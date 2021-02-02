@@ -3,6 +3,7 @@ syntax on
 set number
 
 set tabstop=2 softtabstop=2
+set shiftwidth=2
 set noswapfile
 set smartindent
 set expandtab
@@ -14,6 +15,7 @@ set colorcolumn=80
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
