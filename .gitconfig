@@ -3,3 +3,5 @@
 	name = Daniil Tsivinsky
 [core]
 	editor = vim
+[init]
+	defaultBranch = master
