@@ -5,3 +5,5 @@
 	editor = vim
 [init]
 	defaultBranch = master
+[push]
+	followTags = true
