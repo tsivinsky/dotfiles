@@ -34,6 +34,7 @@ ln -s $PWD/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 ln -s $PWD/polybar/config $HOME/.config/polybar/config
 ln -s $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
 ln -s $PWD/rofi_config.rasi $HOME/.config/rofi/config.rasi
+ln -s $PWD/picom.conf $HOME/.config/picom.conf
 
 echo "Install vim plugins from with :PlugInstall command."
 echo "After that, install completions for youcompleteme plugin by running this command:"
