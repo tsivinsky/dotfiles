@@ -13,8 +13,8 @@ set encoding=utf-8
 set wrap
 set autochdir
 
-" Remap to use Alt+Q to quit panel or vim
-nmap <A-q> :q<CR>
+" Map leader key to Space
+let mapleader = " "
 
 call plug#begin('~/.vim/plugged')
 
@@ -62,11 +62,11 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Remap to quickly quit Vim on Ctrl+Q
-nmap <C-q> :q<CR>
+nmap <leader>q :q<CR>
 
 " Remap to save file with Ctrl+S
-nmap <C-s> :w<CR>
+nmap <leader>w :w<CR>
 
 " Remaps to move line under the cursor down and up
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
