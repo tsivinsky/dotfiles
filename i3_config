@@ -45,12 +45,17 @@ font pango:monospace 8
 # Let's leave it here, I dunno what the fuck is it.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# Use media keys on keyboard to control volume (uses pactl)
+# what??? just leave it
 set $refresh_i3status killall -SIGUSR1 i3status
+
+# Use media keys on keyboard to control volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -61,7 +66,7 @@ bindsym $mod+Return exec $terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# Binding to start dmenu (Mod4 + d)
+# Binding to start rofi (Mod4 + d)
 bindsym $mod+d exec --no-startup-id rofi -show run
 
 # change focus
