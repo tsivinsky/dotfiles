@@ -43,6 +43,10 @@ Plug 'tpope/vim-fugitive'
 " comment/uncomment it
 Plug 'tpope/vim-commentary'
 
+" HTML plugins
+Plug 'mattn/emmet-vim'
+Plug 'alvan/vim-closetag'
+
 call plug#end()
 
 " Theme
@@ -70,3 +74,4 @@ nmap <leader>w :w<CR>
 " Remaps to move line under the cursor down and up
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
+
