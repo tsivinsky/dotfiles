@@ -11,10 +11,10 @@ set smartindent
 set expandtab
 set encoding=utf-8
 set wrap
-set autochdir
 
 " Map leader key to Space
 let mapleader = " "
+let g:closetag_filenames = '*.html,*.svelte'
 
 call plug#begin('~/.vim/plugged')
 
@@ -47,6 +47,9 @@ Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
 
+" Svelte plugin
+Plug 'evanleck/vim-svelte'
+
 call plug#end()
 
 " Theme
@@ -54,7 +57,7 @@ colorscheme gruvbox
 set background=dark
 
 " NerdTree remap to toggle it
-nmap <C-b> :NERDTreeToggle<CR>
+nmap <C-b> :NERDTreeFind <CR>
 
 " Remap to open CtrlP menu
 nmap <C-p> :CtrlP<CR>
