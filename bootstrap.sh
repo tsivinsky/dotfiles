@@ -31,6 +31,7 @@ fi
 # Create symlinks
 ln -s $PWD/i3_config $HOME/.config/i3/config
 ln -s $PWD/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+sudo ln -s $PWD/polybar/pacman-updates-module.sh /usr/bin/count-pacman-updates
 ln -s $PWD/polybar/config.ini $HOME/.config/polybar/config
 ln -s $PWD/polybar/launch.sh $HOME/.config/polybar/launch.sh
 ln -s $PWD/rofi_config.rasi $HOME/.config/rofi/config.rasi
