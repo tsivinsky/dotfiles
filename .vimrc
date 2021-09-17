@@ -50,6 +50,8 @@ Plug 'alvan/vim-closetag'
 " Svelte plugin
 Plug 'evanleck/vim-svelte'
 
+Plug 'ap/vim-css-color'
+
 call plug#end()
 
 " Theme
