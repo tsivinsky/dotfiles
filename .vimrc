@@ -59,7 +59,7 @@ colorscheme gruvbox
 set background=dark
 
 " NerdTree remap to toggle it
-nmap <C-b> :NERDTreeFind <CR>
+nmap <C-b> :NERDTreeToggle <CR>
 
 " Remap to open CtrlP menu
 nmap <C-p> :CtrlP<CR>
