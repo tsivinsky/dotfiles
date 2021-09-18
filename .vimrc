@@ -79,4 +79,5 @@ nmap <leader>w :w<CR>
 " Remaps to move line under the cursor down and up
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
-
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
