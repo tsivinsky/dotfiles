@@ -22,7 +22,7 @@ set $down "j"
 # Autostart applications
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id "setxkbmap -layout \"us,ru\" -option \"grp:win_space_toggle\""
+exec_always --no-startup-id "setxkbmap -layout \"us,ru\" -option \"grp:win_space_toggle\""
 exec_always --no-startup-id picom --config $HOME/.config/picom.conf
 exec_always --no-startup-id dunst 
 
