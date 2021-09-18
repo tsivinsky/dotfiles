@@ -1,1 +1,5 @@
-@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+configuration {
+  theme: "gruvbox-dark";
+  show-icons: true;
+  icon-theme: "Papirus";
+}
