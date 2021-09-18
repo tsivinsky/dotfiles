@@ -35,6 +35,7 @@ assign [class="Code"] $ws2
 for_window [class="Steam"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="mpv"] move absolute center
+for_window [class="Zathura"] floating enable
 
 # Add gaps for windows
 gaps inner 8
