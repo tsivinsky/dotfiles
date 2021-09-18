@@ -70,10 +70,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Remap to quickly quit Vim on Ctrl+Q
+" Remap to quickly quit Vim with Space+q
 nmap <leader>q :q<CR>
 
-" Remap to save file with Ctrl+S
+" Remap to save file with Space+w
 nmap <leader>w :w<CR>
 
 " Remaps to move line under the cursor down and up
