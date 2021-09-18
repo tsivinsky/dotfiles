@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ln -s $PWD/.bashrc $HOME/.bashrc
+
 # Link .vimrc to home directory
 ln -s $PWD/.vimrc $HOME/.vimrc
 
