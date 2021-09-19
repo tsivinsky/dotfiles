@@ -49,7 +49,7 @@ focus_follows_mouse no
 # Font i3 uses
 font pango:monospace 8
 
-bindsym $mod+Shift+s exec i3lock -b -f -i $HOME/Pictures/2b-blurred.png
+bindsym $mod+Shift+s exec i3lock -f -i $HOME/Pictures/2b-blurred.png
 
 # Bind media keys on a keyboard to control volume and playback
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
