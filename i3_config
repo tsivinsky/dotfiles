@@ -35,7 +35,6 @@ assign [class="Code"] $ws2
 for_window [class="Steam"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="mpv"] move absolute center
-for_window [class="Zathura"] floating enable
 
 # Add gaps for windows
 gaps inner 8
@@ -50,11 +49,7 @@ focus_follows_mouse no
 # Font i3 uses
 font pango:monospace 8
 
-# Let's leave it here, I dunno what the fuck is it.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# what??? just leave it
-set $refresh_i3status killall -SIGUSR1 i3status
+bindsym $mod+Shift+s exec i3lock -b -f -i $HOME/Pictures/2b-blurred.png
 
 # Bind media keys on a keyboard to control volume and playback
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
@@ -159,7 +154,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
