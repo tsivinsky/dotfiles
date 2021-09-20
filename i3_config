@@ -1,4 +1,7 @@
-# Global variables
+# 
+#   VARIABLES
+#
+
 set $mod Mod4
 set $terminal alacritty
 
@@ -14,12 +17,37 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# Variables for movement keys
 set $left "h"
 set $right "l"
 set $up "k"
 set $down "j"
 
-# Autostart applications
+#
+#   GENERAL SETTINGS
+#
+
+# Add gaps for windows
+gaps inner 8
+gaps outer 5
+
+default_border pixel
+smart_borders on
+
+# Remove focusing windows with mouse
+focus_follows_mouse no
+
+# Font i3 uses
+font pango:monospace 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+#
+#   APPLICATIONS
+#
+
+# Autostart
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id "setxkbmap -layout \"us,ru\" -option \"grp:win_space_toggle\""
@@ -36,19 +64,12 @@ for_window [class="Steam"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="mpv"] move absolute center
 
-# Add gaps for windows
-gaps inner 8
-gaps outer 5
 
-default_border pixel
-smart_borders on
+#
+#   KEY BINDINGS
+#
 
-# Remove focusing windows with mouse
-focus_follows_mouse no
-
-# Font i3 uses
-font pango:monospace 8
-
+# Screenlocker
 bindsym $mod+Shift+s exec i3lock -f -i $HOME/Pictures/2b-blurred.png
 
 # Bind media keys on a keyboard to control volume and playback
@@ -61,9 +82,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Bind Super+Home keys to take a screenshot
 bindsym $mod+Home exec --no-startup-id screenshoter
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
 
 # Mod4 + Return starts a terminal
 bindsym $mod+Return exec $terminal
@@ -112,18 +130,8 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-# I don't use this shit, so I commented it
-#bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
+# Toggle between stacking/tabbed/split
+bindsym $mod+x layout toggle
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -151,10 +159,9 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
