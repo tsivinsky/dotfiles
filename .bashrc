@@ -7,7 +7,11 @@ alias la='ls -a'
 
 alias count-commits='echo $(git log --oneline | wc -l) commits'
 
+alias e='$EDITOR'
+
 export TERM=alacritty
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
+
+export PATH="$PATH:$HOME/scripts"
 
