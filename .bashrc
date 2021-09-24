@@ -15,4 +15,5 @@ export TERM=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
 
+eval "$(thefuck --alias)"
 
