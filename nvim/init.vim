@@ -1,7 +1,11 @@
 " mark: modules
 call plug#begin('~/.config/nvim/plugged')
 
+" Colorschemes
 Plug 'ayu-theme/ayu-vim'
+Plug 'sainnhe/sonokai'
+Plug 'kaicataldo/material.vim'
+
 Plug 'tpope/vim-commentary'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'jiangmiao/auto-pairs'
@@ -45,8 +49,11 @@ set termguicolors
 let mapleader = " "
 
 " Colorscheme
-let ayucolor = "mirage"
-colorscheme ayu
+let ayucolor = 'mirage' " light/mirage/dark
+" let g:sonokai_style = 'andromeda' " default/atlantis/andromeda/shusia/maia/espresso
+" let g:material_theme_style = 'ocean' " default/palenight/ocean/lighter/darker
+
+colorscheme ayu " ayu/sonokai/material
 
 " Color highlighting
 lua require'colorizer'.setup()
