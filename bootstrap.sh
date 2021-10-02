@@ -51,10 +51,3 @@ cd && rm -rf .bashrc $nvimDir $alacrittyDir $i3Dir $polybarDir $rofiDir && cd -
 
 fi
 
-# Install apps I need from Arch repositories
-if [ "$1" = "-Sa" ] ; then
-
-# TODO: read apps from list-of-apps file
-# TODO: install apps using pacman
-
-fi
