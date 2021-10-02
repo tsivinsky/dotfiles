@@ -21,6 +21,7 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'tc50cal/vim-terminal'
 Plug 'alvan/vim-closetag'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
 
 call plug#end()
 
@@ -30,6 +31,7 @@ syntax on
 set number
 
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set smartindent
 set expandtab
@@ -42,6 +44,7 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+set mouse=nv
 
 set termguicolors
 
@@ -57,6 +60,20 @@ colorscheme ayu " ayu/sonokai/material
 
 " Color highlighting
 lua require'colorizer'.setup()
+
+" let g:clipboard = {
+"   \   'name': 'clipboard',
+"   \   'copy': {
+"   \     '+': 'xclip -selection clipboard',
+"   \     '*': 'xclip -selection clipboard'
+"   \   },
+"   \   'paste': {
+"   \     '+': 'xclip -selection clipboard -o',
+"   \     '*': 'xclip -selection -clipboard -o'
+"   \   },
+"   \   'cache_enabled': 1,
+"   \ }
+
 
 
 
@@ -76,6 +93,7 @@ nnoremap <C-k> :m .-2<CR>==
 nnoremap <C-j> :m .+1<CR>==
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
+
 
 
 
@@ -233,6 +251,11 @@ let g:closetag_regions = {
     \ 'typescriptreact': 'jsxRegion,tsxRegion',
     \ 'javascriptreact': 'jsxRegion',
     \ }
+
+let g:bracey_refresh_on_save = 1
+let g:bracey_server_allow_remote_connections = 1
+let g:bracey_server_port = 3000
+let g:bracey_eval_on_save = 1
 
 
 
