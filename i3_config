@@ -85,6 +85,7 @@ for_window [class="mpv"] floating enable
 for_window [class="mpv"] move absolute center
 for_window [class="Yad"] floating enable
 for_window [class="Yad"] move absolute center
+for_window [class="MuPDF"] floating enable
 
 
 #  _  _________   ______ ___ _   _ ____ ___ _   _  ____ ____  
@@ -94,8 +95,6 @@ for_window [class="Yad"] move absolute center
 # |_|\_\_____| |_| |____/___|_| \_|____/___|_| \_|\____|____/ 
 #                                                            
 
-# Screenlocker
-bindsym $mod+Shift+s exec i3lock -f -i $HOME/Pictures/2b-blurred.png
 
 # Bind media keys on a keyboard to control volume and playback
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
@@ -187,6 +186,11 @@ bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
+# Open applications with keybindings
+bindsym Mod1+r exec alacritty -e ranger
+bindsym Mod1+f exec firefox
+bindsym Mod1+s exec steam
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
