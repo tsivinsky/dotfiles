@@ -22,6 +22,7 @@ Plug 'tc50cal/vim-terminal'
 Plug 'alvan/vim-closetag'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
+Plug 'folke/zen-mode.nvim'
 
 call plug#end()
 
@@ -267,3 +268,17 @@ let g:bracey_eval_on_save = 1
 "                                                                  
 " mark: fuzzy finder
 nnoremap <leader>f :FZF<CR>
+
+
+
+"  __________ _   _   __  __  ___  ____  _____ 
+" |__  / ____| \ | | |  \/  |/ _ \|  _ \| ____|
+"   / /|  _| |  \| | | |\/| | | | | | | |  _|  
+"  / /_| |___| |\  | | |  | | |_| | |_| | |___ 
+" /____|_____|_| \_| |_|  |_|\___/|____/|_____|
+"                                             
+" mark: zen mode
+lua << EOF
+require("zen-mode").setup {}
+EOF
+noremap <leader>z :ZenMode<CR>
