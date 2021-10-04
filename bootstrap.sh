@@ -1,5 +1,16 @@
 #!/bin/bash
 
+usage() {
+  echo "usage: (./)bootstrap [-S][-R]"
+  echo
+  echo "  -S installs all this shit"
+  echo "  -R removes all this shit"
+}
+
+if [ $# -eq 0 ] ; then
+  usage
+fi
+
 # Variables for directories
 nvimDir="$HOME/.config/nvim"
 alacrittyDir="$HOME/.config/alacritty"
