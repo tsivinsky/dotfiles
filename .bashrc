@@ -2,7 +2,6 @@
 [[ $- != *i* ]] && return
 
 
-
 #     _    _     ___    _    ____  _____ ____  
 #    / \  | |   |_ _|  / \  / ___|| ____/ ___| 
 #   / _ \ | |    | |  / _ \ \___ \|  _| \___ \ 
@@ -20,7 +19,7 @@ alias count-commits='echo $(git log --oneline | wc -l) commits'
 
 alias e='$EDITOR'
 
-
+alias copy='xclip -selection clipboard $1'
 
 
 #  _____ _   ___     _____ ____   ___  _   _ __  __ _____ _   _ _____ 
@@ -41,3 +40,24 @@ eval "$(thefuck --alias)"
 source /usr/share/doc/pkgfile/command-not-found.bash
 
 shopt -s autocd
+
+
+
+#   ____ ___  __  __ ____  _     _____ _____ ___ ___  _   _ 
+#  / ___/ _ \|  \/  |  _ \| |   | ____|_   _|_ _/ _ \| \ | |
+# | |  | | | | |\/| | |_) | |   |  _|   | |  | | | | |  \| |
+# | |__| |_| | |  | |  __/| |___| |___  | |  | | |_| | |\  |
+#  \____\___/|_|  |_|_|   |_____|_____| |_| |___\___/|_| \_|
+#                                                          
+
+completions=(
+  "git"
+  "pacman"
+  "systemctl"
+  "yay"
+)
+
+for file in $completions
+do
+  source "/usr/share/bash-completion/completions/$file"
+done
