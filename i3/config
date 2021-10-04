@@ -96,6 +96,10 @@ for_window [class="MuPDF"] floating enable
 #                                                            
 
 
+# Use Super+Tab to cycle through workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # Bind media keys on a keyboard to control volume and playback
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
