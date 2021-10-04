@@ -20,6 +20,15 @@ alias copy='xclip -selection clipboard'
 alias count='wc -l'
 alias aw='awman'
 
+# Git aliases
+alias g='git'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log'
+alias gs='git status'
+alias gd='git diff'
+
 
 #  _____ _   ___     _____ ____   ___  _   _ __  __ _____ _   _ _____ 
 # | ____| \ | \ \   / /_ _|  _ \ / _ \| \ | |  \/  | ____| \ | |_   _|
