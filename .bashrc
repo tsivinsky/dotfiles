@@ -15,11 +15,10 @@ alias ls='ls --color=auto'
 alias lah='ls -lah'
 alias la='ls -a'
 
-alias count-commits='echo $(git log --oneline | wc -l) commits'
-
 alias e='$EDITOR'
-
-alias copy='xclip -selection clipboard $1'
+alias copy='xclip -selection clipboard'
+alias count='wc -l'
+alias aw='awman'
 
 
 #  _____ _   ___     _____ ____   ___  _   _ __  __ _____ _   _ _____ 
