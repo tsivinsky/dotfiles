@@ -51,8 +51,8 @@ set guifont=Fira\ Code:h20
 let mapleader = " "
 
 " Colorscheme
-let ayucolor = 'mirage' " light/mirage/dark
-colorscheme ayu " ayu/sonokai/material
+let ayucolor = 'mirage'
+colorscheme ayu
 
 " Color highlighting
 lua require'colorizer'.setup()
