@@ -15,7 +15,7 @@ alias ls='ls --color=auto'
 alias lah='ls -lah'
 alias la='ls -a'
 
-alias e='$EDITOR'
+alias ed='$EDITOR'
 alias copy='xclip -selection clipboard'
 alias count='wc -l'
 alias aw='awman'
@@ -45,6 +45,8 @@ export VISUAL=nvim
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
+
+export PATH="$PATH:$HOME/scripts"
 
 # Use thefuck command to fix previous command
 eval "$(thefuck --alias)"
