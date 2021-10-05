@@ -41,6 +41,11 @@ export TERM=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Golang ENVs
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:$GOBIN"
+
 # Use thefuck command to fix previous command
 eval "$(thefuck --alias)"
 
