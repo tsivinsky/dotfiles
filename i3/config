@@ -44,7 +44,7 @@ set $down "j"
 # Add gaps for windows
 gaps inner 8
 gaps outer 5
-gaps top 60
+gaps top 50
 
 default_border pixel
 smart_borders on
