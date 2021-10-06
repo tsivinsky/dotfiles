@@ -1,0 +1,42 @@
+/* Colors */
+/* primary: #ffa759 */
+/* background: #202734 */
+/* background-alt: #191e2a */
+/* foreground: #cbccc6 */
+
+window#waybar {
+  background: transparent;
+  color: #cbccc6;
+  font-family: "Fira Code", "Font Awesome 5 Free Solid";
+}
+
+#workspaces {
+  background: #202734;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+#workspaces button {
+  color: #fff;
+  background: transparent;
+}
+
+#workspaces button.focused {
+  color: #ffa759;
+}
+
+#workspaces button.urgent {
+  background: #ffa579;
+}
+
+#clock, #network, #language, #pulseaudio {
+  background: #202734;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#network, #language, #pulseaudio {
+  margin-right: 5px;
+}
+
