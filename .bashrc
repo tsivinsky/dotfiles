@@ -16,9 +16,7 @@ alias lah='ls -lah'
 alias la='ls -a'
 
 alias ed='$EDITOR'
-alias copy='xclip -selection clipboard'
 alias count='wc -l'
-alias aw='awman'
 
 # Git aliases
 alias g='git'
@@ -47,9 +45,6 @@ export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
 
 export PATH="$PATH:$HOME/scripts"
-
-# Use thefuck command to fix previous command
-eval "$(thefuck --alias)"
 
 # Find arch package by binary
 source /usr/share/doc/pkgfile/command-not-found.bash
