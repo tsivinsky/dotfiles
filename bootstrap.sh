@@ -5,6 +5,7 @@ usage() {
   echo
   echo "  -S installs all this shit"
   echo "  -R removes all this shit"
+  echo "  -U updates or installs all packages"
 }
 
 if [ $# -eq 0 ] ; then
@@ -48,3 +49,11 @@ cd && rm -rf .bashrc $nvimDir $alacrittyDir $i3Dir $polybarDir $rofiDir $picomFi
 
 fi
 
+if [ "$1" = "-U" ] ; then
+  archPackages=$(cat apps.list)
+  aurPackages=$(cat apps.aur)
+
+  echo "Installing Arch packages... "
+  echo "We need your sudo privileges"
+  sudo pacman -S $archPackages --noconfirm --needed 
+fi
