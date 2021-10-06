@@ -10,3 +10,9 @@ vnoremap J :m '>+1<CR>gv=gv
 
 " Remap to toggle markdown preview
 nmap <C-m> <Plug>MarkdownPreviewToggle
+
+" FuzzyFinder
+nnoremap <leader>f :FZF<CR>
+
+" Zen Mode
+noremap <leader>z :ZenMode<CR>
