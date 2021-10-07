@@ -18,8 +18,6 @@ alacrittyDir="$HOME/.config/alacritty"
 i3Dir="$HOME/.config/i3"
 polybarDir="$HOME/.config/polybar"
 rofiDir="$HOME/.config/rofi"
-swayDir="$HOME/.config/sway"
-waybarDir="$HOME/.config/waybar"
 picomFile="$HOME/.config/picom.conf"
 gitconfigFile="$HOME/.gitconfig"
 
@@ -34,8 +32,6 @@ ln -s $PWD/i3 $i3Dir
 ln -s $PWD/alacritty $alacrittyDir
 ln -s $PWD/polybar $polybarDir
 ln -s $PWD/rofi $rofiDir
-ln -s $PWD/sway $swayDir
-ln -s $PWD/waybar $waybarDir
 ln -s $PWD/picom.conf $picomFile
 ln -s $PWD/.gitconfig $gitconfigFile
 
@@ -49,7 +45,7 @@ fi
 # Remove all configs
 if [ "$1" = "-R" ] ; then
 
-cd && rm -rf .bashrc $nvimDir $alacrittyDir $i3Dir $polybarDir $rofiDir $swayDir $waybarDir $picomFile $gitconfigFile && cd -
+cd && rm -rf .bashrc $nvimDir $alacrittyDir $i3Dir $polybarDir $rofiDir $picomFile $gitconfigFile && cd -
 
 fi
 
