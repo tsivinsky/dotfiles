@@ -47,7 +47,7 @@ input * {
 }
 
 # Draw a wallpaper
-output * bg $HOME/Pictures/Wallpapers/2b.jpeg fill
+output * bg $HOME/Pictures/Wallpapers/wave.png fill
 
 # For window settings
 for_window [class="Steam"] floating enable
@@ -71,6 +71,7 @@ assign [class="Steam"] $ws3
 #                                                                     
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
 exec_always --no-startup-id /usr/share/sway/scripts/inactive-windows-transparency.py -o 0.8
+
 
 
 #  _  _________   ______ ___ _   _ ____ ___ _   _  ____ ____  
