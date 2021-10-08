@@ -18,6 +18,8 @@ alias la='ls -a'
 alias ed='$EDITOR'
 alias count='wc -l'
 
+alias c='clear'
+
 # Git aliases
 alias g='git'
 alias ga='git add'
@@ -39,12 +41,10 @@ export TERM=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
 
-# Golang ENVs
-export GOPATH="$HOME/go"
-export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOBIN"
-
-export PATH="$PATH:$HOME/scripts"
+# Go ENVs
+export GO111MODULE=auto
+export GOBIN="$HOME/go/bin"
+export PATH="$PATH:$HOME/scripts:$GOBIN"
 
 # Find arch package by binary
 source /usr/share/doc/pkgfile/command-not-found.bash
