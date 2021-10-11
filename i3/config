@@ -161,6 +161,9 @@ bindsym $mod+e layout toggle split
 # Toggle between stacking/tabbed/split
 bindsym $mod+x layout toggle
 
+# Toggle window state between tiling and floating
+bindsym $mod+z floating toggle
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
