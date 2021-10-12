@@ -6,14 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'tpope/vim-commentary'
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'prettier/vim-prettier', {'do': 'yarn install'}
-Plug 'fatih/vim-go'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'akinsho/bufferline.nvim'
@@ -22,6 +15,8 @@ Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
 Plug 'folke/zen-mode.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kevinoid/vim-jsonc'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -57,9 +52,6 @@ colorscheme ayu
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'ayu_mirage'
-
-" Color highlighting
-lua require'colorizer'.setup()
 
 " Zen Mode plugin
 lua require'zen-mode'.setup()

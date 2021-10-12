@@ -15,5 +15,5 @@ let g:nvim_tree_show_icons = {
     \ }
 
 " Remaps
-nnoremap <leader>b :NvimTreeToggle<CR>
+nnoremap <C-b> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>

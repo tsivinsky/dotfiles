@@ -39,3 +39,25 @@ let g:coc_snippet_next = '<c-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<c-k>'
+
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-css',
+  \ 'coc-go',
+  \ 'coc-html',
+  \ 'coc-prettier',
+  \ 'coc-sh',
+  \ 'coc-svelte',
+  \ 'coc-pairs',
+  \ 'coc-json',
+  \ 'coc-snippets',
+  \ 'coc-emmet',
+  \ 'coc-highlight',
+  \ 'coc-python'
+  \ ]
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
