@@ -38,7 +38,7 @@ ln -s $PWD/.gitconfig $gitconfigFile
 # Install vim-plug
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo "Install neovim plugins with :PlugInstall command inside neovim"
+nvim -c "PlugInstall"
 
 fi
 
