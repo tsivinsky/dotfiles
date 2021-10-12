@@ -26,6 +26,8 @@ set $right "l"
 set $up "k"
 set $down "j"
 
+set $draw_wallpaper "feh --no-fehbg --bg-fill ~/Pictures/Wallpapers/2b.jpeg"
+
 
 
 #   ____ _____ _   _ _____ ____      _    _     
@@ -68,7 +70,7 @@ floating_modifier $mod
 #                                                                     
 
 # Autostart
-exec --no-startup-id nitrogen --restore
+exec_always --no-startup-id $draw_wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id "setxkbmap -layout \"us,ru\" -option \"grp:win_space_toggle\""
 exec_always --no-startup-id picom --config $HOME/.config/picom.conf
