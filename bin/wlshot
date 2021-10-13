@@ -1,0 +1,7 @@
+#! /bin/bash
+
+action=$1
+
+path="$HOME/Pictures/Screenshots/Screenshot-$(date +%s%3N).png"
+
+grimshot $action area $path

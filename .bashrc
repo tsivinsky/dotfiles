@@ -37,6 +37,8 @@ alias gd='git diff'
 # |_____|_| \_|  \_/  |___|_| \_\\___/|_| \_|_|  |_|_____|_| \_| |_|  
 #                                                                     
 
+export PATH="$PATH:$HOME/dotfiles/bin"
+
 export TERM=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
@@ -44,7 +46,7 @@ export VISUAL=nvim
 # Go ENVs
 export GO111MODULE=auto
 export GOBIN="$HOME/go/bin"
-export PATH="$PATH:$HOME/scripts:$GOBIN"
+export PATH="$PATH:$GOBIN"
 
 # Find arch package by binary
 source /usr/share/doc/pkgfile/command-not-found.bash
