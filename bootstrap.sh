@@ -55,11 +55,10 @@ fi
 # Remove all configs
 if [ "$1" = "-R" ] ; then
 
-# cd && rm -rf .bashrc $nvimDir $alacrittyDir $i3Dir $polybarDir $swayDir $waybarDir $rofiDir $picomFile $gitconfigFile && cd -
 cd && rm -rf \
   $bashrc $nvimDir $alacrittyDir $i3Dir \
   $polybarDir $swayDir $waybarDir $rofiDir \
-  $picomFile $gitconfigFile \
+  $dunstDir $picomFile $gitconfigFile \
   && cd -
 
 fi
