@@ -8,11 +8,8 @@ nnoremap <C-j> :m .+1<CR>==
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 
-" Remap to toggle markdown preview
-nmap <C-m> <Plug>MarkdownPreviewToggle
-
-" FuzzyFinder
-nnoremap <leader>f :FZF<CR>
-
 " Zen Mode
 noremap <leader>z :ZenMode<CR>
+
+" Remove search highlighting
+noremap <leader>nh :nohl<CR>
