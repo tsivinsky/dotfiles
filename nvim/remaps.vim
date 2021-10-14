@@ -13,3 +13,6 @@ noremap <leader>z :ZenMode<CR>
 
 " Remove search highlighting
 noremap <leader>nh :nohl<CR>
+
+" Use Ctrl+A to select the whole file
+nnoremap <C-a> ggVG
