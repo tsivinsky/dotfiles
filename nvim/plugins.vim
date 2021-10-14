@@ -15,5 +15,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kevinoid/vim-jsonc'
 Plug 'fatih/vim-go'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
