@@ -39,13 +39,11 @@ set $ws10 "10"
 default_border none
 smart_borders on
 focus_follows_mouse no
-
-gaps inner 8
-
+gaps inner 10
 floating_modifier $mod normal
 
 # Draw wallpaper
-output * bg ~/Pictures/Wallpapers/2b.jpeg fill
+output * bg `$HOME/dotfiles/bin/get-random-wallpaper.py` fill
 
 # Keyboard layout
 input * {
@@ -86,7 +84,7 @@ for_window [class="MuPDF"] floating enable
 # /_/   \_\___/  |_| \___/|____/ |_/_/   \_\_| \_\|_|  
 #
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
-exec_always --no-startup-id mako
+exec_always --no-startup-id dunst
 exec_always --no-startup-id inactive-windows-transparency.py
 
 
@@ -110,6 +108,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # Make screenshots
 bindsym $mod+Home exec wlshot copy
 bindsym $mod+Shift+Home exec wlshot save
+
+# Lock screen
+bindsym $mod+Shift+s exec --no-startup-id swaylock -i `$HOME/dotfiles/bin/get-random-wallpaper.py` --font FiraCode
 
 # Start a terminal
 bindsym $mod+Return exec $term
