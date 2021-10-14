@@ -2,8 +2,8 @@
 
 # Main keys
 set $mod Mod4
-set $alt Mod1
 
+set $alt Mod1
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -84,7 +84,7 @@ for_window [class="MuPDF"] floating enable
 # /_/   \_\___/  |_| \___/|____/ |_/_/   \_\_| \_\|_|  
 #
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
-exec_always --no-startup-id dunst
+exec_always --no-startup-id dunst &
 exec_always --no-startup-id inactive-windows-transparency.py
 
 

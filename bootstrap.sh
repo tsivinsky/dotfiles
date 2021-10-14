@@ -13,6 +13,7 @@ if [ $# -eq 0 ] ; then
 fi
 
 # Variables for directories
+bashrc="$HOME/.bashrc"
 nvimDir="$HOME/.config/nvim"
 alacrittyDir="$HOME/.config/alacritty"
 i3Dir="$HOME/.config/i3"
@@ -20,15 +21,17 @@ polybarDir="$HOME/.config/polybar"
 swayDir="$HOME/.config/sway"
 waybarDir="$HOME/.config/waybar"
 rofiDir="$HOME/.config/rofi"
+dunstDir="$HOME/.config/dunst"
 picomFile="$HOME/.config/picom.conf"
 gitconfigFile="$HOME/.gitconfig"
+
 
 # Install all configs
 if [ "$1" = "-S" ] ; then
 
-ln -s $PWD/.bashrc $HOME/.bashrc
 
 # Create symlinks
+ln -s $PWD/.bashrc $bashrc
 ln -s $PWD/nvim $nvimDir
 ln -s $PWD/i3 $i3Dir
 ln -s $PWD/alacritty $alacrittyDir
@@ -36,12 +39,15 @@ ln -s $PWD/polybar $polybarDir
 ln -s $PWD/sway $swayDir
 ln -s $PWD/waybar $waybarDir
 ln -s $PWD/rofi $rofiDir
+ln -s $PWD/dunst $dunstDir
 ln -s $PWD/picom.conf $picomFile
 ln -s $PWD/.gitconfig $gitconfigFile
 
 # Install vim-plug
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.config/nvim/autoload/plug.vim \
+  --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Install vim plugins
 nvim -c "PlugInstall"
 
 fi
@@ -49,7 +55,12 @@ fi
 # Remove all configs
 if [ "$1" = "-R" ] ; then
 
-cd && rm -rf .bashrc $nvimDir $alacrittyDir $i3Dir $polybarDir $swayDir $waybarDir $rofiDir $picomFile $gitconfigFile && cd -
+# cd && rm -rf .bashrc $nvimDir $alacrittyDir $i3Dir $polybarDir $swayDir $waybarDir $rofiDir $picomFile $gitconfigFile && cd -
+cd && rm -rf \
+  $bashrc $nvimDir $alacrittyDir $i3Dir \
+  $polybarDir $swayDir $waybarDir $rofiDir \
+  $picomFile $gitconfigFile \
+  && cd -
 
 fi
 
