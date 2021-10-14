@@ -22,6 +22,7 @@
   },
   "clock": {
     "format": "{:%d %b %H:%M, %A}",
-    "tooltip": false
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "firefox https://calendar.google.com"
   }
 }
