@@ -1,7 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
 #     _    _     ___    _    ____  _____ ____  
 #    / \  | |   |_ _|  / \  / ___|| ____/ ___| 
 #   / _ \ | |    | |  / _ \ \___ \|  _| \___ \ 
@@ -14,6 +13,7 @@ alias sudo='sudo '
 alias ls='ls --color=auto'
 alias lah='ls -lah'
 alias la='ls -a'
+
 
 alias ed='$EDITOR'
 alias count='wc -l'
@@ -37,16 +37,9 @@ alias gd='git diff'
 # |_____|_| \_|  \_/  |___|_| \_\\___/|_| \_|_|  |_|_____|_| \_| |_|  
 #                                                                     
 
-export PATH="$PATH:$HOME/dotfiles/bin"
-
 export TERM=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
-
-# Go ENVs
-export GO111MODULE=auto
-export GOBIN="$HOME/go/bin"
-export PATH="$PATH:$GOBIN"
 
 # Find arch package by binary
 source /usr/share/doc/pkgfile/command-not-found.bash
