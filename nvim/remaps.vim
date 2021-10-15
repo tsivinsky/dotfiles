@@ -8,9 +8,6 @@ nnoremap <C-j> :m .+1<CR>==
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 
-" Zen Mode
-noremap <leader>z :ZenMode<CR>
-
 " Remove search highlighting
 noremap <leader>nh :nohl<CR>
 
