@@ -85,7 +85,7 @@ for_window [class="MuPDF"] floating enable
 #
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
 exec_always --no-startup-id dunst &
-exec_always --no-startup-id inactive-windows-transparency.py
+exec_always --no-startup-id $HOME/dotfiles/bin/inactive-windows-transparency.py &
 
 
 
@@ -106,8 +106,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # TODO: Fix screenshot keybindings
 # Make screenshots
-bindsym $mod+Home exec wlshot copy
-bindsym $mod+Shift+Home exec wlshot save
+bindsym $mod+Home exec $HOME/dotfiles/bin/wlshot copy
+bindsym $mod+Shift+Home exec $HOME/dotfiles/bin/wlshot save
 
 # Lock screen
 bindsym $mod+Shift+s exec --no-startup-id swaylock -i `$HOME/dotfiles/bin/get-random-wallpaper.py` --font FiraCode
