@@ -17,5 +17,8 @@ Plug 'fatih/vim-go'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
+Plug 'evanleck/vim-svelte'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'yuezk/vim-js'
 
 call plug#end()

@@ -18,6 +18,14 @@
     "javascriptreact",
     "typescriptreact",
     "python",
-    "go"
-  ]
+    "go",
+    "svelte"
+  ],
+  "svelte.plugin.svelte.completions.enable": true,
+  "svelte.plugin.css.completions.enable": true,
+  "svelte.plugin.svelte.enable": true,
+  "svelte.plugin.html.enable": true,
+  "svelte.plugin.css.enable": true,
+  "svelte.enable-ts-plugin": true,
+  "svelte.plugin.svelte.format.enable": true
 }
