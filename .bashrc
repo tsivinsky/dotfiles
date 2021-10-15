@@ -69,7 +69,7 @@ completions=(
   "yay"
 )
 
-for file in $completions
+for file in ${completions[@]}
 do
   source "/usr/share/bash-completion/completions/$file"
 done
