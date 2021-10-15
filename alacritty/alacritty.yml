@@ -1,12 +1,15 @@
 font:
   normal:
-    family: Fira Code
+    family: Iosevka
     style: Regular
   bold:
-    family: Fira Code
+    family: Iosevka
     style: Bold
+  offset:
+    x: 1
+    y: 1
   
-  size: 11
+  size: 12
 
 # Colors (Ayu Mirage)
 colors:
