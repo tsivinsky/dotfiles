@@ -37,3 +37,9 @@ colors:
     cyan: '#95E6CB'
     white: '#FFFFFF'
 
+window:
+  padding:
+    x: 5
+    y: 5
+
+background_opacity: 0.95
