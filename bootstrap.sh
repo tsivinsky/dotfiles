@@ -22,6 +22,7 @@ swayDir="$HOME/.config/sway"
 waybarDir="$HOME/.config/waybar"
 rofiDir="$HOME/.config/rofi"
 dunstDir="$HOME/.config/dunst"
+fontsDir="$HOME/.config/fontconfig"
 picomFile="$HOME/.config/picom.conf"
 gitconfigFile="$HOME/.gitconfig"
 
@@ -40,6 +41,7 @@ ln -s $PWD/sway $swayDir
 ln -s $PWD/waybar $waybarDir
 ln -s $PWD/rofi $rofiDir
 ln -s $PWD/dunst $dunstDir
+ln -s $PWD/fontconfig $fontsDir
 ln -s $PWD/picom.conf $picomFile
 ln -s $PWD/.gitconfig $gitconfigFile
 
@@ -58,7 +60,7 @@ if [ "$1" = "-R" ] ; then
 cd && rm -rf \
   $bashrc $nvimDir $alacrittyDir $i3Dir \
   $polybarDir $swayDir $waybarDir $rofiDir \
-  $dunstDir $picomFile $gitconfigFile \
+  $dunstDir $fontsDir $picomFile $gitconfigFile \
   && cd -
 
 fi
