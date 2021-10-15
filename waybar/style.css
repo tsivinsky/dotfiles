@@ -8,6 +8,7 @@ window#waybar {
   background: #191e2a;
   color: #cbccc6;
   font-family: "Fira Code", "Font Awesome 5 Free Solid";
+  font-size: 13px;
 }
 
 #workspaces {
@@ -32,7 +33,8 @@ window#waybar {
 #clock,
 #network,
 #language,
-#pulseaudio {
+#pulseaudio,
+#tray {
   background: #202734;
   margin: 10px;
   padding: 10px;
@@ -41,10 +43,4 @@ window#waybar {
 
 #pulseaudio.muted {
   color: #ffa759;
-}
-
-#network,
-#language,
-#pulseaudio {
-  margin-right: 5px;
 }

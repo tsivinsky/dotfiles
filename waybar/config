@@ -1,7 +1,7 @@
 {
   "position": "top",
   "modules-left": ["sway/workspaces"],
-  "modules-right": ["pulseaudio", "sway/language", "network", "clock"],
+  "modules-right": ["pulseaudio", "sway/language", "network", "clock", "tray"],
 
   "sway/workspaces": {
     "all-output": true,
@@ -24,5 +24,9 @@
     "format": "{:%d %b %H:%M, %A}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "on-click": "firefox https://calendar.google.com"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
   }
 }
