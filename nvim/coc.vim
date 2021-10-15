@@ -53,7 +53,8 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-emmet',
   \ 'coc-highlight',
-  \ 'coc-python'
+  \ 'coc-python',
+  \ 'coc-emoji'
   \ ]
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.

@@ -10,5 +10,14 @@
     "json",
     "jsonc"
   ],
-  "python.jediEnabled": true
+  "python.jediEnabled": true,
+  "coc.source.emoji.filetypes": [
+    "markdown",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "python",
+    "go"
+  ]
 }
