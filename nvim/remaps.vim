@@ -13,3 +13,6 @@ noremap <leader>nh :nohl<CR>
 
 " Use Ctrl+A to select the whole file
 nnoremap <C-a> ggVG
+
+" Open terminal
+nnoremap <C-j> :term<CR>
