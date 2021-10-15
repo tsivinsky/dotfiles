@@ -1,7 +1,7 @@
 [global]
 monitor = 0
 follow = mouse
-geometry = "350x60-20+48"
+geometry = "350x5-30-30"
 indicate_hidden = yes
 shrink = no
 separator_height = 0
@@ -11,7 +11,7 @@ frame_width = 2
 sort = no
 idle_threshold = 120
 font = Fira Code 8
-line_height = 4
+line_height = 2
 markup = full
 format = <b>%s</b>\n%b
 alignment = left
@@ -21,7 +21,7 @@ ignore_newline = no
 stack_duplicates = false
 hide_duplicate_count = yes
 show_indicators = no
-icon_position = left
+icon_position = right
 text_icon_padding = 20
 max_icon_size = 64
 sticky_history = yes
@@ -30,6 +30,8 @@ browser = /usr/bin/firefox -new-tab
 always_run_script = true
 title = Dunst
 class = Dunst
+corner_radius = 8
+mouse_left = do_action
 
 [shortcuts]
 close = ctrl+space
