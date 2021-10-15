@@ -41,6 +41,7 @@ smart_borders on
 focus_follows_mouse no
 gaps inner 10
 floating_modifier $mod normal
+font FiraCode 10
 
 # Draw wallpaper
 output * bg `$HOME/dotfiles/bin/get-random-wallpaper.py` fill
@@ -50,6 +51,7 @@ input * {
   xkb_layout "us,ru"
   xkb_options "grp:win_space_toggle"
 }
+
 
 
 
@@ -186,10 +188,10 @@ bindsym $mod+z floating toggle
 
 ### Resize mode
 mode "resize" {
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 100px
+    bindsym $down resize grow height 100px
+    bindsym $up resize shrink height 100px
+    bindsym $right resize grow width 100px
 
     # Return to default mode
     bindsym Return mode "default"
