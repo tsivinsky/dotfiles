@@ -16,3 +16,6 @@ nnoremap <C-a> ggVG
 
 " Open terminal
 nnoremap <C-j> :term<CR>
+
+" Open Gitabra
+nnoremap <leader>g :Gitabra<CR>
