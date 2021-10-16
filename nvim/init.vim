@@ -35,6 +35,16 @@ let g:bracey_eval_on_save = 1
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 lua << EOF
-  require("gitsigns").setup{}
+  require("gitsigns").setup {
+    current_line_blame = true,
+    current_line_blame_opts = {
+      virt_text = true,
+      virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+      delay = 1000,
+    },
+    current_line_blame_formatter_opts = {
+      relative_time = false
+    }
+  }
   require("gitabra").setup {}
 EOF
