@@ -20,5 +20,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'evanleck/vim-svelte'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'yuezk/vim-js'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'Odie/gitabra'
+Plug 'tricktux/pomodoro.vim'
+Plug 'stevearc/gkeep.nvim'
 
 call plug#end()
