@@ -25,6 +25,7 @@ dunstDir="$HOME/.config/dunst"
 fontsDir="$HOME/.config/fontconfig"
 picomFile="$HOME/.config/picom.conf"
 gitconfigFile="$HOME/.gitconfig"
+nvimPluggedDir="$HOME/dotfiles/nvim/plugged"
 
 
 # Install all configs
@@ -61,6 +62,7 @@ cd && rm -rf \
   $bashrc $nvimDir $alacrittyDir $i3Dir \
   $polybarDir $swayDir $waybarDir $rofiDir \
   $dunstDir $fontsDir $picomFile $gitconfigFile \
+  $nvimPluggedDir \
   && cd -
 
 fi
