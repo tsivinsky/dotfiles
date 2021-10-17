@@ -30,6 +30,8 @@ window#waybar {
   background: #ffa579;
 }
 
+#custom-weather,
+#custom-pacman-updates,
 #clock,
 #network,
 #language,
