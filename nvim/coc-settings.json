@@ -27,5 +27,6 @@
   "svelte.plugin.html.enable": true,
   "svelte.plugin.css.enable": true,
   "svelte.enable-ts-plugin": true,
-  "svelte.plugin.svelte.format.enable": true
+  "svelte.plugin.svelte.format.enable": true,
+  "html.filetypes": ["html", "javascriptreact", "typescriptreact"]
 }
