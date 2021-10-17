@@ -8,14 +8,38 @@ nnoremap <C-j> :m .+1<CR>==
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 
+" Move split panes to left/bottom/top/right
+nnoremap <A-h> <C-W>H
+nnoremap <A-j> <C-W>J
+nnoremap <A-k> <C-W>K
+nnoremap <A-l> <C-W>L
+
+" move between panes to left/bottom/top/right
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+
 " Remove search highlighting
 noremap <leader>nh :nohl<CR>
 
 " Use Ctrl+A to select the whole file
 nnoremap <C-a> ggVG
 
+function! OpenTerminal()
+  split term://bash
+  resize 10
+endfunction
 " Open terminal
-nnoremap <C-j> :term<CR>
+nnoremap <leader>j :call OpenTerminal()<CR>
 
 " Open Gitabra
 nnoremap <leader>g :Gitabra<CR>
+
+" Open splits
+nnoremap <leader>v :vs<CR>
+nnoremap <leader>h :sp<CR>
