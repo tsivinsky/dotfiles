@@ -1,0 +1,26 @@
+#! /bin/bash
+
+packages=$(pacman -Qqe)
+packagesToDelete=()
+
+_GREEN=$(tput setaf 2)
+_RED=$(tput setaf 1)
+_RESET=$(tput sgr0)
+
+for package in ${packages[@]}
+do
+  description=`pacman -Qi $package | grep -i description | awk -F: '{ print $2 }'`
+
+  echo "${_GREEN}$package${_RESET} - $description"
+
+  read -p "${_RED}Delete it? (y/N)${_RESET}: " yes
+
+  if [ "$yes" == "Y" -o "$yes" == "y" ] ; then
+    packagesToDelete+=("$package")
+    echo "Added $package to list of packages to delete"
+  else
+    echo "Ok, skipping"
+  fi
+done
+
+sudo pacman -Rs ${packagesToDelete[@]}
