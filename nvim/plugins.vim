@@ -10,7 +10,6 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'akinsho/bufferline.nvim'
 Plug 'alvan/vim-closetag'
-Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kevinoid/vim-jsonc'
 Plug 'fatih/vim-go'
@@ -24,7 +23,6 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'Odie/gitabra'
-Plug 'tricktux/pomodoro.vim'
 Plug 'stevearc/gkeep.nvim'
 
 call plug#end()
