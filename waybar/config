@@ -34,8 +34,9 @@
     "tooltip": false
   },
   "network": {
-    "format": "{icon} connected",
+    "format": "{icon}",
     "format-icons": [""],
+    "format-disconnected": "No network",
     "tooltip": false
   },
   "clock": {
