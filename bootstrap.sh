@@ -47,8 +47,8 @@ ln -s $PWD/picom.conf $picomFile
 ln -s $PWD/.gitconfig $gitconfigFile
 
 # Install vim-plug
-curl -fLo ~/.config/nvim/autoload/plug.vim \
-  --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir -p $nvimDir/autoload
+wget -O $nvimDir/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install vim plugins
 nvim -c "PlugInstall"
