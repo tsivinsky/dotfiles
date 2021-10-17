@@ -1,17 +1,11 @@
 source $HOME/dotfiles/nvim/plugins.vim
 source $HOME/dotfiles/nvim/general.vim
 source $HOME/dotfiles/nvim/remaps.vim
+source $HOME/dotfiles/nvim/theme.vim
+source $HOME/dotfiles/nvim/terminal.vim
 source $HOME/dotfiles/nvim/file-tree.vim
 source $HOME/dotfiles/nvim/coc.vim
 source $HOME/dotfiles/nvim/tabs.vim
-
-" Colorscheme
-let ayucolor = 'mirage'
-colorscheme ayu
-
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'ayu_mirage'
 
 " Filetypes for markdown extension
 let g:mkdp_filetypes = ['md', 'mdx', 'markdown']
