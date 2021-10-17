@@ -16,6 +16,9 @@ set updatetime=300
 set shortmess+=c
 set mouse=nv
 set cursorline
+set clipboard+=unnamedplus
+set splitright
+set splitbelow
 
 set termguicolors
 
