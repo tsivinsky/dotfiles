@@ -46,13 +46,6 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 
 shopt -s autocd
 
-_GREEN=$(tput setaf 2)
-_BLUE=$(tput setaf 4)
-_RED=$(tput setaf 1)
-_RESET=$(tput sgr0)
-_BOLD=$(tput bold)
-export PS1="${_GREEN}${_BOLD}\u@\h${_RESET}:${_BLUE}${_BOLD}\W${_RESET}# "
-
 
 
 #   ____ ___  __  __ ____  _     _____ _____ ___ ___  _   _ 
