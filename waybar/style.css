@@ -27,9 +27,14 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-  background: #ffa579;
+  background: #ffa759;
 }
 
+#mode {
+  color: #ffa759;
+}
+
+#custom-player,
 #custom-weather,
 #custom-pacman-updates,
 #clock,
