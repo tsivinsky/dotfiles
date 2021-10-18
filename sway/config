@@ -86,8 +86,7 @@ for_window [class="MuPDF"] floating enable
 # /_/   \_\___/  |_| \___/|____/ |_/_/   \_\_| \_\|_|  
 #
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
-exec_always --no-startup-id dunst &
-exec_always --no-startup-id $HOME/dotfiles/bin/inactive-windows-transparency.py &
+exec_always --no-startup-id dunst
 
 
 
