@@ -1,0 +1,25 @@
+#! /bin/bash
+
+args=("$@")
+
+usage() {
+  echo "Clean Cache utility: clean-cache [OPTIONS]"
+  echo
+  echo " --npm cleans npm cache by running 'npm cache clean -f'"
+  echo " --yarn cleans yarn cache by running 'yarn cache clean'"
+}
+
+if [ $# -eq 0 ] ; then
+  usage
+  exit
+fi
+
+if [[ "${args[@]}" =~ "--npm" ]] ; then
+  npm cache clean -f >> /dev/null 2>> /dev/null
+fi
+
+if [[ "${args[@]}" =~ "--yarn" ]] ; then
+  yarn cache clean >> /dev/null 2>> /dev/null
+fi
+
+# TODO: Clean yay's AUR cache
