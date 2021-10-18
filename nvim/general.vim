@@ -3,6 +3,7 @@ syntax on
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set autoindent
 
 set number
 set relativenumber
@@ -14,7 +15,7 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
-set mouse=nv
+set mouse=a " nv for normal and visual only
 set cursorline
 set clipboard+=unnamedplus
 set splitright
