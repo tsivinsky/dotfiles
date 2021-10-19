@@ -47,3 +47,6 @@ nnoremap <leader>vv :sp<CR>
 " Use Ctrl+Shift+jk to resize panes
 nnoremap <C-j> :resize -2<CR>
 nnoremap <C-k> :resize +2<CR>
+
+" Remap to toggle gitsigns as linehl
+nnoremap <leader>sg :Gitsigns toggle_linehl<CR>
