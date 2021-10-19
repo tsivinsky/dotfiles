@@ -1,0 +1,17 @@
+#! /bin/bash
+
+msgId="991049"
+
+volume=$(pamixer --get-volume)
+mute=$(pamixer --get-mute)
+
+if [[ $volume == 0 || "$mute" == "true" ]]; then
+    # Show the sound muted notification
+    dunstify -a "notify-on-volume" -u low -i audio-volume-muted -r "$msgId" "Volume muted" 
+else
+    # Show the volume notification
+    dunstify -a "notify-on-volume" -u low -i audio-volume-high -r "$msgId" \
+    -h int:value:"$volume" "Volume: ${volume}%"
+fi
+
+canberra-gtk-play -i audio-volume-change -d "notify-on-volume"

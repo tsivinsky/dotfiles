@@ -54,3 +54,7 @@ timeout = 0
 background = "#191e2a"
 foreground = "#cbccc6"
 frame_color = "#ff3333"
+
+[volume]
+appname = "notify-on-volume"
+history_ignore=yes
