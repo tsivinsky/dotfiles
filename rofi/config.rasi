@@ -1,5 +1,114 @@
 configuration {
-  theme: "gruvbox-dark";
+  modi: "drun";
+  font: "Iosevka 12";
   show-icons: true;
-  icon-theme: "Papirus";
+}
+
+* {
+  background: #202734;
+  background-alt: #191e2a;
+  foreground: #cbccc6;
+
+  yellow: #ffa759;
+  orange: #ffcc66;
+  red: #ff3333;
+  magenta: #ffd580;
+  violet: #ffee99;
+  blue: #73d0ff;
+  cyan: #95e6cb;
+  green: #859900;
+
+  normal-foreground: @foreground;
+  normal-background: @background;
+  active-foreground: @green;
+  active-background: @background;
+  urgent-foreground: @red;
+  urgent-background: @background;
+  selected-foreground: @magenta;
+
+  selected-normal-foreground: @selected-foreground;
+  selected-normal-background: @selected-background;
+  selected-active-foreground: @active-foreground;
+  selected-active-background: @selected-background;
+  selected-urgent-foreground: @urgent-foreground;
+  selected-urgent-background: @selected-background;
+
+  alternate-normal-background: @background;
+  alternate-normal-foreground: @alternate-foreground;
+  alternate-active-foreground: @active-foreground;
+  alternate-active-background: @background;
+  alternate-urgent-foreground: @urgent-foreground;
+  alternate-urgent-background: @background;
+
+  separatorcolor: @blue;
+
+  /* Main element styles */
+  border-color: @blue;
+  spacing: 2;
+  background-color: @background;
+}
+
+window {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+mainbox {
+  padding: 35% 20%;
+}
+
+/* entry, */
+/* prompt { */
+/*   padding: 6px; */
+/* } */
+
+element {
+  padding: 10px;
+  color: @foreground;
+}
+
+element normal.normal {
+  /* background-color: @normal-background; */
+  /* text-color: @normal-foreground; */
+}
+
+element normal.urgent {
+  /* background-color: @urgent-background; */
+  /* text-color: @urgent-foreground; */
+}
+
+element normal.active {
+  /* background-color: @active-background; */
+  /* text-color: @active-foreground; */
+}
+
+element selected.normal {
+  /* background-color: @selected-normal-background; */
+  /* text-color: @selected-normal-foreground; */
+}
+
+element selected.urgent {
+  /* background-color: @selected-urgent-background; */
+  /* text-color: @selected-urgent-foreground; */
+}
+
+element selected.active {
+  /* background-color: @selected-active-background; */
+  /* text-color: @selected-active-foreground; */
+}
+
+element alternate.normal {
+  /* background-color: @alternate-normal-background; */
+  /* text-color: @alternate-normal-foreground; */
+}
+
+element alternate.urgent {
+  /* background-color: @alternate-urgent-background; */
+  /* text-color: @alternate-urgent-foreground; */
+}
+
+element alternate.active {
+  /* background-color: @alternate-active-background; */
+  /* text-color: @alternate-active-foreground; */
 }
