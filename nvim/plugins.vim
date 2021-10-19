@@ -23,6 +23,5 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'Odie/gitabra'
-Plug 'stevearc/gkeep.nvim'
 
 call plug#end()
