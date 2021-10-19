@@ -7,6 +7,7 @@ usage() {
   echo
   echo " --npm cleans npm cache by running 'npm cache clean -f'"
   echo " --yarn cleans yarn cache by running 'yarn cache clean'"
+  echo " --yay clean yay cache by simply deleting ~/.cache/yay content"
 }
 
 if [ $# -eq 0 ] ; then
@@ -22,4 +23,6 @@ if [[ "${args[@]}" =~ "--yarn" ]] ; then
   yarn cache clean >> /dev/null 2>> /dev/null
 fi
 
-# TODO: Clean yay's AUR cache
+if [[ "${args[@]}" =~ "--yay" ]] ; then
+  rm -rf ~/.cache/yay/*
+fi
