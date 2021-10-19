@@ -109,9 +109,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Home exec $HOME/dotfiles/bin/wlshot copy
 bindsym $mod+Shift+Home exec $HOME/dotfiles/bin/wlshot save
 
-# Lock screen
-bindsym $mod+Shift+s exec --no-startup-id swaylock -i `$HOME/dotfiles/bin/get-random-wallpaper.py` --font FiraCode
-
 # Start a terminal
 bindsym $mod+Return exec $term
 
