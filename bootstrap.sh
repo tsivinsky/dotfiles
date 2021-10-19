@@ -23,6 +23,7 @@ waybarDir="$HOME/.config/waybar"
 rofiDir="$HOME/.config/rofi"
 dunstDir="$HOME/.config/dunst"
 fontsDir="$HOME/.config/fontconfig"
+wlogoutDir="$HOME/.config/wlogout"
 picomFile="$HOME/.config/picom.conf"
 gitconfigFile="$HOME/.gitconfig"
 nvimPluggedDir="$HOME/dotfiles/nvim/plugged"
@@ -43,6 +44,7 @@ ln -s $PWD/waybar $waybarDir
 ln -s $PWD/rofi $rofiDir
 ln -s $PWD/dunst $dunstDir
 ln -s $PWD/fontconfig $fontsDir
+ln -s $PWD/wlogout $wlogoutDir
 ln -s $PWD/picom.conf $picomFile
 ln -s $PWD/.gitconfig $gitconfigFile
 

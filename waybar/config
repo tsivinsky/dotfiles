@@ -8,7 +8,8 @@
     "sway/language",
     "network",
     "clock",
-    "tray"
+    "tray",
+    "custom/power-menu"
   ],
 
   "sway/workspaces": {
@@ -61,5 +62,10 @@
   "tray": {
     "icon-size": 16,
     "spacing": 10
+  },
+  "custom/power-menu": {
+    "format": "{icon}",
+    "format-icons": [""],
+    "on-click": "wlogout -b 4 -m 450 -c 30"
   }
 }

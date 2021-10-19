@@ -41,7 +41,8 @@ window#waybar {
 #network,
 #language,
 #pulseaudio,
-#tray {
+#tray,
+#custom-power-menu {
   background: #202734;
   margin: 10px;
   padding: 10px;
