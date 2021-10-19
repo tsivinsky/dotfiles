@@ -15,10 +15,10 @@ nnoremap <A-k> <C-W>K
 nnoremap <A-l> <C-W>L
 
 " move between panes to left/bottom/top/right
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
 tnoremap <A-k> <C-\><C-n><C-w>k
@@ -35,7 +35,7 @@ function! OpenTerminal()
   resize 10
 endfunction
 " Open terminal
-nnoremap <leader>j :call OpenTerminal()<CR>
+nnoremap <leader>t :call OpenTerminal()<CR>
 
 " Open Gitabra
 nnoremap <leader>g :Gitabra<CR>
@@ -43,3 +43,7 @@ nnoremap <leader>g :Gitabra<CR>
 " Open splits
 nnoremap <leader>v :vs<CR>
 nnoremap <leader>h :sp<CR>
+
+" Use Ctrl+Shift+jk to resize panes
+nnoremap <C-j> :resize -1<CR>
+nnoremap <C-k> :resize +1<CR>
