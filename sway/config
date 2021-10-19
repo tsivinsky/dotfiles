@@ -44,7 +44,7 @@ floating_modifier $mod normal
 font FiraCode 10
 
 # Draw wallpaper
-output * bg `$HOME/dotfiles/bin/get-random-wallpaper.py` fill
+# output * bg `$HOME/dotfiles/bin/get-random-wallpaper.py` fill
 
 # Keyboard layout
 input * {
@@ -87,6 +87,7 @@ for_window [class="MuPDF"] floating enable
 #
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
 exec_always --no-startup-id dunst
+exec_always --no-startup-id $HOME/dotfiles/bin/set-video-wallpaper
 
 
 
