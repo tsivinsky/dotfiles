@@ -15,7 +15,7 @@ nnoremap <A-k> <C-W>K
 nnoremap <A-l> <C-W>L
 
 " move between panes to left/bottom/top/right
-nnoremap <leader>h <C-w>h
+nnoremap <nowait><leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
@@ -42,8 +42,8 @@ nnoremap <leader>g :Gitabra<CR>
 
 " Open splits
 nnoremap <leader>v :vs<CR>
-nnoremap <leader>h :sp<CR>
+nnoremap <leader>vv :sp<CR>
 
 " Use Ctrl+Shift+jk to resize panes
-nnoremap <C-j> :resize -1<CR>
-nnoremap <C-k> :resize +1<CR>
+nnoremap <C-j> :resize -2<CR>
+nnoremap <C-k> :resize +2<CR>
