@@ -1,11 +1,11 @@
-source $HOME/dotfiles/nvim/plugins.vim
-source $HOME/dotfiles/nvim/general.vim
-source $HOME/dotfiles/nvim/remaps.vim
-source $HOME/dotfiles/nvim/theme.vim
-source $HOME/dotfiles/nvim/terminal.vim
-source $HOME/dotfiles/nvim/file-tree.vim
-source $HOME/dotfiles/nvim/coc.vim
-source $HOME/dotfiles/nvim/tabs.vim
+source $HOME/.config/nvim/plugins.vim
+source $HOME/.config/nvim/general.vim
+source $HOME/.config/nvim/remaps.vim
+source $HOME/.config/nvim/theme.vim
+source $HOME/.config/nvim/terminal.vim
+source $HOME/.config/nvim/file-tree.vim
+source $HOME/.config/nvim/coc.vim
+source $HOME/.config/nvim/tabs.vim
 
 " Filetypes for markdown extension
 let g:mkdp_filetypes = ['md', 'mdx', 'markdown']

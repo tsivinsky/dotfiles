@@ -1,5 +1,7 @@
 #!/bin/bash
 
+declare -A configs
+
 usage() {
   echo "usage: (./)bootstrap [-S][-R]"
   echo
@@ -12,21 +14,21 @@ if [ $# -eq 0 ] ; then
   usage
 fi
 
-# Variables for directories
-bashrc="$HOME/.bashrc"
-nvimDir="$HOME/.config/nvim"
-alacrittyDir="$HOME/.config/alacritty"
-i3Dir="$HOME/.config/i3"
-polybarDir="$HOME/.config/polybar"
-swayDir="$HOME/.config/sway"
-waybarDir="$HOME/.config/waybar"
-rofiDir="$HOME/.config/rofi"
-dunstDir="$HOME/.config/dunst"
-fontsDir="$HOME/.config/fontconfig"
-wlogoutDir="$HOME/.config/wlogout"
-picomFile="$HOME/.config/picom.conf"
-gitconfigFile="$HOME/.gitconfig"
-nvimPluggedDir="$HOME/dotfiles/nvim/plugged"
+configs=(
+  ["$PWD/config/.bashrc"]="$HOME/.bashrc"
+  ["$PWD/config/.gitconfig"]="$HOME/.gitconfig"
+  ["$PWD/config/nvim"]="$HOME/.config/nvim"
+  ["$PWD/config/alacritty"]="$HOME/.config/alacritty"
+  ["$PWD/config/i3"]="$HOME/.config/i3"
+  ["$PWD/config/polybar"]="$HOME/.config/polybar"
+  ["$PWD/config/sway"]="$HOME/.config/sway"
+  ["$PWD/config/waybar"]="$HOME/.config/waybar"
+  ["$PWD/config/rofi"]="$HOME/.config/rofi"
+  ["$PWD/config/dunst"]="$HOME/.config/dunst"
+  ["$PWD/config/fonts"]="$HOME/.config/fontconfig"
+  ["$PWD/config/wlogout"]="$HOME/.config/wlogout"
+  ["$PWD/config/picom.conf"]="$HOME/.config/picom.conf"
+)
 
 
 # Install all configs
@@ -34,21 +36,13 @@ if [ "$1" = "-S" ] ; then
 
 
 # Create symlinks
-ln -s $PWD/.bashrc $bashrc
-ln -s $PWD/nvim $nvimDir
-ln -s $PWD/i3 $i3Dir
-ln -s $PWD/alacritty $alacrittyDir
-ln -s $PWD/polybar $polybarDir
-ln -s $PWD/sway $swayDir
-ln -s $PWD/waybar $waybarDir
-ln -s $PWD/rofi $rofiDir
-ln -s $PWD/dunst $dunstDir
-ln -s $PWD/fontconfig $fontsDir
-ln -s $PWD/wlogout $wlogoutDir
-ln -s $PWD/picom.conf $picomFile
-ln -s $PWD/.gitconfig $gitconfigFile
+for config in "${!configs[@]}"
+do
+  ln -s $config ${configs[$config]}
+done
 
 # Install vim-plug
+nvimDir="${configs[$PWD/config/nvim]}"
 mkdir -p $nvimDir/autoload
 wget -O $nvimDir/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -60,12 +54,11 @@ fi
 # Remove all configs
 if [ "$1" = "-R" ] ; then
 
-cd && rm -rf \
-  $bashrc $nvimDir $alacrittyDir $i3Dir \
-  $polybarDir $swayDir $waybarDir $rofiDir \
-  $dunstDir $fontsDir $picomFile $gitconfigFile \
-  $nvimPluggedDir \
-  && cd -
+cd $HOME
+for config in "${!configs[@]}"
+do
+  rm -rf ${configs[$config]}
+done
 
 fi
 
