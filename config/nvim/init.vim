@@ -23,16 +23,3 @@ let g:closetag_regions = {
 
 " Ignore files inside .git directory by CtrlP
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-lua << EOF
-  require("gitabra").setup {}
-  require("gitsigns").setup {
-    signcolumn = false,
-    current_line_blame = true,
-    current_line_blame_opts = {
-      virt_text = true,
-      virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
-      delay = 500,
-    }
-  }
-EOF
