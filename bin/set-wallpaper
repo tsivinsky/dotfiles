@@ -32,6 +32,10 @@ if [[ "$arg" == "--restore" ]] ; then
 
   set_wallpaper $path
 else
+  if [[ "$arg" == ./* ]] ; then
+    arg="$PWD/$arg"
+  fi
+
   echo "$arg" > $HOME/.wallpaper
 
   echo "Saved $arg as a wallpaper but you need to run 'set-wallpaper --restore'"
