@@ -25,7 +25,7 @@ tnoremap <A-k> <C-\><C-n><C-w>k
 tnoremap <A-l> <C-\><C-n><C-w>l
 
 " Remove search highlighting
-noremap <leader>nh :nohl<CR>
+noremap <leader>h :nohl<CR>
 
 " Use Ctrl+A to select the whole file
 nnoremap <C-a> ggVG
@@ -37,9 +37,6 @@ endfunction
 " Open terminal
 nnoremap <leader>t :call OpenTerminal()<CR>
 
-" Open Gitabra
-nnoremap <leader>g :Gitabra<CR>
-
 " Open splits
 nnoremap <leader>v :vs<CR>
 nnoremap <leader>vv :sp<CR>
@@ -47,6 +44,3 @@ nnoremap <leader>vv :sp<CR>
 " Use Ctrl+Shift+jk to resize panes
 nnoremap <C-j> :resize -2<CR>
 nnoremap <C-k> :resize +2<CR>
-
-" Remap to toggle gitsigns as linehl
-nnoremap <leader>sg :Gitsigns toggle_linehl<CR>

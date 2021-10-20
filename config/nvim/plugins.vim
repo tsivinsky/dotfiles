@@ -22,6 +22,5 @@ Plug 'yuezk/vim-js'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'Odie/gitabra'
 
 call plug#end()
