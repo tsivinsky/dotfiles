@@ -69,7 +69,6 @@ assign [class="firefox"] $ws1
 assign [class="Steam"] $ws3
 
 # Default settings for some applications
-for_window [class="Steam"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="mpv"] move absolute center
 for_window [class="MuPDF"] floating enable
