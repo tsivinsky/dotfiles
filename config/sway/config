@@ -60,7 +60,7 @@ input * {
 # /_/   \_\_|   |_|   |_____|___\____/_/   \_\_| |___\___/|_| \_|____/ 
 #                                                                     
 # Start applications with keybindings
-bindsym $alt+f exec firefox
+bindsym $alt+f exec firefox-developer-edition
 bindsym $alt+r exec alacritty -e ranger
 bindsym $alt+s exec steam
 
