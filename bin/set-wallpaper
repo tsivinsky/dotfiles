@@ -11,14 +11,14 @@ set_wallpaper() {
   killall mpvpaper 2>> /dev/null
   killall swaybg 2>> /dev/null
 
-  echo $1
-  if [[ "$1" == *.mkv || "$1" == *.mov || "$1" == *mp4 ]] ; then
+  mimeType=$(file --mime-type $1 | awk '{ print $2 }')
+  if [[ "$mimeType" == video* || "$mimeType" == audio* || "$mimeType" == "image/gif" ]] ; then
     echo "Setting video wallpaper using mpvpaper"
 
     /sbin/mpvpaper -o "no-audio" VGA-1 $1
 
     echo "Video wallpaper has been set"
-  elif [[ "$1" == *.jpeg || "$1" == *.jpg || "$1" == *.png ]] ; then
+  elif [[ "$mimeType" == image* ]] ; then
     echo "Setting image wallpaper using swaybg"
 
     /sbin/swaybg -i $1 -m fill &
