@@ -1,0 +1,39 @@
+#! /bin/bash
+
+arg=$1
+
+if [[ "$arg" == "" ]] ; then
+  echo "Usage: set-wallpaper [--restore]|[/path/to/image/or/video]"
+  exit
+fi
+
+set_wallpaper() {
+  killall mpvpaper 2>> /dev/null
+  killall swaybg 2>> /dev/null
+
+  echo $1
+  if [[ "$1" == *.mkv || "$1" == *.mov || "$1" == *mp4 ]] ; then
+    echo "Setting video wallpaper using mpvpaper"
+
+    /sbin/mpvpaper -o "no-audio" VGA-1 $1
+
+    echo "Video wallpaper has been set"
+  elif [[ "$1" == *.jpeg || "$1" == *.jpg || "$1" == *.png ]] ; then
+    echo "Setting image wallpaper using swaybg"
+
+    /sbin/swaybg -i $1 -m fill &
+
+    echo "Image wallpaper has been set"
+  fi
+}
+
+if [[ "$arg" == "--restore" ]] ; then
+  path=$(cat $HOME/.wallpaper)
+
+  set_wallpaper $path
+else
+  echo "$arg" > $HOME/.wallpaper
+
+  echo "Saved $arg as a wallpaper but you need to run 'set-wallpaper --restore'"
+fi
+

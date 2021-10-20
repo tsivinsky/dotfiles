@@ -1,5 +1,0 @@
-#! /bin/bash
-
-killall mpvpaper
-
-mpvpaper -o "no-audio" VGA-1 ~/Videos/Witcher-3.mp4
