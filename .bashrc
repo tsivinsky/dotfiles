@@ -46,6 +46,10 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 
 shopt -s autocd
 
+_GREEN="\[\033[32m\]"
+_BLUE="\[\033[34m\]"
+_RESET="\[\033[0m\]"
+export PS1="${_GREEN}\u@\h${_RESET}:${_BLUE}\W${_RESET} # "
 
 
 #   ____ ___  __  __ ____  _     _____ _____ ___ ___  _   _ 
