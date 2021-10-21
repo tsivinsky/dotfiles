@@ -26,7 +26,7 @@ configs=(
   ["$PWD/config/waybar"]="$HOME/.config/waybar"
   ["$PWD/config/rofi"]="$HOME/.config/rofi"
   ["$PWD/config/dunst"]="$HOME/.config/dunst"
-  ["$PWD/config/fonts"]="$HOME/.config/fontconfig"
+  ["$PWD/config/fontconfig"]="$HOME/.config/fontconfig"
   ["$PWD/config/wlogout"]="$HOME/.config/wlogout"
   ["$PWD/config/picom.conf"]="$HOME/.config/picom.conf"
 )
