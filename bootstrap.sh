@@ -22,6 +22,7 @@ configs=(
   ["$PWD/config/i3"]="$HOME/.config/i3"
   ["$PWD/config/polybar"]="$HOME/.config/polybar"
   ["$PWD/config/sway"]="$HOME/.config/sway"
+  ["$PWD/config/swaylock"]="$HOME/.config/swaylock"
   ["$PWD/config/waybar"]="$HOME/.config/waybar"
   ["$PWD/config/rofi"]="$HOME/.config/rofi"
   ["$PWD/config/dunst"]="$HOME/.config/dunst"
