@@ -22,5 +22,6 @@ Plug 'yuezk/vim-js'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'caenrique/nvim-toggle-terminal'
 
 call plug#end()

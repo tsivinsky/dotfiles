@@ -30,12 +30,13 @@ noremap <leader>nh :nohl<CR>
 " Use Ctrl+A to select the whole file
 nnoremap <C-a> ggVG
 
-function! OpenTerminal()
-  split term://bash
-  resize 10
-endfunction
-" Open terminal
-nnoremap <leader>t :call OpenTerminal()<CR>
+" function! OpenTerminal()
+"   split term://bash
+"   resize 10
+" endfunction
+" " Open terminal
+" nnoremap <leader>t :call OpenTerminal()<CR>
+nnoremap <leader>t :ToggleTerminal<CR>
 
 " Open splits
 nnoremap <leader>v :vs<CR>
@@ -44,3 +45,6 @@ nnoremap <leader>vv :sp<CR>
 " Use Ctrl+Shift+jk to resize panes
 nnoremap <C-j> :resize -2<CR>
 nnoremap <C-k> :resize +2<CR>
+
+" Use advance-touch to create files
+nnoremap <leader>f :! ad
