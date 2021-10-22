@@ -5,6 +5,9 @@ font:
   bold:
     family: Iosevka
     style: Bold
+  italic:
+    family: Iosevka
+    style: "Light Italic"
   offset:
     x: 1
     y: 1
@@ -44,5 +47,8 @@ window:
   padding:
     x: 5
     y: 5
+
+mouse:
+  hide_when_typing: true
 
 background_opacity: 0.95
