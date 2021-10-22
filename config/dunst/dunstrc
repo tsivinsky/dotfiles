@@ -39,7 +39,7 @@ title = Dunst
 class = Dunst
 corner_radius = 8
 
-mouse_left_click = do_action
+mouse_left_click = open_url
 mouse_right_click = close_current
 
 [urgency_low]
