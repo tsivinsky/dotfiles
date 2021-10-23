@@ -7,6 +7,7 @@ source $HOME/.config/nvim/file-tree.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/tabs.vim
 source $HOME/.config/nvim/git.vim
+source $HOME/.config/nvim/telescope.vim
 
 " Filetypes for markdown extension
 let g:mkdp_filetypes = ['md', 'mdx', 'markdown']

@@ -48,3 +48,6 @@ nnoremap <C-k> :resize +2<CR>
 
 " Use advance-touch to create files
 nnoremap <leader>f :! ad
+
+" Remap to find files
+nnoremap <leader>p :Telescope find_files<CR>
