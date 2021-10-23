@@ -28,6 +28,9 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $bg #000000
+set $br #ffa759
+set $brbug #FF0000
 
 
 #   ____ _____ _   _ _____ ____      _    _     
@@ -36,12 +39,15 @@ set $ws10 "10"
 # | |_| | |___| |\  | |___|  _ <  / ___ \| |___ 
 #  \____|_____|_| \_|_____|_| \_\/_/   \_\_____|
 #                                             
-default_border none
+default_border pixel 2px
 smart_borders on
 focus_follows_mouse no
 gaps inner 10
 floating_modifier $mod normal
 font FiraCode 10
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $br     $br     $br     $brbug       $br
 
 # Keyboard layout
 input * {
