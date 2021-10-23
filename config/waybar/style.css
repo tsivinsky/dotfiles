@@ -1,18 +1,22 @@
 /* Colors */
-/* primary: #ffa759 */
-/* background: #202734 */
-/* background-alt: #191e2a */
-/* foreground: #cbccc6 */
+@define-color background #191e2a;
+@define-color background-alt #202734;
+@define-color primary #ffa759;
+@define-color primary-1 #ffa759;
+@define-color primary-2 #ffad65;
+@define-color primary-3 #ffb371;
+@define-color primary-4 #ffba7c;
+@define-color primary-5 #ffc088;
 
 window#waybar {
-  background: #191e2a;
+  background: @background;
   color: #cbccc6;
   font-family: "Fira Code", "Font Awesome 5 Free Solid";
   font-size: 13px;
 }
 
 #workspaces {
-  background: #202734;
+  background: @background-alt;
   margin: 10px;
   border-radius: 8px;
 }
@@ -23,15 +27,15 @@ window#waybar {
 }
 
 #workspaces button.focused {
-  color: #ffa759;
+  color: @primary;
 }
 
 #workspaces button.urgent {
-  background: #ffa759;
+  background: @primary;
 }
 
 #mode {
-  color: #ffa759;
+  color: @primary;
 }
 
 #custom-player,
@@ -43,12 +47,12 @@ window#waybar {
 #pulseaudio,
 #tray,
 #custom-power-menu {
-  background: #202734;
+  background: @background-alt;
   margin: 10px;
-  padding: 10px;
+  padding: 7px 10px;
   border-radius: 8px;
 }
 
 #pulseaudio.muted {
-  color: #ffa759;
+  color: @primary;
 }

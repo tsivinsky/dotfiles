@@ -1,5 +1,5 @@
 {
-  "position": "top",
+  "position": "bottom",
   "modules-left": ["sway/workspaces", "custom/player", "sway/mode"],
   "modules-right": [
     "custom/weather",
@@ -25,7 +25,8 @@
     "max-length": 40
   },
   "sway/mode": {
-    "format": "--{}--"
+    "format": "--{}--",
+    "tooltip": false
   },
 
   "custom/weather": {
@@ -66,6 +67,7 @@
   "custom/power-menu": {
     "format": "{icon}",
     "format-icons": [""],
-    "on-click": "wlogout -b 4 -m 450 -c 30"
+    "on-click": "wlogout -b 4 -m 450 -c 30",
+    "tooltip": false
   }
 }
