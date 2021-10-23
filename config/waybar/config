@@ -1,5 +1,5 @@
 {
-  "position": "bottom",
+  "position": "top",
   "modules-left": ["sway/workspaces", "custom/player", "sway/mode"],
   "modules-right": [
     "custom/weather",
