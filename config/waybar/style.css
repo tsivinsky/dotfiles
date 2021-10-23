@@ -38,6 +38,7 @@ window#waybar {
   color: @primary;
 }
 
+#custom-dnd,
 #custom-player,
 #custom-weather,
 #custom-pacman-updates,

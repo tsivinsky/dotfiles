@@ -4,6 +4,7 @@
   "modules-right": [
     "custom/weather",
     "custom/pacman-updates",
+    "custom/dnd",
     "pulseaudio",
     "sway/language",
     "network",
@@ -41,6 +42,12 @@
     "return-type": "{}",
     "format": "{} updates",
     "on-click": "alacritty -e sudo pacman -Syu",
+    "tooltip": false
+  },
+  "custom/dnd": {
+    "exec": "$HOME/dotfiles/bin/dnd",
+    "on-click": "dunstctl set-paused toggle",
+    "restart-interval": 0,
     "tooltip": false
   },
   "pulseaudio": {
