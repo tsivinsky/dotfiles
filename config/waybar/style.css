@@ -2,11 +2,6 @@
 @define-color background #191e2a;
 @define-color background-alt #202734;
 @define-color primary #ffa759;
-@define-color primary-1 #ffa759;
-@define-color primary-2 #ffad65;
-@define-color primary-3 #ffb371;
-@define-color primary-4 #ffba7c;
-@define-color primary-5 #ffc088;
 
 window#waybar {
   background: @background;
