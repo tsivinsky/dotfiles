@@ -7,7 +7,13 @@ if [[ "$arg" == "" ]] ; then
   exit
 fi
 
-set_wallpaper() {
+__check_existence() {
+  local bin="$1"
+
+  which "$bin" > /dev/null 2>> /dev/null && echo "true" || echo "false"
+}
+
+__set_wallpaper() {
   killall mpvpaper 2>> /dev/null
   killall swaybg 2>> /dev/null
 
@@ -15,13 +21,29 @@ set_wallpaper() {
   if [[ "$mimeType" == video* || "$mimeType" == audio* || "$mimeType" == "image/gif" ]] ; then
     echo "Setting video wallpaper using mpvpaper"
 
+    if [[ "$(__check_existence mpvpaper)" == "false" ]] ; then
+      echo "You need mpvpaper to use video wallpapers"
+      exit 1
+    fi
+
     /sbin/mpvpaper -o "no-audio" VGA-1 $1
 
     echo "Video wallpaper has been set"
   elif [[ "$mimeType" == image* ]] ; then
-    echo "Setting image wallpaper using swaybg"
+    if [[ "$(__check_existence swaybg)" == "true" && "$WAYLAND_DISPLAY" != "" ]] ; then
 
-    /sbin/swaybg -i $1 -m fill &
+      echo "Setting image wallpaper using swaybg"
+
+      /sbin/swaybg -i $1 -m fill &
+    elif [[ "$(__check_existence feh)" == "true" ]] ; then
+      echo "Setting image wallpaper using feh"
+
+      feh --no-fehbg --bg-fill $1
+    else
+      echo "I don't know what to use. No swaybg or feh"
+      exit 1
+    fi
+
 
     echo "Image wallpaper has been set"
   fi
@@ -30,7 +52,7 @@ set_wallpaper() {
 if [[ "$arg" == "--restore" ]] ; then
   path=$(cat $HOME/.wallpaper)
 
-  set_wallpaper $path
+  __set_wallpaper $path
 else
   if [[ "$arg" == ./* ]] ; then
     arg="$PWD/$arg"
