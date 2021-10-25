@@ -1,0 +1,11 @@
+#! /bin/bash
+
+# Go to 4th workspace
+sway workspace 4 >> /dev/null
+
+# Open zathura and terminal
+zathura ~/Documents/ProgrammingGroundUp.pdf &
+sleep 0.1
+alacritty &
+sleep 0.1
+xdg-open https://translate.google.com
