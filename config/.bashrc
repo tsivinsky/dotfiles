@@ -16,7 +16,7 @@ alias la='ls -a'
 
 
 alias ed='$EDITOR'
-alias count='wc -l'
+alias notes="cd ~/Notes && nvim ."
 
 alias c='clear'
 
