@@ -2,6 +2,7 @@
 
 declare -A configs=(
   ["$PWD/config/.bashrc"]="$HOME/.bashrc"
+  ["$PWD/config/.inputrc"]="$HOME/.inputrc"
   ["$PWD/config/.gitconfig"]="$HOME/.gitconfig"
   ["$PWD/config/nvim"]="$HOME/.config/nvim"
   ["$PWD/config/alacritty"]="$HOME/.config/alacritty"
