@@ -7,7 +7,6 @@ source $HOME/.config/nvim/file-tree.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/tabs.vim
 source $HOME/.config/nvim/git.vim
-source $HOME/.config/nvim/telescope.vim
 
 " Filetypes for markdown extension
 let g:mkdp_filetypes = ['md', 'mdx', 'markdown']
@@ -21,3 +20,5 @@ let g:closetag_regions = {
     \ 'typescriptreact': 'jsxRegion,tsxRegion',
     \ 'javascriptreact': 'jsxRegion',
     \ }
+
+let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|dist|build)$'

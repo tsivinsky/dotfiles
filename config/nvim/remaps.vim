@@ -45,9 +45,3 @@ nnoremap <leader>vv :sp<CR>
 " Use Ctrl+Shift+jk to resize panes
 nnoremap <C-j> :resize -2<CR>
 nnoremap <C-k> :resize +2<CR>
-
-" Use advance-touch to create files
-nnoremap <leader>f :! ad
-
-" Remap to find files
-nnoremap <leader>p :Telescope find_files<CR>
