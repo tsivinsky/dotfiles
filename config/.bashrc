@@ -14,10 +14,7 @@ alias ls='ls --color=auto'
 alias lah='ls -lah'
 alias la='ls -a'
 
-
 alias ed='$EDITOR'
-alias notes="cd ~/Notes && nvim ."
-
 alias c='clear'
 
 # Git aliases
