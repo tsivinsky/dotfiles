@@ -5,6 +5,7 @@ args=("$@")
 usage() {
   echo "Clean Cache utility: clean-cache [OPTIONS]"
   echo
+  echo " --all cleans all cache"
   echo " --npm cleans npm cache by running 'npm cache clean -f'"
   echo " --yarn cleans yarn cache by running 'yarn cache clean'"
   echo " --yay clean yay cache by simply deleting ~/.cache/yay content"
@@ -15,14 +16,32 @@ if [ $# -eq 0 ] ; then
   exit
 fi
 
+__clean_npm() {
+  npm cache clean -f &> /dev/null
+}
+
+__clean_yarn() {
+  yarn cache clean &> /dev/null
+}
+
+__clean_yay() {
+  rm -rf ~/.cache/yay
+}
+
+if [[ "$args[@]" =~ "--all" ]] ; then
+  __clean_npm && __clean_yarn && __clean_yay
+
+  exit
+fi
+
 if [[ "${args[@]}" =~ "--npm" ]] ; then
-  npm cache clean -f >> /dev/null 2>> /dev/null
+  __clean_npm
 fi
 
 if [[ "${args[@]}" =~ "--yarn" ]] ; then
-  yarn cache clean >> /dev/null 2>> /dev/null
+  __clean_yarn
 fi
 
 if [[ "${args[@]}" =~ "--yay" ]] ; then
-  rm -rf ~/.cache/yay/*
+  __clean_yay
 fi
