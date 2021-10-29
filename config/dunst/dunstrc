@@ -5,7 +5,7 @@ follow = mouse
 ### Geometry
 width = 350
 height = 150
-origin = bottom-right
+origin = top-right
 offset = 30x30
 
 
