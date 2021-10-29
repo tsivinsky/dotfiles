@@ -50,7 +50,8 @@
   },
   "pulseaudio": {
     "tooltip": false,
-    "format-muted": "MUTE"
+    "format-muted": "MUTE",
+    "on-click": "pavucontrol"
   },
   "sway/language": {
     "tooltip": false
