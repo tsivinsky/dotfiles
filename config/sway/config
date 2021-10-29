@@ -31,6 +31,7 @@ set $ws10 "10"
 set $bg #000000
 set $br #ffa759
 set $brbug #FF0000
+set $textColor #cbccc6
 
 
 #   ____ _____ _   _ _____ ____      _    _     
@@ -47,7 +48,7 @@ floating_modifier $mod normal
 font FiraCode 10
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $br     $br     $br     $brbug       $br
+client.focused          $br     $br     $textColor     $brbug       $br
 
 # Keyboard layout
 input * {
