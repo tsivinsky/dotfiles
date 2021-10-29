@@ -1,27 +1,29 @@
 /* Colors */
 @define-color background #191e2a;
 @define-color background-alt #202734;
+@define-color foreground #cbccc6;
 @define-color primary #ffa759;
 
 window#waybar {
   background: @background;
-  color: #cbccc6;
+  color: @foreground;
   font-family: "Fira Code", "Font Awesome 5 Free Solid";
   font-size: 13px;
 }
 
 #workspaces {
-  background: @background-alt;
-  margin: 10px;
-  border-radius: 8px;
+  /* background: @background-alt; */
+  /* margin: 10px; */
+  /* border-radius: 8px; */
 }
 
 #workspaces button {
-  color: #fff;
   background: transparent;
+  border-radius: 0;
 }
 
 #workspaces button.focused {
+  background: @background-alt;
   color: @primary;
 }
 
@@ -33,20 +35,17 @@ window#waybar {
   color: @primary;
 }
 
-#custom-dnd,
-#custom-player,
-#custom-weather,
-#custom-pacman-updates,
-#clock,
-#network,
-#language,
-#pulseaudio,
 #tray,
+#custom-dnd,
+#pulseaudio,
+#language,
+#network,
+#clock,
 #custom-power-menu {
-  background: @background-alt;
-  margin: 10px;
-  padding: 7px 10px;
-  border-radius: 8px;
+  /* background: @background-alt; */
+  margin: 8px;
+  /* padding: 7px; */
+  /* border-radius: 8px; */
 }
 
 #pulseaudio.muted {

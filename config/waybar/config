@@ -1,15 +1,13 @@
 {
   "position": "top",
-  "modules-left": ["sway/workspaces", "custom/player", "sway/mode"],
+  "modules-left": ["sway/workspaces"],
   "modules-right": [
-    "custom/weather",
-    "custom/pacman-updates",
+    "tray",
     "custom/dnd",
     "pulseaudio",
     "sway/language",
     "network",
     "clock",
-    "tray",
     "custom/power-menu"
   ],
 
