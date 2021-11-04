@@ -7,8 +7,8 @@
 window#waybar {
   background: @background;
   color: @foreground;
-  font-family: "Fira Code", "Font Awesome 5 Free Solid";
-  font-size: 13px;
+  font-family: "Font Awesome 5 Free Solid", Iosevka, "Fira Code";
+  font-size: 14px;
 }
 
 #workspaces {
@@ -20,6 +20,7 @@ window#waybar {
 #workspaces button {
   background: transparent;
   border-radius: 0;
+  font-size: 0.9rem;
 }
 
 #workspaces button.focused {
