@@ -68,7 +68,7 @@ input * {
 #                                                                     
 # Start applications with keybindings
 bindsym $alt+f exec firefox-developer-edition
-bindsym $alt+r exec alacritty -e ranger
+bindsym $alt+r exec xterm ranger
 bindsym $alt+s exec steam
 
 # Assign specific applications their workspaces
@@ -89,6 +89,7 @@ for_window [app_id="pavucontrol"] floating enable
 #  / ___ \ |_| | | || |_| |___) || |/ ___ \|  _ < | |  
 # /_/   \_\___/  |_| \___/|____/ |_/_/   \_\_| \_\|_|  
 #
+exec_always --no-startup-id xrdb -load $HOME/.Xresources
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id $HOME/dotfiles/bin/set-wallpaper --restore
