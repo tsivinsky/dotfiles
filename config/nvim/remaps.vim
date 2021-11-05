@@ -15,7 +15,7 @@ nnoremap <A-k> <C-W>K
 nnoremap <A-l> <C-W>L
 
 " move between panes to left/bottom/top/right
-nnoremap <nowait><leader>h <C-w>h
+nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
@@ -42,8 +42,8 @@ nnoremap <leader>t :ToggleTerminal<CR>
 tnoremap <Esc> <C-\><C-n>
 
 " Open splits
-nnoremap <leader>v :vs<CR>
-nnoremap <leader>vv :sp<CR>
+nnoremap <leader>sv :vs<CR>
+nnoremap <leader>sh :sp<CR>
 
 " Use Ctrl+Shift+jk to resize panes
 nnoremap <C-j> :resize -2<CR>
