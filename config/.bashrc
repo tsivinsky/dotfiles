@@ -39,6 +39,16 @@ export TERM=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Go ENVs
+export GO111MODULE=auto
+export GOBIN="$HOME/go/bin"
+
+MY_BIN="$HOME/dotfiles/bin"
+RUSTBIN="$HOME/.cargo/bin"
+PYTHON_BIN="$HOME/.local/bin"
+
+export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUSTBIN"
+
 # Find arch package by binary
 source /usr/share/doc/pkgfile/command-not-found.bash
 
