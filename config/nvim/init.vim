@@ -2,7 +2,6 @@ source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/general.vim
 source $HOME/.config/nvim/remaps.vim
 source $HOME/.config/nvim/theme.vim
-source $HOME/.config/nvim/terminal.vim
 source $HOME/.config/nvim/file-tree.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/tabs.vim

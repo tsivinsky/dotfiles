@@ -38,6 +38,9 @@ nnoremap <C-a> ggVG
 " nnoremap <leader>t :call OpenTerminal()<CR>
 nnoremap <leader>t :ToggleTerminal<CR>
 
+" Use Escape to go to normal mode
+tnoremap <Esc> <C-\><C-n>
+
 " Open splits
 nnoremap <leader>v :vs<CR>
 nnoremap <leader>vv :sp<CR>
