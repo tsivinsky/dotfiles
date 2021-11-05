@@ -8,7 +8,8 @@
     "javascriptreact",
     "typescriptreact",
     "json",
-    "jsonc"
+    "jsonc",
+    "rust"
   ],
   "python.jediEnabled": true,
   "coc.source.emoji.filetypes": [
@@ -28,5 +29,7 @@
   "svelte.plugin.css.enable": true,
   "svelte.enable-ts-plugin": true,
   "svelte.plugin.svelte.format.enable": true,
-  "html.filetypes": ["html", "javascriptreact", "typescriptreact"]
+  "html.filetypes": ["html", "javascriptreact", "typescriptreact"],
+  "rust.all_features": true,
+  "rust-client.updateOnStartup": true
 }
