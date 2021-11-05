@@ -1,13 +1,24 @@
 lua << EOF
-  require("nvim-tree").setup {}
+  require("nvim-tree").setup({
+    open_on_setup = true,
+    hijack_cursor = true,
+    indent_markers = true,
+    update_cwd = true,
+    update_focused_file = {
+      enable = true
+    },
+    view = {
+      width = 30,
+      side = "left",
+      auto_resize = true
+    }
+  })
 EOF
 
-let g:nvim_tree_width = 20
-let g:nvim_tree_ignore = [ '.git' ]
 let g:nvim_tree_add_trailing = 1
 let g:nvim_tree_quit_on_open = 1
 let g:nvim_tree_indent_markers = 1
-let g:nvim_tree_refresh_wait = 500
+" let g:nvim_tree_refresh_wait = 500
 let g:nvim_tree_show_icons = {
     \ 'git': 0,
     \ 'folders': 0,
@@ -16,5 +27,5 @@ let g:nvim_tree_show_icons = {
     \ }
 
 " Remaps
-nnoremap <C-b> :NvimTreeToggle<CR>
+nnoremap <leader>b :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
