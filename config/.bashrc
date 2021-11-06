@@ -47,7 +47,7 @@ MY_BIN="$HOME/dotfiles/bin"
 RUSTBIN="$HOME/.cargo/bin"
 PYTHON_BIN="$HOME/.local/bin"
 
-export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUSTBIN"
+export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUSTBIN:$GOBIN"
 
 # Find arch package by binary
 source /usr/share/doc/pkgfile/command-not-found.bash
