@@ -45,6 +45,8 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>sv :vs<CR>
 nnoremap <leader>sh :sp<CR>
 
-" Use Ctrl+Shift+jk to resize panes
+" Use Ctrl+Shift+hjkl to resize panes
 nnoremap <C-j> :resize -2<CR>
 nnoremap <C-k> :resize +2<CR>
+nnoremap <C-h> :vert resize -10<CR>
+nnoremap <C-l> :vert resize +10<CR>
