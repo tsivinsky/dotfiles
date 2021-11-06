@@ -30,12 +30,7 @@ noremap <leader>nh :nohl<CR>
 " Use Ctrl+A to select the whole file
 nnoremap <C-a> ggVG
 
-" function! OpenTerminal()
-"   split term://bash
-"   resize 10
-" endfunction
-" " Open terminal
-" nnoremap <leader>t :call OpenTerminal()<CR>
+" Open terminal
 nnoremap <leader>t :ToggleTerminal<CR>
 
 " Use Escape to go to normal mode
