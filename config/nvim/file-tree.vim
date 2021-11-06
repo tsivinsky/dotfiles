@@ -11,6 +11,9 @@ lua << EOF
       width = 30,
       side = "left",
       auto_resize = true
+    },
+    filters = {
+      custom = {".git"}
     }
   })
 EOF
