@@ -16,6 +16,9 @@ set $term alacritty
 # Your preferred application launcher
 set $menu rofi -show drun
 
+# Screenshot utility
+set $shot "$HOME/dotfiles/bin/grimshot"
+
 # Workspaces
 set $ws1 "1"
 set $ws2 "2"
@@ -114,8 +117,8 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym F8 exec pavucontrol
 
 # Make screenshots
-bindsym $mod+Home exec $HOME/dotfiles/bin/wlshot copy
-bindsym $mod+Shift+Home exec $HOME/dotfiles/bin/wlshot save
+bindsym $mod+Home exec --no-startup-id $shot --notify copy area
+bindsym $mod+Shift+Home exec --no-startup-id $shot --notify save area "$HOME/Pictures/Screenshots/Screenshot_$(date +%s%3N).png"
 
 # Start a terminal
 bindsym $mod+Return exec $term
