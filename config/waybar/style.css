@@ -33,6 +33,7 @@ window#waybar {
 }
 
 #mode {
+  margin-left: 10px;
   color: @primary;
 }
 

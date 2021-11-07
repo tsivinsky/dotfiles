@@ -1,6 +1,6 @@
 {
   "position": "top",
-  "modules-left": ["sway/workspaces"],
+  "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-right": [
     "tray",
     "custom/weather",
