@@ -71,10 +71,20 @@ export PS1="${_GREEN}${_BOLD}\u@\h${_RESET}:${_BLUE}${_BOLD}\W${_RESET} # "
 #                                                          
 
 completions=(
+  "alacritty"
+  "cargo"
+  "gh"
   "git"
+  "journalctl"
+  "loginctl"
+  "mpv"
+  "npm"
   "pacman"
-  "systemctl"
+  "rustup"
+  "sway"
+  "swaymsg"
   "yay"
+  "zathura"
 )
 
 for file in ${completions[@]}
