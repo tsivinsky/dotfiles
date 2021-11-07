@@ -26,6 +26,8 @@ alias gl='git log'
 alias gs='git status'
 alias gd='git diff'
 alias gb='git branch'
+alias gt='git tag'
+alias gch='git checkout'
 
 
 #  _____ _   ___     _____ ____   ___  _   _ __  __ _____ _   _ _____ 
