@@ -61,21 +61,3 @@ _BLUE="\[\033[34m\]"
 _BOLD="\[\033[1m\]"
 _RESET="\[\033[0m\]"
 export PS1="${_GREEN}${_BOLD}\u@\h${_RESET}:${_BLUE}${_BOLD}\W${_RESET} # "
-
-
-#   ____ ___  __  __ ____  _     _____ _____ ___ ___  _   _ 
-#  / ___/ _ \|  \/  |  _ \| |   | ____|_   _|_ _/ _ \| \ | |
-# | |  | | | | |\/| | |_) | |   |  _|   | |  | | | | |  \| |
-# | |__| |_| | |  | |  __/| |___| |___  | |  | | |_| | |\  |
-#  \____\___/|_|  |_|_|   |_____|_____| |_| |___\___/|_| \_|
-#                                                          
-
-completions=(
-  "gh"
-  "git"
-)
-
-for file in ${completions[@]}
-do
-  source "/usr/share/bash-completion/completions/$file"
-done
