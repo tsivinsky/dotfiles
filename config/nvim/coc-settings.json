@@ -11,7 +11,7 @@
     "jsonc",
     "rust"
   ],
-  "python.jediEnabled": true,
+  "python.jediEnabled": false,
   "coc.source.emoji.filetypes": [
     "markdown",
     "javascript",
