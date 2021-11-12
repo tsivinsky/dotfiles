@@ -34,7 +34,4 @@ lua <<EOF
       enable = true
     }
   })
-  require("todo-comments").setup({
-    signs = false
-  })
 EOF
