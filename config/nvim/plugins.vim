@@ -24,6 +24,5 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'caenrique/nvim-toggle-terminal'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rust-lang/rust.vim'
 
 call plug#end()

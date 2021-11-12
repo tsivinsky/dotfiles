@@ -21,5 +21,3 @@ let g:closetag_regions = {
     \ }
 
 let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|dist|build)$'
-
-let g:rustfmt_autosave = 1
