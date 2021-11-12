@@ -23,6 +23,5 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'caenrique/nvim-toggle-terminal'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()

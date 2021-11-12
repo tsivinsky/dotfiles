@@ -20,4 +20,10 @@ let g:closetag_regions = {
     \ 'javascriptreact': 'jsxRegion',
     \ }
 
-let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|dist|build)$'
+lua <<EOF
+  require("telescope").setup({
+    defaults = {
+      sorting_strategy = "ascending"
+    }
+  })
+EOF

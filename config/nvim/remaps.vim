@@ -42,3 +42,6 @@ nnoremap <C-j> :resize -2<CR>
 nnoremap <C-k> :resize +2<CR>
 nnoremap <C-h> :vert resize -10<CR>
 nnoremap <C-l> :vert resize +10<CR>
+
+" Telescope
+nnoremap <leader>f :Telescope find_files<CR>
