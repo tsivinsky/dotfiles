@@ -17,6 +17,7 @@ end
 -- Quickly save/quit vim
 nmap("<leader>w", ":w<CR>")
 nmap("<leader>q", ":q<CR>")
+nmap("<leader>e", ":bdelete<CR>")
 
 -- Move line under the cursor up and down
 nmap("<C-k>", ":m .-2<CR>==")
