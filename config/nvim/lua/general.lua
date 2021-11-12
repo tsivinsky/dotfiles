@@ -19,6 +19,7 @@ vim.o.clipboard = "unnamedplus"
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.termguicolors = true
+vim.o.signcolumn = "yes"
 
 vim.g.mapleader = " "
 
@@ -26,3 +27,6 @@ vim.cmd([[
   let ayucolor = "mirage"
   colorscheme ayu
 ]])
+
+-- Remove highlighting in signcolumn
+vim.cmd("highlight clear SignColumn")
