@@ -40,13 +40,13 @@ do
   ln -s $config ${configs[$config]}
 done
 
-# Install vim-plug
-nvimDir="${configs[$PWD/config/nvim]}"
-mkdir -p $nvimDir/autoload
-wget -O $nvimDir/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Install packer.nvim
+mkdir ~/.local/share/nvim/site/pack
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # Install vim plugins
-nvim -c "PlugInstall"
+nvim -c "PackerInstall"
 
 fi
 
