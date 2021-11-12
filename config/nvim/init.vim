@@ -26,4 +26,15 @@ lua <<EOF
       sorting_strategy = "ascending"
     }
   })
+  require("nvim-treesitter.configs").setup({
+    highlight = {
+      enable = true
+    },
+    indent = {
+      enable = true
+    }
+  })
+  require("todo-comments").setup({
+    signs = false
+  })
 EOF
