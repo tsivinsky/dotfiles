@@ -53,11 +53,10 @@ nmap("<leader>b", ":NvimTreeToggle<CR>")
 nmap("<leader>f", ":Telescope find_files<CR>")
 
 -- LSP
--- nmap("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
--- nmap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
--- nmap("<leader>.", "<cmd>lua vim.lsp.buf.code_action()<CR>")
--- nmap("<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>")
--- imap("<C-space>", "<cmd>lua vim.lsp.buf.completion()<CR>")
+nmap("K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+nmap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+nmap("<leader>.", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+nmap("<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>")
 
 -- Tabs
 nmap("<leader>1", ":BufferLineGoToBuffer 1<CR>")
