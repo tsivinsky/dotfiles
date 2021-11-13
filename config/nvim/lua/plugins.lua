@@ -56,5 +56,7 @@ return require("packer").startup(function(use)
   use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
   use({ "tpope/vim-fugitive" })
 
-  use({ "fatih/vim-go" })
+  use({ "fatih/vim-go", ft = { "go", "gomod" } })
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
 end)
