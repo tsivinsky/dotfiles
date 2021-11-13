@@ -69,3 +69,6 @@ _BLUE="\[\033[34m\]"
 _BOLD="\[\033[1m\]"
 _RESET="\[\033[0m\]"
 export PS1="${_GREEN}${_BOLD}\u@\h${_RESET}:${_BLUE}${_BOLD}\W${_RESET} # "
+
+# Vim everywhere
+set -o vi
