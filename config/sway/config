@@ -2,8 +2,9 @@
 
 # Main keys
 set $mod Mod4
-
+set $ctrl Control
 set $alt Mod1
+
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -117,8 +118,14 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym F8 exec pavucontrol
 
 # Make screenshots
-bindsym $mod+Home exec --no-startup-id $shot --notify copy area
-bindsym $mod+Shift+Home exec --no-startup-id $shot --notify save area "$HOME/Pictures/Screenshots/Screenshot_$(date +%s%3N).png"
+# Ctrl+1,2,3 - Save screenshot of screen, selected window, selected area
+bindsym $ctrl+1 exec --no-startup-id $shot --notify save output "$HOME/Pictures/Screenshots/Screenshot_$(date +%s%3N).png"
+bindsym $ctrl+2 exec --no-startup-id $shot --notify save window "$HOME/Pictures/Screenshots/Screenshot_$(date +%s%3N).png"
+bindsym $ctrl+3 exec --no-startup-id $shot --notify save area "$HOME/Pictures/Screenshots/Screenshot_$(date +%s%3N).png"
+# Ctrl+Shift+1,2,3 - Copy screenshot of screen, selected window, selected area
+bindsym $ctrl+Shift+1 exec --no-startup-id $shot --notify copy output
+bindsym $ctrl+Shift+2 exec --no-startup-id $shot --notify copy window
+bindsym $ctrl+Shift+3 exec --no-startup-id $shot --notify copy area
 
 # Start a terminal
 bindsym $mod+Return exec $term
