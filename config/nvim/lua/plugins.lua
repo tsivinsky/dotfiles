@@ -29,7 +29,6 @@ return require("packer").startup(function(use)
 
   -- LSP
   use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer", "onsails/lspkind-nvim" })
-  use({ "jose-elias-alvarez/null-ls.nvim" })
   use({ "hrsh7th/nvim-cmp", requires = {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
