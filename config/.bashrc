@@ -72,3 +72,7 @@ export PS1="${_GREEN}${_BOLD}\u@\h${_RESET}:${_BLUE}${_BOLD}\W${_RESET} # "
 
 # Vim everywhere
 set -o vi
+
+# Show calendar and date on start
+cal -m
+date +"%d %B %Y - %H:%M:%S, %A"
