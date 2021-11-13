@@ -17,7 +17,7 @@ set $term alacritty
 set $menu rofi -show drun
 
 # Screenshot utility
-set $shot "$HOME/dotfiles/bin/grimshot"
+set $shot "/usr/share/sway/scripts/grimshot"
 
 # Workspaces
 set $ws1 "1"
