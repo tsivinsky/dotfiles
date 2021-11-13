@@ -59,5 +59,9 @@ lsp_installer.on_server_ready(function(server)
     capabilities = capabilities
   }
 
+  require("lsp_signature").setup({
+    bind = true,
+  })
+
   server:setup(opts)
 end)

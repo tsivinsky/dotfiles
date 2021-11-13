@@ -40,6 +40,9 @@ return require("packer").startup(function(use)
   }})
   use({ "L3MON4D3/LuaSnip" })
 
+  -- Signature like in vscode
+  use({ "ray-x/lsp_signature.nvim" })
+
   -- Tabs
   use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 
