@@ -25,7 +25,8 @@ require("gitsigns").setup({
   keymaps = {
     noremap = true,
     ["n <leader>gs"] = '<cmd>lua require("gitsigns").stage_hunk()<CR>',
-    ["n <leader>gu"] = '<cmd>lua require("gitsigns").undo_stage_hunk()<CR>'
+    ["n <leader>gu"] = '<cmd>lua require("gitsigns").undo_stage_hunk()<CR>',
+    ["n <leader>gr"] = '<cmd>lua require("gitsigns").reset_hunk()<CR>'
   }
 })
 
