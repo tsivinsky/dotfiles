@@ -1,6 +1,14 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+gitCompletionPath="~/.config/gitcompletion.bash"
+
+# Install git completion if needed
+if [[ ! -f ~/.config/git-completion.bash ]] ; then
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.config/git-completion.bash
+fi
+source ~/.config/git-completion.bash
+
 #     _    _     ___    _    ____  _____ ____  
 #    / \  | |   |_ _|  / \  / ___|| ____/ ___| 
 #   / _ \ | |    | |  / _ \ \___ \|  _| \___ \ 
