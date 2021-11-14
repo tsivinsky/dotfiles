@@ -51,6 +51,7 @@ nmap("<C-l>", ":vert resize +10<CR>")
 nmap("<leader>b", ":NvimTreeToggle<CR>")
 
 -- Telescope
+nmap("<leader>p", ":Telescope<CR>")
 nmap("<leader>f", ":Telescope find_files<CR>")
 
 -- LSP
