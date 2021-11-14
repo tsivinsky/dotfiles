@@ -18,6 +18,7 @@ return require("packer").startup(function(use)
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use({ "nvim-telescope/telescope-symbols.nvim" })
 
   -- Automatically close brackets and quotes
   use({ "windwp/nvim-autopairs" })
