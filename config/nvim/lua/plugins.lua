@@ -3,6 +3,7 @@ return require("packer").startup(function(use)
 
   -- The best colorscheme out there
   use({ "ayu-theme/ayu-vim" })
+  use({ "ghifarit53/tokyonight-vim" })
 
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
