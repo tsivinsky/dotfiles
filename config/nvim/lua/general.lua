@@ -30,3 +30,11 @@ vim.cmd([[
 
 -- Remove highlighting in signcolumn
 vim.cmd("highlight clear SignColumn")
+
+-- Highlight on yank
+vim.api.nvim_exec([[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+  augroup end
+]], false)
