@@ -1,9 +1,10 @@
 return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
 
-  -- The best colorscheme out there
+  -- Colorschemes
   use({ "ayu-theme/ayu-vim" })
   use({ "ghifarit53/tokyonight-vim" })
+  use({ "NLKNguyen/papercolor-theme" })
 
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
