@@ -25,6 +25,8 @@ alias la='ls -a'
 alias ed='$EDITOR'
 alias c='clear'
 
+alias pacman='pacman --color always'
+
 # Git aliases
 alias g='git'
 alias ga='git add'
