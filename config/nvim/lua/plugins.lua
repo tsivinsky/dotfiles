@@ -53,4 +53,7 @@ return require("packer").startup(function(use)
   use({ "fatih/vim-go", ft = { "go", "gomod" } })
 
   use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
+
+  -- Highlight colors in editor
+  use({ "norcalli/nvim-colorizer.lua" })
 end)
