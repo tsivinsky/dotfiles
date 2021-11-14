@@ -20,12 +20,7 @@ return require("packer").startup(function(use)
   use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
   -- Automatically close brackets and quotes
-  use({
-    "steelsojka/pears.nvim",
-    config = function()
-      require("pears").setup()
-    end
-  })
+  use({ "windwp/nvim-autopairs" })
 
   -- LSP
   use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer", "onsails/lspkind-nvim" })
