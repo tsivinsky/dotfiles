@@ -59,4 +59,23 @@ return require("packer").startup(function(use)
 
   -- Highlight colors in editor
   use({ "norcalli/nvim-colorizer.lua" })
+
+  -- Show indent lines
+  use({
+    "lukas-reineke/indent-blankline.nvim",
+    config = function ()
+      require("indent_blankline").setup({
+        char = "|",
+        buftype_exclude = { "terminal" }
+      })
+    end
+  })
+
+  -- Fast movement
+  use({
+    "ggandor/lightspeed.nvim",
+    config = function ()
+      require("lightspeed").setup()
+    end
+  })
 end)
