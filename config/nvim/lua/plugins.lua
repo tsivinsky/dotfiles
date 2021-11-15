@@ -64,9 +64,10 @@ return require("packer").startup(function(use)
   use({
     "lukas-reineke/indent-blankline.nvim",
     config = function ()
+      vim.cmd("let g:indent_blankline_filetype_exclude = ['help']")
       require("indent_blankline").setup({
         char = "|",
-        buftype_exclude = { "terminal" }
+        buftype_exclude = { "terminal" },
       })
     end
   })
@@ -76,6 +77,20 @@ return require("packer").startup(function(use)
     "ggandor/lightspeed.nvim",
     config = function ()
       require("lightspeed").setup()
+    end
+  })
+
+  -- Window management
+  use({
+    "sindrets/winshift.nvim",
+    config = function ()
+      require("winshift").setup({
+        highlight_moving_win = true,
+        window_picker_ignore = {
+          filetype = { "NvimTree" },
+          buftype = { "terminal" }
+        }
+      })
     end
   })
 end)
