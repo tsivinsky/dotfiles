@@ -80,7 +80,10 @@ cal -m
 date +"%d %B %Y - %H:%M:%S, %A"
 
 # GitHub zen
-echo
-echo -n 'Zen: "'
-curl https://api.github.com/zen
-echo '"'
+githubToken=$(cat "$HOME/.config/github-token.secret")
+if [[ "$githubToken" != "" ]] ; then
+  echo
+  echo -n 'Zen: "'
+  curl -H "Authorization: token $githubToken" https://api.github.com/zen
+  echo '"'
+fi
