@@ -78,3 +78,9 @@ set -o vi
 # Show calendar and date on start
 cal -m
 date +"%d %B %Y - %H:%M:%S, %A"
+
+# GitHub zen
+echo
+echo -n 'Zen: "'
+curl https://api.github.com/zen
+echo '"'
