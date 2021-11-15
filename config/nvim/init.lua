@@ -36,3 +36,5 @@ require("colorizer").setup()
 
 -- Automatically formatting buffer on save
 vim.api.nvim_command("autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()")
+
+vim.cmd('command! ToggleBackground lua require("utils").toggleBackground()')
