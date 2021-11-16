@@ -1,6 +1,33 @@
 local lsp_installer = require("nvim-lsp-installer")
 local cmp = require("cmp")
-local lspkind = require("lspkind")
+
+local kind_icons = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "ﴯ",
+  Interface = "",
+  Module = "",
+  Property = "ﰠ",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = ""
+}
 
 cmp.setup({
   snippet = {
@@ -29,14 +56,17 @@ cmp.setup({
     completeopt = "menu,menuone,noselect,noinsert"
   },
   formatting = {
-    format = lspkind.cmp_format({
-      with_text = true,
-      menu = {
-        buffer = "[buf]",
+    format = function(entry, vim_item)
+      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+      vim_item.menu = ({
+        buffer = "[Buffer]",
         nvim_lsp = "[LSP]",
-        path = "[path]"
-      }
-    })
+        luasnip = "[Snippet]",
+        nvim_lua = "[Lua]",
+        path = "[File]"
+      })[entry.source.name]
+      return vim_item
+    end
   },
   experimental = {
     ghost_text = true
