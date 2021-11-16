@@ -94,6 +94,9 @@ lsp_installer.on_server_ready(function(server)
     table.insert(opts, {
       settings = {
         Lua = {
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true)
+          },
           diagnostics = {
             globals = { "vim" }
           }
