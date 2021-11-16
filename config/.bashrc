@@ -26,6 +26,7 @@ alias ed='$EDITOR'
 alias c='clear'
 
 alias pacman='pacman --color always'
+alias yay='yay --color always'
 
 # Git aliases
 alias g='git'
