@@ -42,3 +42,8 @@ vim.api.nvim_exec([[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
   augroup end
 ]], false)
+
+-- Automatically formatting buffer on save
+vim.api.nvim_command("autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()")
+
+vim.cmd('command! ToggleBackground lua require("utils").toggleBackground()')
