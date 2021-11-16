@@ -5,6 +5,7 @@ require("treesitter")
 require("file-tree")
 require("telescope-config")
 require("lsp")
+require("snippets")
 
 require("remaps")
 

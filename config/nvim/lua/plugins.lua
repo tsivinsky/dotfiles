@@ -35,7 +35,10 @@ return require("packer").startup(function(use)
     "hrsh7th/cmp-nvim-lua",
     "saadparwaiz1/cmp_luasnip"
   }})
+
+  -- Snippets
   use({ "L3MON4D3/LuaSnip" })
+  use({ "rafamadriz/friendly-snippets" })
 
   -- Signature like in vscode
   use({ "ray-x/lsp_signature.nvim" })
