@@ -70,6 +70,12 @@ cmp.setup({
   },
   experimental = {
     ghost_text = true
+  },
+  documentation = {
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  },
+  sorting = {
+    comparators = cmp.config.compare.recently_used
   }
 })
 
