@@ -31,6 +31,10 @@ vim.cmd([[
 -- Remove highlighting in signcolumn
 vim.cmd("highlight clear SignColumn")
 
+vim.cmd([[
+  highlight DiagnosticVirtualTextError guifg=DarkRed
+]])
+
 -- Highlight on yank
 vim.api.nvim_exec([[
   augroup YankHighlight
