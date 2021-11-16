@@ -11,6 +11,7 @@ return require("packer").startup(function(use)
   use({ "p00f/nvim-ts-rainbow" })
   use({ "windwp/nvim-ts-autotag" })
   use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+  use({ "nvim-treesitter/playground" })
 
   -- Make commenting code great
   use({ "tpope/vim-commentary" })
