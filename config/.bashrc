@@ -25,6 +25,8 @@ alias la='ls -a'
 alias ed='$EDITOR'
 alias c='clear'
 
+alias t='tmux'
+
 alias pacman='pacman --color always'
 alias yay='yay --color always'
 
