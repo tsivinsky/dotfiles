@@ -13,9 +13,10 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-    ['<C-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+    ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.SelectBehavior.Insert }),
+    ['<C-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<C-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<TAB>'] = cmp.mapping.confirm({ behavior = cmp.SelectBehavior.Insert })
   },
   sources = {
     { name = "nvim_lsp" },
