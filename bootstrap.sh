@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# complete_alias is a script that allows to use completion in aliases
+declare -A bashCompletions=(
+  ["complete_alias"]="https://raw.githubusercontent.com/cykerway/complete-alias/master/complete_alias"
+  ["tmux"]="https://raw.githubusercontent.com/Bash-it/bash-it/master/completion/available/tmux.completion.bash"
+  ["git"]="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash"
+)
+
 declare -A configs=(
   ["$PWD/config/.bashrc"]="$HOME/.bashrc"
   ["$PWD/config/.inputrc"]="$HOME/.inputrc"
@@ -20,6 +27,23 @@ declare -A configs=(
 )
 
 bashCompletionsDir="$HOME/.config/bash-completions"
+
+__install_bash_completions() {
+  if [[ ! -d "$bashCompletionsDir" ]] ; then
+    mkdir "$bashCompletionsDir"
+  fi
+
+  for cmp in "${!bashCompletions[@]}"
+  do
+    source=${bashCompletions[$cmp]}
+    dest="$bashCompletionsDir/$cmp.bash"
+    
+    if [[ ! -f "$dest" ]] ; then
+      echo "Downloading $cmp completion"
+      curl "$source" -o "$dest" &> /dev/null
+    fi
+  done
+}
 
 
 usage() {
@@ -52,6 +76,10 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 # Install vim plugins
 nvim -c "PackerInstall"
 
+if [[ ! -d "$bashCompletionsDir" ]] ; then
+  __install_bash_completions
+fi
+
 fi
 
 # Remove all configs
@@ -67,23 +95,8 @@ rm -rf "$bashCompletionsDir"
 
 fi
 
-# complete_alias is a script that allows to use completion in aliases
-declare -A bashCompletions=(
-  ["complete_alias"]="https://raw.githubusercontent.com/cykerway/complete-alias/master/complete_alias"
-  ["tmux"]="https://raw.githubusercontent.com/Bash-it/bash-it/master/completion/available/tmux.completion.bash"
-  ["git"]="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash"
-)
 
 # Install bash completions defined in hashmap above
 if [ "$1" = "-I" ] ; then
-for cmp in "${!bashCompletions[@]}"
-do
-  source=${bashCompletions[$cmp]}
-  dest="$bashCompletionsDir/$cmp.bash"
-  
-  if [[ ! -f "$dest" ]] ; then
-    echo "Downloading $cmp completion"
-    curl "$source" -o "$dest" &> /dev/null
-  fi
-done
+  __install_bash_completions
 fi
