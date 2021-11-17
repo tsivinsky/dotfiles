@@ -25,15 +25,8 @@ PYTHON_BIN="$HOME/.local/bin"
 export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUSTBIN:$GOBIN"
 
 
-completionsDir="$HOME/.config/bash-completions"
-# Source bash completions inside bash-completions directory
-if [[ -d "$completionsDir" ]] ; then
-  completions=($completionsDir/*)
-  for cmp in ${completions[@]}
-  do
-    source "$cmp"
-  done
-fi
+# Source bash completions
+source $HOME/.config/bash-completions/*
 
 # Install aliases
 source $DOTFILES/config/bash/aliases.bash
