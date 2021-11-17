@@ -60,39 +60,33 @@ fi
 
 # Install all configs
 if [ "$1" = "-S" ] ; then
+  # Create symlinks
+  for config in "${!configs[@]}"
+  do
+    ln -s $config ${configs[$config]}
+  done
 
+  # Install packer.nvim
+  mkdir ~/.local/share/nvim/site/pack
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-# Create symlinks
-for config in "${!configs[@]}"
-do
-  ln -s $config ${configs[$config]}
-done
+  # Install vim plugins
+  nvim -c "PackerInstall"
 
-# Install packer.nvim
-mkdir ~/.local/share/nvim/site/pack
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-# Install vim plugins
-nvim -c "PackerInstall"
-
-if [[ ! -d "$bashCompletionsDir" ]] ; then
-  __install_bash_completions
-fi
-
+  if [[ ! -d "$bashCompletionsDir" ]] ; then
+    __install_bash_completions
+  fi
 fi
 
 # Remove all configs
 if [ "$1" = "-R" ] ; then
+  for config in "${!configs[@]}"
+  do
+    rm -rf ${configs[$config]}
+  done
 
-cd $HOME
-for config in "${!configs[@]}"
-do
-  rm -rf ${configs[$config]}
-done
-
-rm -rf "$bashCompletionsDir"
-
+  rm -rf "$bashCompletionsDir"
 fi
 
 
