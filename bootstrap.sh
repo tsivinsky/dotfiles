@@ -4,6 +4,7 @@ declare -A configs=(
   ["$PWD/config/.bashrc"]="$HOME/.bashrc"
   ["$PWD/config/.inputrc"]="$HOME/.inputrc"
   ["$PWD/config/.gitconfig"]="$HOME/.gitconfig"
+  ["$PWD/config/.tmux.conf"]="$HOME/.tmux.conf"
   ["$PWD/config/nvim"]="$HOME/.config/nvim"
   ["$PWD/config/alacritty"]="$HOME/.config/alacritty"
   ["$PWD/config/rofi"]="$HOME/.config/rofi"
@@ -18,12 +19,15 @@ declare -A configs=(
   ["$PWD/config/picom.conf"]="$HOME/.config/picom.conf"
 )
 
+bashCompletionsDir="$HOME/.config/bash-completions"
+
 
 usage() {
   echo "usage: (./)bootstrap.sh [-S][-R]"
   echo
   echo "  -S installs all this shit"
   echo "  -R removes all this shit"
+  echo "  -I downloads bash completions"
 }
 
 if [ $# -eq 0 ] ; then
@@ -59,4 +63,27 @@ do
   rm -rf ${configs[$config]}
 done
 
+rm -rf "$bashCompletionsDir"
+
+fi
+
+# complete_alias is a script that allows to use completion in aliases
+declare -A bashCompletions=(
+  ["complete_alias"]="https://raw.githubusercontent.com/cykerway/complete-alias/master/complete_alias"
+  ["tmux"]="https://raw.githubusercontent.com/Bash-it/bash-it/master/completion/available/tmux.completion.bash"
+  ["git"]="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash"
+)
+
+# Install bash completions defined in hashmap above
+if [ "$1" = "-I" ] ; then
+for cmp in "${!bashCompletions[@]}"
+do
+  source=${bashCompletions[$cmp]}
+  dest="$bashCompletionsDir/$cmp.bash"
+  
+  if [[ ! -f "$dest" ]] ; then
+    echo "Downloading $cmp completion"
+    curl "$source" -o "$dest" &> /dev/null
+  fi
+done
 fi

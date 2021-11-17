@@ -1,48 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-gitCompletionPath="~/.config/gitcompletion.bash"
-
-# Install git completion if needed
-if [[ ! -f ~/.config/git-completion.bash ]] ; then
-  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.config/git-completion.bash
-fi
-source ~/.config/git-completion.bash
-
-#     _    _     ___    _    ____  _____ ____  
-#    / \  | |   |_ _|  / \  / ___|| ____/ ___| 
-#   / _ \ | |    | |  / _ \ \___ \|  _| \___ \ 
-#  / ___ \| |___ | | / ___ \ ___) | |___ ___) |
-# /_/   \_\_____|___/_/   \_\____/|_____|____/ 
-#                                             
-
-alias sudo='sudo '
-
-alias ls='ls --color=auto'
-alias lah='ls -lah'
-alias la='ls -a'
-
-alias ed='$EDITOR'
-alias c='clear'
-
-alias t='tmux'
-
-alias pacman='pacman --color always'
-alias yay='yay --color always'
-
-# Git aliases
-alias g='git'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gl='git log'
-alias gs='git status'
-alias gd='git diff'
-alias gb='git branch'
-alias gt='git tag'
-alias gch='git checkout'
-
-
 #  _____ _   ___     _____ ____   ___  _   _ __  __ _____ _   _ _____ 
 # | ____| \ | \ \   / /_ _|  _ \ / _ \| \ | |  \/  | ____| \ | |_   _|
 # |  _| |  \| |\ \ / / | || |_) | | | |  \| | |\/| |  _| |  \| | | |  
@@ -65,6 +23,20 @@ RUSTBIN="$HOME/.cargo/bin"
 PYTHON_BIN="$HOME/.local/bin"
 
 export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUSTBIN:$GOBIN"
+
+
+completionsDir="$HOME/.config/bash-completions"
+# Source bash completions inside bash-completions directory
+if [[ -d "$completionsDir" ]] ; then
+  completions=($completionsDir/*)
+  for cmp in ${completions[@]}
+  do
+    source "$cmp"
+  done
+fi
+
+# Install aliases
+source $DOTFILES/config/bash/aliases.bash
 
 # Find arch package by binary
 source /usr/share/doc/pkgfile/command-not-found.bash
