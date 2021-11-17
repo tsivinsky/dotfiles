@@ -50,6 +50,8 @@ alias gch='git checkout'
 # |_____|_| \_|  \_/  |___|_| \_\\___/|_| \_|_|  |_|_____|_| \_| |_|  
 #                                                                     
 
+export DOTFILES="$HOME/dotfiles"
+
 export TERM=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
@@ -58,7 +60,7 @@ export VISUAL=nvim
 export GO111MODULE=auto
 export GOBIN="$HOME/go/bin"
 
-MY_BIN="$HOME/dotfiles/bin"
+MY_BIN="$DOTFILES/bin"
 RUSTBIN="$HOME/.cargo/bin"
 PYTHON_BIN="$HOME/.local/bin"
 
