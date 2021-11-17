@@ -107,4 +107,6 @@ return require("packer").startup(function(use)
       })
     end
   })
+
+  use({ "mizlan/iswap.nvim" })
 end)

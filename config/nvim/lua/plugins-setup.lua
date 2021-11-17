@@ -23,3 +23,8 @@ require("gitsigns").setup({
     ["n <leader>gr"] = '<cmd>lua require("gitsigns").reset_hunk()<CR>'
   }
 })
+
+require("iswap").setup({
+  keys = "1234567890",
+  autoswap = true
+})
