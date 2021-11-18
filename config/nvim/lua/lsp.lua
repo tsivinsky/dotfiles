@@ -90,20 +90,5 @@ lsp_installer.on_server_ready(function(server)
     bind = true,
   })
 
-  if server.name == "sumneko_lua" then
-    table.insert(opts, {
-      settings = {
-        Lua = {
-          workspace = {
-            library = vim.api.nvim_get_runtime_file("", true)
-          },
-          diagnostics = {
-            globals = { "vim" }
-          }
-        }
-      }
-    })
-  end
-
   server:setup(opts)
 end)
