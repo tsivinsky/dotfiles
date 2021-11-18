@@ -3,8 +3,6 @@ return require("packer").startup(function(use)
 
   -- Colorschemes
   use({ "ayu-theme/ayu-vim" })
-  use({ "ghifarit53/tokyonight-vim" })
-  use({ "NLKNguyen/papercolor-theme" })
 
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
