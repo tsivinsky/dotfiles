@@ -10,6 +10,12 @@ return require("packer").startup(function(use)
   use({ "windwp/nvim-ts-autotag" })
   use({ "JoosepAlviste/nvim-ts-context-commentstring" })
   use({ "nvim-treesitter/playground" })
+  use({ "folke/twilight.nvim", config = function()
+    require("twilight").setup({})
+  end })
+  use({ "folke/zen-mode.nvim", config = function()
+    require("zen-mode").setup({})
+  end })
 
   -- Make commenting code great
   use({ "tpope/vim-commentary" })

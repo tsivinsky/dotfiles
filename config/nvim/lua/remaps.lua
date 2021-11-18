@@ -82,3 +82,6 @@ nmap("<leader>m", "<cmd>WinShift<CR>")
 
 -- Iswap
 nmap("<leader>sw", ":ISwap<CR>")
+
+-- Zen mode
+nmap("zz", ":ZenMode<CR>")
