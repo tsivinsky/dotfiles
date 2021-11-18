@@ -9,3 +9,4 @@ require("lsp")
 require("snippets")
 
 require("remaps")
+require("theme")
