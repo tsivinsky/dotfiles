@@ -60,16 +60,6 @@ return require("packer").startup(function(use)
   -- Git
   use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
   use({ "tpope/vim-fugitive" })
-  -- TODO: Read documentation for github.com/sindrets/diffview.nvim
-  use({
-    "sindrets/diffview.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function ()
-      require("diffview").setup({
-        
-      })
-    end
-  })
 
   use({ "fatih/vim-go", ft = { "go", "gomod" } })
 
