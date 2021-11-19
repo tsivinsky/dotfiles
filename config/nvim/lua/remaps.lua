@@ -77,9 +77,6 @@ nmap("<leader>t", ":ToggleTerminal<CR>")
 -- Git
 nmap("<leader>gg", ":G<CR>")
 
--- Winshift (move buffers across neovim)
-nmap("<leader>m", "<cmd>WinShift<CR>")
-
 -- Iswap
 nmap("<leader>sw", ":ISwap<CR>")
 

@@ -28,3 +28,5 @@ require("iswap").setup({
   keys = "1234567890",
   autoswap = true
 })
+
+require("focus").setup()

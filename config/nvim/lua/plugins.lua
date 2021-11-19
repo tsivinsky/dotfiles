@@ -99,18 +99,7 @@ return require("packer").startup(function(use)
   })
 
   -- Window management
-  use({
-    "sindrets/winshift.nvim",
-    config = function ()
-      require("winshift").setup({
-        highlight_moving_win = true,
-        window_picker_ignore = {
-          filetype = { "NvimTree" },
-          buftype = { "terminal" }
-        }
-      })
-    end
-  })
+  use({ "beauwilliams/focus.nvim" })
 
   use({ "mizlan/iswap.nvim" })
 end)
