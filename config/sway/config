@@ -86,6 +86,11 @@ for_window [class="mpv"] move absolute center
 for_window [class="MuPDF"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 
+for_window [title="Picture-in-Picture"] {
+  sticky enable
+  move position 78ppt 65ppt
+}
+
 
 
 #     _   _   _ _____ ___  ____ _____  _    ____ _____ 
