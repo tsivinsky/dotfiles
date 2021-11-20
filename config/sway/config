@@ -50,6 +50,7 @@ focus_follows_mouse no
 gaps inner 10
 floating_modifier $mod normal
 font FiraCode 10
+xwayland enable
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $br     $br     $textColor     $brbug       $br
