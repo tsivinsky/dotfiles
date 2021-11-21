@@ -11,11 +11,7 @@ require("colorizer").setup()
 -- Git
 require("gitsigns").setup({
   current_line_blame = true,
-  current_line_blame_opts = {
-    virt_text = true,
-    virt_text_pos = "eol",
-    delay = 500
-  },
+  current_line_blame_opts = { virt_text = true, virt_text_pos = "eol", delay = 500 },
   keymaps = {
     noremap = true,
     ["n <leader>gs"] = '<cmd>lua require("gitsigns").stage_hunk()<CR>',
@@ -24,9 +20,6 @@ require("gitsigns").setup({
   }
 })
 
-require("iswap").setup({
-  keys = "1234567890",
-  autoswap = true
-})
+require("iswap").setup({ keys = "1234567890", autoswap = true })
 
 require("focus").setup()

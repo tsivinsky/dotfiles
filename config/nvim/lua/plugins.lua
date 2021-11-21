@@ -10,12 +10,18 @@ return require("packer").startup(function(use)
   use({ "windwp/nvim-ts-autotag" })
   use({ "JoosepAlviste/nvim-ts-context-commentstring" })
   use({ "nvim-treesitter/playground" })
-  use({ "folke/twilight.nvim", config = function()
-    require("twilight").setup({})
-  end })
-  use({ "folke/zen-mode.nvim", config = function()
-    require("zen-mode").setup({})
-  end })
+  use({
+    "folke/twilight.nvim",
+    config = function()
+      require("twilight").setup({})
+    end
+  })
+  use({
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup({})
+    end
+  })
 
   -- Make commenting code great
   use({ "tpope/vim-commentary" })
@@ -32,14 +38,12 @@ return require("packer").startup(function(use)
 
   -- LSP
   use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer", "onsails/lspkind-nvim" })
-  use({ "hrsh7th/nvim-cmp", requires = {
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
-    "hrsh7th/cmp-nvim-lua",
-    "saadparwaiz1/cmp_luasnip"
-  }})
+  use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-cmdline", "hrsh7th/cmp-nvim-lua", "saadparwaiz1/cmp_luasnip"
+    }
+  })
 
   -- Snippets
   use({ "L3MON4D3/LuaSnip" })
@@ -71,19 +75,16 @@ return require("packer").startup(function(use)
   -- Show indent lines
   use({
     "lukas-reineke/indent-blankline.nvim",
-    config = function ()
+    config = function()
       vim.cmd("let g:indent_blankline_filetype_exclude = ['help']")
-      require("indent_blankline").setup({
-        char = "|",
-        buftype_exclude = { "terminal" },
-      })
+      require("indent_blankline").setup({ char = "|", buftype_exclude = { "terminal" } })
     end
   })
 
   -- Fast movement
   use({
     "ggandor/lightspeed.nvim",
-    config = function ()
+    config = function()
       require("lightspeed").setup()
     end
   })

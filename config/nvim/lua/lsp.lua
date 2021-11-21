@@ -45,50 +45,64 @@ cmp.setup({
     ['<C-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
     ['<TAB>'] = cmp.mapping.confirm({ behavior = cmp.SelectBehavior.Insert })
   },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "nvim_lua" },
-    { name = "path" },
-    { name = "buffer", keyword_length = 5 }
-  },
-  completion = {
-    completeopt = "menu,menuone,noselect,noinsert"
-  },
+  sources = { { name = "nvim_lsp" }, { name = "luasnip" }, { name = "nvim_lua" }, { name = "path" }, { name = "buffer", keyword_length = 5 } },
+  completion = { completeopt = "menu,menuone,noselect,noinsert" },
   formatting = {
     format = function(entry, vim_item)
       vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
-      vim_item.menu = ({
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        luasnip = "[Snippet]",
-        nvim_lua = "[Lua]",
-        path = "[File]"
-      })[entry.source.name]
+      vim_item.menu = ({ buffer = "[Buffer]", nvim_lsp = "[LSP]", luasnip = "[Snippet]", nvim_lua = "[Lua]", path = "[File]" })[entry.source.name]
       return vim_item
     end
   },
-  experimental = {
-    ghost_text = true
-  },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
-  sorting = {
-    comparators = cmp.config.compare.recently_used
-  }
+  experimental = { ghost_text = true },
+  documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
+  sorting = { comparators = cmp.config.compare.recently_used }
 })
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 lsp_installer.on_server_ready(function(server)
-  local opts = {
-    capabilities = capabilities
-  }
+  local opts = { capabilities = capabilities }
 
-  require("lsp_signature").setup({
-    bind = true,
-  })
+  if server.name == "sumneko_lua" then
+    opts = {
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+          diagnostics = { globals = { "vim" } },
+          workspace = {
+            library = {
+              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+              [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+              [vim.fn.expand("$HOME/.local/share/nvim/site/pack/packer/start")] = true
+            }
+          }
+        }
+      }
+    }
+  end
+
+  if server.name == "efm" then
+    opts = {
+      capabilities = capabilities,
+      init_options = { documentFormatting = true },
+      filetypes = { "lua" },
+      settings = {
+        rootMarkers = { ".git/" },
+        languages = {
+          lua = {
+            {
+              formatCommand = "lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=150 --break-after-table-lb --tab-width 2 --indent-width 2 --spaces-inside-table-braces",
+              formatStdin = true
+            }
+          }
+        }
+      }
+    }
+  end
+
+  require("lsp_signature").setup({ bind = true })
 
   server:setup(opts)
 end)

@@ -1,6 +1,6 @@
 local M = {}
 
-M.toggleBackground = function ()
+M.toggleBackground = function()
   if vim.opt.background:get() == "dark" then
     vim.opt.background = "light"
   else
