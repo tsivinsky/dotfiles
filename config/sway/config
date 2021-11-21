@@ -85,6 +85,7 @@ for_window [class="mpv"] floating enable
 for_window [class="mpv"] move absolute center
 for_window [class="MuPDF"] floating enable
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="blueman-manager"] floating enable
 
 for_window [title="Picture-in-Picture"] {
   sticky enable
