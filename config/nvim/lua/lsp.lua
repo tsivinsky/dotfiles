@@ -55,8 +55,7 @@ cmp.setup({
     end
   },
   experimental = { ghost_text = true },
-  documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
-  sorting = { comparators = cmp.config.compare.recently_used }
+  documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, zindex = 999 }
 })
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
