@@ -1,6 +1,9 @@
 {
   "position": "top",
-  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode"
+  ],
   "modules-right": [
     "tray",
     "custom/weather",
@@ -11,7 +14,6 @@
     "clock",
     "custom/power-menu"
   ],
-
   "sway/workspaces": {
     "all-output": true,
     "format": "{index}"
@@ -28,7 +30,6 @@
     "format": "--{}--",
     "tooltip": false
   },
-
   "custom/weather": {
     "exec": "curl 'https://wttr.in/?format=1'",
     "interval": 60,
@@ -51,7 +52,9 @@
   },
   "network": {
     "format": "{icon}",
-    "format-icons": [""],
+    "format-icons": [
+      ""
+    ],
     "format-disconnected": "No network",
     "tooltip": false
   },
@@ -65,7 +68,9 @@
   },
   "custom/power-menu": {
     "format": "{icon}",
-    "format-icons": [""],
+    "format-icons": [
+      ""
+    ],
     "on-click": "wlogout -b 4 -m 450 -c 30",
     "tooltip": false
   }
