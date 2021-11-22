@@ -73,7 +73,7 @@ input * {
 #                                                                     
 # Start applications with keybindings
 bindsym $alt+f exec firefox-developer-edition
-bindsym $alt+r exec xterm ranger
+bindsym $alt+r exec alacritty -e lf
 bindsym $alt+s exec steam
 
 # Assign specific applications their workspaces
