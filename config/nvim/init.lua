@@ -49,6 +49,10 @@ require("packer").startup(function(use)
 
   -- Tabs
   use({ "romgrk/barbar.nvim" })
+
+  -- Git
+  use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use({ "tpope/vim-fugitive" })
 end)
 
 require("nightfox").load()
@@ -114,6 +118,10 @@ require("telescope").setup({
     sorting_strategy = "ascending",
     file_ignore_patterns = { ".git", "node_modules" }
   }
+})
+
+require("gitsigns").setup({
+  current_line_blame = true,
 })
 
 require("nvim-autopairs").setup()
