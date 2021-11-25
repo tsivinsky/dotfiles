@@ -104,6 +104,8 @@ require("nvim-treesitter.configs").setup({
 require("nvim-tree").setup({
   open_on_setup = true,
   hijack_cursor = true,
+  auto_close = true,
+  open_on_tab = true,
   update_cwd = true,
   update_focused_file = { enable = true },
   view = { width = 30, side = "left", auto_resize = true },
