@@ -213,8 +213,8 @@ bindsym $mod+z floating toggle
 ### Resize mode
 mode "resize" {
     bindsym $left resize shrink width 100px
-    bindsym $down resize grow height 100px
-    bindsym $up resize shrink height 100px
+    bindsym $down resize shrink height 100px
+    bindsym $up resize grow height 100px
     bindsym $right resize grow width 100px
 
     # Return to default mode
