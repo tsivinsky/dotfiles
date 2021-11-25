@@ -133,7 +133,12 @@ require("telescope").setup({
 
 require("gitsigns").setup({
   current_line_blame = true,
-  keymaps = nil
+  keymaps = {
+    noremap = true,
+    ["n <leader>gs"] = [[:lua require("gitsigns").stage_hunk()<CR>]],
+    ["n <leader>gu"] = [[:lua require("gitsigns").undo_stage_hunk()<CR>]],
+    ["n <leader>gr"] = [[:lua require("gitsigns").reset_hunk()<CR>]],
+  }
 })
 
 require("nvim-autopairs").setup()
