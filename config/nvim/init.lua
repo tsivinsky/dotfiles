@@ -78,7 +78,6 @@ vim.o.swapfile = false
 vim.o.encoding = "utf-8"
 vim.o.hidden = true
 vim.o.writebackup = false
-vim.o.cmdheight = 2
 vim.o.updatetime = 300
 vim.o.shortmess = "filnxtToOFc"
 vim.o.mouse = "a"
