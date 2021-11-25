@@ -133,6 +133,7 @@ require("telescope").setup({
 
 require("gitsigns").setup({
   current_line_blame = true,
+  keymaps = nil
 })
 
 require("nvim-autopairs").setup()
