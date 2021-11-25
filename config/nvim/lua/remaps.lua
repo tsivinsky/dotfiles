@@ -68,7 +68,7 @@ nmap("<leader>9", ":BufferGoto 9<CR>")
 nmap("<leader>e", ":BufferClose<CR>")
 
 -- Git
-nmap("<leader>gg", ":G<CR>")
+nmap("<leader>gg", ":G | :resize -10<CR>")
 nmap("<leader>gs", ":lua require('gitsigns').stage_hunk()<CR>")
 nmap("<leader>gu", ":lua require('gitsigns').undo_stage_hunk()<CR>")
 nmap("<leader>gr", ":lua require('gitsigns').reset_hunk()<CR>")
