@@ -63,6 +63,8 @@ require("packer").startup(function(use)
 
     -- Formatter
     use({"sbdchd/neoformat"})
+
+    use({"unblevable/quick-scope"})
 end)
 
 require("nightfox").load()
@@ -89,6 +91,8 @@ vim.o.termguicolors = true
 vim.o.signcolumn = "yes"
 
 vim.g.mapleader = " "
+
+vim.g.qs_highlight_on_keys = {"f", "F"}
 
 vim.cmd([[autocmd BufWritePre * undojoin | Neoformat]])
 
