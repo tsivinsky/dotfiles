@@ -94,6 +94,14 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp
                                                                      .make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+local function setupLspSignature()
+    require("lsp_signature").setup({
+        bind = true,
+        hint_enable = false,
+        handler_opts = {border = "rounded"}
+    })
+end
+
 lsp_installer.on_server_ready(function(server)
     local opts = {}
 
@@ -112,11 +120,7 @@ lsp_installer.on_server_ready(function(server)
         }
     end
 
-    require("lsp_signature").setup({
-        bind = true,
-        hint_enable = false,
-        handler_opts = {border = "rounded"}
-    })
+    setupLspSignature()
 
     server:setup(opts)
 end)
@@ -135,6 +139,11 @@ configs.ls_emmet = {
     }
 }
 nvim_lsp.ls_emmet.setup({capabilities = capabilities})
+
+nvim_lsp.gopls.setup({
+    capabilities = capabilities,
+    on_attach = function() setupLspSignature() end
+})
 
 require("luasnip/loaders/from_vscode").load({
     include = {"javascript", "typescript", "go", "html"}
