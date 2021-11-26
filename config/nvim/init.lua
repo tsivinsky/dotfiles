@@ -67,6 +67,8 @@ require("packer").startup(function(use)
     use({"unblevable/quick-scope"})
 
     use({"wfxr/minimap.vim", run = "cargo install --locked code-minimap"})
+
+    use({"caenrique/nvim-toggle-terminal"})
 end)
 
 require("nightfox").load()

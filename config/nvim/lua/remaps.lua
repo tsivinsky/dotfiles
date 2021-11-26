@@ -66,3 +66,5 @@ nmap("<leader>e", ":BufferClose<CR>")
 
 -- Git
 nmap("<leader>gg", ":G | :resize -10<CR>")
+
+nmap("<leader>t", ":ToggleTerminal<CR>")
