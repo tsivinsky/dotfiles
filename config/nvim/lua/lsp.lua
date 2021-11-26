@@ -1,5 +1,7 @@
 local lsp_installer = require("nvim-lsp-installer")
 local cmp = require("cmp")
+local configs = require("lspconfig/configs")
+local nvim_lsp = require("lspconfig")
 
 local kind_icons = {
     Text = "",
@@ -113,4 +115,21 @@ lsp_installer.on_server_ready(function(server)
     server:setup(opts)
 end)
 
-require("luasnip/loaders/from_vscode").lazy_load()
+-- Use this emmet lsp - https://github.com/pedro757/emmet
+configs.ls_emmet = {
+    default_config = {
+        cmd = {'ls_emmet', '--stdio'},
+        filetypes = {
+            'html', 'css', 'scss', 'javascript', 'javascriptreact',
+            'typescript', 'typescriptreact', 'haml', 'xml', 'xsl', 'pug',
+            'slim', 'sass', 'stylus', 'less', 'sss'
+        },
+        root_dir = function(fname) return vim.loop.cwd() end,
+        settings = {}
+    }
+}
+nvim_lsp.ls_emmet.setup({capabilities = capabilities})
+
+require("luasnip/loaders/from_vscode").load({
+    include = {"javascript", "typescript", "go", "html"}
+})
