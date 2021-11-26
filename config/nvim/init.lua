@@ -52,7 +52,6 @@ require("packer").startup(function(use)
         "saadparwaiz1/cmp_luasnip"
     })
     use({"ray-x/lsp_signature.nvim"})
-    use({"dense-analysis/ale"})
 
     -- Tabs
     use({"romgrk/barbar.nvim"})
@@ -97,10 +96,6 @@ vim.g.qs_highlight_on_keys = {"f", "F"}
 vim.cmd([[autocmd BufWritePre * undojoin | Neoformat]])
 
 require("lsp")
-
-vim.cmd(
-    "let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'], 'python': ['autopep8', 'remove_trailing_lines', 'reorder-python-imports', 'trim_whitespace']}")
-vim.cmd("let g:ale_fix_on_save = 1")
 
 require("nvim-treesitter.configs").setup({
     ensure_installed = "maintained",
