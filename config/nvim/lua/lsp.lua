@@ -112,6 +112,12 @@ lsp_installer.on_server_ready(function(server)
         }
     end
 
+    require("lsp_signature").setup({
+        bind = true,
+        hint_enable = false,
+        handler_opts = {border = "rounded"}
+    })
+
     server:setup(opts)
 end)
 
