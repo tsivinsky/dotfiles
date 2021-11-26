@@ -46,6 +46,7 @@ require("packer").startup(function(use)
     use({"neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer"})
     use({"hrsh7th/nvim-cmp"})
     use({"L3MON4D3/LuaSnip"})
+    use({"rafamadriz/friendly-snippets"})
     use({
         "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline", "hrsh7th/cmp-nvim-lua",
