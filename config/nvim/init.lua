@@ -11,7 +11,7 @@ require("packer").startup(function(use)
         {
             {"p00f/nvim-ts-rainbow"},
             {"JoosepAlviste/nvim-ts-context-commentstring"},
-            {"nvim-treesitter/playground"}
+            {"nvim-treesitter/playground"}, {"windwp/nvim-ts-autotag"}
         }
     })
 
@@ -110,7 +110,8 @@ require("nvim-treesitter.configs").setup({
         }
     },
     rainbow = {enable = true, extended_mode = true, disable = {"html"}},
-    context_commentstring = {enable = true}
+    context_commentstring = {enable = true},
+    autotag = {enable = true}
 })
 
 require("nvim-tree").setup({
