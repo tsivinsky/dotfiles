@@ -69,6 +69,8 @@ require("packer").startup(function(use)
     use({"wfxr/minimap.vim", run = "cargo install --locked code-minimap"})
 
     use({"caenrique/nvim-toggle-terminal"})
+
+    use({"lukas-reineke/indent-blankline.nvim"})
 end)
 
 require("nightfox").load()
@@ -158,6 +160,12 @@ require("gitsigns").setup({
         ["n <leader>gu"] = [[:lua require("gitsigns").undo_stage_hunk()<CR>]],
         ["n <leader>gr"] = [[:lua require("gitsigns").reset_hunk()<CR>]]
     }
+})
+
+require("indent_blankline").setup({
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true
 })
 
 require("nvim-autopairs").setup()
