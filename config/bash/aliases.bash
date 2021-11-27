@@ -13,6 +13,7 @@ declare -A aliases=(
   ["t"]="tmux"
   ["pacman"]="pacman --color auto"
   ["yay"]="yay --color auto"
+  ["q"]="exit"
 
   # Git
   ["g"]="git"
