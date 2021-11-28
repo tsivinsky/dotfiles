@@ -124,6 +124,9 @@ bindsym XF86AudioPrev exec playerctl previous
 
 bindsym F8 exec pavucontrol
 
+bindsym $mod+equal exec swaymsg 'gaps inner current plus 10'
+bindsym $mod+minus exec swaymsg 'gaps inner current minus 10'
+
 # Make screenshots
 # Ctrl+1,2,3 - Save screenshot of screen, selected window, selected area
 bindsym $ctrl+1 exec --no-startup-id $shot --notify save output "$HOME/Pictures/Screenshots/Screenshot_$(date +%s%3N).png"
