@@ -49,6 +49,9 @@ set -o vi
 cal -m
 date +"%d %B %Y - %H:%M:%S, %A"
 
+# Day progress
+day-progress
+
 # GitHub zen
 githubToken=$(cat "$HOME/.config/github-token.secret")
 if [[ "$githubToken" != "" ]] ; then
