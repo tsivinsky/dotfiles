@@ -71,6 +71,10 @@ require("packer").startup(function(use)
     use({"caenrique/nvim-toggle-terminal"})
 
     use({"lukas-reineke/indent-blankline.nvim"})
+
+    use({"folke/trouble.nvim"})
+
+    use({"folke/todo-comments.nvim"})
 end)
 
 require("nightfox").load()
@@ -168,10 +172,14 @@ require("indent_blankline").setup({
     show_current_context_start = true
 })
 
+require("trouble").setup()
+
 require("nvim-autopairs").setup()
 
 require("lualine").setup()
 
 require("colorizer").setup()
+
+require("todo-comments").setup({signs = false})
 
 require("remaps")
