@@ -12,5 +12,3 @@ else
     # Show the volume notification
     dunstify -a "notify-on-volume" -u low -r "$msgId" -h int:value:"$volume" "Volume: ${volume}%"
 fi
-
-canberra-gtk-play -i audio-volume-change -d "notify-on-volume"
