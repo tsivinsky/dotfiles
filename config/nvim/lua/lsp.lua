@@ -54,7 +54,7 @@ cmp.setup({
     },
     sources = cmp.config.sources({
         {name = "nvim_lsp", trigger_characters = {"."}}, {name = "luasnip"},
-        {name = "nvim_lua"}
+        {name = "nvim_lua"}, {name = "spell"}
     }, {{name = "path"}, {name = "buffer"}}),
     completion = {completeopt = "menu,menuone,noselect,noinsert,preview"},
     experimental = {ghost_text = true},
@@ -78,7 +78,8 @@ cmp.setup({
                 nvim_lsp = "[LSP]",
                 luasnip = "[Snippet]",
                 nvim_lua = "[Lua]",
-                path = "[File]"
+                path = "[File]",
+                spell = "[Spell]"
             })[entry.source.name]
             return vim_item
         end

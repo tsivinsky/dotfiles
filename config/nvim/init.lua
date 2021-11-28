@@ -50,7 +50,7 @@ require("packer").startup(function(use)
     use({
         "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline", "hrsh7th/cmp-nvim-lua",
-        "saadparwaiz1/cmp_luasnip"
+        "saadparwaiz1/cmp_luasnip", "f3fora/cmp-spell"
     })
     use({"ray-x/lsp_signature.nvim"})
 
@@ -103,6 +103,9 @@ vim.o.signcolumn = "yes"
 vim.g.mapleader = " "
 
 vim.g.qs_highlight_on_keys = {"f", "F"}
+
+vim.opt.spell = true
+vim.opt.spelllang = {"en_us"}
 
 -- Minimap settings
 vim.g.minimap_width = 50
