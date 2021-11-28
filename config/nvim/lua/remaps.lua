@@ -51,6 +51,7 @@ nmap("K", ":lua vim.lsp.buf.hover()<CR>")
 nmap("gd", ":lua vim.lsp.buf.definition()<CR>")
 nmap("gr", ":lua vim.lsp.buf.references()<CR>")
 nmap("<leader>.", ":lua vim.lsp.buf.code_action()<CR>")
+nmap("<F2>", ":lua vim.lsp.buf.rename()<CR>")
 
 -- Tabs
 nmap("<leader>1", ":BufferGoto 1<CR>")
