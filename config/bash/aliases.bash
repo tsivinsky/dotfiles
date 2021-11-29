@@ -14,6 +14,7 @@ declare -A aliases=(
   ["pacman"]="pacman --color auto"
   ["yay"]="yay --color auto"
   ["q"]="exit"
+  ["tree"]="tree -C"
 
   # Git
   ["g"]="git"
