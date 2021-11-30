@@ -137,6 +137,9 @@ bindsym $ctrl+Shift+1 exec --no-startup-id $shot --notify copy output
 bindsym $ctrl+Shift+2 exec --no-startup-id $shot --notify copy window
 bindsym $ctrl+Shift+3 exec --no-startup-id $shot --notify copy area
 
+# Call swappy
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
+
 # Start a terminal
 bindsym $mod+Return exec $term
 
