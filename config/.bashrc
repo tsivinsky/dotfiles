@@ -40,7 +40,6 @@ _GREEN="\[\033[32m\]"
 _BLUE="\[\033[34m\]"
 _BOLD="\[\033[1m\]"
 _RESET="\[\033[0m\]"
-# export PS1="${_GREEN}${_BOLD}\u@\h${_RESET}:${_BLUE}${_BOLD}\W${_RESET} # "
 export PS1="${_BLUE}${_BOLD}\W${_RESET} > "
 
 # Vim everywhere
@@ -49,13 +48,3 @@ set -o vi
 # Show calendar and date on start
 cal -m
 date +"%d %B %Y - %H:%M:%S, %A"
-
-# day-progress
-
-# GitHub zen
-# githubToken=$(cat "$HOME/.config/github-token.secret")
-# if [[ "$githubToken" != "" ]] ; then
-#   echo -n 'Zen: "'
-#   curl -H "Authorization: token $githubToken" https://api.github.com/zen
-#   echo '"'
-# fi
