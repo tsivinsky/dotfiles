@@ -103,7 +103,7 @@ local function setupLspSignature()
 end
 
 lsp_installer.on_server_ready(function(server)
-    local opts = {}
+    local opts = {capabilities = capabilities}
 
     if server.name == "sumneko_lua" then
         local runtime_path = vim.split(package.path, ';')
