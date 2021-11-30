@@ -66,8 +66,6 @@ require("packer").startup(function(use)
 
     use({"unblevable/quick-scope"})
 
-    use({"wfxr/minimap.vim", run = "cargo install --locked code-minimap"})
-
     use({"caenrique/nvim-toggle-terminal"})
 
     use({"lukas-reineke/indent-blankline.nvim"})
@@ -103,11 +101,6 @@ vim.o.signcolumn = "yes"
 vim.g.mapleader = " "
 
 vim.g.qs_highlight_on_keys = {"f", "F"}
-
--- Minimap settings
-vim.g.minimap_width = 50
-vim.g.minimap_auto_start = 1
-vim.g.minimap_git_colors = 1
 
 vim.cmd([[autocmd BufWritePre * undojoin | Neoformat]])
 
