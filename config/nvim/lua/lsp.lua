@@ -53,8 +53,8 @@ cmp.setup({
         })
     },
     sources = cmp.config.sources({
-        {name = "nvim_lsp", trigger_characters = {"."}}, {name = "luasnip"},
-        {name = "nvim_lua"}
+        {name = "nvim_lsp", trigger_characters = {".", "!", "#", ">", "*"}},
+        {name = "luasnip"}, {name = "nvim_lua"}
     }, {{name = "path"}, {name = "buffer"}}),
     completion = {completeopt = "menu,menuone,noselect,noinsert,preview"},
     experimental = {ghost_text = true},
