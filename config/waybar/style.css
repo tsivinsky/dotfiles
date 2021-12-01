@@ -11,12 +11,6 @@ window#waybar {
   font-size: 14px;
 }
 
-#workspaces {
-  /* background: @background-alt; */
-  /* margin: 10px; */
-  /* border-radius: 8px; */
-}
-
 #workspaces button {
   background: transparent;
   border-radius: 0;
@@ -38,17 +32,12 @@ window#waybar {
 }
 
 #tray,
-#custom-weather,
-#custom-dnd,
 #pulseaudio,
 #language,
 #network,
 #clock,
 #custom-power-menu {
-  /* background: @background-alt; */
   margin: 8px;
-  /* padding: 7px; */
-  /* border-radius: 8px; */
 }
 
 #pulseaudio.muted {
