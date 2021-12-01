@@ -59,11 +59,7 @@ cmp.setup({
     completion = {completeopt = "menu,menuone,noselect,noinsert,preview"},
     experimental = {ghost_text = true},
     sorting = {
-        comparators = {
-            cmp.config.compare.exact, cmp.config.compare.score,
-            cmp.config.compare.recently_used, cmp.config.compare.kind,
-            cmp.config.compare.offset
-        }
+        comparators = {cmp.config.compare.sort_text, cmp.config.compare.kind}
     },
     documentation = {
         border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"},
