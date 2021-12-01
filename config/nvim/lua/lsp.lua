@@ -71,7 +71,6 @@ cmp.setup({
                                           vim_item.kind)
             vim_item.menu = ({
                 buffer = "[Buffer]",
-                nvim_lsp = "[LSP]",
                 luasnip = "[Snippet]",
                 nvim_lua = "[Lua]",
                 path = "[File]"
@@ -80,6 +79,10 @@ cmp.setup({
         end
     }
 })
+
+vim.cmd([[
+highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+]])
 
 cmp.setup.cmdline("/", {sources = {{name = "buffer"}}})
 
