@@ -97,6 +97,7 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.termguicolors = true
 vim.o.signcolumn = "yes"
+vim.opt.fillchars:append({eob = " "})
 
 vim.g.mapleader = " "
 
