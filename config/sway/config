@@ -15,7 +15,7 @@ set $right l
 set $term alacritty
 
 # Your preferred application launcher
-set $menu rofi -show drun
+set $menu dmenu_run
 
 # Screenshot utility
 set $shot "/usr/share/sway/scripts/grimshot"
