@@ -103,7 +103,8 @@ vim.g.mapleader = " "
 
 vim.g.qs_highlight_on_keys = {"f", "F"}
 
-vim.cmd([[autocmd BufWritePre * undojoin | Neoformat]])
+vim.cmd(
+    [[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.scss,*.json undojoin | Neoformat]])
 
 require("lsp")
 
