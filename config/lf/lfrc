@@ -1,0 +1,21 @@
+### Settings
+set info size
+set dircounts # Show number of items inside of directory instead of its size
+set icons
+set incsearch
+set number
+set relativenumber
+set wrapscroll
+
+### Commands
+cmd mkdir ${{
+  mkdir -p "$1"
+}}
+
+### Mappings
+map <enter> toggle
+map <space> toggle
+
+map <delete> delete
+map <backspace2> delete
+map d delete

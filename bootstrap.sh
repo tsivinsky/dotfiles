@@ -21,6 +21,8 @@ declare -A configs=(
   ["$PWD/config/swaylock"]="$HOME/.config/swaylock"
   ["$PWD/config/waybar"]="$HOME/.config/waybar"
   ["$PWD/config/wlogout"]="$HOME/.config/wlogout"
+  ["$PWD/config/swappy"]="$HOME/.config/swappy"
+  ["$PWD/config/lf"]="$HOME/.config/lf"
 )
 
 bashCompletionsDir="$HOME/.config/bash-completions"
