@@ -5,8 +5,8 @@ declare -A aliases=(
 
   ["ls"]="ls --color=auto"
   ["l"]="ls"
-  ["lah"]="ls -lah"
-  ["la"]="ls -a"
+  ["lah"]="ls -lAh"
+  ["la"]="ls -A"
   ["ll"]="ls -l"
   ["ed"]="$EDITOR"
   ["c"]="clear"
