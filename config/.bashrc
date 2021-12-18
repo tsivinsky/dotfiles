@@ -14,6 +14,8 @@ export TERM=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
 
+export HISTSIZE=10000
+
 # Go ENVs
 export GO111MODULE=auto
 export GOBIN="$HOME/go/bin"
