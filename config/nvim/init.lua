@@ -64,8 +64,6 @@ require("packer").startup(function(use)
     -- Formatter
     use({"sbdchd/neoformat"})
 
-    use({"unblevable/quick-scope"})
-
     use({"caenrique/nvim-toggle-terminal"})
 
     use({"lukas-reineke/indent-blankline.nvim"})
@@ -101,7 +99,7 @@ vim.opt.fillchars:append({eob = " "})
 
 vim.g.mapleader = " "
 
-vim.g.qs_highlight_on_keys = {"f", "F"}
+vim.g.mapleader = " "
 
 vim.cmd(
     [[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.scss,*.json undojoin | Neoformat]])
