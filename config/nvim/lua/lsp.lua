@@ -43,10 +43,10 @@ cmp.setup({
             behavior = cmp.SelectBehavior.Select
         }),
         ["<C-space>"] = cmp.mapping.complete(),
-        ["<CR>"] = cmp.mapping.confirm({
-            select = true,
-            behavior = cmp.SelectBehavior.Insert
-        }),
+        -- ["<CR>"] = cmp.mapping.confirm({
+        --     select = true,
+        --     behavior = cmp.SelectBehavior.Insert
+        -- }),
         ["<TAB>"] = cmp.mapping.confirm({
             select = true,
             behavior = cmp.SelectBehavior.Insert
