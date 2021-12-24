@@ -68,7 +68,8 @@ require("packer").startup(function(use)
 
     use({"lukas-reineke/indent-blankline.nvim"})
 
-    use({"folke/trouble.nvim"})
+    -- NOTE: Don't need this for now
+    -- use({"folke/trouble.nvim"})
 
     use({"folke/todo-comments.nvim"})
 end)
@@ -169,7 +170,7 @@ require("indent_blankline").setup({
     show_current_context_start = true
 })
 
-require("trouble").setup()
+-- require("trouble").setup()
 
 require("nvim-autopairs").setup()
 
