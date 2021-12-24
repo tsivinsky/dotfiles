@@ -107,7 +107,8 @@ autocmd FileType go set noexpandtab
 
 vim.g.mapleader = " "
 
-vim.cmd([[autocmd BufWritePre * Neoformat]])
+vim.cmd(
+    [[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.scss,*.json,*.lua silent Neoformat]])
 
 require("lsp")
 
