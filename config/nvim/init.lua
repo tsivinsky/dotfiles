@@ -98,11 +98,11 @@ vim.o.termguicolors = true
 vim.o.signcolumn = "yes"
 vim.opt.fillchars:append({eob = " "})
 
--- Go specific settings
+-- Go and Lua specific settings
 vim.cmd([[
-autocmd FileType go set tabstop=4
-autocmd FileType go set shiftwidth=4
-autocmd FileType go set noexpandtab
+autocmd FileType go,lua set tabstop=4
+autocmd FileType go,lua set shiftwidth=4
+autocmd FileType go,lua set noexpandtab
 ]])
 
 vim.g.mapleader = " "
