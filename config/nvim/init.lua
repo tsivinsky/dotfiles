@@ -137,16 +137,20 @@ require("nvim-tree").setup({
     update_cwd = true,
     update_focused_file = {enable = true},
     view = {width = 30, side = "left", auto_resize = true},
-    filters = {custom = {".git"}}
+    filters = {custom = {".git"}},
+    git = {ignore = false}
 })
 vim.g.nvim_tree_add_trailing = 1
 vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_show_icons = {
-    git = 0,
-    folders = 0,
-    files = 0,
-    folder_arrows = 0
-}
+vim.g.nvim_tree_icons = {default = "", symlink = ""}
+vim.cmd([[
+  hi NvimTreeGitNew guibg=green
+  hi NvimTreeGitStaged guibg=lightgreen
+  hi NvimTreeGitDeleted guibg=red
+  hi NvimTreeGitDirty guibg=lightblue
+  hi NvimTreeGitIgnored guibg=gray
+  hi NvimTreeOpenedFolderName gui=italic,bold
+]])
 
 require("telescope").setup({
     defaults = {
