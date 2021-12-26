@@ -14,6 +14,18 @@ local function luaformat()
     }
 end
 
+local function gofmt()
+    return {exe = "gofmt", args = {vim.api.nvim_buf_get_name(0)}, stdin = true}
+end
+
+local function goimports()
+    return {
+        exe = "goimports",
+        args = {vim.api.nvim_buf_get_name(0)},
+        stdin = true
+    }
+end
+
 require("formatter").setup({
     filetype = {
         javascript = {prettierd},
@@ -25,9 +37,10 @@ require("formatter").setup({
         scss = {prettierd},
         json = {prettierd},
         svelte = {prettierd},
-        lua = {luaformat}
+        lua = {luaformat},
+        go = {gofmt, goimports}
     }
 })
 
 vim.cmd(
-    [[autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.scss,*.json,*.svelte,*.lua FormatWrite]])
+    [[autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.scss,*.json,*.svelte,*.lua,*.go FormatWrite]])
