@@ -62,7 +62,7 @@ require("packer").startup(function(use)
     use({"tpope/vim-fugitive"})
 
     -- Formatter
-    use({"sbdchd/neoformat"})
+    use({"mhartington/formatter.nvim"})
 
     use({"caenrique/nvim-toggle-terminal"})
 
@@ -109,9 +109,7 @@ autocmd FileType go,lua set noexpandtab
 
 vim.g.mapleader = " "
 
-vim.cmd(
-    [[autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.css,*.scss,*.json,*.lua,*.svelte silent Neoformat]])
-
+require("format")
 require("lsp")
 
 require("nvim-treesitter.configs").setup({
