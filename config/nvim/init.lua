@@ -109,6 +109,7 @@ autocmd FileType go,lua set noexpandtab
 
 vim.g.mapleader = " "
 
+require("theme")
 require("format")
 require("lsp")
 
@@ -143,14 +144,6 @@ require("nvim-tree").setup({
 vim.g.nvim_tree_add_trailing = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_icons = {default = "", symlink = ""}
-vim.cmd([[
-  hi NvimTreeGitNew guibg=green
-  hi NvimTreeGitStaged guibg=lightgreen
-  hi NvimTreeGitDeleted guibg=red
-  hi NvimTreeGitDirty guibg=lightblue
-  hi NvimTreeGitIgnored guibg=gray
-  hi NvimTreeOpenedFolderName gui=italic,bold
-]])
 
 require("telescope").setup({
     defaults = {
