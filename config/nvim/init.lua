@@ -72,6 +72,8 @@ require("packer").startup(function(use)
     -- use({"folke/trouble.nvim"})
 
     use({"folke/todo-comments.nvim"})
+
+    use({"luukvbaal/stabilize.nvim"})
 end)
 
 require("nightfox").load()
@@ -184,5 +186,7 @@ require("lualine").setup()
 require("colorizer").setup()
 
 require("todo-comments").setup({signs = false})
+
+require("stabilize").setup()
 
 require("remaps")
