@@ -31,6 +31,10 @@ window#waybar {
   color: @primary;
 }
 
+#window {
+  margin-left: 10px;
+}
+
 #tray,
 #pulseaudio,
 #language,
