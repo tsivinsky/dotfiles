@@ -128,6 +128,13 @@ lsp_installer.on_server_ready(function(server)
         }
     end
 
+    if server.name == "tsserver" then
+        opts.filetypes = {
+            "javascript", "javascriptreact", "typescript", "typescriptreact",
+            "svelte", "html"
+        }
+    end
+
     setupLspSignature()
 
     server:setup(opts)
