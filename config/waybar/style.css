@@ -12,9 +12,8 @@ window#waybar {
 }
 
 #workspaces button {
-  background: transparent;
+  color: @foreground;
   border-radius: 0;
-  font-size: 0.9rem;
 }
 
 #workspaces button.focused {
