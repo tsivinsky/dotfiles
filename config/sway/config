@@ -92,6 +92,12 @@ for_window [title="Picture-in-Picture"] {
   move position 78ppt 65ppt
 }
 
+for_window [class="feh"] {
+  floating enable
+  move absolute center
+  resize set 1200 800
+}
+
 
 
 #     _   _   _ _____ ___  ____ _____  _    ____ _____ 
