@@ -76,10 +76,6 @@ bindsym $alt+f exec firefox-developer-edition
 bindsym $alt+r exec alacritty -e lf
 bindsym $alt+s exec steam
 
-# Assign specific applications their workspaces
-assign [class="firefox"] $ws1
-assign [class="Steam"] $ws3
-
 # Default settings for some applications
 for_window [class="mpv"] floating enable
 for_window [class="mpv"] move absolute center
