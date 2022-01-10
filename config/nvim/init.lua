@@ -14,6 +14,7 @@ require("packer").startup(function(use)
             {"nvim-treesitter/playground"}, {"windwp/nvim-ts-autotag"}
         }
     })
+    use({"haringsrob/nvim_context_vt"})
 
     -- Make commenting code great
     use({"tpope/vim-commentary"})
@@ -175,5 +176,7 @@ require("colorizer").setup()
 require("todo-comments").setup({signs = false})
 
 require("stabilize").setup()
+
+require("nvim_context_vt").setup()
 
 require("remaps")
