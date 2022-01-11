@@ -113,6 +113,7 @@ vim.g.mapleader = " "
 require("theme")
 require("format")
 require("lsp")
+require("statusline")
 
 require("nvim-treesitter.configs").setup({
     ensure_installed = "maintained",
@@ -168,8 +169,6 @@ require("indent_blankline").setup({show_end_of_line = true})
 -- require("trouble").setup()
 
 require("nvim-autopairs").setup()
-
-require("lualine").setup()
 
 require("colorizer").setup()
 
