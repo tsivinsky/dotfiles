@@ -3,6 +3,7 @@ require("packer").startup(function(use)
 
     -- Colorscheme
     use({"EdenEast/nightfox.nvim"})
+    use({"projekt0n/github-nvim-theme"})
 
     -- Treesitter
     use({
@@ -77,7 +78,8 @@ require("packer").startup(function(use)
     use({"luukvbaal/stabilize.nvim"})
 end)
 
-require("nightfox").load()
+-- require("nightfox").load()
+require("github-theme").setup({theme_style = "dark_default"})
 
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
