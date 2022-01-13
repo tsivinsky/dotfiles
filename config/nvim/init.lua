@@ -4,6 +4,7 @@ require("packer").startup(function(use)
     -- Colorscheme
     use({"EdenEast/nightfox.nvim"})
     use({"projekt0n/github-nvim-theme"})
+    use({"folke/tokyonight.nvim"})
 
     -- Treesitter
     use({
@@ -79,7 +80,9 @@ require("packer").startup(function(use)
 end)
 
 -- require("nightfox").load()
-require("github-theme").setup({theme_style = "dark_default"})
+-- require("github-theme").setup({theme_style = "dark_default"})
+vim.g.tokyonight_style = "night"
+vim.cmd([[colorscheme tokyonight]])
 
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
