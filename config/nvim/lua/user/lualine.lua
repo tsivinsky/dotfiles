@@ -21,9 +21,6 @@ local diagnostics = {
 
 local mode = {
 	"mode",
-	fmt = function(str)
-		return "-- " .. str .. " --"
-	end,
 }
 
 local diff = {
