@@ -26,6 +26,7 @@ opt.updatetime = 300
 opt.mouse = "a"
 opt.cursorline = true
 opt.clipboard = "unnamedplus"
+opt.signcolumn = "yes"
 opt.fillchars:append({ eob = " " })
 
 -- Settings for folds
