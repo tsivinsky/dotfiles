@@ -1,4 +1,5 @@
 local opt = vim.opt
+local wo = vim.wo
 
 -- 2 tabs converted to spaces + autoindentation
 opt.tabstop = 2
@@ -27,4 +28,8 @@ opt.cursorline = true
 opt.clipboard = "unnamedplus"
 opt.fillchars:append({ eob = " " })
 
--- TODO: Add settings for nvim-treesitter provided folding
+-- Settings for folds
+wo.foldmethod = "expr"
+wo.foldexpr = "nvim_treesitter#foldexpr()"
+wo.foldcolumn = "auto"
+wo.foldenable = false
