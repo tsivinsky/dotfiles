@@ -1,9 +1,5 @@
 local lualine = require("lualine")
 
-local hide_in_width = function()
-	return vim.fn.winwidth(0) > 80
-end
-
 local branch = {
 	"branch",
 	icons_enabled = true,
@@ -21,13 +17,6 @@ local diagnostics = {
 
 local mode = {
 	"mode",
-}
-
-local diff = {
-	"diff",
-	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-	cond = hide_in_width,
 }
 
 local filetype = {
@@ -50,8 +39,8 @@ lualine.setup({
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
 		lualine_c = {},
-		lualine_x = { diff, "encoding", filetype },
-		lualine_y = { location },
+		lualine_x = { location },
+		lualine_y = { "encoding", filetype },
 		lualine_z = {},
 	},
 })
