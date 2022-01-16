@@ -1,5 +1,7 @@
 local utils = require("user.utils")
 local nmap = utils.nmap
+local vmap = utils.vmap
+local tmap = utils.tmap
 
 -- Move focus between splits
 nmap("<leader>h", "<C-w>h") -- Leader+h - focus left split
@@ -16,6 +18,17 @@ nmap("<C-l>", ":vert resize +5<CR>") -- Control+l - increase split width
 -- Open splits
 nmap("<leader>sv", ":vs<CR>") -- Leader+s+v - split current window vertically
 nmap("<leader>sh", ":split<CR>") -- Leader+s+h - split current window horizontally
+
+-- Move lines easily
+nmap("<A-k>", ":m .-2<CR>==") -- Alt+k - switch current line and line above it
+nmap("<A-j>", ":m .+1<CR>==") -- Alt+j - same as above mapping but the other way
+vmap("K", ":m '<-2<CR>gv=gv") -- Shift+k - in visual mode move selected lines up
+vmap("J", ":m '>+1<CR>gv=gv") -- Shift+j - same as above mapping but the other way
+
+-- Terminal
+tmap("<ESC>", "<C-\\><C-n>") -- Escape - in terminal mode, quit to normal mode
+nmap("Th", ":lua open_terminal()<CR>") -- Shift+t - open terminal in horizontal split
+nmap("Tv", ":lua open_terminal(true)<CR>") -- Shift+t+v - open terminal in vertical split
 
 -- Tabs
 nmap("H", ":tabprev<CR>") -- Shift+h - open previous tab
