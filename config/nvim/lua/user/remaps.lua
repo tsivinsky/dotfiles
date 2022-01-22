@@ -33,8 +33,9 @@ nmap("Tv", ":lua open_terminal(true)<CR>") -- Shift+t+v - open terminal in verti
 -- Tabs
 nmap("H", ":tabprev<CR>") -- Shift+h - open previous tab
 nmap("L", ":tabnext<CR>") -- Shift+l - open next tab
-nmap("<C-t>", ":tabnew<CR>") -- Control+t - open new empty tab
-nmap("<C-w>", ":tabclose<CR>") -- Control+w - close current tab
+nmap("tn", ":tabnew<CR>") -- Control+t - open new empty tab
+nmap("tc", ":lua require('user.tabs').close_tab()<CR>") -- Control+w - close current tab
+nmap("tr", ":lua require('user.tabs').restore_tab()<CR>") -- Control+Shift+t - reopen closed tab
 nmap("<A-h>", ":-tabmove<CR>") -- Switch current tab with previous one
 nmap("<A-l>", ":+tabmove<CR>") -- Switch current tab with next one
 
