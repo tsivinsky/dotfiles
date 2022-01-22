@@ -6,15 +6,6 @@ local branch = {
   icon = "",
 }
 
-local diagnostics = {
-  "diagnostics",
-  sections = { "error", "warn" },
-  symbols = { error = " ", warn = " " },
-  colored = false,
-  update_in_insert = false,
-  always_visible = true,
-}
-
 local mode = {
   "mode",
 }
@@ -36,8 +27,8 @@ lualine.setup({
     section_separators = { left = "", right = "" },
   },
   sections = {
-    lualine_a = { branch, diagnostics },
-    lualine_b = { mode },
+    lualine_a = { mode },
+    lualine_b = { branch },
     lualine_c = {},
     lualine_x = { location },
     lualine_y = { "encoding", filetype },
