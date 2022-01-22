@@ -89,6 +89,10 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({ "folke/zen-mode.nvim", {
+    "folke/twilight.nvim",
+  } })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

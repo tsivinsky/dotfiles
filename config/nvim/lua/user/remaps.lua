@@ -51,3 +51,6 @@ nmap("<leader>d", ':lua vim.diagnostic.open_float(nil, {focus = false, scope = "
 
 -- Git
 nmap("<leader>gg", ":G<CR>") -- Leader+g+g - open vim-fugitive window
+
+-- Zen mode
+nmap("<leader>z", ":ZenMode<CR>") -- Leader+z - toggle zen mode
