@@ -6,6 +6,7 @@ require("gitsigns").setup({
     ["n <leader>gs"] = ":Gitsigns stage_hunk<CR>",
     ["n <leader>gu"] = ":Gitsigns undo_stage_hunk<CR>",
     ["n <leader>gr"] = ":Gitsigns reset_hunk<CR>",
+    ["n <leader>gp"] = ":Gitsigns preview_hunk<CR>",
   },
   current_line_blame = true,
   current_line_blame_opts = {
