@@ -37,14 +37,6 @@ require("nvim-tree").setup({
     width = 30,
     side = "left",
     auto_resize = true,
-    mappings = {
-      list = {
-        {
-          key = "<C-t>",
-          cb = tree_cb("tabnew"),
-        },
-      },
-    },
   },
   filters = {
     custom = { ".git" },
