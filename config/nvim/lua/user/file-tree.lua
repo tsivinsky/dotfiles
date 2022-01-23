@@ -1,4 +1,3 @@
-local tree_cb = require("nvim-tree.config").nvim_tree_callback
 local nmap = require("user.utils").nmap
 
 vim.g.nvim_tree_show_icons = {
