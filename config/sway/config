@@ -61,6 +61,8 @@ input * {
   xkb_options "grp:win_space_toggle"
 }
 
+workspace "$ws1" output DVI-I-1
+workspace "$ws2" output VGA-1
 
 
 
