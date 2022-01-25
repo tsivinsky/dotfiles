@@ -25,6 +25,10 @@ nmap("<A-j>", ":m .+1<CR>==") -- Alt+j - same as above mapping but the other way
 vmap("K", ":m '<-2<CR>gv=gv") -- Shift+k - in visual mode move selected lines up
 vmap("J", ":m '>+1<CR>gv=gv") -- Shift+j - same as above mapping but the other way
 
+-- Leave selection when moving code left and right
+vmap("<", "<gv")
+vmap(">", ">gv")
+
 -- Terminal
 tmap("<ESC>", "<C-\\><C-n>") -- Escape - in terminal mode, quit to normal mode
 nmap("Th", ":lua open_terminal()<CR>") -- Shift+t - open terminal in horizontal split
