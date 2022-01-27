@@ -131,7 +131,7 @@ cmp.setup.cmdline(":", {
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local lsps_with_disabled_formatting = { "tsserver", "gopls" }
+local lsps_with_disabled_formatting = { "tsserver", "gopls", "jsonls" }
 
 local on_attach = function(client)
   if list_includes_item(lsps_with_disabled_formatting, client.name) then
