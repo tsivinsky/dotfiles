@@ -40,11 +40,6 @@ colors:
     cyan: "#95E6CB"
     white: "#FFFFFF"
 
-window:
-  padding:
-    x: 5
-    y: 5
-
 mouse:
   hide_when_typing: true
 
