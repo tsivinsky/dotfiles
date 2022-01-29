@@ -29,6 +29,7 @@ opt.clipboard = "unnamedplus"
 opt.signcolumn = "yes"
 opt.fillchars:append({ eob = " " })
 opt.showtabline = 2
+opt.matchpairs:append({ "<:>" })
 
 -- Settings for folds
 wo.foldmethod = "expr"
