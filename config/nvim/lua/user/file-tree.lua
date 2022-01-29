@@ -28,7 +28,6 @@ require("nvim-tree").setup({
   hijack_cursor = true,
   open_on_tab = true,
   update_cwd = true,
-  auto_close = true,
   update_focused_file = {
     enable = true,
   },
