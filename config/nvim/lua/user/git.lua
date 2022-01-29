@@ -1,13 +1,8 @@
+local nmap = require("user.utils").nmap
+
 require("gitsigns").setup({
   signcolumn = true,
-  keymaps = {
-    noremap = true,
-
-    ["n <leader>gs"] = ":Gitsigns stage_hunk<CR>",
-    ["n <leader>gu"] = ":Gitsigns undo_stage_hunk<CR>",
-    ["n <leader>gr"] = ":Gitsigns reset_hunk<CR>",
-    ["n <leader>gp"] = ":Gitsigns preview_hunk<CR>",
-  },
+  attach_to_untracked = false,
   current_line_blame = true,
   current_line_blame_opts = {
     delay = 1000,
@@ -15,4 +10,12 @@ require("gitsigns").setup({
   current_line_blame_formatter_opts = {
     relative_time = true,
   },
+  on_attach = function(bufnr)
+    nmap("<leader>gs", ":Gitsigns stage_hunk<CR>")
+    nmap("<leader>gu", ":Gitsigns undo_stage_hunk<CR>")
+    nmap("<leader>gr", ":Gitsigns reset_hunk<CR>")
+    nmap("<leader>gp", ":Gitsigns preview_hunk<CR>")
+    nmap("<leader>gn", ":Gitsigns next_hunk<CR>")
+    nmap("<leader>gN", ":Gitsigns prev_hunk<CR>")
+  end,
 })
