@@ -99,10 +99,25 @@ require("packer").startup(function(use)
     "folke/twilight.nvim",
   } })
 
+  use({
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("indent_blankline").setup({
+        space_char_blankline = " ",
+        show_current_context = true,
+      })
+    end,
+  })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
 end)
+
+vim.cmd([[
+  hi IndentBlanklineChar guifg=#373737 guibg=none gui=none
+  hi IndentBlanklineContextChar guifg=#808080 guibg=none gui=none
+]])
 
 vim.g.mapleader = " "
 
