@@ -32,7 +32,7 @@ opt.showtabline = 2
 opt.matchpairs:append({ "<:>" })
 
 -- Settings for folds
-wo.foldmethod = "expr"
-wo.foldexpr = "nvim_treesitter#foldexpr()"
-wo.foldcolumn = "auto"
-wo.foldenable = false
+-- wo.foldmethod = "expr"
+-- wo.foldexpr = "nvim_treesitter#foldexpr()"
+-- wo.foldcolumn = "3"
+-- wo.foldenable = false
