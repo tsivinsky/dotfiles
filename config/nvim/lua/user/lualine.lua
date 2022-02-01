@@ -11,6 +11,11 @@ local branch = {
   icons_enabled = true,
   icon = "",
 }
+local diagnostics = {
+  "diagnostics",
+  always_visible = true,
+  sections = { "error", "warn" },
+}
 
 -- Section "c"
 local filename = {
@@ -47,9 +52,9 @@ lualine.setup({
   sections = {
     lualine_a = { mode },
     lualine_b = { branch },
-    lualine_c = { filename, fileformat },
-    lualine_x = { location },
-    lualine_y = { encoding, filetype },
+    lualine_c = { diagnostics, filename, fileformat },
+    lualine_x = { location, encoding, filetype },
+    lualine_y = {},
     lualine_z = {},
   },
 })
