@@ -1,26 +1,25 @@
 local lualine = require("lualine")
 
--- Section "a"
 local mode = {
   "mode",
 }
 
--- Section "b"
 local branch = {
   "branch",
   icons_enabled = true,
   icon = "",
 }
+
 local diagnostics = {
   "diagnostics",
   always_visible = true,
   sections = { "error", "warn" },
 }
 
--- Section "c"
 local filename = {
   "filename",
 }
+
 local fileformat = {
   "fileformat",
   symbols = {
@@ -30,17 +29,37 @@ local fileformat = {
   },
 }
 
--- Section "x"
 local location = {
   "location",
 }
 
--- Section "y"
 local encoding = {
   "encoding",
 }
+
 local filetype = {
   "filetype",
+}
+
+local timer = vim.loop.new_timer()
+timer:start(
+  0,
+  1000,
+  vim.schedule_wrap(function()
+    vim.g.lualine_time_module = os.date("%H:%M", os.time())
+  end)
+)
+local time = {
+  function()
+    return vim.g.lualine_time_module
+  end,
+  cond = function()
+    if vim.g.lualine_time_module then
+      return true
+    end
+
+    return false
+  end,
 }
 
 lualine.setup({
@@ -53,7 +72,7 @@ lualine.setup({
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics, filename, fileformat },
-    lualine_x = { location, encoding, filetype },
+    lualine_x = { location, encoding, filetype, time },
     lualine_y = {},
     lualine_z = {},
   },
