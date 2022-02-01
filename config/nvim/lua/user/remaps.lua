@@ -52,9 +52,10 @@ nmap("gd", ":lua vim.lsp.buf.definition()<CR>") -- g+d - Go to definition
 nmap("gr", ":lua vim.lsp.buf.references()<CR>") -- g+r - Show references
 nmap("K", ":lua vim.lsp.buf.hover()<CR>") -- Shift+k - Show documentation in hover window
 nmap("<F2>", ":lua vim.lsp.buf.rename()<CR>") -- F2 - Rename thing under the cursor
-nmap("<leader>d", ':lua vim.diagnostic.open_float(nil, {focus = false, scope = "cursor"})<CR>') -- Leader+d - show diagnostics in float window
 nmap("<leader>.", ":lua vim.lsp.buf.code_action()<CR>") -- Leader+. - show code actions to run
 vmap("<leader>.", ":lua vim.lsp.buf.range_code_action()<CR>") -- same as above but for visual mode
+nmap("<leader>dd", ':lua vim.diagnostic.open_float(nil, {focus = false, scope = "cursor"})<CR>') -- Leader+d - show diagnostics in float window
+nmap("<leader>dy", ":lua copy_diagnostic_message()<CR>") -- Leader+d+c - copy diagnostic message
 
 -- Git
 nmap("<leader>gg", ":G<CR>") -- Leader+g+g - open vim-fugitive window

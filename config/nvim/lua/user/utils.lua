@@ -38,4 +38,13 @@ M.list_includes_item = function(list, item)
   return false
 end
 
+M.yank = function(message)
+  if vim.fn.has("win32") == 1 then
+    os.execute("echo '" .. message .. "' | win32yank -i")
+  else
+    -- i use wayland, so there is no xclip for X11
+    os.execute("echo -n '" .. message .. "' | wl-copy")
+  end
+end
+
 return M

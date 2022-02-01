@@ -1,3 +1,5 @@
+local yank = require("user.utils").yank
+
 function open_terminal(vertically)
   vertically = vertically or false
 
@@ -6,4 +8,21 @@ function open_terminal(vertically)
   else
     vim.cmd(":split term://bash")
   end
+end
+
+function copy_diagnostic_message()
+  local diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
+
+  if #diagnostics == 0 then
+    print("No diagnostics to yank")
+    return
+  end
+
+  -- TODO: print all messages available and prompt which one to yank
+
+  local message = diagnostics[1].message
+
+  yank(message)
+
+  print("Diagnostic message was yanked")
 end
