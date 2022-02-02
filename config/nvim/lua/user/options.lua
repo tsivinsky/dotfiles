@@ -31,6 +31,10 @@ opt.fillchars:append({ eob = " " })
 opt.showtabline = 2
 opt.matchpairs:append({ "<:>" })
 
+if vim.fn.has("win32") == 1 then
+  opt.shell = "powershell.exe" -- TODO: need to check if it works later
+end
+
 -- Settings for folds
 -- wo.foldmethod = "expr"
 -- wo.foldexpr = "nvim_treesitter#foldexpr()"
