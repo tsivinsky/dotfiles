@@ -133,11 +133,16 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 
 local lsps_with_disabled_formatting = { "tsserver", "gopls", "jsonls" }
 
-local on_attach = function(client)
+local on_attach = function(client, bufnr)
   if list_includes_item(lsps_with_disabled_formatting, client.name) then
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
   end
+
+  require("lsp_signature").on_attach({
+    bind = true,
+    hint_enable = false,
+  }, bufnr)
 end
 
 lsp_installer.on_server_ready(function(server)
