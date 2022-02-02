@@ -1,4 +1,5 @@
 local nmap = require("user.utils").nmap
+local vmap = require("user.utils").vmap
 
 require("gitsigns").setup({
   signcolumn = true,
@@ -17,5 +18,9 @@ require("gitsigns").setup({
     nmap("<leader>gp", ":Gitsigns preview_hunk<CR>")
     nmap("<leader>gn", ":Gitsigns next_hunk<CR>")
     nmap("<leader>gN", ":Gitsigns prev_hunk<CR>")
+
+    vmap("gs", ":Gitsigns stage_hunk<CR>")
+    vmap("gu", ":Gitsigns undo_stage_hunk<CR>")
+    vmap("gr", ":Gitsigns reset_hunk<CR>")
   end,
 })
