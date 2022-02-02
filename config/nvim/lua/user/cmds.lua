@@ -1,6 +1,8 @@
 local yank = require("user.utils").yank
 
-function open_terminal(vertically)
+local M = {}
+
+M.open_terminal = function(vertically)
   vertically = vertically or false
 
   if vertically then
@@ -10,7 +12,7 @@ function open_terminal(vertically)
   end
 end
 
-function copy_diagnostic_message()
+M.copy_diagnostic_message = function()
   local diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
 
   if #diagnostics == 0 then
@@ -26,3 +28,5 @@ function copy_diagnostic_message()
 
   print("Diagnostic message was yanked")
 end
+
+return M
