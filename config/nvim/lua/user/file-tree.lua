@@ -63,7 +63,7 @@ require("nvim-tree").setup({
     custom = { ".git" },
   },
   git = {
-    ignore = false,
+    ignore = true,
   },
   diagnostics = {
     enable = true,
