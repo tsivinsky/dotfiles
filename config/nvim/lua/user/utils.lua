@@ -59,10 +59,17 @@ M.get_hidden_buffers = function()
       table.insert(hidden_buffers, { bufnr = buf.bufnr, name = buf.name })
     end
   end
+
+  return hidden_buffers
 end
 
 M.delete_noname_buffers = function()
   local buffers = M.get_hidden_buffers()
+
+  if buffers == nil then
+    print("No noname buffers")
+    return
+  end
 
   for _, buf in ipairs(buffers) do
     if buf.name == "" then
