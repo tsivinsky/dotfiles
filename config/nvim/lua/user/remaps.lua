@@ -31,8 +31,8 @@ vmap(">", ">gv")
 
 -- Terminal
 tmap("<ESC>", "<C-\\><C-n>") -- Escape - in terminal mode, quit to normal mode
-nmap("Th", ":lua require('user.cmds').open_terminal()<CR>") -- Shift+t - open terminal in horizontal split
-nmap("Tv", ":lua require('user.cmds').open_terminal(true)<CR>") -- Shift+t+v - open terminal in vertical split
+nmap("Th", ":lua require('user.utils').open_terminal()<CR>") -- Shift+t - open terminal in horizontal split
+nmap("Tv", ":lua require('user.utils').open_terminal(true)<CR>") -- Shift+t+v - open terminal in vertical split
 
 -- Tabs
 nmap("H", ":tabprev<CR>") -- Shift+h - open previous tab
@@ -55,7 +55,7 @@ nmap("<F2>", ":lua vim.lsp.buf.rename()<CR>") -- F2 - Rename thing under the cur
 nmap("<leader>.", ":lua vim.lsp.buf.code_action()<CR>") -- Leader+. - show code actions to run
 vmap("<leader>.", ":lua vim.lsp.buf.range_code_action()<CR>") -- same as above but for visual mode
 nmap("<leader>dd", ':lua vim.diagnostic.open_float(nil, {focus = false, scope = "cursor"})<CR>') -- Leader+d - show diagnostics in float window
-nmap("<leader>dy", ":lua require('user.cmds').copy_diagnostic_message()<CR>") -- Leader+d+c - copy diagnostic message
+nmap("<leader>dy", ":lua require('user.utils').copy_diagnostic_message()<CR>") -- Leader+d+c - copy diagnostic message
 
 -- Git
 nmap("<leader>gg", ":G<CR>") -- Leader+g+g - open vim-fugitive window
