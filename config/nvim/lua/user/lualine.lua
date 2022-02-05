@@ -29,6 +29,19 @@ local fileformat = {
   },
 }
 
+-- don't know if it's working or not. seems working right
+local tabstop = {
+  function()
+    local tabstop = vim.bo.tabstop
+    local expandtab = vim.bo.expandtab
+
+    local method = expandtab == true and "spaces" or "tabs"
+    local format = tabstop .. " " .. method
+
+    return format
+  end,
+}
+
 local location = {
   "location",
 }
@@ -72,7 +85,7 @@ lualine.setup({
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics, filename, fileformat },
-    lualine_x = { location, encoding, filetype, time },
+    lualine_x = { tabstop, location, encoding, filetype, time },
     lualine_y = {},
     lualine_z = {},
   },
