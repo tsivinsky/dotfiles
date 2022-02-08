@@ -1,7 +1,5 @@
 # .files
 
-![My desktop](desktop.png)
-
 ### What do I use
 
 | Name    | Little description             | Homepage                                                                 |
