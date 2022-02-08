@@ -118,6 +118,9 @@ require("packer").startup(function(use)
     end,
   })
 
+  -- Markdown preview
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
