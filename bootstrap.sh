@@ -23,6 +23,7 @@ declare -A configs=(
 	["$PWD/config/wlogout"]="$HOME/.config/wlogout"
 	["$PWD/config/swappy"]="$HOME/.config/swappy"
 	["$PWD/config/lf"]="$HOME/.config/lf"
+	["$PWD/config/kitty"]="$HOME/.config/kitty"
 )
 
 bashCompletionsDir="$HOME/.config/bash-completions"
