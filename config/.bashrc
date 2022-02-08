@@ -1,16 +1,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#  _____ _   ___     _____ ____   ___  _   _ __  __ _____ _   _ _____ 
+#  _____ _   ___     _____ ____   ___  _   _ __  __ _____ _   _ _____
 # | ____| \ | \ \   / /_ _|  _ \ / _ \| \ | |  \/  | ____| \ | |_   _|
-# |  _| |  \| |\ \ / / | || |_) | | | |  \| | |\/| |  _| |  \| | | |  
-# | |___| |\  | \ V /  | ||  _ <| |_| | |\  | |  | | |___| |\  | | |  
-# |_____|_| \_|  \_/  |___|_| \_\\___/|_| \_|_|  |_|_____|_| \_| |_|  
-#                                                                     
+# |  _| |  \| |\ \ / / | || |_) | | | |  \| | |\/| |  _| |  \| | | |
+# | |___| |\  | \ V /  | ||  _ <| |_| | |\  | |  | | |___| |\  | | |
+# |_____|_| \_|  \_/  |___|_| \_\\___/|_| \_|_|  |_|_____|_| \_| |_|
+#
 
 export DOTFILES="$HOME/dotfiles"
 
-export TERM=alacritty
+export TERM=kitty
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -25,7 +25,6 @@ RUSTBIN="$HOME/.cargo/bin"
 PYTHON_BIN="$HOME/.local/bin"
 
 export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUSTBIN:$GOBIN"
-
 
 # Source bash completions
 source $HOME/.config/bash-completions/*
@@ -50,3 +49,7 @@ set -o vi
 # Show calendar and date on start
 cal -m
 date +"%d %B %Y - %H:%M:%S, %A"
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION
