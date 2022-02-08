@@ -7,6 +7,9 @@ set number
 set relativenumber
 set wrapscroll
 
+set previewer ~/.config/lf/preview.sh
+set cleaner ~/.config/lf/clean.sh
+
 ### Commands
 cmd mkdir ${{
   mkdir -p "$1"
