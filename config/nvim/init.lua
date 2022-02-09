@@ -73,6 +73,7 @@ require("packer").startup(function(use)
   use({ "L3MON4D3/LuaSnip", {
     "saadparwaiz1/cmp_luasnip",
   } })
+  use({ "rafamadriz/friendly-snippets" })
 
   use({ "nvim-telescope/telescope.nvim" })
 
@@ -143,6 +144,7 @@ require("user.treesitter")
 require("user.telescope")
 require("user.git")
 require("user.lsp")
+require("user.snippets")
 require("user.lualine")
 require("user.remaps")
 require("user.cmds")

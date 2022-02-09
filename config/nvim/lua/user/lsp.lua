@@ -183,5 +183,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   },
   signs = false,
 })
-
-require("luasnip.loaders.from_vscode").load()
