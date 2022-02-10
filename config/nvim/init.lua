@@ -28,9 +28,12 @@ require("packer").startup(function(use)
   use({ "folke/tokyonight.nvim" })
 
   -- Make commenting code great
-  use({ "numToStr/Comment.nvim", config = function ()
-    require("Comment").setup()
-  end })
+  use({
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+  })
 
   -- Icons used by many plugins
   use({ "kyazdani42/nvim-web-devicons" })
