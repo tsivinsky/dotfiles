@@ -29,6 +29,11 @@ vmap("J", ":m '>+1<CR>gv=gv") -- Shift+j - same as above mapping but the other w
 vmap("<", "<gv")
 vmap(">", ">gv")
 
+-- Quickfix and local lists
+nmap("lo", ":lopen<CR>") -- lo - open local quickfix list
+nmap("ln", ":lnext<CR>") -- ln - go to next local quickfix entry
+nmap("lp", ":lprev<CR>") -- lp - go to previous local quickfix entry
+
 -- Terminal
 tmap("<ESC>", "<C-\\><C-n>") -- Escape - in terminal mode, quit to normal mode
 nmap("Th", ":lua require('user.utils').open_terminal()<CR>") -- Shift+t - open terminal in horizontal split
