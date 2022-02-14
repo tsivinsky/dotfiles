@@ -29,11 +29,6 @@ vmap("J", ":m '>+1<CR>gv=gv") -- Shift+j - same as above mapping but the other w
 vmap("<", "<gv")
 vmap(">", ">gv")
 
--- Quickfix and local lists
-nmap("lo", ":lopen<CR>") -- lo - open local quickfix list
-nmap("ln", ":lnext<CR>") -- ln - go to next local quickfix entry
-nmap("lp", ":lprev<CR>") -- lp - go to previous local quickfix entry
-
 -- Terminal
 tmap("<ESC>", "<C-\\><C-n>") -- Escape - in terminal mode, quit to normal mode
 nmap("Th", ":lua require('user.utils').open_terminal()<CR>") -- Shift+t - open terminal in horizontal split
@@ -59,8 +54,13 @@ nmap("K", ":lua vim.lsp.buf.hover()<CR>") -- Shift+k - Show documentation in hov
 nmap("<F2>", ":lua vim.lsp.buf.rename()<CR>") -- F2 - Rename thing under the cursor
 nmap("<leader>.", ":lua vim.lsp.buf.code_action()<CR>") -- Leader+. - show code actions to run
 vmap("<leader>.", ":lua vim.lsp.buf.range_code_action()<CR>") -- same as above but for visual mode
+
+-- Diagnostics
 nmap("<leader>dd", ':lua vim.diagnostic.open_float(nil, {focus = false, scope = "cursor"})<CR>') -- Leader+d - show diagnostics in float window
 nmap("<leader>dy", ":lua require('user.utils').copy_diagnostic_message()<CR>") -- Leader+d+c - copy diagnostic message
+nmap("<leader>dn", ":lua vim.diagnostic.goto_next({ float = false })<CR>") -- Leader+d+n - go to next diagnostic
+nmap("<leader>dp", ":lua vim.diagnostic.goto_prev({ float = false })<CR>") -- Leader+d+p - go to previous diagnostic
+nmap("<leader>do", ":lopen<CR>") -- Leader+d+o - open local quickfix list w/ diagnostics
 
 -- Git
 nmap("<leader>gg", ":G<CR>") -- Leader+g+g - open vim-fugitive window
