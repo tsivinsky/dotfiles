@@ -170,6 +170,7 @@ lsp_installer.on_server_ready(function(server)
         },
         diagnostics = {
           library = vim.api.nvim_get_runtime_file("", true),
+          globals = { "vim" },
         },
         telemetry = {
           enable = false,
