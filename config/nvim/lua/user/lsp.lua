@@ -56,6 +56,11 @@ null_ls.setup({
 -- Other formats that work weird with null_ls
 vim.cmd([[autocmd BufWritePre *.svelte lua vim.lsp.buf.formatting_sync(nil, 1000)]])
 
+local completion_trigger = "<C-space>"
+if vim.fn.has("win32") then
+  completion_trigger = "<C-y>"
+end
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -65,7 +70,7 @@ cmp.setup({
   mapping = {
     ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
     ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-    ["<C-space>"] = cmp.mapping(function(fallback)
+    [completion_trigger] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.close()
       else
