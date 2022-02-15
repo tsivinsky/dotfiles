@@ -4,66 +4,66 @@ local vmap = utils.vmap
 local tmap = utils.tmap
 
 -- Move focus between splits
-nmap("<leader>h", "<C-w>h") -- Leader+h - focus left split
-nmap("<leader>l", "<C-w>l") -- Leader+l - focus right split
-nmap("<leader>j", "<C-w>j") -- Leader+j - focus split under focused one
-nmap("<leader>k", "<C-w>k") -- Leader+k - focus split above focused one
+nmap("<leader>h", "<C-w>h")
+nmap("<leader>l", "<C-w>l")
+nmap("<leader>j", "<C-w>j")
+nmap("<leader>k", "<C-w>k")
 
 -- Resize splits
-nmap("<C-j>", ":resize -2<CR>") -- Control+j - decrease split height
-nmap("<C-k>", ":resize +2<CR>") -- Control+k - increase split height
-nmap("<C-h>", ":vert resize -5<CR>") -- Control+h - decrease split width
-nmap("<C-l>", ":vert resize +5<CR>") -- Control+l - increase split width
+nmap("<C-j>", ":resize -2<CR>")
+nmap("<C-k>", ":resize +2<CR>")
+nmap("<C-h>", ":vert resize -5<CR>")
+nmap("<C-l>", ":vert resize +5<CR>")
 
 -- Open splits
-nmap("<leader>sv", ":vs<CR>") -- Leader+s+v - split current window vertically
-nmap("<leader>sh", ":split<CR>") -- Leader+s+h - split current window horizontally
+nmap("<leader>sv", ":vs<CR>")
+nmap("<leader>sh", ":split<CR>")
 
 -- Move lines easily
-nmap("<A-k>", ":m .-2<CR>==") -- Alt+k - switch current line and line above it
-nmap("<A-j>", ":m .+1<CR>==") -- Alt+j - same as above mapping but the other way
-vmap("K", ":m '<-2<CR>gv=gv") -- Shift+k - in visual mode move selected lines up
-vmap("J", ":m '>+1<CR>gv=gv") -- Shift+j - same as above mapping but the other way
+nmap("<A-k>", ":m .-2<CR>==")
+nmap("<A-j>", ":m .+1<CR>==")
+vmap("K", ":m '<-2<CR>gv=gv")
+vmap("J", ":m '>+1<CR>gv=gv")
 
 -- Leave selection when moving code left and right
 vmap("<", "<gv")
 vmap(">", ">gv")
 
 -- Terminal
-tmap("<ESC>", "<C-\\><C-n>") -- Escape - in terminal mode, quit to normal mode
-nmap("Th", ":lua require('user.utils').open_terminal()<CR>") -- Shift+t - open terminal in horizontal split
-nmap("Tv", ":lua require('user.utils').open_terminal(true)<CR>") -- Shift+t+v - open terminal in vertical split
+tmap("<ESC>", "<C-\\><C-n>")
+nmap("Th", ":lua require('user.utils').open_terminal()<CR>")
+nmap("Tv", ":lua require('user.utils').open_terminal(true)<CR>")
 
 -- Tabs
-nmap("H", ":tabprev<CR>") -- Shift+h - open previous tab
-nmap("L", ":tabnext<CR>") -- Shift+l - open next tab
-nmap("tn", ":tabnew<CR>") -- Control+t - open new empty tab
-nmap("tc", ":lua require('user.tabs').close_tab()<CR>") -- Control+w - close current tab
-nmap("tr", ":lua require('user.tabs').restore_tab()<CR>") -- Control+Shift+t - reopen closed tab
-nmap("<A-h>", ":-tabmove<CR>") -- Switch current tab with previous one
-nmap("<A-l>", ":+tabmove<CR>") -- Switch current tab with next one
+nmap("H", ":tabprev<CR>")
+nmap("L", ":tabnext<CR>")
+nmap("tn", ":tabnew<CR>")
+nmap("tc", ":lua require('user.tabs').close_tab()<CR>")
+nmap("tr", ":lua require('user.tabs').restore_tab()<CR>")
+nmap("<A-h>", ":-tabmove<CR>")
+nmap("<A-l>", ":+tabmove<CR>")
 
 -- Telescope
-nmap("<leader>f", ":Telescope find_files<CR>") -- Leader+f - find files with Telescope
-nmap("<leader>p", ":Telescope<CR>") -- Leader+p - open Telescope as command palette
+nmap("<leader>f", ":Telescope find_files<CR>")
+nmap("<leader>p", ":Telescope<CR>")
 
 -- LSP
-nmap("gd", ":lua vim.lsp.buf.definition()<CR>") -- g+d - Go to definition
-nmap("gr", ":lua vim.lsp.buf.references()<CR>") -- g+r - Show references
-nmap("K", ":lua vim.lsp.buf.hover()<CR>") -- Shift+k - Show documentation in hover window
-nmap("<F2>", ":lua vim.lsp.buf.rename()<CR>") -- F2 - Rename thing under the cursor
-nmap("<leader>.", ":lua vim.lsp.buf.code_action()<CR>") -- Leader+. - show code actions to run
-vmap("<leader>.", ":lua vim.lsp.buf.range_code_action()<CR>") -- same as above but for visual mode
+nmap("gd", ":lua vim.lsp.buf.definition()<CR>")
+nmap("gr", ":lua vim.lsp.buf.references()<CR>")
+nmap("K", ":lua vim.lsp.buf.hover()<CR>")
+nmap("<F2>", ":lua vim.lsp.buf.rename()<CR>")
+nmap("<leader>.", ":lua vim.lsp.buf.code_action()<CR>")
+vmap("<leader>.", ":lua vim.lsp.buf.range_code_action()<CR>")
 
 -- Diagnostics
-nmap("<leader>dd", ':lua vim.diagnostic.open_float(nil, {focus = false, scope = "cursor"})<CR>') -- Leader+d - show diagnostics in float window
-nmap("<leader>dy", ":lua require('user.utils').copy_diagnostic_message()<CR>") -- Leader+d+c - copy diagnostic message
-nmap("<leader>dn", ":lua vim.diagnostic.goto_next({ float = false })<CR>") -- Leader+d+n - go to next diagnostic
-nmap("<leader>dp", ":lua vim.diagnostic.goto_prev({ float = false })<CR>") -- Leader+d+p - go to previous diagnostic
-nmap("<leader>do", ":lopen<CR>") -- Leader+d+o - open local quickfix list w/ diagnostics
+nmap("<leader>dd", ':lua vim.diagnostic.open_float(nil, {focus = false, scope = "cursor"})<CR>')
+nmap("<leader>dy", ":lua require('user.utils').copy_diagnostic_message()<CR>")
+nmap("<leader>dn", ":lua vim.diagnostic.goto_next({ float = false })<CR>")
+nmap("<leader>dp", ":lua vim.diagnostic.goto_prev({ float = false })<CR>")
+nmap("<leader>do", ":lopen<CR>")
 
 -- Git
-nmap("<leader>gg", ":G<CR>") -- Leader+g+g - open vim-fugitive window
+nmap("<leader>gg", ":G<CR>")
 
 -- Zen mode
-nmap("<leader>z", ":ZenMode<CR>") -- Leader+z - toggle zen mode
+nmap("<leader>z", ":ZenMode<CR>")
