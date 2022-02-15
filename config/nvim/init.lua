@@ -104,17 +104,6 @@ require("packer").startup(function(use)
   })
 
   use({
-    "folke/trouble.nvim",
-    config = function()
-      require("trouble").setup({})
-    end,
-  })
-
-  use({ "folke/zen-mode.nvim", {
-    "folke/twilight.nvim",
-  } })
-
-  use({
     "lukas-reineke/indent-blankline.nvim",
     config = function()
       require("indent_blankline").setup({
