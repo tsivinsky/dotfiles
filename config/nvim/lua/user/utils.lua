@@ -88,9 +88,20 @@ M.copy_diagnostic_message = function()
     return
   end
 
-  -- TODO: print all messages available and prompt which one to yank
+  local message = ""
 
-  local message = diagnostics[1].message
+  if #diagnostics == 1 then
+    message = diagnostics[1].message
+  elseif #diagnostics > 1 then
+    local d = {}
+    for _, diagnostic in ipairs(diagnostics) do
+      table.insert(d, diagnostic.message)
+    end
+
+    vim.ui.select(d, { prompt = "Pick a diagnostic to yank" }, function(item)
+      message = item
+    end)
+  end
 
   M.yank(message)
 
