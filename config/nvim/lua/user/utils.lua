@@ -28,6 +28,12 @@ M.tmap = function(shortcut, command, opts)
   map("t", shortcut, command, opts)
 end
 
+M.imap = function(shortcut, command, opts)
+  opts = opts or {}
+
+  map("i", shortcut, command, opts)
+end
+
 M.list_includes_item = function(list, item)
   for _, value in pairs(list) do
     if value == item then
