@@ -112,9 +112,9 @@ M.open_terminal = function(vertically)
   vertically = vertically or false
 
   if vertically then
-    vim.cmd(":vs term://bash")
+    vim.cmd(":vs | :term")
   else
-    vim.cmd(":split term://bash")
+    vim.cmd(":split | :term")
   end
 end
 
