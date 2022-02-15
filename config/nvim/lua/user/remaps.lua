@@ -65,6 +65,3 @@ nmap("<leader>do", ":lopen<CR>")
 
 -- Git
 nmap("<leader>gg", ":G<CR>")
-
--- Zen mode
-nmap("<leader>z", ":ZenMode<CR>")
