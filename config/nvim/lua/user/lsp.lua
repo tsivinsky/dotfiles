@@ -57,7 +57,7 @@ null_ls.setup({
 vim.cmd([[autocmd BufWritePre *.svelte lua vim.lsp.buf.formatting_sync(nil, 1000)]])
 
 local completion_trigger = "<C-space>"
-if vim.fn.has("win32") then
+if vim.fn.has("win32") == 1 then
   completion_trigger = "<C-y>"
 end
 
