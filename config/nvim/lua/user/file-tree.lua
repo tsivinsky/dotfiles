@@ -55,7 +55,8 @@ require("nvim-tree").setup({
       list = {
         { key = "tn", action = "tabnew" },
         { key = "gs", action = "git_stage", action_cb = git_stage },
-        { key = "gr", action = "git restore", action_cb = git_reset },
+        { key = "gr", action = "git_restore", action_cb = git_reset },
+        { key = "l", action = "edit" },
       },
     },
   },
