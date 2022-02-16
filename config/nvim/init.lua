@@ -80,7 +80,13 @@ require("packer").startup(function(use)
   } })
   use({ "rafamadriz/friendly-snippets" })
 
-  use({ "nvim-telescope/telescope.nvim" })
+  use({
+    "nvim-telescope/telescope.nvim",
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      run = "make",
+    },
+  })
 
   -- Statusline
   use({ "nvim-lualine/lualine.nvim" })
