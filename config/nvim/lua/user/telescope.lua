@@ -15,4 +15,6 @@ telescope.setup({
   },
 })
 
-require("telescope").load_extension("fzf")
+if vim.fn.has("win32") == 0 then
+  require("telescope").load_extension("fzf")
+end
