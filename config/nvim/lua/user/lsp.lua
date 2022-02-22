@@ -147,11 +147,13 @@ local on_attach = function(client, bufnr)
     client.resolved_capabilities.document_range_formatting = false
   end
 
-  vim.cmd([[
-    autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
-    autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-  ]])
+  if client.resolved_capabilities.document_highlight then
+    vim.cmd([[
+      autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
+      autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+    ]])
+  end
 
   require("lsp_signature").on_attach({
     bind = true,
