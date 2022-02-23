@@ -59,6 +59,13 @@ require("packer").startup(function(use)
   use({ "williamboman/nvim-lsp-installer" })
   use({ "jose-elias-alvarez/null-ls.nvim" })
   use({ "ray-x/lsp_signature.nvim" })
+  use({
+    "themaxmarchuk/tailwindcss-colors.nvim",
+    module = "tailwindcss-colors",
+    config = function()
+      require("tailwindcss-colors").setup()
+    end,
+  })
 
   -- Completion, snippets, etc
   use({

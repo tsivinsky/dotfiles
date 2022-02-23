@@ -155,6 +155,10 @@ local on_attach = function(client, bufnr)
     ]])
   end
 
+  if client.name == "tailwindcss" then
+    require("tailwindcss-colors").buf_attach(bufnr)
+  end
+
   require("lsp_signature").on_attach({
     bind = true,
     hint_enable = false,
