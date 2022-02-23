@@ -124,4 +124,47 @@ M.open_terminal = function(vertically)
   end
 end
 
+M.get_definitions = function()
+  local params = vim.lsp.util.make_position_params()
+
+  local resp = vim.lsp.buf_request_sync(0, "textDocument/definition", params, 1000)
+  local result = {}
+  for _, v in pairs(resp) do
+    table.insert(result, v)
+  end
+  result = result[1].result
+
+  return result
+end
+
+M.goto_local_definition = function()
+  local definitions = M.get_definitions()
+
+  local local_definition = unpack(definitions)
+  local target = local_definition.targetSelectionRange
+
+  local startLine = target.start.line + 1
+  local startCol = target.start.character
+
+  vim.api.nvim_win_set_cursor(0, { startLine, startCol })
+end
+
+M.goto_global_definition = function()
+  local definitions = M.get_definitions()
+
+  local global_definition = definitions[#definitions]
+  local target = global_definition.targetSelectionRange
+
+  local startLine = target.start.line + 1
+  local startCol = target.start.character
+
+  local fileuri = global_definition.targetUri
+  local filepath = string.gsub(fileuri, "file://", "")
+
+  vim.cmd("tabnew")
+  vim.cmd("e " .. filepath)
+
+  vim.api.nvim_win_set_cursor(0, { startLine, startCol })
+end
+
 return M
