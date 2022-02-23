@@ -2,8 +2,14 @@
 	email = daniil@tsivinsky.com
 	name = Daniil Tsivinsky
 [core]
-	editor = nvim
+	editor = vim
 [init]
 	defaultBranch = master
 [push]
 	followTags = true
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[merge]
+  tool = nvim
+[mergetool]
+  prompt = false
