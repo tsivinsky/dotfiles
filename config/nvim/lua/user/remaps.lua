@@ -3,6 +3,8 @@ local nmap = utils.nmap
 local vmap = utils.vmap
 local tmap = utils.tmap
 
+nmap("<C-c>", ":nohl<CR>")
+
 -- Move focus between splits
 nmap("<leader>h", "<C-w>h")
 nmap("<leader>l", "<C-w>l")
