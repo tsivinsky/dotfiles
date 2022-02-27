@@ -2,8 +2,6 @@ local lsp_installer = require("nvim-lsp-installer")
 local cmp = require("cmp")
 local null_ls = require("null-ls")
 local list_includes_item = require("user.utils").list_includes_item
-local lspconfig = require("lspconfig")
-local configs = require("lspconfig.configs")
 
 local kind_icons = {
   Text = "",
@@ -164,31 +162,6 @@ local on_attach = function(client, bufnr)
     hint_enable = false,
   }, bufnr)
 end
-
-if not configs.ls_emmet then
-  configs.ls_emmet = {
-    default_config = {
-      cmd = { "ls_emmet", "--stdio" },
-      filetypes = {
-        "html",
-        "css",
-        "scss",
-        "javascript",
-        "javascriptreact",
-        "javascript.jsx",
-        "typescript",
-        "typescriptreact",
-        "typescript.tsx",
-        "sass",
-      },
-      root_dir = function(fname)
-        return lspconfig.util.find_git_ancestor(fname)
-      end,
-      settings = {},
-    },
-  }
-end
-lspconfig.ls_emmet.setup({ capabilities = capabilities, on_attach = on_attach })
 
 lsp_installer.on_server_ready(function(server)
   local opts = {
