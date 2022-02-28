@@ -48,6 +48,9 @@ nmap("tr", ":lua require('user.tabs').restore_tab()<CR>")
 nmap("<A-h>", ":-tabmove<CR>")
 nmap("<A-l>", ":+tabmove<CR>")
 
+-- Nvim Tree
+nmap("<leader>b", ":lua require('nvim-tree').toggle()<CR>")
+
 -- Telescope
 nmap("<leader>f", ":Telescope find_files<CR>")
 nmap("<leader>p", ":Telescope<CR>")

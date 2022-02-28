@@ -1,5 +1,3 @@
-local nmap = require("user.utils").nmap
-
 vim.g.nvim_tree_show_icons = {
   git = 1,
   files = 1,
@@ -73,5 +71,3 @@ require("nvim-tree").setup({
     icons = { hint = "", info = "", warning = "", error = "" },
   },
 })
-
-nmap("<leader>b", ":NvimTreeToggle<CR>")
