@@ -56,8 +56,7 @@ nmap("<leader>f", ":Telescope find_files<CR>")
 nmap("<leader>p", ":Telescope<CR>")
 
 -- LSP
-nmap("gd", ":lua require('user.utils').goto_local_definition()<CR>")
-nmap("gD", ":lua require('user.utils').goto_global_definition()<CR>")
+nmap("gd", ":lua vim.lsp.buf.definition()<CR>")
 nmap("gr", ":lua vim.lsp.buf.references()<CR>")
 nmap("K", ":lua vim.lsp.buf.hover()<CR>")
 nmap("<F2>", ":lua vim.lsp.buf.rename()<CR>")
