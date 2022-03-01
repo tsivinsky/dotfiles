@@ -64,8 +64,8 @@ input * {
 workspace "$ws1" output DVI-I-1
 workspace "$ws2" output VGA-1
 
-output VGA-1 pos 0 1920
-output DVI-I-1 pos 1920 3200
+output VGA-1 pos 0 0
+output DVI-I-1 pos 1920 0
 
 
 
