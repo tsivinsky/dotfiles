@@ -1,6 +1,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export TERM=kitty
+export EDITOR=nvim
+export VISUAL=nvim
+
 export DOTFILES="$HOME/dotfiles"
 
 export HISTSIZE=10000
