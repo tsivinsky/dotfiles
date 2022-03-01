@@ -3,6 +3,8 @@ local nmap = utils.nmap
 local vmap = utils.vmap
 local tmap = utils.tmap
 
+-- General keymaps
+nmap("<leader><leader>", "<C-w><C-w>")
 nmap("<C-c>", ":nohl<CR>")
 
 -- Move focus between splits
