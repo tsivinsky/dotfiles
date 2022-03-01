@@ -78,7 +78,7 @@ output DVI-I-1 pos 1920 3200
 #                                                                     
 # Start applications with keybindings
 bindsym $alt+f exec firefox-developer-edition
-bindsym $alt+r exec alacritty -e lf
+bindsym $alt+r exec kitty sh -c "lf"
 bindsym $alt+s exec steam
 
 # Default settings for some applications

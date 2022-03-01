@@ -10,8 +10,7 @@
     "pulseaudio",
     "sway/language",
     "network",
-    "clock",
-    "custom/power-menu"
+    "clock"
   ],
   "sway/workspaces": {
     "all-output": true,
@@ -47,13 +46,5 @@
   "tray": {
     "icon-size": 16,
     "spacing": 10
-  },
-  "custom/power-menu": {
-    "format": "{icon}",
-    "format-icons": [
-      ""
-    ],
-    "on-click": "wlogout -b 4 -m 450 -c 30",
-    "tooltip": false
   }
 }

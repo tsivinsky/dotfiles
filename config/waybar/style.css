@@ -34,8 +34,7 @@ window#waybar {
   margin-left: 10px;
 }
 
-#network,
-#custom-power-menu {
+#network {
   font-family: "Font Awesome 6 Free Solid";
 }
 
@@ -43,8 +42,7 @@ window#waybar {
 #pulseaudio,
 #language,
 #network,
-#clock,
-#custom-power-menu {
+#clock {
   margin: 8px;
 }
 
