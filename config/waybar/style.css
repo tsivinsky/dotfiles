@@ -7,7 +7,7 @@
 window#waybar {
   background: @background;
   color: @foreground;
-  font-family: "Font Awesome 5 Free Solid", Iosevka, "Fira Code";
+  font-family: Iosevka, "Fira Code";
   font-size: 14px;
 }
 
@@ -32,6 +32,11 @@ window#waybar {
 
 #window {
   margin-left: 10px;
+}
+
+#network,
+#custom-power-menu {
+  font-family: "Font Awesome 6 Free Solid";
 }
 
 #tray,
