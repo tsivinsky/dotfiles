@@ -2,10 +2,19 @@ local utils = require("user.utils")
 local nmap = utils.nmap
 local vmap = utils.vmap
 local tmap = utils.tmap
+local imap = utils.imap
 
 -- General keymaps
 nmap("<leader><leader>", "<C-w><C-w>")
 nmap("<C-c>", ":nohl<CR>")
+
+-- Disable PageUp and PageDown keys
+nmap("<PageDown>", "<nop>")
+imap("<PageDown>", "<nop>")
+vmap("<PageDown>", "<nop>")
+nmap("<PageUp>", "<nop>")
+imap("<PageUp>", "<nop>")
+vmap("<PageUp>", "<nop>")
 
 -- Move focus between splits
 nmap("<leader>h", "<C-w>h")
