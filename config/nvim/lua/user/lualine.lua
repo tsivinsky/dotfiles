@@ -12,7 +12,6 @@ local branch = {
 
 local diagnostics = {
   "diagnostics",
-  always_visible = true,
   sections = { "error", "warn" },
 }
 
