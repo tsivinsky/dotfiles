@@ -5,7 +5,6 @@ local tmap = utils.tmap
 local imap = utils.imap
 
 -- General keymaps
-nmap("<leader><leader>", "<C-w><C-w>")
 nmap("<C-c>", ":nohl<CR>")
 
 -- Disable PageUp and PageDown keys
@@ -60,7 +59,7 @@ nmap("<A-h>", ":-tabmove<CR>")
 nmap("<A-l>", ":+tabmove<CR>")
 
 -- Nvim Tree
-nmap("<leader>b", ":lua require('nvim-tree').toggle()<CR>")
+nmap("<leader><leader>", ":lua require('nvim-tree').toggle(true, false)<CR>")
 
 -- Telescope
 nmap("<leader>f", ":Telescope find_files<CR>")
