@@ -29,6 +29,7 @@ opt.clipboard = "unnamedplus"
 opt.signcolumn = "yes"
 opt.fillchars:append({ eob = " " })
 opt.showtabline = 2
+opt.showcmd = false
 
 -- if vim.fn.has("win32") == 1 then
 --   opt.shell = "powershell.exe"
