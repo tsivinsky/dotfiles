@@ -17,7 +17,7 @@ MY_BIN="$DOTFILES/bin"
 RUST_BIN="$HOME/.cargo/bin"
 PYTHON_BIN="$HOME/.local/bin"
 
-export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUST_BIN"
+export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUST_BIN:$GOBIN"
 
 # Source bash completions
 source $HOME/.config/bash-completions/*
@@ -41,5 +41,5 @@ if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integr
 # END_KITTY_SHELL_INTEGRATION
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
