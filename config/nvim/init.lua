@@ -26,6 +26,7 @@ require("packer").startup(function(use)
 
   -- Colorschemes go here
   use({ "folke/tokyonight.nvim" })
+  use({ "sainnhe/edge" })
 
   -- Make commenting code great
   use({ "numToStr/Comment.nvim" })

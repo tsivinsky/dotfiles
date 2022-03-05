@@ -1,5 +1,4 @@
 local opt = vim.opt
-local wo = vim.wo
 
 -- 2 tabs converted to spaces + autoindentation
 opt.tabstop = 2
@@ -15,6 +14,7 @@ opt.splitbelow = true
 opt.splitright = true
 
 -- Other settings
+opt.termguicolors = true
 opt.number = true
 opt.relativenumber = true
 opt.wrap = true
