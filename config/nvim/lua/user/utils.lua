@@ -114,16 +114,6 @@ M.copy_diagnostic_message = function()
   print("Diagnostic message was yanked")
 end
 
-M.open_terminal = function(vertically)
-  vertically = vertically or false
-
-  if vertically then
-    vim.cmd(":vs | :term")
-  else
-    vim.cmd(":split | :term")
-  end
-end
-
 M.get_definitions = function()
   local params = vim.lsp.util.make_position_params()
 

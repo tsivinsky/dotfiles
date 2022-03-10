@@ -45,8 +45,8 @@ vim.cmd("imap <C-_> <ESC>gccA")
 
 -- Terminal
 tmap("<ESC>", "<C-\\><C-n>")
-nmap("Th", ":lua require('user.utils').open_terminal()<CR>")
-nmap("Tv", ":lua require('user.utils').open_terminal(true)<CR>")
+nmap("Th", ":split | :term<CR>")
+nmap("Tv", ":vs | :term<CR>")
 
 -- Tabs
 nmap("H", ":tabprev<CR>")
