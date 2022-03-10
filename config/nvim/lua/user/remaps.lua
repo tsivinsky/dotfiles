@@ -41,8 +41,6 @@ vmap("J", ":m '>+1<CR>gv=gv")
 vmap("<", "<gv")
 vmap(">", ">gv")
 
-vim.cmd("imap <C-_> <ESC>gccA")
-
 -- Terminal
 tmap("<ESC>", "<C-\\><C-n>")
 nmap("Th", ":split | :term<CR>")
