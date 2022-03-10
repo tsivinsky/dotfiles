@@ -53,39 +53,6 @@ M.yank = function(message)
   end
 end
 
-M.get_hidden_buffers = function()
-  local buffers = vim.api.nvim_list_bufs()
-
-  local hidden_buffers = {}
-
-  for _, bufnr in ipairs(buffers) do
-    local buf = vim.fn.getbufinfo(bufnr)[1]
-
-    if buf.hidden == 1 then
-      table.insert(hidden_buffers, { bufnr = buf.bufnr, name = buf.name })
-    end
-  end
-
-  return hidden_buffers
-end
-
-M.delete_noname_buffers = function()
-  local buffers = M.get_hidden_buffers()
-
-  if buffers == nil then
-    print("No noname buffers")
-    return
-  end
-
-  for _, buf in ipairs(buffers) do
-    if buf.name == "" then
-      vim.cmd("bd " .. buf.bufnr)
-    end
-  end
-
-  print("Deleted " .. #buffers .. " buffers")
-end
-
 M.copy_diagnostic_message = function()
   local diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
 
