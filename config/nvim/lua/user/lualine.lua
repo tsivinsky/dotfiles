@@ -12,23 +12,26 @@ local branch = {
 
 local diagnostics = {
   "diagnostics",
-  sections = { "error", "warn" },
+  sections = { "error", "warn", "info", "hint" },
+  always_visible = true,
 }
 
 local filename = {
-  "filename",
+  function()
+    local filename = vim.fn.expand("%:t")
+    local fileext = vim.fn.expand("%:e")
+    local icon = require("nvim-web-devicons").get_icon(filename, fileext)
+
+    return icon .. " " .. filename
+  end,
 }
 
 local fileformat = {
-  "fileformat",
-  symbols = {
-    unix = "",
-    dos = "",
-    mac = "",
-  },
+  function()
+    return "[" .. vim.bo.fileformat .. "]"
+  end,
 }
 
--- don't know if it's working or not. seems working right
 local tabstop = {
   function()
     local tabstop = vim.bo.tabstop
@@ -41,39 +44,6 @@ local tabstop = {
   end,
 }
 
-local location = {
-  "location",
-}
-
-local encoding = {
-  "encoding",
-}
-
-local filetype = {
-  "filetype",
-}
-
--- local timer = vim.loop.new_timer()
--- timer:start(
---   0,
---   1000,
---   vim.schedule_wrap(function()
---     vim.g.lualine_time_module = os.date("%H:%M", os.time())
---   end)
--- )
--- local time = {
---   function()
---     return vim.g.lualine_time_module
---   end,
---   cond = function()
---     if vim.g.lualine_time_module then
---       return true
---     end
-
---     return false
---   end,
--- }
-
 lualine.setup({
   options = {
     disabled_filetypes = { "NvimTree" },
@@ -83,9 +53,9 @@ lualine.setup({
   sections = {
     lualine_a = { mode },
     lualine_b = { branch },
-    lualine_c = { diagnostics, filename, fileformat },
-    lualine_x = { tabstop, location, encoding, filetype },
-    lualine_y = {},
+    lualine_c = { diagnostics },
+    lualine_x = { tabstop, fileformat },
+    lualine_y = { filename },
     lualine_z = {},
   },
 })
