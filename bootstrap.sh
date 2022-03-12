@@ -24,6 +24,7 @@ declare -A configs=(
 	["$PWD/config/swappy"]="$HOME/.config/swappy"
 	["$PWD/config/lf"]="$HOME/.config/lf"
 	["$PWD/config/kitty"]="$HOME/.config/kitty"
+	["$PWD/config/spotifyd"]="$HOME/.config/spotifyd"
 )
 
 bashCompletionsDir="$HOME/.config/bash-completions"
