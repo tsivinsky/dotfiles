@@ -2,7 +2,6 @@
   "position": "top",
   "modules-left": [
     "sway/workspaces",
-    "sway/window",
     "sway/mode"
   ],
   "modules-right": [
@@ -15,9 +14,6 @@
   "sway/workspaces": {
     "all-output": true,
     "format": "{index}"
-  },
-  "sway/window": {
-    "max-length": 30
   },
   "sway/mode": {
     "format": "--{}--",
