@@ -17,9 +17,6 @@ set $term kitty
 # Your preferred application launcher
 set $menu kickoff
 
-# Screenshot utility
-set $shot "/usr/share/sway/scripts/grimshot"
-
 # Workspaces
 set $ws1 "1"
 set $ws2 "2"
@@ -133,16 +130,6 @@ bindsym F8 exec pavucontrol
 
 bindsym $mod+equal exec swaymsg 'gaps inner current plus 10'
 bindsym $mod+minus exec swaymsg 'gaps inner current minus 10'
-
-# Make screenshots
-# Ctrl+1,2,3 - Save screenshot of screen, selected window, selected area
-bindsym $ctrl+1 exec --no-startup-id $shot --notify save output "$HOME/Pictures/Screenshots/Screenshot_$(date +%s%3N).png"
-bindsym $ctrl+2 exec --no-startup-id $shot --notify save window "$HOME/Pictures/Screenshots/Screenshot_$(date +%s%3N).png"
-bindsym $ctrl+3 exec --no-startup-id $shot --notify save area "$HOME/Pictures/Screenshots/Screenshot_$(date +%s%3N).png"
-# Ctrl+Shift+1,2,3 - Copy screenshot of screen, selected window, selected area
-bindsym $ctrl+Shift+1 exec --no-startup-id $shot --notify copy output
-bindsym $ctrl+Shift+2 exec --no-startup-id $shot --notify copy window
-bindsym $ctrl+Shift+3 exec --no-startup-id $shot --notify copy area
 
 # Call swappy
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
