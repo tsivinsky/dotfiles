@@ -31,6 +31,8 @@ opt.fillchars:append({ eob = " " })
 opt.showtabline = 2
 opt.showcmd = false
 opt.guicursor = "a:block,i:ver25"
+opt.fileformat = "unix"
+opt.fileformats = { "unix", "dos", "mac" }
 
 -- if vim.fn.has("win32") == 1 then
 --   opt.shell = "powershell.exe"
