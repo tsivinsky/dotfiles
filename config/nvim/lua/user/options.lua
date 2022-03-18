@@ -33,6 +33,7 @@ opt.showcmd = false
 opt.guicursor = "a:block,i:ver25"
 opt.fileformat = "unix"
 opt.fileformats = { "unix", "dos", "mac" }
+opt.laststatus = 3
 
 -- if vim.fn.has("win32") == 1 then
 --   opt.shell = "powershell.exe"
