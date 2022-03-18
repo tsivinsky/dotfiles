@@ -49,6 +49,7 @@ lualine.setup({
     disabled_filetypes = { "NvimTree" },
     component_separators = "",
     section_separators = "",
+    globalstatus = true,
   },
   sections = {
     lualine_a = { mode },
