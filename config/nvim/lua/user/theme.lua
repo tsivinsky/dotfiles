@@ -1,6 +1,7 @@
-vim.g.tokyonight_style = "night"
+vim.g.edge_diagnostic_virtual_text = "colored"
+vim.g.edge_better_performance = 1
 
 vim.cmd([[
-colorscheme tokyonight
+colorscheme edge
 hi SpellBad guifg=red
 ]])
