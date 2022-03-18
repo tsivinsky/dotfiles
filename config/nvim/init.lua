@@ -67,6 +67,7 @@ require("packer").startup(function(use)
       require("tailwindcss-colors").setup()
     end,
   })
+  use({ "b0o/SchemaStore.nvim" })
 
   -- Completion, snippets, etc
   use({

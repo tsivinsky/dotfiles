@@ -191,6 +191,21 @@ lsp_installer.on_server_ready(function(server)
     }
   end
 
+  if server.name == "jsonls" then
+    opts.settings = {
+      json = {
+        schemas = require("schemastore").json.schemas({
+          select = {
+            ".eslintrc",
+            "package.json",
+            "tsconfig.json",
+            "prettierrc.json",
+          },
+        }),
+      },
+    }
+  end
+
   server:setup(opts)
 end)
 
