@@ -33,9 +33,6 @@ _BOLD="\[\033[1m\]"
 _RESET="\[\033[0m\]"
 export PS1="${_BLUE}${_BOLD}\w${_RESET} \$ "
 
-# Vim everywhere
-set -o vi
-
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
