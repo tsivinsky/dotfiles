@@ -23,7 +23,7 @@ export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUST_BIN:$GOBIN"
 source $HOME/.config/bash-completions/*
 
 # Install aliases
-source $DOTFILES/config/bash/aliases.bash
+source $HOME/.config/bash/aliases.bash
 
 shopt -s autocd
 

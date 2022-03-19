@@ -1,5 +1,11 @@
 # .files
 
+### How to install
+
+```bash
+stow -S config neovim
+```
+
 ### What do I use
 
 | Name    | Little description             | Homepage                                                                 |
