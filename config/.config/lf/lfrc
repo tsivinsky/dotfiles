@@ -6,6 +6,7 @@ set incsearch
 set number
 set relativenumber
 set wrapscroll
+set hidden
 
 set previewer ~/.config/lf/preview.sh
 set cleaner ~/.config/lf/clean.sh
