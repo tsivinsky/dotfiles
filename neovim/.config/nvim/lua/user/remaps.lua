@@ -60,7 +60,7 @@ nmap("<A-l>", ":+tabmove<CR>")
 nmap("<leader><leader>", ":lua require('nvim-tree').toggle(true, false)<CR>")
 
 -- Telescope
-nmap("<leader>ff", ":Telescope find_files<CR>")
+nmap("<leader>ff", ":lua require('telescope.builtin').find_files({ hidden = true })<CR>")
 nmap("<leader>fo", ":Telescope lsp_document_symbols<CR>")
 nmap("<leader>p", ":Telescope<CR>")
 
