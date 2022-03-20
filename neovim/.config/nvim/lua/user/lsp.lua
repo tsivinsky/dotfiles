@@ -2,6 +2,7 @@ local lsp_installer = require("nvim-lsp-installer")
 local cmp = require("cmp")
 local null_ls = require("null-ls")
 local list_includes_item = require("user.utils").list_includes_item
+local util = require("lspconfig").util
 
 local kind_icons = {
   Text = "",
@@ -204,6 +205,10 @@ lsp_installer.on_server_ready(function(server)
         }),
       },
     }
+  end
+
+  if server.name == "tsserver" then
+    opts.root_dir = util.root_pattern(".git", "package.json", "tsconfig.json")
   end
 
   server:setup(opts)
