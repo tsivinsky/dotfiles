@@ -193,6 +193,7 @@ lsp_installer.on_server_ready(function(server)
   end
 
   if server.name == "jsonls" then
+    opts.filetypes = { "json", "jsonc" }
     opts.settings = {
       json = {
         schemas = require("schemastore").json.schemas({
