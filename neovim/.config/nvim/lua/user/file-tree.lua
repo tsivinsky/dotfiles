@@ -1,3 +1,5 @@
+local Job = require("plenary.job")
+
 vim.g.nvim_tree_show_icons = {
   git = 1,
   files = 1,
@@ -24,15 +26,23 @@ local function git_stage(node)
   local cwd = vim.loop.cwd()
   local relative_path = string.gsub(node.absolute_path, cwd .. "/", "")
 
-  local f = io.popen("git add " .. relative_path, "r")
-  f:close()
+  Job
+    :new({
+      command = "git",
+      args = { "add", relative_path },
+    })
+    :start()
 end
 local function git_reset(node)
   local cwd = vim.loop.cwd()
   local relative_path = string.gsub(node.absolute_path, cwd .. "/", "")
 
-  local f = io.popen("git reset " .. relative_path, "r")
-  f:close()
+  Job
+    :new({
+      command = "git",
+      args = { "reset", relative_path },
+    })
+    :start()
 end
 -- TODO: add here keymap for git diff window
 
