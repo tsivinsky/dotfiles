@@ -124,4 +124,18 @@ M.goto_global_definition = function()
   vim.api.nvim_win_set_cursor(0, { startLine, startCol })
 end
 
+M.lsp_organize_imports = function(bufnr, timeout)
+  if not bufnr then
+    bufnr = vim.api.nvim_get_current_buf()
+  end
+
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(bufnr) },
+    title = "",
+  }
+
+  vim.lsp.buf_request_sync(bufnr, "workspace/executeCommand", params, timeout or 500)
+end
+
 return M

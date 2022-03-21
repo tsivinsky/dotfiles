@@ -81,3 +81,6 @@ nmap("<leader>do", ":lopen<CR>")
 
 -- Git
 nmap("<leader>gg", ":G<CR>")
+
+-- Refactoring
+nmap("<leader>ri", ":lua require('user.utils').lsp_organize_imports()<CR>")
