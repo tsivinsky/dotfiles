@@ -229,3 +229,10 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   update_in_insert = false,
   signs = false,
 })
+
+vim.cmd([[
+hi DiagnosticError guifg=#e80f43
+hi DiagnosticWarn guifg=#ffc914
+hi DiagnosticInfo guifg=#9fd356
+hi DiagnosticHint guifg=#1d74f7
+]])
