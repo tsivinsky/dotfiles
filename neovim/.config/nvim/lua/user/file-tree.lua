@@ -63,6 +63,11 @@ require("nvim-tree").setup({
   filters = {
     custom = { ".git" },
   },
+  actions = {
+    open_file = {
+      resize_window = true,
+    },
+  },
   git = {
     ignore = true,
   },
