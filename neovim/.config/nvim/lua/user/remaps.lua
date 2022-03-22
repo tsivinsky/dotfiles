@@ -1,3 +1,5 @@
+local ts = require("telescope.builtin")
+
 -- General keymaps
 vim.keymap.set("n", "<C-c>", ":nohl<CR>")
 vim.keymap.set("n", "<C-q>", "<C-W>q")
@@ -56,21 +58,21 @@ end)
 
 -- Telescope
 vim.keymap.set("n", "<leader>ff", function()
-  require("telescope.builtin").find_files({ hidden = true })
+  ts.find_files({ hidden = true })
 end)
 vim.keymap.set("n", "<leader>fo", function()
-  require("telescope.builtin").lsp_document_symbols()
+  ts.lsp_document_symbols()
 end)
 vim.keymap.set("n", "<leader>p", function()
-  require("telescope.builtin").builtin()
+  ts.builtin()
 end)
 
 -- LSP
 vim.keymap.set("n", "gd", function()
-  vim.lsp.buf.definition()
+  ts.lsp_definitions()
 end)
 vim.keymap.set("n", "gr", function()
-  vim.lsp.buf.references()
+  ts.lsp_references()
 end)
 vim.keymap.set("n", "K", function()
   vim.lsp.buf.hover()
@@ -104,4 +106,6 @@ vim.keymap.set("n", "<leader>do", ":lopen<CR>")
 vim.keymap.set("n", "<leader>gg", ":G<CR>")
 
 -- Refactoring
-vim.keymap.set("n", "<leader>ri", require("user.utils").lsp_organize_imports)
+vim.keymap.set("n", "<leader>ri", function()
+  require("user.utils").lsp_organize_imports()
+end)

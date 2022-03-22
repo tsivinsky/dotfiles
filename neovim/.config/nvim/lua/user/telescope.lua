@@ -12,6 +12,14 @@ telescope.setup({
       },
     },
   },
+  pickers = {
+    lsp_references = {
+      initial_mode = "normal",
+    },
+    lsp_definitions = {
+      initial_mode = "normal",
+    },
+  },
   extensions = {
     fzf = {
       fuzzy = true,
