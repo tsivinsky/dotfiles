@@ -33,10 +33,7 @@ opt.showcmd = false
 opt.guicursor = "a:block,i:ver25"
 opt.fileformat = "unix"
 opt.fileformats = { "unix", "dos", "mac" }
-
-if vim.fn.has("nvim-0.7") == 1 then
-  opt.laststatus = 3
-end
+opt.laststatus = 3
 
 vim.cmd(":language en")
 
