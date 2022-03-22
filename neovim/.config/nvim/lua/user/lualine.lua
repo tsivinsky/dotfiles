@@ -22,6 +22,10 @@ local filename = {
     local fileext = vim.fn.expand("%:e")
     local icon = require("nvim-web-devicons").get_icon(filename, fileext)
 
+    if not icon then
+      return filename
+    end
+
     return icon .. " " .. filename
   end,
 }
