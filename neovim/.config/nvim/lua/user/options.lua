@@ -38,6 +38,8 @@ if vim.fn.has("nvim-0.7") == 1 then
   opt.laststatus = 3
 end
 
+vim.cmd(":language en")
+
 -- if vim.fn.has("win32") == 1 then
 --   opt.shell = "powershell.exe"
 -- end
