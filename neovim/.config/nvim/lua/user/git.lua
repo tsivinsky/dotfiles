@@ -1,6 +1,3 @@
-local nmap = require("user.utils").nmap
-local vmap = require("user.utils").vmap
-
 require("gitsigns").setup({
   signcolumn = true,
   attach_to_untracked = false,
@@ -12,15 +9,15 @@ require("gitsigns").setup({
     relative_time = true,
   },
   on_attach = function(bufnr)
-    nmap("<leader>gs", ":Gitsigns stage_hunk<CR>")
-    nmap("<leader>gu", ":Gitsigns undo_stage_hunk<CR>")
-    nmap("<leader>gr", ":Gitsigns reset_hunk<CR>")
-    nmap("<leader>gp", ":Gitsigns preview_hunk<CR>")
-    nmap("<leader>gn", ":Gitsigns next_hunk<CR>")
-    nmap("<leader>gN", ":Gitsigns prev_hunk<CR>")
+    vim.keymap.set("n", "<leader>gs", ":Gitsigns stage_hunk<CR>")
+    vim.keymap.set("n", "<leader>gu", ":Gitsigns undo_stage_hunk<CR>")
+    vim.keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>")
+    vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
+    vim.keymap.set("n", "<leader>gn", ":Gitsigns next_hunk<CR>")
+    vim.keymap.set("n", "<leader>gN", ":Gitsigns prev_hunk<CR>")
 
-    vmap("gs", ":Gitsigns stage_hunk<CR>")
-    vmap("gu", ":Gitsigns undo_stage_hunk<CR>")
-    vmap("gr", ":Gitsigns reset_hunk<CR>")
+    vim.keymap.set("v", "s", ":Gitsigns stage_hunk<CR>")
+    vim.keymap.set("v", "u", ":Gitsigns undo_stage_hunk<CR>")
+    vim.keymap.set("v", "r", ":Gitsigns reset_hunk<CR>")
   end,
 })
