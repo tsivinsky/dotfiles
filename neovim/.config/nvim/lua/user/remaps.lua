@@ -73,7 +73,7 @@ nmap("<leader>.", ":lua vim.lsp.buf.code_action()<CR>")
 vmap("<leader>.", ":lua vim.lsp.buf.range_code_action()<CR>")
 
 -- Diagnostics
-nmap("<leader>dd", ':lua vim.diagnostic.open_float(nil, {focus = false, scope = "cursor"})<CR>')
+nmap("<leader>dd", ':lua vim.diagnostic.open_float(nil, {focus = false, scope = "line"})<CR>')
 nmap("<leader>dy", ":lua require('user.utils').copy_diagnostic_message()<CR>")
 nmap("<leader>dn", ":lua vim.diagnostic.goto_next({ float = false })<CR>")
 nmap("<leader>dp", ":lua vim.diagnostic.goto_prev({ float = false })<CR>")
