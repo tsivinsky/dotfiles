@@ -1,9 +1,16 @@
 local telescope = require("telescope")
+local actions = require("telescope.actions")
 
 telescope.setup({
   defaults = {
     sorting_strategy = "ascending",
     file_ignore_patterns = { ".git/", "node_modules/" },
+    mappings = {
+      i = {
+        ["<C-j>"] = actions.move_selection_worse,
+        ["<C-k>"] = actions.move_selection_better,
+      },
+    },
   },
   extensions = {
     fzf = {
