@@ -28,10 +28,6 @@ nmap("<C-k>", ":resize +2<CR>")
 nmap("<C-h>", ":vert resize -5<CR>")
 nmap("<C-l>", ":vert resize +5<CR>")
 
--- Open splits
-nmap("<leader>sv", ":vs<CR>")
-nmap("<leader>sh", ":split<CR>")
-
 -- Move lines easily
 nmap("<A-k>", ":m .-2<CR>==")
 nmap("<A-j>", ":m .+1<CR>==")
