@@ -44,19 +44,11 @@ local tabstop = {
   end,
 }
 
-local globalstatus = false
-local disabledfts = { "NvimTree" }
-if vim.fn.has("nvim-0.7") == 1 then
-  globalstatus = true
-  disabledfts = {}
-end
-
 lualine.setup({
   options = {
-    disabled_filetypes = disabledfts,
     component_separators = "",
     section_separators = "",
-    globalstatus = globalstatus,
+    globalstatus = true,
   },
   sections = {
     lualine_a = { mode },
