@@ -6,6 +6,7 @@ local imap = utils.imap
 
 -- General keymaps
 nmap("<C-c>", ":nohl<CR>")
+nmap("<C-q>", "<C-W>q")
 
 -- Disable PageUp and PageDown keys
 nmap("<PageDown>", "<nop>")
