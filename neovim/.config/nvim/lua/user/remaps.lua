@@ -29,8 +29,6 @@ nmap("<C-h>", ":vert resize -5<CR>")
 nmap("<C-l>", ":vert resize +5<CR>")
 
 -- Move lines easily
-nmap("<A-k>", ":m .-2<CR>==")
-nmap("<A-j>", ":m .+1<CR>==")
 vmap("K", ":m '<-2<CR>gv=gv")
 vmap("J", ":m '>+1<CR>gv=gv")
 
