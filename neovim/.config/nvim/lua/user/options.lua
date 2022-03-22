@@ -34,6 +34,10 @@ opt.guicursor = "a:block,i:ver25"
 opt.fileformat = "unix"
 opt.fileformats = { "unix", "dos", "mac" }
 opt.laststatus = 3
+opt.smartcase = true
+opt.ignorecase = true
+opt.scrolloff = 5
+opt.colorcolumn = "80"
 
 vim.cmd(":language en")
 
