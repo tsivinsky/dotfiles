@@ -1,81 +1,103 @@
-local utils = require("user.utils")
-local nmap = utils.nmap
-local vmap = utils.vmap
-local tmap = utils.tmap
-local imap = utils.imap
-
 -- General keymaps
-nmap("<C-c>", ":nohl<CR>")
-nmap("<C-q>", "<C-W>q")
+vim.keymap.set("n", "<C-c>", ":nohl<CR>")
+vim.keymap.set("n", "<C-q>", "<C-W>q")
 
 -- Disable PageUp and PageDown keys
-nmap("<PageDown>", "<nop>")
-imap("<PageDown>", "<nop>")
-vmap("<PageDown>", "<nop>")
-nmap("<PageUp>", "<nop>")
-imap("<PageUp>", "<nop>")
-vmap("<PageUp>", "<nop>")
+vim.keymap.set({ "n", "i", "v" }, "<PageDown>", "<nop>")
+vim.keymap.set({ "n", "i", "v" }, "<PageUp>", "<nop>")
 
 -- Move focus between splits
-nmap("<leader>h", "<C-w>h")
-nmap("<leader>l", "<C-w>l")
-nmap("<leader>j", "<C-w>j")
-nmap("<leader>k", "<C-w>k")
+vim.keymap.set("n", "<leader>h", "<C-w>h")
+vim.keymap.set("n", "<leader>l", "<C-w>l")
+vim.keymap.set("n", "<leader>j", "<C-w>j")
+vim.keymap.set("n", "<leader>k", "<C-w>k")
 
 -- Resize splits
-nmap("<C-j>", ":resize -2<CR>")
-nmap("<C-k>", ":resize +2<CR>")
-nmap("<C-h>", ":vert resize -5<CR>")
-nmap("<C-l>", ":vert resize +5<CR>")
+vim.keymap.set("n", "<C-j>", ":resize -2<CR>")
+vim.keymap.set("n", "<C-k>", ":resize +2<CR>")
+vim.keymap.set("n", "<C-h>", ":vert resize -5<CR>")
+vim.keymap.set("n", "<C-l>", ":vert resize +5<CR>")
 
 -- Move lines easily
-vmap("K", ":m '<-2<CR>gv=gv")
-vmap("J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
 -- Leave selection when moving code left and right
-vmap("<", "<gv")
-vmap(">", ">gv")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- Terminal
-tmap("<ESC>", "<C-\\><C-n>")
-nmap("Th", ":split | :term<CR>")
-nmap("Tv", ":vs | :term<CR>")
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
+vim.keymap.set("n", "Th", ":split | :term<CR>")
+vim.keymap.set("n", "Tv", ":vs | :term<CR>")
 
 -- Tabs
-nmap("H", ":tabprev<CR>")
-nmap("L", ":tabnext<CR>")
-nmap("tn", ":tabnew<CR>")
-nmap("tN", ":-tabnew<CR>")
-nmap("tc", ":lua require('user.tabs').close_tab()<CR>")
-nmap("tr", ":lua require('user.tabs').restore_tab()<CR>")
-nmap("<A-h>", ":-tabmove<CR>")
-nmap("<A-l>", ":+tabmove<CR>")
+vim.keymap.set("n", "H", ":tabprev<CR>")
+vim.keymap.set("n", "L", ":tabnext<CR>")
+vim.keymap.set("n", "tn", ":tabnew<CR>")
+vim.keymap.set("n", "tN", ":-tabnew<CR>")
+vim.keymap.set("n", "tc", function()
+  require("user.tabs").close_tab()
+end)
+vim.keymap.set("n", "tr", function()
+  require("user.tabs").restore_tab()
+end)
+vim.keymap.set("n", "<A-h>", ":-tabmove<CR>")
+vim.keymap.set("n", "<A-l>", ":+tabmove<CR>")
 
 -- Nvim Tree
-nmap("<leader><leader>", ":lua require('nvim-tree').toggle(true, false)<CR>")
+vim.keymap.set("n", "<leader><leader>", function()
+  require("nvim-tree").toggle(true, false)
+end)
 
 -- Telescope
-nmap("<leader>ff", ":lua require('telescope.builtin').find_files({ hidden = true })<CR>")
-nmap("<leader>fo", ":Telescope lsp_document_symbols<CR>")
-nmap("<leader>p", ":Telescope<CR>")
+vim.keymap.set("n", "<leader>ff", function()
+  require("telescope.builtin").find_files({ hidden = true })
+end)
+vim.keymap.set("n", "<leader>fo", function()
+  require("telescope.builtin").lsp_document_symbols()
+end)
+vim.keymap.set("n", "<leader>p", function()
+  require("telescope.builtin").builtin()
+end)
 
 -- LSP
-nmap("gd", ":lua vim.lsp.buf.definition()<CR>")
-nmap("gr", ":lua vim.lsp.buf.references()<CR>")
-nmap("K", ":lua vim.lsp.buf.hover()<CR>")
-nmap("<F2>", ":lua vim.lsp.buf.rename()<CR>")
-nmap("<leader>.", ":lua vim.lsp.buf.code_action()<CR>")
-vmap("<leader>.", ":lua vim.lsp.buf.range_code_action()<CR>")
+vim.keymap.set("n", "gd", function()
+  vim.lsp.buf.definition()
+end)
+vim.keymap.set("n", "gr", function()
+  vim.lsp.buf.references()
+end)
+vim.keymap.set("n", "K", function()
+  vim.lsp.buf.hover()
+end)
+vim.keymap.set("n", "<F2>", function()
+  vim.lsp.buf.rename()
+end)
+vim.keymap.set("n", "<leader>.", function()
+  vim.lsp.buf.code_action()
+end)
+vim.keymap.set("v", "<leader>.", function()
+  vim.lsp.buf.range_code_action()
+end)
 
 -- Diagnostics
-nmap("<leader>dd", ':lua vim.diagnostic.open_float(nil, {focus = false, scope = "line"})<CR>')
-nmap("<leader>dy", ":lua require('user.utils').copy_diagnostic_message()<CR>")
-nmap("<leader>dn", ":lua vim.diagnostic.goto_next({ float = false })<CR>")
-nmap("<leader>dp", ":lua vim.diagnostic.goto_prev({ float = false })<CR>")
-nmap("<leader>do", ":lopen<CR>")
+vim.keymap.set("n", "<leader>dd", function()
+  vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
+end)
+vim.keymap.set("n", "<leader>dy", function()
+  require("user.utils").copy_diagnostic_message()
+end)
+vim.keymap.set("n", "<leader>dn", function()
+  vim.diagnostic.goto_next({ float = false })
+end)
+vim.keymap.set("n", "<leader>dp", function()
+  vim.diagnostic.goto_prev({ float = false })
+end)
+vim.keymap.set("n", "<leader>do", ":lopen<CR>")
 
 -- Git
-nmap("<leader>gg", ":G<CR>")
+vim.keymap.set("n", "<leader>gg", ":G<CR>")
 
 -- Refactoring
-nmap("<leader>ri", ":lua require('user.utils').lsp_organize_imports()<CR>")
+vim.keymap.set("n", "<leader>ri", require("user.utils").lsp_organize_imports)
