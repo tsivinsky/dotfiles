@@ -2,6 +2,10 @@
 vim.keymap.set("n", "<C-c>", ":nohl<CR>")
 vim.keymap.set("n", "<C-q>", "<C-W>q")
 
+-- Horizontal moving in insert mode
+vim.keymap.set("i", "<C-h>", "<Left>")
+vim.keymap.set("i", "<C-l>", "<Right>")
+
 -- Disable PageUp and PageDown keys
 vim.keymap.set({ "n", "i", "v" }, "<PageDown>", "<nop>")
 vim.keymap.set({ "n", "i", "v" }, "<PageUp>", "<nop>")
