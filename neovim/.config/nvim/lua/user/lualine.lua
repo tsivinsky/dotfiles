@@ -1,4 +1,5 @@
 local lualine = require("lualine")
+local devicons = require("nvim-web-devicons")
 
 local mode = {
   "mode",
@@ -18,9 +19,15 @@ local diagnostics = {
 
 local filename = {
   function()
+    local filetype = vim.bo.filetype
     local filename = vim.fn.expand("%:t")
     local fileext = vim.fn.expand("%:e")
-    local icon = require("nvim-web-devicons").get_icon(filename, fileext)
+    local icon = devicons.get_icon(filename, fileext)
+
+    if filetype == "fugitive" then
+      icon = devicons.get_icons().git.icon
+      filename = "git"
+    end
 
     if not icon then
       return filename
