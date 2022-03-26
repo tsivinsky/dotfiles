@@ -37,7 +37,7 @@ opt.laststatus = 3
 opt.smartcase = true
 opt.ignorecase = true
 opt.scrolloff = 5
-opt.colorcolumn = "80"
+opt.colorcolumn = "120"
 
 -- if vim.fn.has("win32") == 1 then
 --   opt.shell = "powershell.exe"
