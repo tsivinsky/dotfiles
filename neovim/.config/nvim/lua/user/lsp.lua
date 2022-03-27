@@ -44,17 +44,22 @@ null_ls.setup({
     formatting.shfmt,
   },
   on_attach = function()
-    vim.cmd([[
-      augroup LspFormatting
-        autocmd! * <buffer>
-        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-      augroup END
-    ]])
+    local group = vim.api.nvim_create_augroup("NullLsLspFormatting", { clear = true })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*",
+      group = group,
+      callback = vim.lsp.buf.formatting_sync,
+    })
   end,
 })
 
 -- Other formats that work weird with null_ls
-vim.cmd([[autocmd BufWritePre *.svelte lua vim.lsp.buf.formatting_sync(nil, 1000)]])
+local group = vim.api.nvim_create_augroup("OtherLspFormatting", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.svelte" },
+  group = group,
+  callback = vim.lsp.buf.formatting_sync,
+})
 
 local completion_trigger = "<C-space>"
 if vim.fn.has("win32") == 1 then
