@@ -32,6 +32,8 @@ local function git_stage(node)
       args = { "add", relative_path },
     })
     :start()
+
+  require("nvim-tree.actions.reloaders").reload_explorer()
 end
 local function git_reset(node)
   local cwd = vim.loop.cwd()
@@ -43,6 +45,8 @@ local function git_reset(node)
       args = { "reset", relative_path },
     })
     :start()
+
+  require("nvim-tree.actions.reloaders").reload_explorer()
 end
 -- TODO: add here keymap for git diff window
 
