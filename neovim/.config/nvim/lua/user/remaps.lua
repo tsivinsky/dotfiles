@@ -57,11 +57,8 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", function()
+vim.keymap.set("n", "<leader>f", function()
   ts.find_files({ hidden = true })
-end)
-vim.keymap.set("n", "<leader>fo", function()
-  ts.lsp_document_symbols()
 end)
 vim.keymap.set("n", "<leader>p", function()
   ts.builtin()
