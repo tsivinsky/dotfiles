@@ -214,16 +214,6 @@ lsp_installer.on_server_ready(function(server)
   server:setup(opts)
 end)
 
--- Populate local quickfix list with diagnostics from lsp
--- Thanks to ThePrimeagen
--- https://www.youtube.com/watch?v=IoyW8XYGqjM
-vim.cmd([[
-augroup PopulateLocalListWithLsp
-autocmd!
-autocmd! BufWritePre,BufEnter,InsertLeave * :lua vim.diagnostic.setloclist({ open = false })
-augroup END
-]])
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   update_in_insert = false,
   signs = false,
