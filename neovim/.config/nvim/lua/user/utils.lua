@@ -1,15 +1,5 @@
 local M = {}
 
-M.list_includes_item = function(list, item)
-  for _, value in pairs(list) do
-    if value == item then
-      return true
-    end
-  end
-
-  return false
-end
-
 M.yank = function(message)
   if vim.fn.has("win32") == 1 then
     os.execute("echo '" .. message .. "' | win32yank -i")

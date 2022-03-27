@@ -1,7 +1,6 @@
 local lsp_installer = require("nvim-lsp-installer")
 local cmp = require("cmp")
 local null_ls = require("null-ls")
-local list_includes_item = require("user.utils").list_includes_item
 local util = require("lspconfig").util
 
 local kind_icons = {
@@ -141,7 +140,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local lsps_with_disabled_formatting = { "tsserver", "gopls", "jsonls", "html" }
 
 local on_attach = function(client, bufnr)
-  if list_includes_item(lsps_with_disabled_formatting, client.name) then
+  if vim.tbl_contains(lsps_with_disabled_formatting, client.name) then
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
   end
