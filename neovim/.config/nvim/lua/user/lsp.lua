@@ -151,11 +151,17 @@ local on_attach = function(client, bufnr)
   end
 
   if client.resolved_capabilities.document_highlight then
-    vim.cmd([[
-      autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
-      autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-    ]])
+    local lspReferencesAuGroup = vim.api.nvim_create_augroup("LspReferences", { clear = true })
+    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+      pattern = "*",
+      group = lspReferencesAuGroup,
+      callback = vim.lsp.buf.document_highlight,
+    })
+    vim.api.nvim_create_autocmd("CursorMoved", {
+      pattern = "*",
+      group = lspReferencesAuGroup,
+      callback = vim.lsp.buf.clear_references,
+    })
   end
 
   if client.name == "tailwindcss" then
