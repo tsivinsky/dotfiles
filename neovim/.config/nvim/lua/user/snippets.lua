@@ -22,6 +22,9 @@ ls.snippets = {
   typescriptreact = {
     clg_snippet,
   },
+  svelte = {
+    clg_snippet,
+  },
 }
 
 require("luasnip.loaders.from_vscode").load()
