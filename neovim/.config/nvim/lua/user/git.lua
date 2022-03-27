@@ -1,3 +1,6 @@
+local a = require("gitsigns.actions")
+local reload_nvimtree = require("nvim-tree.actions.reloaders").reload_explorer
+
 require("gitsigns").setup({
   signcolumn = true,
   attach_to_untracked = false,
@@ -9,15 +12,42 @@ require("gitsigns").setup({
     relative_time = true,
   },
   on_attach = function(bufnr)
-    vim.keymap.set("n", "<leader>gs", ":Gitsigns stage_hunk<CR>")
-    vim.keymap.set("n", "<leader>gu", ":Gitsigns undo_stage_hunk<CR>")
-    vim.keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>")
-    vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
-    vim.keymap.set("n", "<leader>gn", ":Gitsigns next_hunk<CR>")
-    vim.keymap.set("n", "<leader>gN", ":Gitsigns prev_hunk<CR>")
+    vim.keymap.set("n", "<leader>gs", function()
+      a.stage_hunk()
+      reload_nvimtree()
+    end)
+    vim.keymap.set("n", "<leader>gu", function()
+      a.undo_stage_hunk()
+      reload_nvimtree()
+    end)
+    vim.keymap.set("n", "<leader>gr", function()
+      a.reset_hunk()
+      reload_nvimtree()
+    end)
+    vim.keymap.set("n", "<leader>gp", function()
+      a.preview_hunk()
+      reload_nvimtree()
+    end)
+    vim.keymap.set("n", "<leader>gn", function()
+      a.next_hunk()
+      reload_nvimtree()
+    end)
+    vim.keymap.set("n", "<leader>gN", function()
+      a.prev_hunk()
+      reload_nvimtree()
+    end)
 
-    vim.keymap.set("v", "s", ":Gitsigns stage_hunk<CR>")
-    vim.keymap.set("v", "u", ":Gitsigns undo_stage_hunk<CR>")
-    vim.keymap.set("v", "r", ":Gitsigns reset_hunk<CR>")
+    vim.keymap.set("v", "gs", function()
+      a.stage_hunk()
+      reload_nvimtree()
+    end)
+    vim.keymap.set("v", "gu", function()
+      a.undo_stage_hunk()
+      reload_nvimtree()
+    end)
+    vim.keymap.set("v", "gr", function()
+      a.reset_hunk()
+      reload_nvimtree()
+    end)
   end,
 })
