@@ -86,6 +86,8 @@ cmp.setup({
       select = true,
       behavior = cmp.SelectBehavior.Insert,
     }),
+    ["<A-j>"] = cmp.mapping.scroll_docs(4),
+    ["<A-k>"] = cmp.mapping.scroll_docs(-4),
   },
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
