@@ -63,6 +63,9 @@ end)
 vim.keymap.set("n", "<leader>p", function()
   ts.builtin()
 end)
+vim.keymap.set("n", "<leader>b", function()
+  ts.buffers()
+end)
 
 -- LSP
 vim.keymap.set("n", "gd", function()
