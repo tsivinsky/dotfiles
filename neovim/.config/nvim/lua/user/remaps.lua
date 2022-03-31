@@ -1,4 +1,6 @@
 local ts = require("telescope.builtin")
+local u = require("user.utils")
+local git = require("user.git")
 
 -- General keymaps
 vim.keymap.set("n", "<C-c>", ":nohl<CR>")
@@ -92,7 +94,7 @@ vim.keymap.set("n", "<leader>dd", function()
   vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
 end)
 vim.keymap.set("n", "<leader>dy", function()
-  require("user.utils").copy_diagnostic_message()
+  u.copy_diagnostic_message()
 end)
 vim.keymap.set("n", "<leader>dn", function()
   vim.diagnostic.goto_next({ float = false })
@@ -105,10 +107,10 @@ vim.keymap.set("n", "<leader>do", ":lopen<CR>")
 -- Git
 vim.keymap.set("n", "<leader>gg", ":G<CR>")
 vim.keymap.set("n", "<leader>go", function()
-  require("user.utils").open_commit_on_github()
+  git.open_commit_on_github()
 end)
 
 -- Refactoring
 vim.keymap.set("n", "<leader>ri", function()
-  require("user.utils").lsp_organize_imports()
+  u.lsp_organize_imports()
 end)
