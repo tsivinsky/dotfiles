@@ -104,6 +104,9 @@ vim.keymap.set("n", "<leader>do", ":lopen<CR>")
 
 -- Git
 vim.keymap.set("n", "<leader>gg", ":G<CR>")
+vim.keymap.set("n", "<leader>go", function()
+  require("user.utils").open_commit_on_github()
+end)
 
 -- Refactoring
 vim.keymap.set("n", "<leader>ri", function()
