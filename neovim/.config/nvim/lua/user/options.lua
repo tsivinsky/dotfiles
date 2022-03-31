@@ -43,9 +43,3 @@ opt.autoread = true
 -- if vim.fn.has("win32") == 1 then
 --   opt.shell = "powershell.exe"
 -- end
-
--- Settings for folds
--- wo.foldmethod = "expr"
--- wo.foldexpr = "nvim_treesitter#foldexpr()"
--- wo.foldcolumn = "3"
--- wo.foldenable = false
