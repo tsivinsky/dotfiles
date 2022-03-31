@@ -43,20 +43,6 @@ local on_attach = function(client, bufnr)
     client.resolved_capabilities.document_range_formatting = false
   end
 
-  if client.resolved_capabilities.document_highlight then
-    local lspReferencesAuGroup = vim.api.nvim_create_augroup("LspReferences", { clear = true })
-    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-      pattern = "<buffer>",
-      group = lspReferencesAuGroup,
-      callback = vim.lsp.buf.document_highlight,
-    })
-    vim.api.nvim_create_autocmd("CursorMoved", {
-      pattern = "<buffer>",
-      group = lspReferencesAuGroup,
-      callback = vim.lsp.buf.clear_references,
-    })
-  end
-
   if client.name == "tailwindcss" then
     require("tailwindcss-colors").buf_attach(bufnr)
   end
