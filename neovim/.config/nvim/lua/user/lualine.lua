@@ -55,11 +55,28 @@ local tabstop = {
   end,
 }
 
+local tabs = {
+  "tabs",
+  mode = 1,
+}
+
+local windows = {
+  "windows",
+  disabled_buftypes = { "nofile" },
+  filetype_names = {
+    NvimTree = "File Tree",
+  },
+}
+
 lualine.setup({
   options = {
     component_separators = "",
     section_separators = "",
     globalstatus = true,
+  },
+  tabline = {
+    lualine_a = { tabs },
+    lualine_z = { windows },
   },
   sections = {
     lualine_a = { mode },
