@@ -52,13 +52,14 @@ M.lsp_organize_imports = function(bufnr, timeout)
 end
 
 M.open_url_in_browser = function(url)
-  -- TODO: implement windows support
+  local f
+
   if vim.fn.has("win32") == 1 then
-    print("windows not supported, sorry")
-    return
+    f = io.popen("explorer " .. url, "r")
+  else
+    f = io.popen("xdg-open " .. url, "r")
   end
 
-  local f = io.popen("xdg-open " .. url, "r")
   f:close()
 end
 
