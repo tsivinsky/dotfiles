@@ -60,27 +60,14 @@ lsp_installer.on_server_ready(function(server)
   }
 
   if server.name == "sumneko_lua" then
-    local runtime_path = vim.split(package.path, ";")
-    table.insert(runtime_path, "lua/?.lua")
-    table.insert(runtime_path, "lua/?/init/lua")
-
-    opts.settings = {
-      Lua = {
-        runtime = {
-          version = "LuaJIT",
-          path = runtime_path,
-        },
-        diagnostics = {
-          globals = { "vim" },
-        },
-        workspace = {
-          library = vim.api.nvim_get_runtime_file("", true),
-        },
-        telemetry = {
-          enable = false,
-        },
+    local luadev = require("lua-dev").setup({
+      lspconfig = {
+        capabilities = capabilities,
+        on_attach = on_attach,
       },
-    }
+    })
+
+    opts = luadev
   end
 
   if server.name == "jsonls" then

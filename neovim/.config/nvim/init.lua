@@ -23,6 +23,7 @@ require("packer").startup(function(use)
 
   use({ "nvim-lua/popup.nvim" })
   use({ "nvim-lua/plenary.nvim" })
+  use({ "folke/lua-dev.nvim" })
 
   -- Colorschemes go here
   use({ "folke/tokyonight.nvim" })
