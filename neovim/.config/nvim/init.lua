@@ -132,6 +132,13 @@ require("packer").startup(function(use)
 
   use({ "editorconfig/editorconfig-vim" })
 
+  use({
+    "rcarriga/nvim-notify",
+    config = function()
+      vim.notify = require("notify")
+    end,
+  })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
