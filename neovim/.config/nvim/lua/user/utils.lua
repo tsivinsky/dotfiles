@@ -9,28 +9,36 @@ M.yank = function(message)
   end
 end
 
-M.copy_diagnostic_message = function()
-  local diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
-
+--- @param diagnostics list
+--- @param prompt string
+--- @return string
+M.select_diagnostic = function(diagnostics, prompt)
   if #diagnostics == 0 then
-    print("No diagnostics to yank")
-    return
+    return ""
   end
 
   local message = ""
 
   if #diagnostics == 1 then
     message = diagnostics[1].message
-  elseif #diagnostics > 1 then
+  else
     local d = {}
     for _, diagnostic in ipairs(diagnostics) do
       table.insert(d, diagnostic.message)
     end
 
-    vim.ui.select(d, { prompt = "Pick a diagnostic to yank" }, function(item)
+    vim.ui.select(d, { prompt = prompt }, function(item)
       message = item
     end)
   end
+
+  return message
+end
+
+M.copy_diagnostic_message = function()
+  local diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
+
+  local message = M.select_diagnostic(diagnostics, "Pick a diagnostic to yank")
 
   M.yank(message)
 
