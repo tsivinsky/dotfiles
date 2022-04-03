@@ -86,4 +86,5 @@ lualine.setup({
     lualine_y = { filename },
     lualine_z = {},
   },
+  extensions = { "nvim-tree", "fugitive" },
 })
