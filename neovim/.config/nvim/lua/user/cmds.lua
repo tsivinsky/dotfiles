@@ -1,3 +1,3 @@
-vim.cmd([[
-command! OrganizeImports :lua require('user.utils').lsp_organize_imports()<CR>
-]])
+vim.api.nvim_add_user_command("OrganizeImports", function()
+  require("user.utils").lsp_organize_imports()
+end, {})
