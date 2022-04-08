@@ -5,10 +5,23 @@ msgId="991049"
 volume=$(pamixer --get-volume)
 mute=$(pamixer --get-mute)
 
+player_status=$(playerctl status)
+
+player_title=""
+player_artist=""
+
+if [[ "$player_status" == "Playing" ]]; then
+	player_title=$(playerctl metadata title)
+	player_artist=$(playerctl metadata artist)
+fi
+
 if [[ $volume == 0 || "$mute" == "true" ]]; then
-    # Show the sound muted notification
-    dunstify -a "notify-on-volume" -u low -r "$msgId" "Volume muted" 
+	dunstify -a "notify-on-volume" -u low -r "$msgId" "Volume muted"
 else
-    # Show the volume notification
-    dunstify -a "notify-on-volume" -u low -r "$msgId" -h int:value:"$volume" "Volume: ${volume}%"
+	body=""
+	if [[ "$player_title" != "" ]]; then
+		body="$player_artist - $player_title"
+	fi
+
+	dunstify -a "notify-on-volume" -u low -r "$msgId" -h int:value:"$volume" "Volume: ${volume}%" "$body"
 fi
