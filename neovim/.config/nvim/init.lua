@@ -146,6 +146,27 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup({
+        plugins = {
+          gitsigns = {
+            enabled = true,
+          },
+          kitty = {
+            enabled = true,
+            font = "+4",
+          },
+          twilight = {
+            enabled = true,
+          },
+        },
+      })
+    end,
+  })
+  use({ "folke/twilight.nvim" })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
