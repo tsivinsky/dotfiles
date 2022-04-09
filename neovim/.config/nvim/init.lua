@@ -139,6 +139,13 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "pwntester/octo.nvim",
+    config = function()
+      require("octo").setup()
+    end,
+  })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
