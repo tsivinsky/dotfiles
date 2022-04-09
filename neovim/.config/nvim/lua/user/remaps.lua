@@ -36,7 +36,7 @@ vim.keymap.set("v", ">", ">gv")
 
 -- Terminal
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
-vim.keymap.set("n", "Th", ":split | :term<CR>")
+vim.keymap.set("n", "Th", ":split | :term<CR> <C-W>J")
 vim.keymap.set("n", "Tv", ":vs | :term<CR>")
 
 -- Tabs
@@ -112,6 +112,7 @@ vim.keymap.set("n", "<leader>gg", ":G<CR>")
 vim.keymap.set("n", "<leader>go", function()
   git.open_commit_on_github()
 end)
+vim.keymap.set("n", "<leader>gh", ":Octo actions<CR>")
 
 -- Refactoring
 vim.keymap.set("n", "<leader>ri", function()
