@@ -15,3 +15,19 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.cmd(":checktime")
   end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  group = group,
+  callback = function()
+    local ft = vim.bo.filetype
+
+    if ft == "fugitive" then
+      vim.wo.colorcolumn = ""
+    end
+
+    if ft == "gitcommit" then
+      vim.wo.colorcolumn = "50"
+    end
+  end,
+})
