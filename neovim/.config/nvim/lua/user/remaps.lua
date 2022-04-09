@@ -36,7 +36,7 @@ vim.keymap.set("v", ">", ">gv")
 
 -- Terminal
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
-vim.keymap.set("n", "Th", ":split | :term<CR> <C-W>J")
+vim.keymap.set("n", "Th", ":split | :term<CR>")
 vim.keymap.set("n", "Tv", ":vs | :term<CR>")
 
 -- Tabs
