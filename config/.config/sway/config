@@ -126,8 +126,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym F8 exec pavucontrol
-
 bindsym $mod+equal exec swaymsg 'gaps inner current plus 10'
 bindsym $mod+minus exec swaymsg 'gaps inner current minus 10'
 
