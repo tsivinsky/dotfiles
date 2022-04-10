@@ -21,6 +21,7 @@ require("packer").startup(function(use)
 
   use({ "lewis6991/impatient.nvim" })
 
+  use({ "MunifTanjim/nui.nvim" })
   use({ "nvim-lua/popup.nvim" })
   use({ "nvim-lua/plenary.nvim" })
   use({ "folke/lua-dev.nvim" })
