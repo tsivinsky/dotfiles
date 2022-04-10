@@ -1,5 +1,6 @@
 local lualine = require("lualine")
 local devicons = require("nvim-web-devicons")
+local pkgInfo = require("package-info")
 
 local mode = {
   "mode",
@@ -55,6 +56,12 @@ local tabstop = {
   end,
 }
 
+local npm = {
+  function()
+    return pkgInfo.get_status()
+  end,
+}
+
 local tabs = {
   "tabs",
   mode = 1,
@@ -82,7 +89,7 @@ lualine.setup({
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics },
-    lualine_x = { tabstop, fileformat },
+    lualine_x = { npm, tabstop, fileformat },
     lualine_y = { filename },
     lualine_z = {},
   },

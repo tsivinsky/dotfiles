@@ -1,6 +1,7 @@
 local ts = require("telescope.builtin")
 local u = require("user.utils")
 local git = require("user.git")
+local pkgInfo = require("package-info")
 
 -- General keymaps
 vim.keymap.set("n", "<C-c>", ":nohl<CR>")
@@ -124,4 +125,24 @@ end)
 
 vim.keymap.set("n", "<leader>z", function()
   require("zen-mode").toggle()
+end)
+
+-- package-info
+vim.keymap.set("n", "<leader>ns", function()
+  pkgInfo.show()
+end)
+vim.keymap.set("n", "<leader>nh", function()
+  pkgInfo.hide()
+end)
+vim.keymap.set("n", "<leader>ni", function()
+  pkgInfo.install()
+end)
+vim.keymap.set("n", "<leader>nd", function()
+  pkgInfo.delete()
+end)
+vim.keymap.set("n", "<leader>nu", function()
+  pkgInfo.change_version()
+end)
+vim.keymap.set("n", "<leader>nr", function()
+  pkgInfo.reinstall()
 end)
