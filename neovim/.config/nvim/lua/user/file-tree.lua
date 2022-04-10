@@ -19,7 +19,6 @@ vim.g.nvim_tree_icons = {
 }
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_group_empty = 1
 
 local function git_stage(node)
@@ -73,6 +72,11 @@ require("nvim-tree").setup({
         { key = "l", action = "edit" },
         { key = "@", action = "cd" },
       },
+    },
+  },
+  renderer = {
+    indent_markers = {
+      enable = true,
     },
   },
   filters = {
