@@ -28,6 +28,9 @@ require("packer").startup(function(use)
   -- Colorschemes go here
   use({ "folke/tokyonight.nvim" })
   use({ "sainnhe/edge" })
+  use({ "pineapplegiant/spaceduck" })
+  use({ "sainnhe/gruvbox-material" })
+  use({ "nocksock/bloop-vim" })
 
   -- Make commenting code great
   use({ "numToStr/Comment.nvim" })

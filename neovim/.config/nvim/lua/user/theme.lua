@@ -3,6 +3,6 @@ vim.g.edge_better_performance = 1
 vim.g.tokyonight_style = "night"
 
 vim.cmd([[
-colorscheme tokyonight
+colorscheme bloop
 hi SpellBad guifg=red
 ]])
