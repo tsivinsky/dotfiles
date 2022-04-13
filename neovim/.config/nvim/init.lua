@@ -29,7 +29,6 @@ require("packer").startup(function(use)
   -- Colorschemes go here
   use({ "folke/tokyonight.nvim" })
   use({ "sainnhe/edge" })
-  use({ "pineapplegiant/spaceduck" })
   use({ "sainnhe/gruvbox-material" })
   use({ "nocksock/bloop-vim" })
 
@@ -149,27 +148,6 @@ require("packer").startup(function(use)
       require("octo").setup()
     end,
   })
-
-  use({
-    "folke/zen-mode.nvim",
-    config = function()
-      require("zen-mode").setup({
-        plugins = {
-          gitsigns = {
-            enabled = true,
-          },
-          kitty = {
-            enabled = true,
-            font = "+4",
-          },
-          twilight = {
-            enabled = true,
-          },
-        },
-      })
-    end,
-  })
-  use({ "folke/twilight.nvim" })
 
   use({
     "vuki656/package-info.nvim",

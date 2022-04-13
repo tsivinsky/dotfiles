@@ -123,10 +123,6 @@ vim.keymap.set("n", "<leader>rf", function()
   vim.lsp.buf.formatting_sync()
 end)
 
-vim.keymap.set("n", "<leader>z", function()
-  require("zen-mode").toggle()
-end)
-
 -- package-info
 vim.keymap.set("n", "<leader>ns", function()
   pkgInfo.show()
