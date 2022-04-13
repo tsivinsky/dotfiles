@@ -76,10 +76,9 @@ cmp.setup({
       cmp.config.compare.kind,
     },
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    zindex = 999,
-    format = { "markdown" },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   formatting = {
     format = function(entry, vim_item)
