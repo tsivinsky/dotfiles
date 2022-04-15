@@ -106,6 +106,10 @@ lsp_installer.on_server_ready(function(server)
     opts.root_dir = util.root_pattern(".git", "package.json", "tsconfig.json")
   end
 
+  if server.name == "eslint" then
+    opts.root_dir = util.root_pattern(".eslintrc", ".eslintrc.json")
+  end
+
   server:setup(opts)
 end)
 
