@@ -40,6 +40,7 @@ opt.scrolloff = 5
 opt.colorcolumn = "120"
 opt.autoread = true
 opt.showmode = false
+opt.redrawtime = 4000
 
 -- if vim.fn.has("win32") == 1 then
 --   opt.shell = "powershell.exe"
