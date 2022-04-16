@@ -80,7 +80,7 @@ require("nvim-tree").setup({
     },
   },
   filters = {
-    custom = { ".git" },
+    custom = { "^.git$" },
   },
   actions = {
     open_file = {
