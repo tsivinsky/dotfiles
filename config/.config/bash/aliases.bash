@@ -1,5 +1,12 @@
 #! /bin/bash
 
+mc() {
+	dir="$1"
+
+	mkdir -p $dir
+	cd $dir
+}
+
 declare -A aliases=(
 	["sudo"]="sudo "
 
