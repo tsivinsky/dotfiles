@@ -14,15 +14,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   })
 end
 
-local function safe_require(mod_name)
-  local ok, mod = pcall(require, mod_name)
-  if not ok then
-    return print("Error: " .. mod_name .. " didn't imported properly")
-  end
-
-  return mod
-end
-
 pcall(require, "impatient")
 
 require("packer").startup(function(use)
@@ -77,7 +68,7 @@ require("packer").startup(function(use)
     "themaxmarchuk/tailwindcss-colors.nvim",
     module = "tailwindcss-colors",
     config = function()
-      safe_require("tailwindcss-colors").setup()
+      require("tailwindcss-colors").setup()
     end,
   })
   use({ "b0o/SchemaStore.nvim" })
@@ -116,7 +107,7 @@ require("packer").startup(function(use)
   use({
     "folke/todo-comments.nvim",
     config = function()
-      safe_require("todo-comments").setup({
+      require("todo-comments").setup({
         signs = false,
       })
     end,
@@ -126,14 +117,14 @@ require("packer").startup(function(use)
   use({
     "norcalli/nvim-colorizer.lua",
     config = function()
-      safe_require("colorizer").setup({ "*" })
+      require("colorizer").setup({ "*" })
     end,
   })
 
   use({
     "lukas-reineke/indent-blankline.nvim",
     config = function()
-      safe_require("indent_blankline").setup({
+      require("indent_blankline").setup({
         space_char_blankline = " ",
         show_current_context = true,
       })
@@ -155,21 +146,21 @@ require("packer").startup(function(use)
   use({
     "pwntester/octo.nvim",
     config = function()
-      safe_require("octo").setup()
+      require("octo").setup()
     end,
   })
 
   use({
     "vuki656/package-info.nvim",
     config = function()
-      safe_require("package-info").setup()
+      require("package-info").setup()
     end,
   })
 
   use({
     "dstein64/nvim-scrollview",
     config = function()
-      safe_require("scrollview").setup({
+      require("scrollview").setup({
         excluded_filetypes = { "NvimTree" },
         current_only = true,
         winblend = 50,
@@ -189,20 +180,20 @@ vim.cmd([[
 
 vim.g.mapleader = " "
 
-safe_require("user.options")
-safe_require("user.theme")
+require("user.options")
+require("user.theme")
 
-safe_require("nvim-autopairs").setup({})
+require("nvim-autopairs").setup({})
 
-safe_require("user.file-tree")
-safe_require("user.treesitter")
-safe_require("user.telescope")
-safe_require("user.gitsigns")
-safe_require("user.comp")
-safe_require("user.lsp")
-safe_require("user.comment")
-safe_require("user.snippets")
-safe_require("user.lualine")
-safe_require("user.remaps")
-safe_require("user.cmds")
-safe_require("user.aus")
+require("user.file-tree")
+require("user.treesitter")
+require("user.telescope")
+require("user.gitsigns")
+require("user.comp")
+require("user.lsp")
+require("user.comment")
+require("user.snippets")
+require("user.lualine")
+require("user.remaps")
+require("user.cmds")
+require("user.aus")
