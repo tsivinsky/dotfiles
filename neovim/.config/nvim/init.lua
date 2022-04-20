@@ -53,6 +53,9 @@ require("packer").startup(function(use)
   -- File tree
   use({ "kyazdani42/nvim-tree.lua" })
 
+  -- Sidebar
+  use({ "sidebar-nvim/sidebar.nvim" })
+
   -- Treesitter for better syntax highlighting
   use({
     "nvim-treesitter/nvim-treesitter",
@@ -195,6 +198,7 @@ require("user.theme")
 require("nvim-autopairs").setup({})
 
 require("user.file-tree")
+require("user.sidebar")
 require("user.treesitter")
 require("user.telescope")
 require("user.gitsigns")
