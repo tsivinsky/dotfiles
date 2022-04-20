@@ -39,6 +39,7 @@ require("packer").startup(function(use)
       })
     end,
   })
+  use({ "rafi/awesome-vim-colorschemes" })
 
   -- Make commenting code great
   use({ "numToStr/Comment.nvim" })
