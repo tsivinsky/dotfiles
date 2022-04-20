@@ -1,5 +1,6 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
+local layout_actions = require("telescope.actions.layout")
 
 telescope.setup({
   defaults = {
@@ -12,11 +13,13 @@ telescope.setup({
         ["<C-d>"] = function(prompt_bufnr)
           actions.delete_buffer(prompt_bufnr)
         end,
+        ["<C-p>"] = layout_actions.toggle_preview,
       },
       n = {
         ["<C-d>"] = function(prompt_bufnr)
           actions.delete_buffer(prompt_bufnr)
         end,
+        ["<C-p>"] = layout_actions.toggle_preview,
       },
     },
   },
