@@ -31,6 +31,14 @@ require("packer").startup(function(use)
   use({ "sainnhe/edge" })
   use({ "sainnhe/gruvbox-material" })
   use({ "nocksock/bloop-vim" })
+  use({
+    "Yagua/nebulous.nvim",
+    config = function()
+      require("nebulous").setup({
+        variant = "fullmoon",
+      })
+    end,
+  })
 
   -- Make commenting code great
   use({ "numToStr/Comment.nvim" })
