@@ -27,19 +27,13 @@ require("packer").startup(function(use)
   use({ "folke/lua-dev.nvim" })
 
   -- Colorschemes go here
-  use({ "folke/tokyonight.nvim" })
-  use({ "sainnhe/edge" })
-  use({ "sainnhe/gruvbox-material" })
-  use({ "nocksock/bloop-vim" })
   use({
-    "Yagua/nebulous.nvim",
-    config = function()
-      require("nebulous").setup({
-        variant = "fullmoon",
-      })
-    end,
+    { "folke/tokyonight.nvim" },
+    { "nocksock/bloop-vim" },
+    { "sainnhe/edge" },
+    { "sainnhe/gruvbox-material" },
+    { "sainnhe/sonokai" },
   })
-  use({ "rafi/awesome-vim-colorschemes" })
 
   -- Make commenting code great
   use({ "numToStr/Comment.nvim" })
