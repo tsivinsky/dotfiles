@@ -63,7 +63,7 @@ require("nvim-tree").setup({
   view = {
     width = 30,
     side = "left",
-    auto_resize = true,
+    preserve_window_proportions = true,
     mappings = {
       list = {
         { key = "tn", action = "tabnew" },
