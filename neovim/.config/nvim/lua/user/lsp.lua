@@ -19,7 +19,9 @@ null_ls.setup({
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*",
       group = group,
-      callback = vim.lsp.buf.format,
+      callback = function()
+        vim.lsp.buf.format()
+      end,
     })
   end,
 })
@@ -29,7 +31,9 @@ local group = vim.api.nvim_create_augroup("OtherLspFormatting", { clear = true }
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.svelte" },
   group = group,
-  callback = vim.lsp.buf.format,
+  callback = function()
+    vim.lsp.buf.format()
+  end,
 })
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
