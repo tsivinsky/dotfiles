@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local ls = require("luasnip")
 
 local kind_icons = {
   Text = "",
@@ -36,7 +37,7 @@ end
 cmp.setup({
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body)
+      ls.lsp_expand(args.body)
     end,
   },
   mapping = {
@@ -55,6 +56,20 @@ cmp.setup({
     }),
     ["<A-j>"] = cmp.mapping.scroll_docs(4),
     ["<A-k>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-l>"] = cmp.mapping(function(fallback)
+      if ls.expand_or_jumpable() then
+        ls.expand_or_jump()
+      else
+        fallback()
+      end
+    end),
+    ["<C-h>"] = cmp.mapping(function(fallback)
+      if ls.jumpable(-1) then
+        ls.jump(-1)
+      else
+        fallback()
+      end
+    end),
   },
   sources = cmp.config.sources({
     { name = "nvim_lsp" },

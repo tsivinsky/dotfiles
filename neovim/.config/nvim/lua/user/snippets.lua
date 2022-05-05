@@ -2,29 +2,19 @@ local ls = require("luasnip")
 local s, i = ls.s, ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 
-local clg_snippet = s(
+-- NOTE: this is not working right now, i need to RTFM
+ls.filetype_extend("javascript", { "javascriptreact", "javascript.jsx" })
+ls.filetype_extend("typescript", { "typescriptreact", "typescript.jsx" })
+
+local clg = s(
   "clg",
   fmt([[console.log({});]], {
     i(0),
   })
 )
 
-ls.snippets = {
-  javascript = {
-    clg_snippet,
-  },
-  typescript = {
-    clg_snippet,
-  },
-  javascriptreact = {
-    clg_snippet,
-  },
-  typescriptreact = {
-    clg_snippet,
-  },
-  svelte = {
-    clg_snippet,
-  },
-}
+ls.add_snippets("javascript", { clg })
+ls.add_snippets("typescript", { clg })
+ls.add_snippets("svelte", { clg })
 
 require("luasnip.loaders.from_vscode").load()
