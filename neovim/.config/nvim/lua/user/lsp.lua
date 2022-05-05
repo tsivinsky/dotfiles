@@ -39,8 +39,8 @@ local lsps_with_disabled_formatting = { "tsserver", "gopls", "jsonls", "html", "
 
 local on_attach = function(client, bufnr)
   if vim.tbl_contains(lsps_with_disabled_formatting, client.name) then
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_range_formatting = false
   end
 
   if client.name == "tailwindcss" then
