@@ -123,7 +123,7 @@ vim.keymap.set("n", "<leader>ri", function()
   u.lsp_organize_imports()
 end)
 vim.keymap.set("n", "<leader>rf", function()
-  vim.lsp.buf.formatting_sync()
+  vim.lsp.buf.format()
 end)
 
 -- package-info
