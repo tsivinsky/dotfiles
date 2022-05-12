@@ -7,10 +7,6 @@ local pkgInfo = require("package-info")
 vim.keymap.set("n", "<C-c>", ":nohl<CR>")
 vim.keymap.set("n", "<C-q>", "<C-W>q")
 
-vim.keymap.set("n", "<leader>cr", function()
-  require("nebulous.functions").toggle_variant()
-end)
-
 -- Horizontal moving in insert mode
 vim.keymap.set("i", "<C-h>", "<Left>")
 vim.keymap.set("i", "<C-l>", "<Right>")
