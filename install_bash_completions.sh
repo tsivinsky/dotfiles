@@ -24,3 +24,5 @@ __install_bash_completions() {
 		fi
 	done
 }
+
+__install_bash_completions
