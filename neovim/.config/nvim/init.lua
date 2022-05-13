@@ -160,17 +160,6 @@ require("packer").startup(function(use)
     end,
   })
 
-  use({
-    "dstein64/nvim-scrollview",
-    config = function()
-      require("scrollview").setup({
-        excluded_filetypes = { "NvimTree" },
-        current_only = true,
-        winblend = 50,
-      })
-    end,
-  })
-
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
