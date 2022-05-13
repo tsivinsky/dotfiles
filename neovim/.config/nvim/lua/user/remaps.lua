@@ -56,11 +56,6 @@ vim.keymap.set("n", "<leader><leader>", function()
   require("nvim-tree").toggle(true, false)
 end)
 
--- Sidebar
-vim.keymap.set("n", "<leader>s", function()
-  require("sidebar-nvim").toggle()
-end)
-
 -- Telescope
 vim.keymap.set("n", "<leader>f", function()
   ts.find_files({ hidden = true })
