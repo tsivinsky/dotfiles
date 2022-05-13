@@ -84,6 +84,10 @@ for _, server in ipairs(servers) do
     on_attach = on_attach,
   }
 
+  if server.name == "tailwindcss" then
+    opts.root_dir = util.root_pattern("tailwind.config.js", "tailwind.config.cjs", "tailwind.config.mjs")
+  end
+
   if server.name == "sumneko_lua" then
     local luadev = require("lua-dev").setup({
       lspconfig = {
