@@ -20,6 +20,8 @@ lsp_installer.setup({
     "prismals",
     "sumneko_lua",
     "svelte",
+    "emmet_ls",
+    "eslint",
   },
   automatic_installation = true,
 })
@@ -83,6 +85,10 @@ for _, server in ipairs(servers) do
     capabilities = capabilities,
     on_attach = on_attach,
   }
+
+  if server.name == "emmet_ls" then
+    opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact" }
+  end
 
   if server.name == "tailwindcss" then
     opts.root_dir = util.root_pattern("tailwind.config.js", "tailwind.config.cjs", "tailwind.config.mjs")
