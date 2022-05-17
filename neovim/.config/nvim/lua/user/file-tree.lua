@@ -59,6 +59,7 @@ require("nvim-tree").setup({
   open_on_tab = false,
   update_cwd = true,
   auto_reload_on_write = true,
+  reload_on_bufenter = true,
   update_focused_file = {
     enable = true,
   },
