@@ -62,6 +62,17 @@ local npm = {
   end,
 }
 
+local location = {
+  function()
+    local line = vim.fn.line(".")
+    local total_lines = vim.api.nvim_buf_line_count(0)
+
+    local percent = math.floor(line / total_lines * 100)
+
+    return line .. "/" .. total_lines .. " (" .. percent .. "%%)"
+  end,
+}
+
 local tabs = {
   "tabs",
   mode = 1,
@@ -89,7 +100,7 @@ lualine.setup({
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics },
-    lualine_x = { npm, tabstop, fileformat },
+    lualine_x = { npm, location, tabstop, fileformat },
     lualine_y = { filename },
     lualine_z = {},
   },

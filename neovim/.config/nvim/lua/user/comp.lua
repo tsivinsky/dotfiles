@@ -1,6 +1,8 @@
 local cmp = require("cmp")
 local ls = require("luasnip")
 
+require("cmp_git").setup()
+
 local kind_icons = {
   Text = "",
   Method = "",
@@ -128,7 +130,7 @@ cmp.setup.cmdline(":", {
 
 cmp.setup.filetype("gitcommit", {
   sources = cmp.config.sources({
-    { name = "cmp_git" },
+    { name = "git" },
   }, {
     { name = "buffer" },
   }),

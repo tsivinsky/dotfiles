@@ -1,9 +1,30 @@
 local lsp_installer = require("nvim-lsp-installer")
+local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
 local util = require("lspconfig").util
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+
+lsp_installer.setup({
+  ensure_installed = {
+    "bashls",
+    "cssmodules_ls",
+    "dockerls",
+    "tailwindcss",
+    "tsserver",
+    "vimls",
+    "cssls",
+    "html",
+    "jsonls",
+    "prismals",
+    "sumneko_lua",
+    "svelte",
+    "emmet_ls",
+    "eslint",
+  },
+  automatic_installation = true,
+})
 
 null_ls.setup({
   sources = {
@@ -57,11 +78,21 @@ local on_attach = function(client, bufnr)
   }, bufnr)
 end
 
-lsp_installer.on_server_ready(function(server)
+local servers = lsp_installer.get_installed_servers()
+
+for _, server in ipairs(servers) do
   local opts = {
     capabilities = capabilities,
     on_attach = on_attach,
   }
+
+  if server.name == "emmet_ls" then
+    opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact" }
+  end
+
+  if server.name == "tailwindcss" then
+    opts.root_dir = util.root_pattern("tailwind.config.js", "tailwind.config.cjs", "tailwind.config.mjs")
+  end
 
   if server.name == "sumneko_lua" then
     local luadev = require("lua-dev").setup({
@@ -114,8 +145,8 @@ lsp_installer.on_server_ready(function(server)
     opts.root_dir = util.root_pattern(".eslintrc", ".eslintrc.json")
   end
 
-  server:setup(opts)
-end)
+  lspconfig[server.name].setup(opts)
+end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   update_in_insert = false,
