@@ -17,11 +17,16 @@ declare -A aliases=(
 	["ll"]="ls -l"
 	["ed"]="$EDITOR"
 	["c"]="clear"
-	["t"]="tmux"
 	["pacman"]="pacman --color auto"
 	["yay"]="yay --color auto"
 	["q"]="exit"
 	["tree"]="tree -C"
+
+	# Tmux
+	["t"]="tmux"
+	["tl"]="tmux ls"
+	["ta"]="tmux attach"
+	["tn"]="tmux new-session"
 
 	# Git
 	["g"]="git"
