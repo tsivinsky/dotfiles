@@ -73,6 +73,10 @@ local location = {
   end,
 }
 
+local diff = {
+  "diff",
+}
+
 local tabs = {
   "tabs",
   mode = 1,
@@ -100,7 +104,7 @@ lualine.setup({
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics },
-    lualine_x = { npm, location, tabstop, fileformat },
+    lualine_x = { npm, diff, location, tabstop, fileformat },
     lualine_y = { filename },
     lualine_z = {},
   },
