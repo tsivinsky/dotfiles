@@ -1,26 +1,5 @@
 local Job = require("plenary.job")
 
-vim.g.nvim_tree_show_icons = {
-  git = 1,
-  files = 1,
-  folders = 1,
-}
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    unstaged = "U",
-    staged = "S",
-    unmerged = "M",
-    renamed = "R",
-    untracked = "N",
-    deleted = "D",
-  },
-}
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_group_empty = 1
-
 local function git_stage(node)
   local cwd = vim.loop.cwd()
   local relative_path = string.gsub(node.absolute_path, cwd .. "/", "")
@@ -78,8 +57,30 @@ require("nvim-tree").setup({
     },
   },
   renderer = {
+    add_trailing = true,
+    group_empty = true,
+    highlight_git = true,
     indent_markers = {
       enable = true,
+    },
+    icons = {
+      show = {
+        git = true,
+        file = true,
+        folder = true,
+      },
+      glyphs = {
+        default = "",
+        symlink = "",
+        git = {
+          unstaged = "U",
+          staged = "S",
+          unmerged = "M",
+          renamed = "R",
+          untracked = "N",
+          deleted = "D",
+        },
+      },
     },
   },
   filters = {
