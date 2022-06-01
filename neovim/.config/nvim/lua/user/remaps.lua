@@ -76,6 +76,8 @@ vim.keymap.set("n", "gr", function()
 end)
 vim.keymap.set("n", "K", function()
   vim.lsp.buf.hover()
+  -- TODO: find another solution
+  require("notify").dismiss()
 end)
 vim.keymap.set("n", "<F2>", function()
   vim.lsp.buf.rename()
