@@ -9,3 +9,7 @@ vim.api.nvim_create_user_command("GitShowCommit", function()
 
   vim.cmd(":Git show " .. commit)
 end, {})
+
+vim.api.nvim_create_user_command("ClearMessages", function()
+  require("notify").dismiss()
+end, {})
