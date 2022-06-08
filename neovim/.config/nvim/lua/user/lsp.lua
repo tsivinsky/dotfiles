@@ -2,6 +2,7 @@ local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
 local util = require("lspconfig").util
+local u = require("user.utils")
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
@@ -41,7 +42,7 @@ null_ls.setup({
       pattern = "*",
       group = group,
       callback = function()
-        vim.lsp.buf.format()
+        u.lsp_format()
       end,
     })
   end,

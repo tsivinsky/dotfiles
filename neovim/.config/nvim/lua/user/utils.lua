@@ -71,4 +71,19 @@ M.open_url_in_browser = function(url)
   f:close()
 end
 
+function M.lsp_format(bufnr)
+  bufnr = bufnr or 0
+
+  vim.lsp.buf.format({
+    filter = function(client)
+      if client.name == "tsserver" then
+        return false
+      end
+
+      return true
+    end,
+    bufnr = bufnr,
+  })
+end
+
 return M
