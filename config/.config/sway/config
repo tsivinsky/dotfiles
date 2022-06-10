@@ -37,6 +37,8 @@ set $textColor #cbccc6
 set $mainMonitor "HDMI-A-1"
 set $laptopMonitor "eDP-1"
 
+set $lockCmd "swaylock"
+
 
 #   ____ _____ _   _ _____ ____      _    _     
 #  / ___| ____| \ | | ____|  _ \    / \  | |    
@@ -73,6 +75,9 @@ workspace "$ws2" output $mainMonitor
 output $laptopMonitor pos 0 0
 output $mainMonitor pos 1920 0 mode 1920x1080@144Hz
 
+
+# idle and lock
+exec_always swayidle before-sleep $lockCmd
 
 
 
