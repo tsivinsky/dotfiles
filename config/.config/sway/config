@@ -34,6 +34,9 @@ set $br #ffa759
 set $brbug #FF0000
 set $textColor #cbccc6
 
+set $mainMonitor "HDMI-A-1"
+set $laptopMonitor "eDP-1"
+
 
 #   ____ _____ _   _ _____ ____      _    _     
 #  / ___| ____| \ | | ____|  _ \    / \  | |    
@@ -58,11 +61,11 @@ input * {
   xkb_options "grp:win_space_toggle"
 }
 
-workspace "$ws1" output DVI-I-1
-workspace "$ws2" output VGA-1
+workspace "$ws1" output $laptopMonitor
+workspace "$ws2" output $mainMonitor
 
-output VGA-1 pos 0 0
-output DVI-I-1 pos 1920 0
+output $laptopMonitor pos 0 0
+output $mainMonitor pos 1920 0 mode 1920x1080@144Hz
 
 
 
@@ -125,6 +128,11 @@ bindsym XF86AudioMute exec --no-startup-id pamixer -t
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# brightness
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 
 bindsym $mod+equal exec swaymsg 'gaps inner current plus 10'
 bindsym $mod+minus exec swaymsg 'gaps inner current minus 10'
