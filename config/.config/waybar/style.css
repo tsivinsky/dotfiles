@@ -42,6 +42,8 @@ window#waybar {
 #pulseaudio,
 #language,
 #network,
+#upower,
+#backlight,
 #clock {
   margin: 8px;
 }

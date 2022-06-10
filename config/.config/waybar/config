@@ -9,6 +9,8 @@
     "pulseaudio",
     "sway/language",
     "network",
+    "backlight",
+    "upower",
     "clock"
   ],
   "sway/workspaces": {
@@ -33,6 +35,12 @@
       ""
     ],
     "format-disconnected": "No network",
+    "tooltip": false
+  },
+  "backlight": {
+    "tooltip": false
+  },
+  "upower": {
     "tooltip": false
   },
   "clock": {
