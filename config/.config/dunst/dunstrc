@@ -63,3 +63,7 @@ frame_color = "#ff3333"
 [volume]
 appname = "notify-on-volume"
 history_ignore=yes
+
+[microphone]
+appname = "microphone-is-muted"
+history_ignore=yes

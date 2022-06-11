@@ -143,13 +143,13 @@ exec_always --no-startup-id $HOME/dotfiles/bin/set-wallpaper --restore
 #                                                            
 
 # Bind media keys on a keyboard to control volume and playback
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 && $HOME/dotfiles/bin/notify-on-volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 && $HOME/dotfiles/bin/notify-on-volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --allow-boost -i 5 && $HOME/dotfiles/bin/notify-on-volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --allow-boost -d 5 && $HOME/dotfiles/bin/notify-on-volume
 bindsym XF86AudioMute exec --no-startup-id pamixer -t
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioMicMute exec $HOME/dotfiles/bin/toggle-mic-mute.sh
 
 # brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
