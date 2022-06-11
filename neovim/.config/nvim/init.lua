@@ -161,8 +161,6 @@ require("packer").startup(function(use)
     end,
   })
 
-  use({ "wakatime/vim-wakatime" })
-
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
