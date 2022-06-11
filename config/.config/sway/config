@@ -67,6 +67,10 @@ input type:touchpad {
   natural_scroll enabled
   tap enabled
   tap_button_map "lrm"
+  drag enabled
+  events enabled
+  pointer_accel 0.3
+  scroll_factor 0.3
 }
 
 workspace "$ws1" output $laptopMonitor
