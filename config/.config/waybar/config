@@ -7,6 +7,7 @@
   "modules-right": [
     "tray",
     "pulseaudio",
+    "custom/mic-state",
     "sway/language",
     "network",
     "backlight",
@@ -25,6 +26,16 @@
     "tooltip": false,
     "format-muted": "MUTE",
     "on-click": "pavucontrol"
+  },
+  "custom/mic-state": {
+    "exec": "~/dotfiles/bin/mic-state.sh",
+    "format": "{icon}",
+    "return-type": "json",
+    "restart-interval": 0,
+    "format-icons": {
+      "yes": "",
+      "no": ""
+    }
   },
   "sway/language": {
     "tooltip": false

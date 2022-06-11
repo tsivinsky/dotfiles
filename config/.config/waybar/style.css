@@ -34,12 +34,14 @@ window#waybar {
   margin-left: 10px;
 }
 
-#network {
+#network,
+#custom-mic-state {
   font-family: "Font Awesome 6 Free Solid";
 }
 
 #tray,
 #pulseaudio,
+#custom-mic-state,
 #language,
 #network,
 #upower,
