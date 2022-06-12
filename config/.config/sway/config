@@ -85,6 +85,9 @@ output $mainMonitor {
   adaptive_sync on
 }
 
+bindswitch --reload --locked lid:on output $laptopMonitor disable
+bindswitch --reload --locked lid:off output $laptopMonitor enable
+
 
 # idle and lock
 exec_always swayidle before-sleep $lockCmd
