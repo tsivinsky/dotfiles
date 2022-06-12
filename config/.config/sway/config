@@ -71,6 +71,8 @@ input type:touchpad {
   scroll_factor 0.3
 }
 
+seat seat0 hide_cursor when-typing enable
+
 workspace "$ws1" output $laptopMonitor
 workspace "$ws2" output $mainMonitor
 
