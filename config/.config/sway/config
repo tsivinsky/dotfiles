@@ -37,8 +37,6 @@ set $textColor #cbccc6
 set $mainMonitor "HDMI-A-1"
 set $laptopMonitor "eDP-1"
 
-set $lockCmd "swaylock"
-
 
 #   ____ _____ _   _ _____ ____      _    _     
 #  / ___| ____| \ | | ____|  _ \    / \  | |    
@@ -89,9 +87,6 @@ bindswitch --reload --locked lid:on output $laptopMonitor disable
 bindswitch --reload --locked lid:off output $laptopMonitor enable
 
 
-# idle and lock
-exec_always swayidle before-sleep $lockCmd
-
 
 
 #     _    ____  ____  _     ___ ____    _  _____ ___ ___  _   _ ____  
@@ -135,6 +130,7 @@ exec_always --no-startup-id xrdb -load $HOME/.Xresources
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
 exec_always --no-startup-id dunst
 exec_always --no-startup-id $HOME/dotfiles/bin/set-wallpaper --restore
+exec_always --no-startup-id $HOME/dotfiles/bin/swayidle.sh
 
 
 
