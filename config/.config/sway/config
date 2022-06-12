@@ -58,9 +58,10 @@ xwayland enable
 client.focused          $br     $br     $textColor     $brbug       $br
 
 # Keyboard layout
-input * {
+input type:keyboard {
   xkb_layout "us,ru"
   xkb_options "grp:win_space_toggle"
+  xkb_options "caps:escape"
 }
 
 input type:touchpad {
