@@ -105,6 +105,7 @@ cmp.setup({
         luasnip = "[Snippet]",
         nvim_lua = "[Lua]",
         path = "[File]",
+        nvim_lsp = "[LSP]",
       })[entry.source.name]
 
       return vim_item
