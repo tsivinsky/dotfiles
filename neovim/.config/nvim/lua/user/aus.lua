@@ -28,6 +28,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
     if ft == "gitcommit" then
       vim.wo.colorcolumn = "50"
+      vim.cmd("setlocal spell")
     end
   end,
 })
