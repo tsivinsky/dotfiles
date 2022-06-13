@@ -31,3 +31,11 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  group = group,
+  callback = function()
+    vim.cmd(":silent :!goimports -w %")
+  end,
+})
