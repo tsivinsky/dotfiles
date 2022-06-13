@@ -131,6 +131,7 @@ exec_always --no-startup-id dunst
 exec_always --no-startup-id $HOME/dotfiles/bin/set-wallpaper --restore
 exec_always --no-startup-id $HOME/dotfiles/bin/swayidle.sh
 exec_always --no-startup-id libinput-gestures-setup restart
+exec_always --no-startup-id $HOME/dotfiles/bin/initial-mic-state.sh
 
 
 
