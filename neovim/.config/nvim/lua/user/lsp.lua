@@ -23,6 +23,7 @@ lsp_installer.setup({
     "svelte",
     "emmet_ls",
     "eslint",
+    "gopls",
   },
   automatic_installation = true,
 })
