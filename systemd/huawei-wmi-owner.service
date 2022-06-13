@@ -1,0 +1,10 @@
+[Unit]
+Description=Huawei WMI Privilege (other)
+After=sys-devices-platform-huawei\x2dwmi.device
+
+[Service]
+Type=oneshot
+ExecStart=/home/daniil/dotfiles/bin/chown-huawei-wmi.sh
+
+[Install]
+WantedBy=sys-devices-platform-huawei\x2dwmi.device
