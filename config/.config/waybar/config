@@ -32,7 +32,7 @@
   "network": {
     "format": "{icon}",
     "format-icons": [
-      ""
+      ""
     ],
     "format-disconnected": "No network",
     "tooltip": false
