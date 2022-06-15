@@ -2,6 +2,8 @@
 
 killall swayidle
 
-cmd="swaylock"
+cmd="$HOME/dotfiles/bin/swaylock.sh"
 
-swayidle before-sleep $cmd after-resume "swaymsg seat seat0 cursor set 300 300"
+afterResumeCmd="swaymsg seat seat0 cursor set 300 300"
+
+swayidle before-sleep "$cmd" after-resume "$afterResumeCmd"

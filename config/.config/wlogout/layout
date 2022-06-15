@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "$HOME/dotfiles/bin/swaylock.sh",
     "text" : "Lock",
     "keybind" : "l"
 }
