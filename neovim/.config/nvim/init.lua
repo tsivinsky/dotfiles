@@ -29,7 +29,6 @@ require("packer").startup(function(use)
   -- Colorschemes go here
   use({
     { "folke/tokyonight.nvim" },
-    { "nocksock/bloop-vim" },
     { "sainnhe/edge" },
     { "sainnhe/gruvbox-material" },
     { "sainnhe/sonokai" },
