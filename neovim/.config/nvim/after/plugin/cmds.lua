@@ -1,4 +1,4 @@
-local git = require("user.git")
+local git = require("daniil.git")
 
 vim.api.nvim_create_user_command("OrganizeImports", function()
   require("user.utils").lsp_organize_imports()

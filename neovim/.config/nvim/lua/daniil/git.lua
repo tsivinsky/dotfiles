@@ -1,4 +1,4 @@
-local u = require("user.utils")
+local u = require("daniil.utils")
 
 local git = {}
 
