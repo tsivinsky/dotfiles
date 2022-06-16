@@ -180,28 +180,7 @@ require("packer").startup(function(use)
   end
 end)
 
-vim.cmd([[
-  hi IndentBlanklineChar guifg=#373737 guibg=none gui=none
-  hi IndentBlanklineContextChar guifg=#808080 guibg=none gui=none
-]])
-
 vim.g.mapleader = " "
-
-require("user.options")
-require("user.theme")
+vim.opt.termguicolors = true
 
 require("nvim-autopairs").setup({})
-
-require("user.file-tree")
-require("user.treesitter")
-require("user.telescope")
-require("user.gitsigns")
-require("user.comp")
-require("user.lsp")
-require("user.comment")
-require("user.snippets")
-require("user.lualine")
-require("user.session")
-require("user.remaps")
-require("user.cmds")
-require("user.aus")
