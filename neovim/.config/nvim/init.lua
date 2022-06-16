@@ -28,8 +28,6 @@ require("packer").startup(function(use)
 
   -- Colorschemes go here
   use({
-    { "folke/tokyonight.nvim" },
-    { "sainnhe/edge" },
     { "sainnhe/gruvbox-material" },
     { "sainnhe/sonokai" },
   })
@@ -105,16 +103,6 @@ require("packer").startup(function(use)
   -- Statusline
   use({ "nvim-lualine/lualine.nvim" })
 
-  -- Highlight todo comments
-  use({
-    "folke/todo-comments.nvim",
-    config = function()
-      require("todo-comments").setup({
-        signs = false,
-      })
-    end,
-  })
-
   -- Highlight colors
   use({
     "norcalli/nvim-colorizer.lua",
@@ -133,7 +121,6 @@ require("packer").startup(function(use)
     end,
   })
 
-  -- Markdown preview
   use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
 
   use({ "editorconfig/editorconfig-vim" })
@@ -143,13 +130,6 @@ require("packer").startup(function(use)
     config = function()
       require("notify").setup({})
       vim.notify = require("notify")
-    end,
-  })
-
-  use({
-    "pwntester/octo.nvim",
-    config = function()
-      require("octo").setup()
     end,
   })
 
