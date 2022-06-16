@@ -13,11 +13,15 @@ export HISTSIZE=10000
 export GO111MODULE=auto
 export GOBIN="$HOME/go/bin"
 
+# Android stuff
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+
 MY_BIN="$DOTFILES/bin"
 RUST_BIN="$HOME/.cargo/bin"
 PYTHON_BIN="$HOME/.local/bin"
+ANDROID_BIN="$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools"
 
-export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUST_BIN:$GOBIN"
+export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUST_BIN:$GOBIN:$ANDROID_BIN"
 
 # Source bash completions
 source $HOME/.config/bash-completions/*
