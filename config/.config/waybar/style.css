@@ -25,13 +25,14 @@ window#waybar {
   background: @primary;
 }
 
-#mode {
+/* left modules */
+#mode,
+#window,
+#custom-player {
   margin-left: 10px;
-  color: @primary;
 }
-
-#window {
-  margin-left: 10px;
+#mode {
+  color: @primary;
 }
 
 #network {
