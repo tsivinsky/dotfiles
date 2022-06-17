@@ -69,6 +69,7 @@ input type:touchpad {
   events enabled
   pointer_accel 0.3
   scroll_factor 0.3
+  dwt disabled
 }
 
 workspace "$ws1" output $laptopMonitor
