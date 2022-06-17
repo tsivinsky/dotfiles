@@ -237,6 +237,10 @@ bindsym --to-code {
   $mod+z floating toggle
 
   $mod+r mode "resize"
+
+  # scratchpad
+  $mod+minus scratchpad show
+  $mod+Shift+minus move scratchpad
 }
 
 ### Resize mode
