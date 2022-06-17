@@ -11,11 +11,11 @@ if [[ "$state" == "0" ]]; then
 	pactl set-source-mute @DEFAULT_SOURCE@ 0
 	dunstify -a "$appName" -u low -t 1000 -r "$id" "Actived microphone" "It's not muted now"
 
-	echo "0" >/sys/devices/platform/huawei-wmi/leds/platform::micmute/brightness
+	brightnessctl -d "platform::micmute" s 0
 else
 	# mic is not muted
 	pactl set-source-mute @DEFAULT_SOURCE@ 1
 	dunstify -a "$appName" -u low -t 1000 -r "$id" "Disabled microphone" "It's muted now"
 
-	echo "1" >/sys/devices/platform/huawei-wmi/leds/platform::micmute/brightness
+	brightnessctl -d "platform::micmute" s 1
 fi
