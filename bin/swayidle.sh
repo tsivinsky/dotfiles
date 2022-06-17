@@ -2,7 +2,7 @@
 
 killall swayidle
 
-cmd="$HOME/dotfiles/bin/swaylock.sh"
+cmd="$DOTFILES/bin/lock.sh"
 
 afterResumeCmd="swaymsg seat seat0 cursor set 300 300"
 
