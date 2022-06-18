@@ -126,9 +126,10 @@ for_window [class="feh"] {
 #  / ___ \ |_| | | || |_| |___) || |/ ___ \|  _ < | |  
 # /_/   \_\___/  |_| \___/|____/ |_/_/   \_\_| \_\|_|  
 #
+exec --no-startup-id swaync
+exec_always --no-startup-id swaync-client -R
 exec_always --no-startup-id xrdb -load $HOME/.Xresources
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
-exec_always --no-startup-id dunst
 exec_always --no-startup-id $HOME/dotfiles/bin/set-wallpaper --restore
 exec_always --no-startup-id $HOME/dotfiles/bin/swayidle.sh
 exec_always --no-startup-id libinput-gestures-setup restart
@@ -162,6 +163,9 @@ bindsym --to-code {
 
   # terminal
   $mod+Return exec $term
+
+  # swaync
+  $mod+Shift+n exec swaync-client -t -sw
 
   # Kill focused window
   $mod+Shift+q kill
