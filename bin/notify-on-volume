@@ -23,5 +23,5 @@ else
 		body="$player_artist - $player_title"
 	fi
 
-	dunstify -a "notify-on-volume" -u low -r "$msgId" -h int:value:"$volume" "Volume: ${volume}%" "$body"
+	echo "$volume" >$XDG_RUNTIME_DIR/wob.sock
 fi
