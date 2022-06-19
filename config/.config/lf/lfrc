@@ -16,10 +16,6 @@ cmd mkdir ${{
   mkdir -p "$1"
 }}
 
-cmd set-wallpaper ${{
-  set-wallpaper "./$1" &> /dev/null
-}}
-
 ### Mappings
 map <enter> toggle
 map <space> toggle
