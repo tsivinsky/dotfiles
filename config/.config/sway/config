@@ -86,8 +86,8 @@ output $mainMonitor {
   mode 1920x1080@144Hz
 }
 
-bindswitch --reload --locked lid:on output $laptopMonitor disable
-bindswitch --reload --locked lid:off output $laptopMonitor enable
+bindswitch --reload --locked lid:on output $laptopMonitor dkms off
+bindswitch --reload --locked lid:off output $laptopMonitor dkms on
 
 
 
