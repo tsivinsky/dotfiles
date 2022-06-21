@@ -86,4 +86,27 @@ function M.lsp_format(bufnr)
   })
 end
 
+function M.open_unsaved_buffers()
+  local buffers = vim.api.nvim_list_bufs()
+  local unsaved_buffers = {}
+
+  local og_bufnr = vim.api.nvim_get_current_buf()
+
+  for _, bufnr in ipairs(buffers) do
+    local is_saved = vim.api.nvim_buf_get_option(bufnr, "modified")
+
+    if is_saved and bufnr ~= og_bufnr then
+      local bufname = vim.api.nvim_buf_get_name(bufnr)
+
+      table.insert(unsaved_buffers, bufnr)
+
+      vim.cmd("tabnew " .. bufname)
+    end
+  end
+
+  if #unsaved_buffers > 0 then
+    vim.notify("Opened " .. #unsaved_buffers .. " unsaved buffers")
+  end
+end
+
 return M

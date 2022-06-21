@@ -13,3 +13,7 @@ end, {})
 vim.api.nvim_create_user_command("ClearMessages", function()
   require("notify").dismiss()
 end, {})
+
+vim.api.nvim_create_user_command("OpenUnsavedBuffers", function()
+  require("daniil.utils").open_unsaved_buffers()
+end, {})
