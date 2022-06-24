@@ -1,7 +1,6 @@
 local ts = require("telescope.builtin")
 local u = require("daniil.utils")
 local git = require("daniil.git")
-local pkgInfo = require("package-info")
 
 -- General keymaps
 vim.keymap.set("n", "<C-c>", ":nohl<CR>")
