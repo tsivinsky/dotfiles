@@ -111,16 +111,6 @@ require("packer").startup(function(use)
     end,
   })
 
-  use({
-    "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      require("indent_blankline").setup({
-        space_char_blankline = " ",
-        show_current_context = true,
-      })
-    end,
-  })
-
   use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
 
   use({ "editorconfig/editorconfig-vim" })

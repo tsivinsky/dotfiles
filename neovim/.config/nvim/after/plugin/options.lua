@@ -41,3 +41,5 @@ opt.colorcolumn = "120"
 opt.autoread = true
 opt.showmode = false
 opt.redrawtime = 4000
+opt.list = true
+opt.listchars = { space = "·", tab = ">~" }
