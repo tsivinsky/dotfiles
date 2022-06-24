@@ -55,6 +55,9 @@ vim.keymap.set("n", "<A-l>", ":+tabmove<CR>")
 vim.keymap.set("n", "<leader><leader>", function()
   require("nvim-tree").toggle(true, false)
 end)
+vim.keymap.set("n", "<C-Space>", function()
+  require("nvim-tree").toggle(true, true)
+end)
 
 -- Telescope
 vim.keymap.set("n", "<leader>f", function()
