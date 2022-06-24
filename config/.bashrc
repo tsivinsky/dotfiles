@@ -49,3 +49,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # https://stackoverflow.com/a/65362210/13725946
 export DOCKER_BUILDKIT=0
 export COMPOSE_DOCKER_CLI_BUILD=0
+
+# update tmux config
+tmux source-file ~/.tmux.conf
