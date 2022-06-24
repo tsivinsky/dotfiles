@@ -6,10 +6,6 @@ local git = require("daniil.git")
 vim.keymap.set("n", "<C-c>", ":nohl<CR>")
 vim.keymap.set("n", "<C-q>", "<C-W>q")
 
--- Horizontal moving in insert mode
-vim.keymap.set("i", "<C-h>", "<Left>")
-vim.keymap.set("i", "<C-l>", "<Right>")
-
 -- Disable PageUp and PageDown keys
 vim.keymap.set({ "n", "i", "v" }, "<PageDown>", "<nop>")
 vim.keymap.set({ "n", "i", "v" }, "<PageUp>", "<nop>")
@@ -111,7 +107,6 @@ vim.keymap.set("n", "<leader>gg", ":G<CR>")
 vim.keymap.set("n", "<leader>go", function()
   git.open_commit_on_github()
 end)
-vim.keymap.set("n", "<leader>gh", ":Octo actions<CR>")
 
 -- Refactoring
 vim.keymap.set("n", "<leader>ri", function()
