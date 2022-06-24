@@ -38,7 +38,7 @@ set $mainMonitor "HDMI-A-1"
 set $laptopMonitor "eDP-1"
 
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
-exec_always rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob \
+exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob \
   -a "bottom" \
   -M 70 \
   -W 600
