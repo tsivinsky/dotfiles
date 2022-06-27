@@ -7,6 +7,6 @@ vim.api.nvim_set_hl(0, "SpellBad", {
 })
 
 vim.cmd([[
-colorscheme gruvbox-material
+colorscheme rose-pine
 hi clear SignColumn
 ]])

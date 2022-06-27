@@ -26,6 +26,16 @@ require("packer").startup(function(use)
   use({
     { "sainnhe/gruvbox-material" },
     { "sainnhe/sonokai" },
+    {
+      "rose-pine/neovim",
+      as = "rose-pine",
+      tag = "v1.*",
+      config = function()
+        require("rose-pine").setup({
+          dark_variant = "moon",
+        })
+      end,
+    },
   })
 
   -- Make commenting code great
