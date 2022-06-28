@@ -141,6 +141,13 @@ for _, server in ipairs(servers) do
 
   if server.name == "tsserver" then
     opts.root_dir = util.root_pattern(".git", "package.json", "tsconfig.json")
+    opts.settings = {
+      tsserver = {
+        experimental = {
+          enableProjectDiagnostics = true,
+        },
+      },
+    }
   end
 
   if server.name == "eslint" then
