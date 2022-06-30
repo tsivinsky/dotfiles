@@ -28,7 +28,8 @@ window#waybar {
 /* left modules */
 #mode,
 #window,
-#custom-player {
+#custom-player,
+#custom-uptime {
   margin-left: 10px;
 }
 #mode {

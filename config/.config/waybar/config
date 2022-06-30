@@ -3,7 +3,8 @@
   "modules-left": [
     "sway/workspaces",
     "custom/player",
-    "sway/mode"
+    "sway/mode",
+    "custom/uptime"
   ],
   "modules-right": [
     "tray",
@@ -21,6 +22,10 @@
   "sway/mode": {
     "format": "--{}--",
     "tooltip": false
+  },
+  "custom/uptime": {
+    "exec": "uptime -p",
+    "restart-interval": 60
   },
   "custom/player": {
     "exec": "playerctl metadata -f '{{title}} - {{artist}}' -F"
