@@ -154,6 +154,10 @@ for _, server in ipairs(servers) do
     opts.root_dir = util.root_pattern(".eslintrc", ".eslintrc.json")
   end
 
+  if server.name == "denols" then
+    opts.root_dir = util.root_pattern("deno.json", "deps.ts")
+  end
+
   lspconfig[server.name].setup(opts)
 end
 
