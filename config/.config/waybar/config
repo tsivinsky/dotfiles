@@ -23,7 +23,7 @@
     "tooltip": false
   },
   "custom/player": {
-    "exec": "playerctl metadata -f '{{title}} - {{artist}}' -F"
+    "exec": "playerctl metadata -f '{{title}} ― {{artist}}' -F"
   },
   "pulseaudio": {
     "tooltip": false,
