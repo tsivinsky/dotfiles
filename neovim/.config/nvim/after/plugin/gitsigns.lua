@@ -1,5 +1,5 @@
 local a = require("gitsigns.actions")
-local reload_nvimtree = require("nvim-tree.actions.reloaders").reload_explorer
+local reload_nvimtree = require("nvim-tree.actions.reloaders.reloaders").reload_explorer
 
 require("gitsigns").setup({
   signcolumn = true,
