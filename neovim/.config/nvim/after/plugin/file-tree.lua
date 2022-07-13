@@ -46,6 +46,7 @@ require("nvim-tree").setup({
     width = 30,
     side = "left",
     preserve_window_proportions = true,
+    centralize_selection = true,
     mappings = {
       list = {
         { key = "tn", action = "tabnew" },
