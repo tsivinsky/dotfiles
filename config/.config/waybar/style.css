@@ -7,7 +7,7 @@
 window#waybar {
   background: @background;
   color: @foreground;
-  font-family: Iosevka, "Fira Code";
+  font-family: "Iosevka Nerd Font", "Fira Code";
   font-size: 14px;
 }
 
@@ -35,11 +35,8 @@ window#waybar {
   color: @primary;
 }
 
-#network {
-  font-family: "Font Awesome 6 Free Solid";
-}
-
 #tray,
+#custom-pacman-packages,
 #pulseaudio,
 #language,
 #network,

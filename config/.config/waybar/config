@@ -7,6 +7,7 @@
   ],
   "modules-right": [
     "tray",
+    "custom/pacman-packages",
     "pulseaudio",
     "sway/language",
     "network",
@@ -25,23 +26,36 @@
   "custom/player": {
     "exec": "playerctl metadata -f '{{title}} ― {{artist}}' -F"
   },
+  "custom/pacman-packages": {
+    "exec": "pacman -Qu | wc -l",
+    "restart-interval": 900,
+    "format": "{icon} {}",
+    "format-icons": ""
+  },
   "pulseaudio": {
     "tooltip": false,
-    "format-muted": "MUTE",
+    "format": "{icon} {volume}",
+    "format-muted": "婢 {volume}",
+    "format-icons": [
+      "奄",
+      "奔",
+      "墳",
+      ""
+    ],
     "on-click": "pavucontrol"
   },
   "sway/language": {
     "tooltip": false
   },
   "network": {
-    "format": "{icon}",
-    "format-icons": [
-      ""
-    ],
-    "format-disconnected": "No network",
+    "format": "{icon}  {essid}",
+    "format-icons": "",
+    "format-disconnected": "睊",
     "tooltip": false
   },
   "backlight": {
+    "format": "{icon}  {percent}%",
+    "format-icons": "",
     "tooltip": false
   },
   "upower": {
