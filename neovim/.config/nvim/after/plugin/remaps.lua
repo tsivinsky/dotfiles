@@ -10,6 +10,9 @@ vim.keymap.set("n", "<C-q>", "<C-W>q")
 vim.keymap.set({ "n", "i", "v" }, "<PageDown>", "<nop>")
 vim.keymap.set({ "n", "i", "v" }, "<PageUp>", "<nop>")
 
+-- Disable <F1> key
+vim.keymap.set({ "n", "i", "v" }, "<F1>", "<nop>")
+
 -- Move focus between splits
 vim.keymap.set("n", "<leader>h", "<C-w>h")
 vim.keymap.set("n", "<leader>l", "<C-w>l")
