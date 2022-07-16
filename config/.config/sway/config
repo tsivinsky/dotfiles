@@ -83,6 +83,7 @@ workspace "$ws2" output $mainMonitor
 
 output $laptopMonitor {
   pos 0 0
+  scale 1.1
 }
 output $mainMonitor {
   pos 1920 0
