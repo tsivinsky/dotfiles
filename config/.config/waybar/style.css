@@ -1,14 +1,18 @@
 /* Colors */
-@define-color background #191e2a;
-@define-color background-alt #202734;
-@define-color foreground #cbccc6;
-@define-color primary #ffa759;
+@define-color background #282828;
+@define-color background-alt #32302f;
+@define-color foreground #ddc7a1;
+@define-color primary #d4be98;
 
 window#waybar {
   background: @background;
   color: @foreground;
   font-family: "Iosevka Nerd Font", "Fira Code";
   font-size: 14px;
+}
+
+window.eDP-1 * {
+  font-size: 16px;
 }
 
 #workspaces button {
@@ -44,6 +48,7 @@ window#waybar {
 #backlight,
 #clock {
   margin: 8px;
+  font-style: italic;
 }
 
 #pulseaudio.muted {
