@@ -68,6 +68,7 @@ local on_attach = function(client, bufnr)
   if vim.tbl_contains(lsps_with_disabled_formatting, client.name) then
     client.server_capabilities.document_formatting = false
     client.server_capabilities.document_range_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
   end
 
   if client.name == "tailwindcss" then
@@ -111,6 +112,9 @@ for _, server in ipairs(servers) do
     opts.filetypes = { "json", "jsonc" }
     opts.settings = {
       json = {
+        format = {
+          enable = false,
+        },
         schemas = require("schemastore").json.schemas({
           select = {
             ".eslintrc",
@@ -145,6 +149,16 @@ for _, server in ipairs(servers) do
       tsserver = {
         experimental = {
           enableProjectDiagnostics = true,
+        },
+        javascript = {
+          format = {
+            enable = false,
+          },
+        },
+        typescript = {
+          format = {
+            enable = false,
+          },
         },
       },
     }
