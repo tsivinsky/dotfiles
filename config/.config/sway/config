@@ -90,8 +90,7 @@ output $mainMonitor {
   mode 1920x1080@144Hz
 }
 
-bindswitch --reload --locked lid:on output $laptopMonitor disable
-bindswitch --reload --locked lid:off output $laptopMonitor enable
+bindswitch --reload lid:on exec "$HOME/dotfiles/bin/lock.sh"
 
 
 

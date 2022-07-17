@@ -1,16 +1,13 @@
 #! /bin/bash
 
-gtklock
+__lock() {
+	gtklock
+}
 
-# leave it here in case i'll need it later
-# swaylock \
-# 	--screenshots \
-# 	--indicator \
-# 	--indicator-radius 100 \
-# 	--indicator-thickness 7 \
-# 	--clock \
-# 	--ring-color ffeced \
-# 	--key-hl-color 0291ff \
-# 	--effect-blur 7x5 \
-# 	--effect-vignette 0.5:0.5 \
-# 	--fade-in 0.2
+amount_of_outputs=$(swaymsg -t get_outputs | grep -i name | wc -l)
+
+if [[ "$amount_of_outputs" == "1" ]]; then
+	__lock
+else
+	swaymsg output eDP-1 disable
+fi
