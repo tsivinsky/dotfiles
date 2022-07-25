@@ -123,6 +123,8 @@ for_window [class="feh"] {
   resize set 1200 800
 }
 
+assign [class="Slack"] workspace $ws4
+
 
 
 #     _   _   _ _____ ___  ____ _____  _    ____ _____ 
