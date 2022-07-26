@@ -120,13 +120,6 @@ require("packer").startup(function(use)
     end,
   })
 
-  use({
-    "vuki656/package-info.nvim",
-    config = function()
-      require("package-info").setup()
-    end,
-  })
-
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
