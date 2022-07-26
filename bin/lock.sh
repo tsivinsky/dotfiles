@@ -1,8 +1,13 @@
 #! /bin/bash
 
 __lock() {
-	gtklock
+	gtklock -d
 }
+
+if [[ "$1" == "just-lock" ]]; then
+	__lock
+	exit
+fi
 
 amount_of_outputs=$(swaymsg -t get_outputs | grep -i name | wc -l)
 

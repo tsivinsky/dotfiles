@@ -2,8 +2,10 @@
 
 killall swayidle
 
-cmd="$DOTFILES/bin/lock.sh"
+lockCmd="$HOME/dotfiles/bin/lock.sh just-lock"
 
-afterResumeCmd="swaymsg seat seat0 cursor set 300 300"
-
-swayidle before-sleep "$cmd" after-resume "$afterResumeCmd"
+swayidle -w \
+	timeout 900 "$lockCmd" \
+	timeout 900 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"' \
+	before-sleep "$lockCmd"

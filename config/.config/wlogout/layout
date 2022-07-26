@@ -1,6 +1,6 @@
 {
   "label": "lock",
-  "action": "$HOME/dotfiles/bin/lock.sh",
+  "action": "$HOME/dotfiles/bin/lock.sh just-lock",
   "text": "",
   "keybind": "l"
 },
