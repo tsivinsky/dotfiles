@@ -178,7 +178,7 @@ bindsym --to-code {
   $mod+Shift+q kill
 
   # Run wlogout to quit
-  $mod+Shift+e exec --no-startup-id wlogout -b 4 -m 450 -c 30
+  $mod+Shift+e exec --no-startup-id wlogout -m 250
 
   # Start your launcher
   $mod+d exec $menu
