@@ -20,8 +20,10 @@ MY_BIN="$DOTFILES/bin"
 RUST_BIN="$HOME/.cargo/bin"
 PYTHON_BIN="$HOME/.local/bin"
 ANDROID_BIN="$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools"
+BUN_INSTALL="$HOME/.bun"
+BUN_BIN="$BUN_INSTALL/bin"
 
-export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUST_BIN:$GOBIN:$ANDROID_BIN"
+export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUST_BIN:$GOBIN:$ANDROID_BIN:$BUN_BIN"
 
 # Source bash completions
 source $HOME/.config/bash-completions/*
