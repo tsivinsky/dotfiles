@@ -87,14 +87,11 @@ for _, server in ipairs(servers) do
   local opts = {
     capabilities = capabilities,
     on_attach = on_attach,
+    root_dir = util.root_pattern(".git"),
   }
 
   if server.name == "emmet_ls" then
     opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact" }
-  end
-
-  if server.name == "tailwindcss" then
-    opts.root_dir = util.root_pattern("tailwind.config.js", "tailwind.config.cjs", "tailwind.config.mjs")
   end
 
   if server.name == "sumneko_lua" then
@@ -144,7 +141,6 @@ for _, server in ipairs(servers) do
   end
 
   if server.name == "tsserver" then
-    opts.root_dir = util.root_pattern(".git", "package.json", "tsconfig.json")
     opts.settings = {
       tsserver = {
         experimental = {
@@ -162,10 +158,6 @@ for _, server in ipairs(servers) do
         },
       },
     }
-  end
-
-  if server.name == "eslint" then
-    opts.root_dir = util.root_pattern(".eslintrc", ".eslintrc.json")
   end
 
   if server.name == "denols" then
