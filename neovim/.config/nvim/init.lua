@@ -57,7 +57,7 @@ require("packer").startup(function(use)
 
   -- LSP stuff
   use({ "neovim/nvim-lspconfig" })
-  use({ "williamboman/nvim-lsp-installer" })
+  use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" })
   use({ "jose-elias-alvarez/null-ls.nvim" })
   use({ "ray-x/lsp_signature.nvim" })
   use({
@@ -116,6 +116,7 @@ require("packer").startup(function(use)
     "rcarriga/nvim-notify",
     config = function()
       require("notify").setup({})
+      vim.notify = require("notify")
     end,
   })
 

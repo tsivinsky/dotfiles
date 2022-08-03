@@ -1,4 +1,5 @@
-local lsp_installer = require("nvim-lsp-installer")
+local mason = require("mason")
+local lsp_installer = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
 local util = require("lspconfig").util
@@ -6,6 +7,8 @@ local u = require("daniil.utils")
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+
+mason.setup()
 
 lsp_installer.setup({
   ensure_installed = {
@@ -90,11 +93,11 @@ for _, server in ipairs(servers) do
     root_dir = util.root_pattern(".git"),
   }
 
-  if server.name == "emmet_ls" then
+  if server == "emmet_ls" then
     opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact" }
   end
 
-  if server.name == "sumneko_lua" then
+  if server == "sumneko_lua" then
     local luadev = require("lua-dev").setup({
       lspconfig = {
         capabilities = capabilities,
@@ -105,7 +108,7 @@ for _, server in ipairs(servers) do
     opts = luadev
   end
 
-  if server.name == "jsonls" then
+  if server == "jsonls" then
     opts.filetypes = { "json", "jsonc" }
     opts.settings = {
       json = {
@@ -140,7 +143,7 @@ for _, server in ipairs(servers) do
     }
   end
 
-  if server.name == "tsserver" then
+  if server == "tsserver" then
     opts.settings = {
       tsserver = {
         experimental = {
@@ -160,11 +163,11 @@ for _, server in ipairs(servers) do
     }
   end
 
-  if server.name == "denols" then
-    opts.root_dir = util.root_pattern("deno.json", "deps.ts")
+  if server == "tailwindcss" then
+    -- TODO: somehow need to help tailwindcss lsp find its config starting from .git
   end
 
-  lspconfig[server.name].setup(opts)
+  lspconfig[server].setup(opts)
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
