@@ -164,7 +164,7 @@ for _, server in ipairs(servers) do
   end
 
   if server == "tailwindcss" then
-    -- TODO: somehow need to help tailwindcss lsp find its config starting from .git
+    opts.root_dir = util.root_pattern("tailwind.config.js", ".git")
   end
 
   lspconfig[server].setup(opts)
