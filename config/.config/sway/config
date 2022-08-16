@@ -137,7 +137,7 @@ exec --no-startup-id swaync
 exec_always --no-startup-id swaync-client -R
 exec_always --no-startup-id xrdb -load $HOME/.Xresources
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
-exec_always --no-startup-id walle --restore
+exec_always --no-startup-id $HOME/go/bin/walle --restore
 exec_always --no-startup-id $HOME/dotfiles/bin/swayidle.sh
 exec_always --no-startup-id libinput-gestures-setup restart
 exec_always --no-startup-id $HOME/dotfiles/bin/initial-mic-state.sh
