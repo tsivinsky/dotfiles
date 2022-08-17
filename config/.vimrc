@@ -29,6 +29,8 @@ set scrolloff=5
 set autoread
 set autowrite
 set wildmenu
+set clipboard=unnamed
+set clipboard+=unnamedplus
 
 set smartcase
 set ignorecase
@@ -51,3 +53,6 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
+
+vnoremap < <gv
+vnoremap > >gv
