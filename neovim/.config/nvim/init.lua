@@ -21,11 +21,20 @@ require("packer").startup(function(use)
   use({ "nvim-lua/popup.nvim" })
   use({ "nvim-lua/plenary.nvim" })
   use({ "folke/lua-dev.nvim" })
+  use({ "tjdevries/colorbuddy.vim" })
 
   -- Colorschemes go here
   use({
     { "sainnhe/gruvbox-material" },
     { "sainnhe/sonokai" },
+    {
+      "Shatur/neovim-ayu",
+      config = function()
+        require("ayu").setup({
+          mirage = true,
+        })
+      end,
+    },
   })
 
   -- Make commenting code great
