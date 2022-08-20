@@ -17,3 +17,7 @@ end, {})
 vim.api.nvim_create_user_command("OpenUnsavedBuffers", function()
   require("daniil.utils").open_unsaved_buffers()
 end, {})
+
+vim.api.nvim_create_user_command("ClearQuickfixList", function()
+  vim.fn.setqflist({})
+end, {})
