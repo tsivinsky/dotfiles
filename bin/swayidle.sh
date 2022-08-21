@@ -8,4 +8,5 @@ swayidle -w \
 	timeout 900 "$lockCmd" \
 	timeout 900 'swaymsg "output * dpms off"' \
 	resume 'swaymsg "output * dpms on"' \
+	after-resume 'swaymsg "output * dpms on"' \
 	before-sleep "$lockCmd"
