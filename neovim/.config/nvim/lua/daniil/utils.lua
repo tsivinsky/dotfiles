@@ -109,4 +109,20 @@ function M.open_unsaved_buffers()
   end
 end
 
+function M.toggle_qflist()
+  if vim.bo.ft == "qf" then
+    vim.cmd(":cclose")
+  else
+    vim.cmd(":copen")
+  end
+end
+
+function M.toggle_locationlist()
+  if vim.bo.ft == "qf" then
+    vim.cmd(":lclose")
+  else
+    vim.cmd(":lopen")
+  end
+end
+
 return M

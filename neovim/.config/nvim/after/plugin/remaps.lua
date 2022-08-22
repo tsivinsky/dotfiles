@@ -4,7 +4,10 @@ local git = require("daniil.git")
 
 -- General keymaps
 vim.keymap.set("n", "<C-c>", ":nohl<CR>")
-vim.keymap.set("n", "<C-q>", "<C-W>q")
+
+-- Quickfix and location list remaps
+vim.keymap.set("n", "<C-q>", u.toggle_qflist)
+vim.keymap.set("n", "<leader>q", u.toggle_locationlist)
 
 -- Disable PageUp and PageDown keys
 vim.keymap.set({ "n", "i", "v" }, "<PageDown>", "<nop>")
