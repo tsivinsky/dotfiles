@@ -90,6 +90,7 @@ output $mainMonitor {
 }
 
 bindswitch --reload lid:on exec "$HOME/dotfiles/bin/lock.sh"
+bindswitch --reload lid:off exec 'swaymsg "output eDP-1 enable"'
 
 
 
