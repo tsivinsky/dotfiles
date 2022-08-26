@@ -89,8 +89,8 @@ output $mainMonitor {
   mode 1920x1080@144Hz
 }
 
-bindswitch --reload lid:on exec "$HOME/dotfiles/bin/lock.sh"
-bindswitch --reload lid:off exec 'swaymsg "output eDP-1 enable"'
+bindswitch --reload --locked lid:on exec "$HOME/dotfiles/bin/lock.sh"
+bindswitch --reload --locked lid:off exec 'swaymsg "output eDP-1 enable"'
 
 
 
@@ -142,6 +142,7 @@ exec_always --no-startup-id $HOME/go/bin/walle --restore
 exec_always --no-startup-id $HOME/dotfiles/bin/swayidle.sh
 exec_always --no-startup-id libinput-gestures-setup restart
 exec_always --no-startup-id $HOME/dotfiles/bin/initial-mic-state.sh
+exec_always --no-startup-id $HOME/dotfiles/bin/sway-lid-watcher.sh
 
 
 
