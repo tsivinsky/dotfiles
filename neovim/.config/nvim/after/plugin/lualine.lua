@@ -72,14 +72,10 @@ local diff = {
 
 local tabs = {
   "tabs",
-  mode = 1,
-}
-
-local windows = {
-  "windows",
-  disabled_buftypes = { "nofile" },
-  filetype_names = {
-    NvimTree = "File Tree",
+  mode = 2,
+  tabs_color = {
+    active = "lualine_a_normal",
+    inactive = "lualine_a_inactive",
   },
 }
 
@@ -88,15 +84,22 @@ lualine.setup({
     component_separators = "",
     section_separators = "",
     globalstatus = true,
+    disabled_filetypes = {
+      winbar = {
+        "NvimTree",
+      },
+    },
   },
-  tabline = {
-    lualine_a = { tabs },
-    lualine_z = { windows },
+  winbar = {
+    lualine_a = { filename },
+  },
+  inactive_winbar = {
+    lualine_a = { filename },
   },
   sections = {
     lualine_a = { mode },
     lualine_b = { branch },
-    lualine_c = { diagnostics },
+    lualine_c = { diagnostics, tabs },
     lualine_x = { diff, location, tabstop, fileformat },
     lualine_y = { filename },
     lualine_z = {},
