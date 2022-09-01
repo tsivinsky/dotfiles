@@ -17,4 +17,5 @@ ls.add_snippets("javascript", { clg })
 ls.add_snippets("typescript", { clg })
 ls.add_snippets("svelte", { clg })
 
-require("luasnip.loaders.from_vscode").load()
+-- NOTE: i commented this line because its taking a very long time to require and i don't use it
+-- require("luasnip.loaders.from_vscode").load()
