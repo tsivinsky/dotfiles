@@ -23,3 +23,5 @@ map <space> toggle
 map <delete> delete
 map <backspace2> delete
 map d delete
+
+map x cut
