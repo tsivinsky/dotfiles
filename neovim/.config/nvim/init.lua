@@ -117,6 +117,13 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "stevearc/dressing.nvim",
+    config = function()
+      require("dressing").setup({})
+    end,
+  })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
