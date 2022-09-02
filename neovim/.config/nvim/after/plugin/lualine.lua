@@ -90,6 +90,9 @@ lualine.setup({
       },
     },
   },
+  tabline = {
+    lualine_a = { tabs },
+  },
   winbar = {
     lualine_a = { filename },
   },
@@ -99,7 +102,7 @@ lualine.setup({
   sections = {
     lualine_a = { mode },
     lualine_b = { branch },
-    lualine_c = { diagnostics, tabs },
+    lualine_c = { diagnostics },
     lualine_x = { diff, location, tabstop, fileformat },
     lualine_y = { filename },
     lualine_z = {},
