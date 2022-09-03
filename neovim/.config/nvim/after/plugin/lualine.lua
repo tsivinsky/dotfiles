@@ -17,7 +17,7 @@ local diagnostics = {
   always_visible = true,
 }
 
-local filename = {
+local filetype = {
   function()
     local filetype = vim.bo.filetype
     local filename = vim.fn.expand("%:t")
@@ -26,14 +26,13 @@ local filename = {
 
     if filetype == "fugitive" then
       icon = devicons.get_icons().git.icon
-      filename = "git"
     end
 
     if not icon then
-      return filename
+      return filetype
     end
 
-    return icon .. " " .. filename
+    return icon .. " " .. filetype
   end,
 }
 
@@ -94,17 +93,17 @@ lualine.setup({
     lualine_a = { tabs },
   },
   winbar = {
-    lualine_a = { filename },
+    lualine_a = { filetype },
   },
   inactive_winbar = {
-    lualine_a = { filename },
+    lualine_a = { filetype },
   },
   sections = {
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics },
     lualine_x = { diff, location, tabstop, fileformat },
-    lualine_y = { filename },
+    lualine_y = { filetype },
     lualine_z = {},
   },
   extensions = { "nvim-tree", "fugitive", "quickfix" },
