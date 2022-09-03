@@ -36,6 +36,25 @@ local filetype = {
   end,
 }
 
+local filename = {
+  function()
+    local filetype = vim.bo.filetype
+    local filename = vim.fn.expand("%:t")
+    local fileext = vim.fn.expand("%:e")
+    local icon = devicons.get_icon(filename, fileext)
+
+    if filetype == "fugitive" then
+      icon = devicons.get_icons().git.icon
+    end
+
+    if not icon then
+      return filename
+    end
+
+    return icon .. " " .. filename
+  end,
+}
+
 local fileformat = {
   function()
     return "[" .. vim.bo.fileformat .. "]"
@@ -93,10 +112,10 @@ lualine.setup({
     lualine_a = { tabs },
   },
   winbar = {
-    lualine_a = { filetype },
+    lualine_a = { filename },
   },
   inactive_winbar = {
-    lualine_a = { filetype },
+    lualine_a = { filename },
   },
   sections = {
     lualine_a = { mode },
