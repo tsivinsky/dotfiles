@@ -124,6 +124,13 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "levouh/tint.nvim",
+    config = function()
+      require("tint").setup({})
+    end,
+  })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
