@@ -127,7 +127,9 @@ require("packer").startup(function(use)
   use({
     "levouh/tint.nvim",
     config = function()
-      require("tint").setup({})
+      require("tint").setup({
+        ignore = { "NvimTree" },
+      })
     end,
   })
 
