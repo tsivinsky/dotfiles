@@ -25,7 +25,7 @@ require("packer").startup(function(use)
   -- Colorschemes go here
   use({
     { "sainnhe/gruvbox-material" },
-    { "Everblush/everblush.viEverblush/everblush.vimm" },
+    { "kaicataldo/material.vim" },
   })
 
   -- Make commenting code great
