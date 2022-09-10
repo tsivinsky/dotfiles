@@ -108,8 +108,6 @@ require("packer").startup(function(use)
     end,
   })
 
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
-
   use({ "editorconfig/editorconfig-vim" })
 
   use({
