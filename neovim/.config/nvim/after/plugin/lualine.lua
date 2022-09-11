@@ -42,6 +42,7 @@ local filename = {
     local filename = vim.fn.expand("%:t")
     local fileext = vim.fn.expand("%:e")
     local icon = devicons.get_icon(filename, fileext)
+    local modified = vim.bo.modified
 
     if filetype == "fugitive" then
       icon = devicons.get_icons().git.icon
@@ -49,6 +50,10 @@ local filename = {
 
     if not icon then
       return filename
+    end
+
+    if modified then
+      return icon .. " " .. filename .. " " .. "[+]"
     end
 
     return icon .. " " .. filename
