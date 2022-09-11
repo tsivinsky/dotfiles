@@ -108,14 +108,6 @@ require("packer").startup(function(use)
   use({ "editorconfig/editorconfig-vim" })
 
   use({
-    "rcarriga/nvim-notify",
-    config = function()
-      require("notify").setup({})
-      vim.notify = require("notify")
-    end,
-  })
-
-  use({
     "stevearc/dressing.nvim",
     config = function()
       require("dressing").setup({})
