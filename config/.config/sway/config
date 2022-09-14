@@ -78,8 +78,8 @@ input type:touchpad {
   dwt disabled
 }
 
-workspace "$ws1" output $laptopMonitor
-workspace "$ws2" output $mainMonitor
+workspace "$ws2" output $laptopMonitor
+workspace "$ws1" output $mainMonitor
 
 output $laptopMonitor {
   pos 0 0
