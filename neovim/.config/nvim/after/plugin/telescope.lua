@@ -10,9 +10,6 @@ telescope.setup({
       i = {
         ["<C-j>"] = actions.move_selection_worse,
         ["<C-k>"] = actions.move_selection_better,
-        ["<C-d>"] = function(prompt_bufnr)
-          actions.delete_buffer(prompt_bufnr)
-        end,
         ["<C-p>"] = layout_actions.toggle_preview,
       },
       n = {
@@ -29,6 +26,20 @@ telescope.setup({
     },
     lsp_definitions = {
       initial_mode = "normal",
+    },
+    buffers = {
+      mappings = {
+        i = {
+          ["<C-d>"] = function(prompt_bufnr)
+            actions.delete_buffer(prompt_bufnr)
+          end,
+        },
+        n = {
+          ["<C-d>"] = function(prompt_bufnr)
+            actions.delete_buffer(prompt_bufnr)
+          end,
+        },
+      },
     },
   },
   extensions = {
