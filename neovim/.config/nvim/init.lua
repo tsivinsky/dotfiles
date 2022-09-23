@@ -26,13 +26,25 @@ require("packer").startup(function(use)
   })
 
   -- Make commenting code great
-  use({ "numToStr/Comment.nvim" })
+  use({
+    "numToStr/Comment.nvim",
+    event = "BufRead",
+    config = function()
+      require("daniil.plugins.comment")
+    end,
+  })
 
   -- Icons used by many plugins
   use({ "kyazdani42/nvim-web-devicons" })
 
   -- Auto pairs plugin that automatically closes brackets and quotes
-  use({ "windwp/nvim-autopairs" })
+  use({
+    "windwp/nvim-autopairs",
+    event = "BufRead",
+    config = function()
+      require("nvim-autopairs").setup({})
+    end,
+  })
 
   -- File tree
   use({ "kyazdani42/nvim-tree.lua" })
@@ -49,7 +61,13 @@ require("packer").startup(function(use)
   })
 
   -- Git things
-  use({ "lewis6991/gitsigns.nvim" })
+  use({
+    "lewis6991/gitsigns.nvim",
+    event = "BufRead",
+    config = function()
+      require("daniil.plugins.gitsigns")
+    end,
+  })
   use({ "tpope/vim-fugitive" })
 
   -- LSP stuff
@@ -100,6 +118,7 @@ require("packer").startup(function(use)
   -- Highlight colors
   use({
     "norcalli/nvim-colorizer.lua",
+    event = "BufRead",
     config = function()
       require("colorizer").setup({ "*" })
     end,
