@@ -109,7 +109,7 @@ for _, server in ipairs(servers) do
   end
 
   if server == "jsonls" then
-    opts.filetypes = { "json", "jsonc" }
+    opts.filetypes = { "json", "jsonc", "yaml" }
     opts.settings = {
       json = {
         format = {
