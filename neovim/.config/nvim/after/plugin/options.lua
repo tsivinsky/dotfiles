@@ -34,6 +34,7 @@ opt.guicursor = "a:block,i:ver25"
 opt.fileformat = "unix"
 opt.fileformats = { "unix", "dos", "mac" }
 opt.laststatus = 3
+opt.cmdheight = 0
 opt.smartcase = true
 opt.ignorecase = true
 opt.scrolloff = 5
