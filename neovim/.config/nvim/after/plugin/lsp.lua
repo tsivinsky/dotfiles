@@ -94,7 +94,7 @@ for _, server in ipairs(servers) do
   }
 
   if server == "emmet_ls" then
-    opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact" }
+    opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact", "astro" }
   end
 
   if server == "sumneko_lua" then
