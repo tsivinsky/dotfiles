@@ -40,6 +40,7 @@ declare -A aliases=(
 	["gch"]="git checkout"
 	["gpl"]="git pull"
 	["gb"]="git branch"
+	["gm"]="git merge"
 )
 
 for alias in ${!aliases[@]}; do
