@@ -125,4 +125,20 @@ function M.toggle_locationlist()
   end
 end
 
+function M.is_inside_tmux()
+  local TMUX = os.getenv("TMUX")
+
+  return TMUX ~= nil
+end
+
+function M.get_colorscheme()
+  local IS_TMUX = M.is_inside_tmux()
+
+  if IS_TMUX then
+    return "gruvbox-material"
+  else
+    return "poimandres"
+  end
+end
+
 return M

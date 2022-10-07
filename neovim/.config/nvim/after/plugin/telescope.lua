@@ -2,11 +2,16 @@ local telescope = require("telescope")
 local actions = require("telescope.actions")
 local layout_actions = require("telescope.actions.layout")
 
+local winblend = 15
+if require("daniil.utils").get_colorscheme() == "poimandres" then
+  winblend = 0
+end
+
 telescope.setup({
   defaults = {
     sorting_strategy = "ascending",
     file_ignore_patterns = { ".git/", "node_modules/" },
-    winblend = 15,
+    winblend = winblend,
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_worse,

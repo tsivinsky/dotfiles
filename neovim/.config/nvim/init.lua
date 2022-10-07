@@ -23,6 +23,7 @@ require("packer").startup(function(use)
   use({
     { "sainnhe/gruvbox-material" },
     { "kaicataldo/material.vim" },
+    { "olivercederborg/poimandres.nvim" },
   })
 
   -- Make commenting code great
