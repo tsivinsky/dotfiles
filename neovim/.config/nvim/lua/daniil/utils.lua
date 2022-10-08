@@ -137,7 +137,7 @@ function M.get_colorscheme()
   if IS_TMUX then
     return "gruvbox-material"
   else
-    return "poimandres"
+    return "material"
   end
 end
 
