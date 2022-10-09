@@ -166,8 +166,8 @@ bindsym --to-code {
   XF86AudioMicMute exec $HOME/dotfiles/bin/toggle-mic-mute.sh
 
   # brightness
-  XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
-  XF86MonBrightnessUp exec brightnessctl set 5%+ | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+  XF86MonBrightnessDown exec $HOME/dotfiles/bin/control-brightness.sh down | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+  XF86MonBrightnessUp exec $HOME/dotfiles/bin/control-brightness.sh up | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
 
   # screenshots
   $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
