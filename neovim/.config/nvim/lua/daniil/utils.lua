@@ -1,12 +1,7 @@
 local M = {}
 
 M.yank = function(message)
-  if vim.fn.has("win32") == 1 then
-    os.execute("echo '" .. message .. "' | win32yank -i")
-  else
-    -- i use wayland, so there is no xclip for X11
-    os.execute("echo -n '" .. message .. "' | wl-copy")
-  end
+  vim.cmd(":!echo -n '" .. message .. "' | wl-copy")
 end
 
 --- @param diagnostics list
@@ -60,15 +55,9 @@ M.lsp_organize_imports = function(bufnr, timeout)
 end
 
 M.open_url_in_browser = function(url)
-  local f
+  local _url = string.format('"%s"', url)
 
-  if vim.fn.has("win32") == 1 then
-    f = io.popen("explorer " .. url, "r")
-  else
-    f = io.popen("xdg-open " .. url, "r")
-  end
-
-  f:close()
+  vim.cmd(":!exec xdg-open " .. _url)
 end
 
 function M.lsp_format(bufnr)
