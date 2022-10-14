@@ -110,6 +110,7 @@ vim.keymap.set("n", "<leader>dp", function()
   vim.diagnostic.goto_prev({ float = false })
 end)
 vim.keymap.set("n", "<leader>do", ":lopen<CR>")
+vim.keymap.set("n", "<leader>ds", u.open_error_on_stackoverflow)
 
 -- Git
 vim.keymap.set("n", "<leader>gg", ":G<CR>")

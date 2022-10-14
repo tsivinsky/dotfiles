@@ -130,4 +130,15 @@ function M.get_colorscheme()
   end
 end
 
+function M.open_error_on_stackoverflow()
+  local diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
+  local selected_diagnostic = M.select_diagnostic(diagnostics, "Select diagnostic to open on Stack Overflow")
+
+  local url = string.format("https://stackoverflow.com/search?q=%s", selected_diagnostic)
+
+  M.open_url_in_browser(url)
+
+  M.yank(selected_diagnostic)
+end
+
 return M
