@@ -17,7 +17,7 @@ require("packer").startup(function(use)
   use({ "MunifTanjim/nui.nvim" })
   use({ "nvim-lua/popup.nvim" })
   use({ "nvim-lua/plenary.nvim" })
-  use({ "folke/lua-dev.nvim" })
+  use({ "folke/neodev.nvim" })
 
   -- Colorschemes go here
   use({

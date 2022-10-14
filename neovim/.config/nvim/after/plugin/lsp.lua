@@ -86,6 +86,8 @@ end
 
 local servers = lsp_installer.get_installed_servers()
 
+require("neodev").setup({})
+
 for _, server in ipairs(servers) do
   local opts = {
     capabilities = capabilities,
@@ -95,17 +97,6 @@ for _, server in ipairs(servers) do
 
   if server == "emmet_ls" then
     opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact", "astro" }
-  end
-
-  if server == "sumneko_lua" then
-    local luadev = require("lua-dev").setup({
-      lspconfig = {
-        capabilities = capabilities,
-        on_attach = on_attach,
-      },
-    })
-
-    opts = luadev
   end
 
   if server == "jsonls" then
