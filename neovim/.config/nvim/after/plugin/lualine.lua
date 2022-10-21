@@ -121,15 +121,6 @@ local diff = {
   "diff",
 }
 
-local tabs = {
-  "tabs",
-  mode = 2,
-  tabs_color = {
-    active = "lualine_a_normal",
-    inactive = "lualine_a_inactive",
-  },
-}
-
 local git_status = {
   function()
     return "勒" .. gstatus.ahead .. " " .. gstatus.behind .. ""
@@ -146,9 +137,6 @@ lualine.setup({
         "NvimTree",
       },
     },
-  },
-  tabline = {
-    lualine_a = { tabs },
   },
   winbar = {
     lualine_a = { filename },
