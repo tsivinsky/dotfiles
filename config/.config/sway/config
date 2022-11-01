@@ -81,6 +81,10 @@ input type:touchpad {
 workspace "$ws2" output $laptopMonitor
 workspace "$ws1" output $mainMonitor
 
+output * {
+  bg ~/dotfiles/wallpapers/guweiz-samurai.jpg fill
+}
+
 output $laptopMonitor {
   pos 0 0
 }
@@ -137,7 +141,7 @@ assign [class="Slack"] workspace $ws4
 exec --no-startup-id swaync
 # exec --no-startup-id swww init
 # exec_always --no-startup-id $HOME/dotfiles/bin/wall.sh --restore
-exec_always --no-startup-id $HOME/go/bin/walle --restore
+# exec_always --no-startup-id $HOME/go/bin/walle --restore
 exec_always --no-startup-id swaync-client -R
 exec_always --no-startup-id xrdb -load $HOME/.Xresources
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
