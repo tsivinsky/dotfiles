@@ -29,12 +29,6 @@ window.eDP-1 * {
   background: @primary;
 }
 
-/* left modules */
-#mode,
-#window,
-#custom-player {
-  margin-left: 10px;
-}
 #mode {
   color: @primary;
 }
@@ -49,6 +43,8 @@ window.eDP-1 * {
 #clock {
   margin: 8px;
   font-style: italic;
+  padding: 0;
+  color: @foreground;
 }
 
 #pulseaudio.muted {
