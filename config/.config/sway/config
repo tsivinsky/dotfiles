@@ -260,6 +260,8 @@ bindsym --to-code {
   # scratchpad
   $mod+minus scratchpad show
   $mod+Shift+minus move scratchpad
+
+  $mod+o exec --no-startup-id echo '‎' | wl-copy
 }
 
 ### Resize mode
