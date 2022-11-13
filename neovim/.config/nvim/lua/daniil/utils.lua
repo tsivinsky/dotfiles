@@ -120,16 +120,6 @@ function M.is_inside_tmux()
   return TMUX ~= nil
 end
 
-function M.get_colorscheme()
-  local IS_TMUX = M.is_inside_tmux()
-
-  if IS_TMUX then
-    return "gruvbox-material"
-  else
-    return "material"
-  end
-end
-
 function M.open_error_on_stackoverflow()
   local diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
   local selected_diagnostic = M.select_diagnostic(diagnostics, "Select diagnostic to open on Stack Overflow")
