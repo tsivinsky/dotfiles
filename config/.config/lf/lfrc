@@ -25,3 +25,5 @@ map <backspace2> delete
 map d delete
 
 map x cut
+
+map R reload
