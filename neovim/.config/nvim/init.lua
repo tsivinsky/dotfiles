@@ -121,6 +121,27 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({
+    "petertriho/nvim-scrollbar",
+    after = { "gitsigns.nvim" },
+    config = function()
+      require("scrollbar").setup({
+        excluded_filetypes = {
+          "prompt",
+          "TelescopePrompt",
+          "noice",
+          "NvimTree",
+        },
+        handlers = {
+          cursor = true,
+          diagnostic = true,
+          gitsigns = true,
+        },
+      })
+      require("scrollbar.handlers.gitsigns").setup({})
+    end,
+  })
+
   use({ "editorconfig/editorconfig-vim" })
 
   use({
