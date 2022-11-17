@@ -52,14 +52,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export DOCKER_BUILDKIT=0
 export COMPOSE_DOCKER_CLI_BUILD=0
 
-__trap_not_cmd_found_error() {
-	code="$?"
-	if [[ "$code" == "127" ]]; then
-		prevCmd=$(history | tail -n 1 | awk '{ printf $2 }')
-		echo "$prevCmd"
+function ? {
+	cmd=$(history | tail -n 2 | head -n 1 | awk '{ printf $2 }')
+	echo "$cmd"
 
-		xdg-open "https://command-not-found.com/$prevCmd"
-	fi
+	xdg-open "https://command-not-found.com/$cmd"
 }
-
-trap "__trap_not_cmd_found_error" ERR
