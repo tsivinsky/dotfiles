@@ -33,6 +33,10 @@ window.eDP-1 * {
   color: @primary;
 }
 
+#custom-player {
+  margin-left: 8px;
+}
+
 #tray,
 #custom-pacman-packages,
 #pulseaudio,
