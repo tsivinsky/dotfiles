@@ -1,6 +1,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+if [ -f /usr/share/git/git-prompt.sh ]; then
+	source /usr/share/git/git-prompt.sh
+fi
+
 export TERM=kitty
 export EDITOR=nvim
 export VISUAL=nvim
@@ -35,9 +39,10 @@ shopt -s autocd
 
 _GREEN="\[\033[32m\]"
 _BLUE="\[\033[34m\]"
+_RED="\[\033[31m\]"
 _BOLD="\[\033[1m\]"
 _RESET="\[\033[0m\]"
-export PS1="${_BLUE}${_BOLD}\w${_RESET} \$ "
+PS1=$_BLUE$_BOLD'\w'$_RESET$_RED$_BOLD'$(__git_ps1 " [%s]")'$_RESET' \$ '
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
