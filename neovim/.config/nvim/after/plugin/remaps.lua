@@ -60,9 +60,6 @@ vim.keymap.set("n", "<A-l>", ":+tabmove<CR>")
 vim.keymap.set("n", "<leader><leader>", function()
   require("nvim-tree").toggle(true, false)
 end)
-vim.keymap.set("n", "<C-Space>", function()
-  require("nvim-tree").toggle(true, true)
-end)
 
 -- Telescope
 vim.keymap.set("n", "<leader>f", function()
@@ -115,12 +112,4 @@ vim.keymap.set("n", "<leader>ds", u.open_error_on_stackoverflow)
 vim.keymap.set("n", "<leader>gg", ":G<CR>")
 vim.keymap.set("n", "<leader>go", function()
   git.open_commit_on_github()
-end)
-
--- Refactoring
-vim.keymap.set("n", "<leader>ri", function()
-  u.lsp_organize_imports()
-end)
-vim.keymap.set("n", "<leader>rf", function()
-  u.lsp_format()
 end)
