@@ -17,5 +17,6 @@ ls.add_snippets("javascript", { clg })
 ls.add_snippets("typescript", { clg })
 ls.add_snippets("svelte", { clg })
 
--- NOTE: i commented this line because its taking a very long time to require and i don't use it
--- require("luasnip.loaders.from_vscode").load()
+require("luasnip.loaders.from_vscode").lazy_load({
+  include = { "go", "typescript", "typescriptreact", "javascript", "javascriptreact" },
+})
