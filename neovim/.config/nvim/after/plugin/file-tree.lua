@@ -8,8 +8,6 @@ local function git_stage(node)
     command = "git",
     args = { "add", relative_path },
   }):start()
-
-  require("nvim-tree.actions.reloaders").reload_explorer()
 end
 
 local function git_reset(node)
@@ -20,8 +18,6 @@ local function git_reset(node)
     command = "git",
     args = { "reset", relative_path },
   }):start()
-
-  require("nvim-tree.actions.reloaders").reload_explorer()
 end
 
 -- TODO: add here keymap for git diff window
