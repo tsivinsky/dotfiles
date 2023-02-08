@@ -10,6 +10,16 @@ local function git_stage(node)
   }):start()
 end
 
+local function git_unstage(node)
+  local cwd = vim.loop.cwd()
+  local relative_path = string.gsub(node.absolute_path, cwd .. "/", "")
+
+  Job:new({
+    command = "git",
+    args = { "reset", relative_path },
+  }):start()
+end
+
 local function git_reset(node)
   local cwd = vim.loop.cwd()
   local relative_path = string.gsub(node.absolute_path, cwd .. "/", "")
@@ -43,6 +53,7 @@ require("nvim-tree").setup({
       list = {
         { key = "tn", action = "tabnew" },
         { key = "gs", action = "git_stage", action_cb = git_stage },
+        { key = "gu", action = "git_unstage", action_cb = git_unstage },
         { key = "gr", action = "git_reset", action_cb = git_reset },
         { key = "l", action = "edit" },
         { key = "@", action = "cd" },
