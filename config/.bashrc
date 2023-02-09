@@ -63,3 +63,5 @@ function ? {
 
 	xdg-open "https://command-not-found.com/$cmd"
 }
+
+TZ=:/etc/localtime
