@@ -22,7 +22,6 @@ lsp_installer.setup({
     "html",
     "jsonls",
     "prismals",
-    "sumneko_lua",
     "svelte",
     "emmet_ls",
     "eslint",
