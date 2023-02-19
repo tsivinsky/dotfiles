@@ -1,7 +1,12 @@
 local git = require("daniil.git")
+local u = require("daniil.utils")
 
 vim.api.nvim_create_user_command("OrganizeImports", function()
-  require("daniil.utils").lsp_organize_imports()
+  u.lsp_organize_imports()
+end, {})
+vim.api.nvim_create_user_command("AddMissingImports", function()
+  u.addMissingImports(0)
+  u.lsp_format(0)
 end, {})
 
 vim.api.nvim_create_user_command("GitShowCommit", function()

@@ -1,5 +1,22 @@
 local M = {}
 
+M.objectAssign = function(target, ...)
+  local sources = { ... }
+  for i = 1, #sources do
+    local source = sources[i]
+    for key in pairs(source) do
+      target[key] = source[key]
+    end
+  end
+  return target
+end
+
+M.get_lsp_client = function(name, bufnr)
+  local clients = vim.lsp.get_active_clients({ bufnr = bufnr, name = name })
+
+  return clients[1]
+end
+
 M.yank = function(message)
   vim.cmd(":!echo -n '" .. message .. "' | wl-copy")
 end
@@ -40,18 +57,42 @@ M.copy_diagnostic_message = function()
   print("Diagnostic message was yanked")
 end
 
-M.lsp_organize_imports = function(bufnr, timeout)
-  if not bufnr then
-    bufnr = vim.api.nvim_get_current_buf()
+M.run_lsp_codeaction = function(codeAction, bufnr, timeout, clientName)
+  local params = M.objectAssign({}, vim.lsp.util.make_range_params(), {
+    context = {
+      only = { codeAction },
+      diagnostics = vim.diagnostic.get(bufnr),
+    },
+  })
+
+  local client = M.get_lsp_client(clientName, bufnr)
+  if not client then
+    return
   end
 
-  local params = {
-    command = "_typescript.organizeImports",
-    arguments = { vim.api.nvim_buf_get_name(bufnr) },
-    title = "",
-  }
+  local res = client.request_sync("textDocument/codeAction", params, timeout, bufnr)
+  if not res.result[1] then
+    return
+  end
 
-  vim.lsp.buf_request_sync(bufnr, "workspace/executeCommand", params, timeout or 500)
+  local edits = res.result[1].edit.documentChanges[1].edits
+  vim.lsp.util.apply_text_edits(edits, bufnr, client.offset_encoding)
+end
+
+M.removeUnusedImports = function(bufnr, timeout)
+  M.run_lsp_codeaction("source.removeUnusedImports.ts", bufnr, timeout, "tsserver")
+end
+
+M.addMissingImports = function(bufnr, timeout)
+  M.run_lsp_codeaction("source.addMissingImports.ts", bufnr, timeout, "tsserver")
+end
+
+M.lsp_organize_imports = function(bufnr, timeout)
+  if not bufnr then
+    bufnr = 0
+  end
+
+  M.removeUnusedImports(bufnr, timeout)
 end
 
 M.open_url_in_browser = function(url)
@@ -62,6 +103,8 @@ end
 
 function M.lsp_format(bufnr)
   bufnr = bufnr or 0
+
+  M.lsp_organize_imports(bufnr)
 
   vim.lsp.buf.format({
     filter = function(client)
