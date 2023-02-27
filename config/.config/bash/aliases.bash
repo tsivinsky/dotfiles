@@ -7,6 +7,17 @@ mc() {
 	cd $dir
 }
 
+newgo() {
+	dir="$1"
+
+	mkdir -p $dir
+	cd $dir
+
+	go mod init $1
+
+	touch main.go
+}
+
 declare -A aliases=(
 	["sudo"]="sudo "
 
