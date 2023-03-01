@@ -21,7 +21,6 @@ require("packer").startup(function(use)
 
   -- Colorschemes go here
   use({ "sainnhe/gruvbox-material" })
-  use({ "rebelot/kanagawa.nvim" })
 
   -- Make commenting code great
   use({
