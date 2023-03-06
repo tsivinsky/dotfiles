@@ -65,3 +65,5 @@ function ? {
 }
 
 TZ=:/etc/localtime
+
+export NODE_OPTIONS="--inspect"
