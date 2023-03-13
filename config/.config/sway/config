@@ -190,7 +190,7 @@ bindsym --to-code {
   $mod+Shift+e exec --no-startup-id wlogout -m 250
 
   # Start your launcher
-  $mod+d exec $menu
+  $alt+d exec $menu
 
   # Reload the configuration file
   $mod+Shift+r reload
