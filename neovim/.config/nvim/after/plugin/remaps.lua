@@ -57,9 +57,7 @@ vim.keymap.set("n", "<A-h>", ":-tabmove<CR>")
 vim.keymap.set("n", "<A-l>", ":+tabmove<CR>")
 
 -- Nvim Tree
-vim.keymap.set("n", "<leader><leader>", function()
-  require("nvim-tree").toggle(true, false)
-end)
+vim.keymap.set("n", "<leader><leader>", ":NvimTreeToggle<CR>")
 
 -- Telescope
 vim.keymap.set("n", "<leader>f", function()
