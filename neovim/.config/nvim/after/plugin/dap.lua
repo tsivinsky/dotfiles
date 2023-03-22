@@ -13,7 +13,7 @@ dap.adapters.delve = {
 dap.configurations.go = {
   {
     type = "delve",
-    name = "Debug",
+    name = "Debug file",
     request = "launch",
     program = "${file}",
   },
@@ -25,6 +25,12 @@ dap.configurations.go = {
     program = "${file}",
   },
   -- works with go.mod packages and sub packages
+  {
+    type = "delve",
+    name = "Debug app (go.mod)",
+    request = "launch",
+    program = "./${relativeFileDirname}",
+  },
   {
     type = "delve",
     name = "Debug test (go.mod)",
