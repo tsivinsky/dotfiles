@@ -151,6 +151,14 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({ "mfussenegger/nvim-dap" })
+  use({
+    "theHamsta/nvim-dap-virtual-text",
+    config = function()
+      require("nvim-dap-virtual-text").setup()
+    end,
+  })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
