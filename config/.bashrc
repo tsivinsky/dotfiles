@@ -65,3 +65,5 @@ function ? {
 }
 
 TZ=:/etc/localtime
+
+export FONTCONFIG_PATH=/etc/fonts
