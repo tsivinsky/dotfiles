@@ -139,6 +139,7 @@ assign [class="Slack"] workspace $ws4
 # /_/   \_\___/  |_| \___/|____/ |_/_/   \_\_| \_\|_|  
 #
 exec --no-startup-id swaync
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id swww init
 # exec_always --no-startup-id $HOME/dotfiles/bin/wall.sh --restore
 # exec_always --no-startup-id $HOME/go/bin/walle --restore
