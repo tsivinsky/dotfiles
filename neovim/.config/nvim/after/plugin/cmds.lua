@@ -28,3 +28,7 @@ vim.api.nvim_create_user_command("ClearQuickfixList", function()
 end, {})
 
 vim.api.nvim_create_user_command("GoRunFile", ":!go run %", {})
+vim.api.nvim_create_user_command("GoFixImports", function()
+  vim.cmd(":!go mod tidy")
+  vim.cmd(":LspRestart gopls")
+end, {})
