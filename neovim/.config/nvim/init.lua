@@ -142,8 +142,6 @@ require("packer").startup(function(use)
     end,
   })
 
-  use({ "editorconfig/editorconfig-vim" })
-
   use({
     "stevearc/dressing.nvim",
     config = function()
