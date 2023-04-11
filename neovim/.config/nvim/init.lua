@@ -52,7 +52,6 @@ require("packer").startup(function(use)
     run = ":TSUpdate",
     {
       { "JoosepAlviste/nvim-ts-context-commentstring" },
-      { "nvim-treesitter/playground" },
       { "windwp/nvim-ts-autotag" },
     },
   })
