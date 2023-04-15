@@ -21,7 +21,6 @@ lsp_installer.setup({
     "cssls",
     "html",
     "jsonls",
-    "prismals",
     "svelte",
     "emmet_ls",
     "eslint",
