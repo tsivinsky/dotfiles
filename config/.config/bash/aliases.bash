@@ -15,7 +15,7 @@ newgo() {
 
 	go mod init $1
 
-	touch main.go
+	nap go/pkgm >main.go
 }
 
 declare -A aliases=(
