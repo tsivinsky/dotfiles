@@ -31,6 +31,7 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "F", api.live_filter.clear, opts("clear filter"))
   vim.keymap.set("n", "f", api.live_filter.start, opts("filter"))
   vim.keymap.set("n", "q", api.tree.close, opts("quit"))
+  vim.keymap.set("n", "p", api.fs.paste, opts("paste"))
 end
 
 require("nvim-tree").setup({
