@@ -86,7 +86,7 @@ output * {
 }
 
 output $laptopMonitor {
-  pos 0 1920
+  pos 0 1080
 }
 output $mainMonitor {
   pos 0 0
