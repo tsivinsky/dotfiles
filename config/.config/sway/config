@@ -86,10 +86,10 @@ output * {
 }
 
 output $laptopMonitor {
-  pos 0 0
+  pos 0 1920
 }
 output $mainMonitor {
-  pos 1920 0
+  pos 0 0
   mode 1920x1080@144Hz
 }
 
