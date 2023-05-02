@@ -37,6 +37,8 @@ set $textColor #cbccc6
 set $mainMonitor "HDMI-A-1"
 set $laptopMonitor "eDP-1"
 
+set $wallpaperPathFile "~/.config/.wallpaper"
+
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob \
   -a "bottom" \
@@ -82,7 +84,7 @@ workspace "$ws2" output $laptopMonitor
 workspace "$ws1" output $mainMonitor
 
 output * {
-  bg ~/dotfiles/wallpapers/guweiz-samurai.jpg fill
+  bg $(cat $wallpaperPathFile) fill
 }
 
 output $laptopMonitor {
