@@ -16,6 +16,10 @@ cmd mkdir ${{
   mkdir -p "$1"
 }}
 
+cmd wallpaper ${{
+  echo -n "/home/daniil/dotfiles/wallpapers/$1" > ~/.config/.wallpaper
+}}
+
 ### Mappings
 map <enter> toggle
 map <space> toggle
