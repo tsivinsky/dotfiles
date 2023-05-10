@@ -17,7 +17,8 @@ cmd mkdir ${{
 }}
 
 cmd wallpaper ${{
-  echo -n "/home/daniil/dotfiles/wallpapers/$1" > ~/.config/.wallpaper
+  p=$(pwd)
+  echo -n "$p/$1" > ~/.config/.wallpaper
 }}
 
 ### Mappings
