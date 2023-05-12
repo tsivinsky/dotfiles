@@ -7,7 +7,6 @@
   ],
   "modules-right": [
     "tray",
-    "custom/pacman-packages",
     "pulseaudio",
     "sway/language",
     "network",
@@ -25,12 +24,6 @@
   },
   "custom/player": {
     "exec": "playerctl metadata -f '{{title}} ― {{artist}}' -F"
-  },
-  "custom/pacman-packages": {
-    "exec": "pacman -Qu | wc -l",
-    "restart-interval": 900,
-    "format": "{icon} {}",
-    "format-icons": ""
   },
   "pulseaudio": {
     "tooltip": false,
