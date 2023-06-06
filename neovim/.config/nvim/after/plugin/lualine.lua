@@ -17,6 +17,11 @@ local diagnostics = {
   always_visible = true,
 }
 
+local relative_filename = {
+  "filename",
+  path = 1,
+}
+
 local filetype = {
   function()
     local filetype = vim.bo.filetype
@@ -113,7 +118,7 @@ lualine.setup({
   sections = {
     lualine_a = { mode },
     lualine_b = { branch },
-    lualine_c = { diagnostics },
+    lualine_c = { diagnostics, relative_filename },
     lualine_x = { diff, location, tabstop, fileformat },
     lualine_y = { filetype },
     lualine_z = {},
