@@ -33,7 +33,6 @@ null_ls.setup({
   sources = {
     formatting.prettierd,
     formatting.stylua,
-    formatting.black,
     formatting.gofmt,
     formatting.goimports,
     formatting.shfmt,
