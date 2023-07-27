@@ -14,7 +14,6 @@ end
 require("packer").startup(function(use)
   use({ "wbthomason/packer.nvim" })
 
-  use({ "MunifTanjim/nui.nvim" })
   use({ "nvim-lua/popup.nvim" })
   use({ "nvim-lua/plenary.nvim" })
   use({ "folke/neodev.nvim" })
@@ -124,14 +123,6 @@ require("packer").startup(function(use)
     "stevearc/dressing.nvim",
     config = function()
       require("dressing").setup({})
-    end,
-  })
-
-  use({ "mfussenegger/nvim-dap" })
-  use({
-    "theHamsta/nvim-dap-virtual-text",
-    config = function()
-      require("nvim-dap-virtual-text").setup()
     end,
   })
 
