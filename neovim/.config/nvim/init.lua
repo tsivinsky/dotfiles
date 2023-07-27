@@ -19,7 +19,7 @@ require("packer").startup(function(use)
   use({ "folke/neodev.nvim" })
 
   -- Colorschemes go here
-  use({ "sainnhe/gruvbox-material" })
+  use({ "sainnhe/gruvbox-material", "ellisonleao/gruvbox.nvim" })
 
   -- Make commenting code great
   use({
