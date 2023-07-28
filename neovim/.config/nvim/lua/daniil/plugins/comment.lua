@@ -5,7 +5,8 @@ require("Comment").setup({
       local U = require("Comment.utils")
 
       -- Detemine whether to use linewise or blockwise commentstring
-      local type = ctx.ctype == U.ctype.line and "__default" or "__multiline"
+      -- local type = ctx.ctype == U.ctype.line and "__default" or "__multiline"
+      local type = "__default"
 
       -- Determine the location where to calculate commentstring from
       local location = nil
