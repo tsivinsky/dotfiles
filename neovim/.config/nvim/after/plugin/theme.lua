@@ -11,4 +11,5 @@ require("gruvbox").setup({
 vim.cmd([[
 colorscheme gruvbox
 hi clear SignColumn
+hi GitSignsCurrentLineBlame guifg=#888888
 ]])
