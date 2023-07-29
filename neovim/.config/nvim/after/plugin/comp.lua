@@ -58,16 +58,9 @@ cmp.setup({
     }),
     ["<A-j>"] = cmp.mapping.scroll_docs(4),
     ["<A-k>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-l>"] = cmp.mapping(function(fallback)
+    ["<C-f>"] = cmp.mapping(function(fallback)
       if ls.expand_or_jumpable() then
         ls.expand_or_jump()
-      else
-        fallback()
-      end
-    end),
-    ["<C-h>"] = cmp.mapping(function(fallback)
-      if ls.jumpable(-1) then
-        ls.jump(-1)
       else
         fallback()
       end

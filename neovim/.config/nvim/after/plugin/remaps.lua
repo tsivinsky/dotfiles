@@ -1,6 +1,7 @@
 local ts = require("telescope.builtin")
 local u = require("daniil.utils")
 local git = require("daniil.git")
+local ls = require("luasnip")
 
 -- General keymaps
 vim.keymap.set("n", "<C-c>", ":nohl<CR>")
@@ -109,3 +110,19 @@ vim.keymap.set("n", "<leader>gg", ":G<CR>")
 vim.keymap.set("n", "<leader>go", function()
   git.open_commit_on_github()
 end)
+
+-- Luasnip
+local function next_choice()
+  if ls.jumpable(1) then
+    ls.jump(1)
+  end
+end
+local function prev_choice()
+  if ls.jumpable(-1) then
+    ls.jump(-1)
+  end
+end
+vim.keymap.set("i", "<C-l>", next_choice, { noremap = true, silent = true })
+vim.keymap.set("s", "<C-l>", next_choice, { noremap = true, silent = true })
+vim.keymap.set("i", "<C-h>", prev_choice, { noremap = true, silent = true })
+vim.keymap.set("s", "<C-h>", prev_choice, { noremap = true, silent = true })
