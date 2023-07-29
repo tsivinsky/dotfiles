@@ -102,9 +102,6 @@ require("packer").startup(function(use)
       "nvim-telescope/telescope-fzf-native.nvim",
       run = "make",
     },
-    {
-      "nvim-telescope/telescope-symbols.nvim",
-    },
   })
 
   -- Statusline
