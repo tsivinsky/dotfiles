@@ -16,23 +16,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*",
-  group = group,
-  callback = function()
-    local ft = vim.bo.filetype
-
-    if ft == "fugitive" then
-      vim.wo.colorcolumn = ""
-    end
-
-    if ft == "gitcommit" then
-      vim.wo.colorcolumn = "50"
-      vim.cmd("setlocal spell")
-    end
-  end,
-})
-
 local function open_nvim_tree(data)
   -- buffer is a directory
   local directory = vim.fn.isdirectory(data.file) == 1
