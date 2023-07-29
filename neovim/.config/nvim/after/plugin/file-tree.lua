@@ -54,7 +54,7 @@ require("nvim-tree").setup({
   },
   renderer = {
     add_trailing = true,
-    group_empty = true,
+    group_empty = false,
     highlight_git = true,
     indent_markers = {
       enable = true,
