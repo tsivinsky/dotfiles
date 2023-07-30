@@ -2,14 +2,7 @@ vim.api.nvim_set_hl(0, "SpellBad", {
   fg = "red",
 })
 
-require("gruvbox").setup({
-  italic = {
-    comments = true,
-  },
-})
-
 vim.cmd([[
-colorscheme gruvbox
+colorscheme gruvbox-material
 hi clear SignColumn
-hi GitSignsCurrentLineBlame guifg=#888888
 ]])
