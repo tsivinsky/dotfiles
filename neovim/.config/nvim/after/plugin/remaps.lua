@@ -84,7 +84,7 @@ end)
 vim.keymap.set("v", "<leader>.", function()
   vim.lsp.buf.range_code_action()
 end)
-vim.keymap.set("i", "<C-i>", vim.lsp.buf.signature_help)
+vim.keymap.set({ "i", "n" }, "<C-i>", vim.lsp.buf.signature_help)
 
 -- Diagnostics
 vim.keymap.set("n", "<leader>ee", function()
