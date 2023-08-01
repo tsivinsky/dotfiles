@@ -74,11 +74,6 @@ local on_attach = function(client, bufnr)
   if client.name == "tailwindcss" then
     require("tailwindcss-colors").buf_attach(bufnr)
   end
-
-  require("lsp_signature").on_attach({
-    bind = true,
-    hint_enable = false,
-  }, bufnr)
 end
 
 local servers = lsp_installer.get_installed_servers()
