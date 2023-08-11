@@ -105,6 +105,8 @@ vim.keymap.set("n", "<leader>gg", ":G<CR>")
 vim.keymap.set("n", "<leader>go", function()
   git.open_commit_on_github()
 end)
+vim.keymap.set("n", "gh", ":diffget //2<CR>")
+vim.keymap.set("n", "gl", ":diffget //3<CR>")
 
 -- Luasnip
 local function next_choice()
