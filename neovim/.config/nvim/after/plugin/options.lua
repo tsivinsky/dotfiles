@@ -44,3 +44,6 @@ opt.showmode = false
 opt.redrawtime = 4000
 opt.list = true
 opt.listchars = { multispace = "·", tab = ">~" }
+
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true

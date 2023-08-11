@@ -121,3 +121,11 @@ vim.keymap.set("i", "<C-l>", next_choice, { noremap = true, silent = true })
 vim.keymap.set("s", "<C-l>", next_choice, { noremap = true, silent = true })
 vim.keymap.set("i", "<C-h>", prev_choice, { noremap = true, silent = true })
 vim.keymap.set("s", "<C-h>", prev_choice, { noremap = true, silent = true })
+
+-- Undotree
+vim.keymap.set("n", "<leader>u", function()
+  vim.cmd([[
+    UndotreeToggle
+    UndotreeFocus
+  ]])
+end)

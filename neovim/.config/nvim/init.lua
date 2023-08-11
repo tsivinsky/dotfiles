@@ -122,6 +122,8 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({ "mbbill/undotree" })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
