@@ -14,7 +14,6 @@ end
 require("packer").startup(function(use)
   use({ "wbthomason/packer.nvim" })
 
-  use({ "nvim-lua/popup.nvim" })
   use({ "nvim-lua/plenary.nvim" })
   use({ "folke/neodev.nvim" })
 
@@ -69,13 +68,6 @@ require("packer").startup(function(use)
   use({ "neovim/nvim-lspconfig" })
   use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" })
   use({ "jose-elias-alvarez/null-ls.nvim" })
-  use({
-    "themaxmarchuk/tailwindcss-colors.nvim",
-    module = "tailwindcss-colors",
-    config = function()
-      require("tailwindcss-colors").setup()
-    end,
-  })
   use({ "b0o/SchemaStore.nvim" })
 
   -- Completion, snippets, etc
@@ -105,22 +97,6 @@ require("packer").startup(function(use)
 
   -- Statusline
   use({ "nvim-lualine/lualine.nvim" })
-
-  -- Highlight colors
-  use({
-    "norcalli/nvim-colorizer.lua",
-    event = "BufRead",
-    config = function()
-      require("colorizer").setup({ "*" })
-    end,
-  })
-
-  use({
-    "stevearc/dressing.nvim",
-    config = function()
-      require("dressing").setup({})
-    end,
-  })
 
   use({ "mbbill/undotree" })
 
