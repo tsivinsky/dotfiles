@@ -78,8 +78,6 @@ end
 
 local servers = lsp_installer.get_installed_servers()
 
-require("neodev").setup({})
-
 for _, server in ipairs(servers) do
   local opts = {
     capabilities = capabilities,

@@ -15,7 +15,6 @@ require("packer").startup(function(use)
   use({ "wbthomason/packer.nvim" })
 
   use({ "nvim-lua/plenary.nvim" })
-  use({ "folke/neodev.nvim" })
 
   -- Colorschemes go here
   use({ "sainnhe/gruvbox-material" })
