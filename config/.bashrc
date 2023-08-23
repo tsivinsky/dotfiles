@@ -62,3 +62,6 @@ function ? {
 TZ=:/etc/localtime
 
 export FONTCONFIG_PATH=/etc/fonts
+
+# opam configuration
+test -r /home/daniil/.opam/opam-init/init.sh && . /home/daniil/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
