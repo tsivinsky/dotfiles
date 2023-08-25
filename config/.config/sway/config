@@ -147,7 +147,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id swaync-client -R
 exec_always --no-startup-id xrdb -load $HOME/.Xresources
 exec_always --no-startup-id $HOME/.config/waybar/launch.sh
-exec_always --no-startup-id $HOME/dotfiles/bin/swayidle.sh
+# exec_always --no-startup-id $HOME/dotfiles/bin/swayidle.sh
 exec_always --no-startup-id $HOME/dotfiles/bin/initial-mic-state.sh
 exec_always --no-startup-id $HOME/dotfiles/bin/sway-lid-watcher.sh
 
