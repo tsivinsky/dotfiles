@@ -2,32 +2,12 @@ local mason = require("mason")
 local lsp_installer = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
-local util = require("lspconfig").util
-local u = require("daniil.utils")
+local util = lspconfig.util
 
 local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
 
 mason.setup()
-
-lsp_installer.setup({
-  ensure_installed = {
-    "bashls",
-    "cssmodules_ls",
-    "dockerls",
-    "tailwindcss",
-    "tsserver",
-    "vimls",
-    "cssls",
-    "html",
-    "jsonls",
-    "svelte",
-    "emmet_ls",
-    "eslint",
-    "gopls",
-  },
-  automatic_installation = true,
-})
+lsp_installer.setup()
 
 null_ls.setup({
   sources = {
@@ -43,41 +23,38 @@ null_ls.setup({
       pattern = "*",
       group = group,
       callback = function()
-        u.lsp_format()
+        vim.lsp.buf.format()
       end,
     })
   end,
 })
 
--- Other formats that work weird with null_ls
-local group = vim.api.nvim_create_augroup("OtherLspFormatting", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.svelte" },
-  group = group,
-  callback = function()
-    vim.lsp.buf.format()
-  end,
-})
+local function on_attach(client, bufnr)
+  local opts = { buffer = bufnr, remap = false }
+
+  vim.keymap.set("n", "gd", ts.lsp_definitions, opts)
+  vim.keymap.set("n", "gr", ts.lsp_references, opts)
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+  vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
+  vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
+  vim.keymap.set("v", "<leader>.", vim.lsp.buf.range_code_action, opts)
+  vim.keymap.set({ "i", "n" }, "<C-u>", vim.lsp.buf.signature_help, opts)
+
+  vim.keymap.set("n", "<leader>ee", function()
+    vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
+  end, opts)
+  vim.keymap.set("n", "<leader>en", function()
+    vim.diagnostic.goto_next({ float = false })
+  end)
+  vim.keymap.set("n", "<leader>eN", function()
+    vim.diagnostic.goto_prev({ float = false })
+  end)
+end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local lsps_with_disabled_formatting = { "tsserver", "gopls", "jsonls", "html", "sumneko_lua" }
-
-local on_attach = function(client, bufnr)
-  if vim.tbl_contains(lsps_with_disabled_formatting, client.name) then
-    client.server_capabilities.document_formatting = false
-    client.server_capabilities.document_range_formatting = false
-    client.server_capabilities.documentFormattingProvider = false
-  end
-
-  if client.name == "tailwindcss" then
-    require("tailwindcss-colors").buf_attach(bufnr)
-  end
-end
-
 local servers = lsp_installer.get_installed_servers()
-
 for _, server in ipairs(servers) do
   local opts = {
     capabilities = capabilities,
@@ -87,41 +64,6 @@ for _, server in ipairs(servers) do
 
   if server == "emmet_ls" then
     opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact", "astro" }
-  end
-
-  if server == "jsonls" then
-    opts.filetypes = { "json", "jsonc", "yaml" }
-    opts.settings = {
-      json = {
-        format = {
-          enable = false,
-        },
-        schemas = require("schemastore").json.schemas({
-          select = {
-            ".eslintrc",
-            "package.json",
-            "tsconfig.json",
-            "prettierrc.json",
-            "babelrc.json",
-            "Vercel",
-            "cypress.json",
-            "GitHub Action",
-            "GitHub Workflow",
-            "lerna.json",
-            "openapi.json",
-            ".postcssrc",
-            "prisma.yml",
-            "Swagger API 2.0",
-            "huskyrc",
-            "jsdoc",
-            ".commitlintrc",
-            "docker-compose.yml",
-            ".yarnrc.yml",
-            "swcrc",
-          },
-        }),
-      },
-    }
   end
 
   if server == "tsserver" then

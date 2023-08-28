@@ -1,6 +1,7 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local layout_actions = require("telescope.actions.layout")
+local builtin = require("telescope.builtin")
 
 telescope.setup({
   defaults = {
@@ -14,9 +15,6 @@ telescope.setup({
         ["<C-p>"] = layout_actions.toggle_preview,
       },
       n = {
-        ["<C-d>"] = function(prompt_bufnr)
-          actions.delete_buffer(prompt_bufnr)
-        end,
         ["<C-p>"] = layout_actions.toggle_preview,
       },
     },
@@ -28,19 +26,9 @@ telescope.setup({
     lsp_definitions = {
       initial_mode = "normal",
     },
-    buffers = {
-      mappings = {
-        i = {
-          ["<C-d>"] = function(prompt_bufnr)
-            actions.delete_buffer(prompt_bufnr)
-          end,
-        },
-        n = {
-          ["<C-d>"] = function(prompt_bufnr)
-            actions.delete_buffer(prompt_bufnr)
-          end,
-        },
-      },
+    find_files = {
+      hidden = true,
+      no_ignore = true,
     },
   },
   extensions = {
@@ -53,4 +41,6 @@ telescope.setup({
   },
 })
 
-require("telescope").load_extension("fzf")
+telescope.load_extension("fzf")
+
+vim.keymap.set("n", "<leader>f", builtin.find_files)

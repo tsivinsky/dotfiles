@@ -13,63 +13,22 @@ end
 
 require("packer").startup(function(use)
   use({ "wbthomason/packer.nvim" })
-
   use({ "nvim-lua/plenary.nvim" })
 
-  -- Colorschemes go here
   use({ "sainnhe/gruvbox-material" })
 
-  -- Make commenting code great
+  use({ "nvim-treesitter/nvim-treesitter" })
+  use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+
   use({
-    "numToStr/Comment.nvim",
-    event = "BufRead",
-    config = function()
-      require("daniil.plugins.comment")
-    end,
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
   })
 
-  -- Icons used by many plugins
-  use({ "kyazdani42/nvim-web-devicons" })
-
-  -- Auto pairs plugin that automatically closes brackets and quotes
-  use({
-    "windwp/nvim-autopairs",
-    event = "BufRead",
-    config = function()
-      require("nvim-autopairs").setup({})
-    end,
-  })
-
-  -- File tree
-  use({ "kyazdani42/nvim-tree.lua" })
-
-  -- Treesitter for better syntax highlighting
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    {
-      { "JoosepAlviste/nvim-ts-context-commentstring" },
-      { "windwp/nvim-ts-autotag" },
-    },
-  })
-
-  -- Git things
-  use({
-    "lewis6991/gitsigns.nvim",
-    event = "BufRead",
-    config = function()
-      require("daniil.plugins.gitsigns")
-    end,
-  })
   use({ "tpope/vim-fugitive" })
+  use({ "lewis6991/gitsigns.nvim" })
 
-  -- LSP stuff
-  use({ "neovim/nvim-lspconfig" })
-  use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" })
-  use({ "jose-elias-alvarez/null-ls.nvim" })
-  use({ "b0o/SchemaStore.nvim" })
-
-  -- Completion, snippets, etc
   use({
     "hrsh7th/nvim-cmp",
     {
@@ -83,21 +42,10 @@ require("packer").startup(function(use)
   use({ "L3MON4D3/LuaSnip", {
     "saadparwaiz1/cmp_luasnip",
   } })
-  use({ "rafamadriz/friendly-snippets" })
 
-  use({
-    "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      run = "make",
-    },
-  })
-
-  -- Statusline
-  use({ "nvim-lualine/lualine.nvim" })
-
-  use({ "mbbill/undotree" })
+  use({ "neovim/nvim-lspconfig" })
+  use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" })
+  use({ "jose-elias-alvarez/null-ls.nvim" })
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

@@ -1,49 +1,40 @@
-local opt = vim.opt
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
 
--- 2 tabs converted to spaces + autoindentation
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.autoindent = true
+vim.opt.guicursor = "a:blinkoff0"
+vim.opt.mouse = ""
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.signcolumn = "yes"
+vim.opt.laststatus = 3
+vim.opt.cmdheight = 0
+vim.opt.showcmd = false
+vim.opt.cursorline = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.autoread = true
+vim.opt.colorcolumn = "80"
+vim.opt.showtabline = 2
+vim.opt.wrap = true
+vim.opt.encoding = "utf-8"
+vim.opt.updatetime = 300
+vim.opt.fillchars:append({ eob = " " })
+vim.opt.scrolloff = 5
+vim.opt.redrawtime = 4000
+vim.opt.showmode = false
+vim.opt.hidden = true
 
--- What the **** is this
-opt.shortmess = "filnxtToOFc"
+vim.opt.swapfile = false
+vim.opt.writebackup = false
 
--- Create splits like a normal human being
-opt.splitbelow = true
-opt.splitright = true
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
 
--- Other settings
-opt.termguicolors = true
-opt.number = true
-opt.relativenumber = true
-opt.wrap = true
-opt.swapfile = false
-opt.hidden = true
-opt.writebackup = false
-opt.encoding = "utf-8"
-opt.updatetime = 300
-opt.mouse = ""
-opt.cursorline = true
-opt.clipboard = "unnamedplus"
-opt.signcolumn = "yes"
-opt.fillchars:append({ eob = " " })
-opt.showtabline = 2
-opt.showcmd = false
-opt.guicursor = "a:blinkoff0"
-opt.fileformat = "unix"
-opt.fileformats = { "unix", "dos", "mac" }
-opt.laststatus = 3
-opt.cmdheight = 0
-opt.smartcase = true
-opt.ignorecase = true
-opt.scrolloff = 5
-opt.colorcolumn = "120"
-opt.autoread = true
-opt.showmode = false
-opt.redrawtime = 4000
-opt.list = true
-opt.listchars = { multispace = "·", tab = ">~" }
+vim.opt.list = true
+vim.opt.listchars = { multispace = "·", tab = ">~" }
 
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-opt.undofile = true
+vim.cmd("colorscheme gruvbox-material")
