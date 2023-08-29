@@ -47,6 +47,8 @@ require("packer").startup(function(use)
   use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" })
   use({ "jose-elias-alvarez/null-ls.nvim" })
 
+  use({ "mbbill/undotree" })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
