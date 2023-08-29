@@ -23,7 +23,7 @@ require("packer").startup(function(use)
   use({
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
-    { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+    { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
   })
 
   use({ "tpope/vim-fugitive" })
