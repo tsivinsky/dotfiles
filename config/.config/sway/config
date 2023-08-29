@@ -77,9 +77,6 @@ input type:touchpad {
   dwt disabled
 }
 
-workspace "$ws2" output $laptopMonitor
-workspace "$ws1" output $mainMonitor
-
 output * {
   bg $(cat $wallpaperPathFile) fill
 }
