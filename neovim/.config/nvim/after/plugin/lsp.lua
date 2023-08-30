@@ -1,3 +1,4 @@
+local ts = require("telescope.builtin")
 local mason = require("mason")
 local lsp_installer = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
