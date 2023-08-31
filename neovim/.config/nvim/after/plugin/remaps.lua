@@ -4,7 +4,7 @@ vim.keymap.set({ "n", "i", "v" }, "<PageUp>", "<nop>")
 vim.keymap.set({ "n", "i", "v" }, "<F1>", "<nop>")
 vim.keymap.set("n", "q:", "<nop>")
 
-vim.keymap.set("n", "<leader><leader>", vim.cmd.Ex)
+vim.keymap.set("n", "<leader><leader>", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<C-c>", vim.cmd.nohl)
 
 -- Move lines easily
