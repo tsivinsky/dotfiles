@@ -54,6 +54,8 @@ require("packer").startup(function(use)
 
   use({ "windwp/nvim-autopairs" })
 
+  use({ "numToStr/Comment.nvim" })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
