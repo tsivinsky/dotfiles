@@ -13,7 +13,7 @@ require("gitsigns").setup({
   on_attach = function(bufnr)
     vim.keymap.set("n", "gn", actions.next_hunk)
     vim.keymap.set("n", "gN", actions.prev_hunk)
-    vim.keymap.set("n", "gr", actions.reset_hunk)
+    vim.keymap.set({ "n", "v" }, "<leader>gr", actions.reset_hunk)
   end,
 })
 
