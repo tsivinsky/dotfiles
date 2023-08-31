@@ -13,9 +13,13 @@ telescope.setup({
         ["<C-j>"] = actions.move_selection_worse,
         ["<C-k>"] = actions.move_selection_better,
         ["<C-p>"] = layout_actions.toggle_preview,
+        ["<C-x>"] = actions.add_selected_to_qflist,
+        ["<C-t>"] = actions.toggle_selection,
       },
       n = {
         ["<C-p>"] = layout_actions.toggle_preview,
+        ["<C-x>"] = actions.add_selected_to_qflist,
+        ["<C-t>"] = actions.toggle_selection,
       },
     },
   },

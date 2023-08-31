@@ -24,3 +24,14 @@ vim.keymap.set("n", "tn", ":tabnew<CR>")
 vim.keymap.set("n", "tN", ":-tabnew<CR>")
 vim.keymap.set("n", "H", ":tabprev<CR>")
 vim.keymap.set("n", "L", ":tabnext<CR>")
+
+-- quickfix
+vim.keymap.set("n", "<C-q><C-q>", function()
+  if vim.bo.ft == "qf" then
+    vim.cmd(":cclose")
+  else
+    vim.cmd(":copen")
+  end
+end)
+vim.keymap.set("n", "<C-q>n", vim.cmd.cnext)
+vim.keymap.set("n", "<C-q>N", vim.cmd.cprevious)
