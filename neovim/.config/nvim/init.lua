@@ -52,6 +52,8 @@ require("packer").startup(function(use)
   use({ "kyazdani42/nvim-tree.lua" })
   use({ "kyazdani42/nvim-web-devicons" })
 
+  use({ "windwp/nvim-autopairs" })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
