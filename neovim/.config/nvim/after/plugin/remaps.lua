@@ -1,3 +1,5 @@
+local formatting = require("daniil.formatting")
+
 -- Disable different keys and commands
 vim.keymap.set({ "n", "i", "v" }, "<PageDown>", "<nop>")
 vim.keymap.set({ "n", "i", "v" }, "<PageUp>", "<nop>")
@@ -35,3 +37,6 @@ vim.keymap.set("n", "<C-q><C-q>", function()
 end)
 vim.keymap.set("n", "<C-q>n", vim.cmd.cnext)
 vim.keymap.set("n", "<C-q>N", vim.cmd.cprevious)
+
+-- formatting
+vim.keymap.set("n", "<C-g>", formatting.toggle)

@@ -4,19 +4,20 @@ local lsp_installer = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
 local util = lspconfig.util
+local formatting = require("daniil.formatting")
 
-local formatting = null_ls.builtins.formatting
+local null_formatting = null_ls.builtins.formatting
 
 mason.setup()
 lsp_installer.setup()
 
 null_ls.setup({
   sources = {
-    formatting.prettierd,
-    formatting.stylua,
-    formatting.gofmt,
-    formatting.goimports,
-    formatting.shfmt,
+    null_formatting.prettierd,
+    null_formatting.stylua,
+    null_formatting.gofmt,
+    null_formatting.goimports,
+    null_formatting.shfmt,
   },
   on_attach = function()
     local group = vim.api.nvim_create_augroup("NullLsLspFormatting", { clear = true })
@@ -24,6 +25,10 @@ null_ls.setup({
       pattern = "*",
       group = group,
       callback = function()
+        if not formatting.is_enabled() then
+          return
+        end
+
         vim.lsp.buf.format()
       end,
     })
