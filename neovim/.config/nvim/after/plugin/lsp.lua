@@ -45,17 +45,17 @@ local function on_attach(client, bufnr)
   vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
   vim.keymap.set("v", "<leader>.", vim.lsp.buf.range_code_action, opts)
   vim.keymap.set({ "i", "n" }, "<C-u>", vim.lsp.buf.signature_help, opts)
-
-  vim.keymap.set("n", "<leader>ee", function()
-    vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
-  end, opts)
-  vim.keymap.set("n", "<leader>en", function()
-    vim.diagnostic.goto_next({ float = false })
-  end)
-  vim.keymap.set("n", "<leader>eN", function()
-    vim.diagnostic.goto_prev({ float = false })
-  end)
 end
+
+vim.keymap.set("n", "<leader>ee", function()
+  vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
+end)
+vim.keymap.set("n", "<leader>en", function()
+  vim.diagnostic.goto_next({ float = false })
+end)
+vim.keymap.set("n", "<leader>eN", function()
+  vim.diagnostic.goto_prev({ float = false })
+end)
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
