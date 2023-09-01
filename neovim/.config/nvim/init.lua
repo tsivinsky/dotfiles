@@ -56,6 +56,8 @@ require("packer").startup(function(use)
 
   use({ "numToStr/Comment.nvim" })
 
+  use({ "nvim-lualine/lualine.nvim" })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
