@@ -34,7 +34,7 @@ set $br #ffa759
 set $brbug #FF0000
 set $textColor #cbccc6
 
-set $mainMonitor "HDMI-A-1"
+set $mainMonitor "DP-1"
 set $laptopMonitor "eDP-1"
 
 set $wallpaperPathFile "~/.config/.wallpaper"
