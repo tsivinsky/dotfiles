@@ -6,7 +6,7 @@ device=""
 if [[ "$active_output" == "HDMI-A-1" ]]; then
 	device="ddcci5"
 else
-	device="amdgpu_bl0"
+	device="amdgpu_bl1"
 fi
 
 param=""
