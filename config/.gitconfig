@@ -19,3 +19,4 @@
   rebase = false
 [alias]
 	today = log --author=daniil@tsivinsky.com --since=yesterday
+  sync = remote update origin -p
