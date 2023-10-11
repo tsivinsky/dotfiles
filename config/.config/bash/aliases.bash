@@ -26,11 +26,8 @@ declare -A aliases=(
 	["lah"]="ls -lAh"
 	["la"]="ls -A"
 	["ll"]="ls -l"
-	["ed"]="$EDITOR"
-	["c"]="clear"
 	["pacman"]="pacman --color auto"
 	["yay"]="yay --color auto"
-	["q"]="exit"
 	["tree"]="tree -C"
 
 	# Tmux
