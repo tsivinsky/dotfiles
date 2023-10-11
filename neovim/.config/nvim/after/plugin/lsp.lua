@@ -44,7 +44,6 @@ local function on_attach(client, bufnr)
   vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
   vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
   vim.keymap.set("v", "<leader>.", vim.lsp.buf.range_code_action, opts)
-  vim.keymap.set({ "i", "n" }, "<C-u>", vim.lsp.buf.signature_help, opts)
 end
 
 vim.keymap.set("n", "<leader>ee", function()
