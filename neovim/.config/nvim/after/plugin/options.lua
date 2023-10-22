@@ -35,6 +35,6 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 
 vim.opt.list = true
-vim.opt.listchars = { multispace = "·", tab = ">~" }
+vim.opt.listchars = { multispace = "·", tab = ">~", leadmultispace = "┊ " }
 
 vim.cmd("colorscheme gruvbox-material")
