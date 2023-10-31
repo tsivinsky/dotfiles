@@ -38,6 +38,12 @@ null_ls.setup({
 local function on_attach(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
+  -- disable tsserver formatting here because i don't understand how lsp configuration works
+  if client.name == "tsserver" then
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+  end
+
   vim.keymap.set("n", "gd", ts.lsp_definitions, opts)
   vim.keymap.set("n", "gr", ts.lsp_references, opts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
