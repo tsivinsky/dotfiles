@@ -68,6 +68,8 @@ require("packer").startup(function(use)
     end,
   })
 
+  use({ "b0o/SchemaStore.nvim" })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

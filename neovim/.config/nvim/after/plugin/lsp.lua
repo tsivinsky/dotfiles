@@ -104,6 +104,17 @@ for _, server in ipairs(servers) do
     opts.root_dir = util.root_pattern("tailwind.config.js", ".git")
   end
 
+  if server == "jsonls" then
+    opts.settings = {
+      json = {
+        schemas = require("schemastore").json.schemas(),
+        validate = {
+          enable = true,
+        },
+      },
+    }
+  end
+
   lspconfig[server].setup(opts)
 end
 
