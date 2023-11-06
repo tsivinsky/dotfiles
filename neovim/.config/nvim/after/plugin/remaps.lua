@@ -37,6 +37,3 @@ vim.keymap.set("n", "<C-q><C-q>", function()
 end)
 vim.keymap.set("n", "<C-q>n", vim.cmd.cnext)
 vim.keymap.set("n", "<C-q>N", vim.cmd.cprevious)
-
--- formatting
-vim.keymap.set("n", "<C-g>", formatting.toggle)
