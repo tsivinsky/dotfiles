@@ -21,6 +21,6 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
       buffer = bufnr,
     }
 
-    vim.keymap.set("n", "p", ":Git push<CR>", opts)
+    vim.keymap.set("n", "<leader>p", ":Git push<CR>", opts)
   end,
 })
