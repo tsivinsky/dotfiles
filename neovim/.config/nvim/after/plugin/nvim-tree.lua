@@ -46,11 +46,13 @@ require("nvim-tree").setup({
     enable = true,
   },
   view = {
-    width = 30,
+    width = 40,
     adaptive_size = false,
     side = "left",
     preserve_window_proportions = true,
     centralize_selection = true,
+    number = true,
+    relativenumber = true,
   },
   renderer = {
     add_trailing = true,
