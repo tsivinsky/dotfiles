@@ -13,7 +13,9 @@ lsp_installer.setup()
 
 null_ls.setup({
   sources = {
-    null_formatting.prettierd,
+    null_formatting.prettierd.with({
+      extra_filetypes = { "svelte" },
+    }),
     null_formatting.stylua,
     null_formatting.gofmt,
     null_formatting.goimports,
