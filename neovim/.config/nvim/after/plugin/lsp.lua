@@ -57,6 +57,10 @@ local function on_attach(client, bufnr)
   if not vim.lsp.buf.range_code_action == nil then
     vim.keymap.set("v", "<leader>.", vim.lsp.buf.range_code_action, opts)
   end
+
+  if client.server_capabilities.inlayHintProvider then
+    vim.lsp.inlay_hint.enable(bufnr, true)
+  end
 end
 
 vim.keymap.set("n", "<leader>ee", function()
@@ -84,21 +88,13 @@ for _, server in ipairs(servers) do
     opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact", "astro" }
   end
 
-  if server == "tsserver" then
+  if server == "gopls" then
+    -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
     opts.settings = {
-      tsserver = {
-        experimental = {
-          enableProjectDiagnostics = true,
-        },
-        javascript = {
-          format = {
-            enable = false,
-          },
-        },
-        typescript = {
-          format = {
-            enable = false,
-          },
+      gopls = {
+        linksInHover = true,
+        hints = {
+          constantValues = true,
         },
       },
     }

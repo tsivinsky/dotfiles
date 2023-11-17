@@ -24,3 +24,11 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
     vim.keymap.set("n", "<leader>p", ":Git push<CR>", opts)
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+  pattern = "*",
+  group = group,
+  callback = function()
+    vim.lsp.codelens.refresh()
+  end,
+})
