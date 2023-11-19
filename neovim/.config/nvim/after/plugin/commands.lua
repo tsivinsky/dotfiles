@@ -9,13 +9,15 @@ vim.api.nvim_create_user_command("FormattingDisable", formatting.disable, {})
 vim.api.nvim_create_user_command("FormattingToggle", formatting.toggle, {})
 vim.api.nvim_create_user_command("FormattingStatus", formatting.status, {})
 
-vim.api.nvim_create_user_command("GoCommands", function()
-  local clients = vim.lsp.get_active_clients()
-  for _, client in ipairs(clients) do
-    if client.name == "gopls" then
-      print(vim.inspect(client.server_capabilities.executeCommandProvider.commands))
+vim.api.nvim_create_user_command("LspCommands", function()
+  vim.ui.input({ prompt = "LSP server: " }, function(input)
+    local clients = vim.lsp.get_active_clients()
+    for _, client in ipairs(clients) do
+      if client.name == input then
+        print(vim.inspect(client.server_capabilities.executeCommandProvider.commands))
+      end
     end
-  end
+  end)
 end, {})
 
 vim.api.nvim_create_user_command("CodelensList", function()
