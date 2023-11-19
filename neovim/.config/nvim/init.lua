@@ -18,7 +18,13 @@ require("packer").startup(function(use)
   use({ "sainnhe/gruvbox-material" })
 
   use({ "nvim-treesitter/nvim-treesitter" })
-  use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+  use({
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    config = function()
+      require("ts_context_commentstring").setup({})
+      vim.g.skip_ts_context_commentstring_module = true
+    end,
+  })
 
   use({
     "nvim-telescope/telescope.nvim",
