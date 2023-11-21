@@ -8,23 +8,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufWinEnter", {
-  pattern = "*",
-  group = group,
-  callback = function()
-    if vim.bo.ft ~= "fugitive" then
-      return
-    end
-
-    local bufnr = vim.api.nvim_get_current_buf()
-    local opts = {
-      buffer = bufnr,
-    }
-
-    vim.keymap.set("n", "<leader>p", ":Git push<CR>", opts)
-  end,
-})
-
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
   pattern = "*",
   group = group,
