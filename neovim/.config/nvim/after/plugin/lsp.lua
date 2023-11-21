@@ -58,7 +58,7 @@ local function on_attach(client, bufnr)
     vim.keymap.set("v", "<leader>.", vim.lsp.buf.range_code_action, opts)
   end
 
-  if client.server_capabilities.inlayHintProvider then
+  if client.name ~= "tsserver" and client.server_capabilities.inlayHintProvider then
     vim.lsp.inlay_hint.enable(bufnr, true)
   end
 end
