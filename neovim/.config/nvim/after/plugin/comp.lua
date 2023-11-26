@@ -38,9 +38,21 @@ cmp.setup({
     end,
   },
   mapping = {
-    ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-    ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-    ["<C-space>"] = cmp.mapping(function(fallback)
+    ["<C-j>"] = cmp.mapping(function()
+      if ls.in_snippet() then
+        ls.jump(1)
+      else
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+      end
+    end),
+    ["<C-k>"] = cmp.mapping(function()
+      if ls.in_snippet() then
+        ls.jump(-1)
+      else
+        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+      end
+    end),
+    ["<C-space>"] = cmp.mapping(function()
       if cmp.visible() then
         cmp.close()
       else
@@ -124,3 +136,5 @@ cmp.setup.filetype("gitcommit", {
     { name = "buffer" },
   }),
 })
+
+require("luasnip.loaders.from_vscode").lazy_load()
