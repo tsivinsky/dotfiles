@@ -93,9 +93,6 @@ for _, server in ipairs(servers) do
     opts.settings = {
       gopls = {
         linksInHover = true,
-        hints = {
-          constantValues = true,
-        },
       },
     }
   end
