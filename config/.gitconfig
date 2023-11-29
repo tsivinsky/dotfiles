@@ -2,7 +2,7 @@
   email = daniil@tsivinsky.com
   name = Daniil Tsivinsky
 [core]
-  editor = vim
+  editor = nvim
 [init]
   defaultBranch = master
 [push]
