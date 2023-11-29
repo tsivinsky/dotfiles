@@ -80,6 +80,10 @@ require("packer").startup(function(use)
 
   use({ "ThePrimeagen/harpoon" })
 
+  use({
+    "stevearc/oil.nvim",
+  })
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
