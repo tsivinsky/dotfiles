@@ -37,5 +37,4 @@ vim.opt.ignorecase = true
 vim.opt.list = true
 vim.opt.listchars = { multispace = "·", tab = ">~", leadmultispace = "┊ " }
 
-vim.opt.background = "light"
-vim.cmd("colorscheme PaperColor")
+vim.cmd("colorscheme gruvbox-material")

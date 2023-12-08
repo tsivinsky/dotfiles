@@ -16,7 +16,6 @@ require("packer").startup(function(use)
   use({ "nvim-lua/plenary.nvim" })
 
   use({ "sainnhe/gruvbox-material" })
-  use({ "NLKNguyen/papercolor-theme" })
 
   use({ "nvim-treesitter/nvim-treesitter" })
   use({
