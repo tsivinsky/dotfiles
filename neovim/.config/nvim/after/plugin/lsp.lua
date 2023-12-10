@@ -42,7 +42,7 @@ local lsp_server_without_formatting = { "tsserver", "html", "css", "eslint", "js
 local function on_attach(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
-  -- disable tsserver formatting here because i don't understand how lsp configuration works
+  -- disable lsp formatting here because i don't understand how lsp configuration works
   if vim.list_contains(lsp_server_without_formatting, client.name) then
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
