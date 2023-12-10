@@ -52,6 +52,7 @@ local function on_attach(client, bufnr)
   vim.keymap.set("n", "gr", ts.lsp_references, opts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
   vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
+  vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
   vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
 
   if not vim.lsp.buf.range_code_action == nil then
