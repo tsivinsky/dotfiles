@@ -5,7 +5,7 @@ if [ -f /usr/share/git/git-prompt.sh ]; then
 	source /usr/share/git/git-prompt.sh
 fi
 
-export TERM=kitty
+# export TERM=kitty
 export EDITOR=nvim
 export VISUAL=nvim
 
