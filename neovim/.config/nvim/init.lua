@@ -16,6 +16,13 @@ require("packer").startup(function(use)
   use({ "nvim-lua/plenary.nvim" })
 
   use({ "sainnhe/gruvbox-material" })
+  use({
+    "rose-pine/neovim",
+    as = "rose-pine",
+    config = function()
+      require("rose-pine").setup({})
+    end,
+  })
 
   use({ "nvim-treesitter/nvim-treesitter" })
   use({
