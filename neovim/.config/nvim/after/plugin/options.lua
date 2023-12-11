@@ -38,4 +38,4 @@ vim.opt.list = true
 vim.opt.listchars = { multispace = "·", tab = ">~", leadmultispace = "┊ " }
 
 vim.g.gruvbox_material_foreground = "mix" -- material, mix or original
-vim.cmd("colorscheme rose-pine-main")
+vim.cmd("colorscheme gruvbox-material")
