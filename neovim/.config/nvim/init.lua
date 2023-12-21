@@ -78,8 +78,6 @@ require("packer").startup(function(use)
 
   use({ "b0o/SchemaStore.nvim" })
 
-  use({ "ThePrimeagen/harpoon", branch = "harpoon2" })
-
   use({
     "stevearc/oil.nvim",
   })
