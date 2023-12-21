@@ -37,7 +37,7 @@ null_ls.setup({
   end,
 })
 
-local lsp_server_without_formatting = { "tsserver", "html", "css", "eslint", "jsonls", "svelte" }
+local lsp_server_without_formatting = { "tsserver", "html", "cssls", "eslint", "jsonls", "svelte" }
 
 local function on_attach(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
