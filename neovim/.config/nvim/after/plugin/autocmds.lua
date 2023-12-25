@@ -1,3 +1,5 @@
+local u = require("daniil.utils")
+
 local group = vim.api.nvim_create_augroup("RootGroup", { clear = true })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -13,5 +15,13 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
   group = group,
   callback = function()
     vim.lsp.codelens.refresh()
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*",
+  group = group,
+  callback = function()
+    u.adjust_leadmultispace()
   end,
 })
