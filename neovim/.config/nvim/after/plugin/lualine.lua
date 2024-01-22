@@ -22,6 +22,10 @@ local relative_filename = {
   path = 1,
 }
 
+local searchcount = {
+  "searchcount",
+}
+
 local filetype = {
   function()
     local filetype = vim.bo.filetype
@@ -119,7 +123,7 @@ lualine.setup({
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics, relative_filename },
-    lualine_x = { diff, location, tabstop, fileformat },
+    lualine_x = { searchcount, diff, location, tabstop, fileformat },
     lualine_y = { filetype },
     lualine_z = {},
   },
