@@ -26,11 +26,7 @@ require("packer").startup(function(use)
     end,
   })
 
-  use({
-    "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
-    { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-  })
+  use({ "nvim-telescope/telescope.nvim" })
 
   use({ "tpope/vim-fugitive" })
   use({ "lewis6991/gitsigns.nvim" })
@@ -54,8 +50,6 @@ require("packer").startup(function(use)
   use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" })
   use({ "jose-elias-alvarez/null-ls.nvim" })
 
-  use({ "mbbill/undotree" })
-
   use({ "kyazdani42/nvim-tree.lua" })
   use({ "kyazdani42/nvim-web-devicons" })
 
@@ -66,21 +60,7 @@ require("packer").startup(function(use)
 
   use({ "nvim-lualine/lualine.nvim" })
 
-  use({
-    "jinh0/eyeliner.nvim",
-    config = function()
-      require("eyeliner").setup({
-        highlight_on_key = true,
-        dim = true,
-      })
-    end,
-  })
-
   use({ "b0o/SchemaStore.nvim" })
-
-  use({
-    "stevearc/oil.nvim",
-  })
 
   use({ "Exafunction/codeium.vim" })
 
