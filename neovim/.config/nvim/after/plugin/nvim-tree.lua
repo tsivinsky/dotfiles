@@ -16,7 +16,7 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "<CR>", api.node.open.edit, opts("edit ENTER"))
   vim.keymap.set("n", "@", api.tree.change_root_to_node, opts("change root"))
   vim.keymap.set("n", "<C-v>", api.node.open.vertical, opts("vertical split"))
-  vim.keymap.set("n", "<C-h>", api.node.open.horizontal, opts("horizontal split"))
+  vim.keymap.set("n", "<C-s>", api.node.open.horizontal, opts("horizontal split"))
   vim.keymap.set("n", "a", api.fs.create, opts("create file"))
   vim.keymap.set("n", "d", api.fs.remove, opts("remove file"))
   vim.keymap.set("n", "r", api.fs.rename, opts("rename file"))
@@ -28,8 +28,6 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "I", api.tree.toggle_gitignore_filter, opts("toggle git ignored files"))
   vim.keymap.set("n", "H", api.tree.toggle_hidden_filter, opts("toggle hidden files"))
   vim.keymap.set("n", "<TAB>", api.node.open.preview, opts("preview node"))
-  vim.keymap.set("n", "F", api.live_filter.clear, opts("clear filter"))
-  vim.keymap.set("n", "f", api.live_filter.start, opts("filter"))
   vim.keymap.set("n", "q", api.tree.close, opts("quit"))
   vim.keymap.set("n", "p", api.fs.paste, opts("paste"))
   vim.keymap.set("n", "g?", api.tree.toggle_help, opts("toggle help"))
@@ -47,13 +45,13 @@ require("nvim-tree").setup({
     enable = true,
   },
   view = {
-    width = 30,
+    width = 50,
     adaptive_size = false,
     side = "left",
     preserve_window_proportions = true,
     centralize_selection = true,
-    number = true,
-    relativenumber = true,
+    number = false,
+    relativenumber = false,
   },
   renderer = {
     add_trailing = true,
