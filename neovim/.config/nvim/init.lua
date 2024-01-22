@@ -16,6 +16,8 @@ require("packer").startup(function(use)
   use({ "nvim-lua/plenary.nvim" })
 
   use({ "sainnhe/gruvbox-material" })
+  use({ "nyoom-engineering/oxocarbon.nvim" })
+  use({ "maxmx03/solarized.nvim" })
 
   use({ "nvim-treesitter/nvim-treesitter" })
   use({
