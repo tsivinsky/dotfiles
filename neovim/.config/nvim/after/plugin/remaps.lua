@@ -36,6 +36,3 @@ vim.keymap.set("n", "<C-q><C-q>", function()
 end)
 vim.keymap.set("n", "<C-q>n", vim.cmd.cnext)
 vim.keymap.set("n", "<C-q>N", vim.cmd.cprevious)
-
--- zenmode
-vim.keymap.set("n", "<leader>z", require("daniil.zenmode").toggle)
