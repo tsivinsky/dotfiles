@@ -63,8 +63,8 @@ cmp.setup({
       select = true,
       behavior = cmp.SelectBehavior.Insert,
     }),
-    ["<A-j>"] = cmp.mapping.scroll_docs(4),
-    ["<A-k>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-S-j>"] = cmp.mapping.scroll_docs(4),
+    ["<C-S-k>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping(function(fallback)
       if ls.expand_or_jumpable() then
         ls.expand_or_jump()
