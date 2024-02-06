@@ -48,7 +48,7 @@ require("packer").startup(function(use)
 
   use({ "neovim/nvim-lspconfig" })
   use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" })
-  use({ "jose-elias-alvarez/null-ls.nvim" })
+  use({ "nvimtools/none-ls.nvim" })
 
   use({ "kyazdani42/nvim-tree.lua" })
   use({ "kyazdani42/nvim-web-devicons" })
