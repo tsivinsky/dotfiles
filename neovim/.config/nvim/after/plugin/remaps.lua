@@ -1,10 +1,5 @@
 local formatting = require("daniil.formatting")
 
--- Disable different keys and commands
-vim.keymap.set({ "n", "i", "v" }, "<PageDown>", "<nop>")
-vim.keymap.set({ "n", "i", "v" }, "<PageUp>", "<nop>")
-vim.keymap.set({ "n", "i", "v" }, "<F1>", "<nop>")
-
 vim.keymap.set("n", "<leader><leader>", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<C-c>", vim.cmd.nohl)
 
@@ -18,7 +13,6 @@ vim.keymap.set("v", ">", ">gv")
 
 -- Terminal
 vim.keymap.set("n", "Th", ":split | :term<CR>")
-vim.keymap.set("n", "Tv", ":vs | :term<CR>")
 
 -- Tabs
 vim.keymap.set("n", "tn", ":tabnew<CR>")
