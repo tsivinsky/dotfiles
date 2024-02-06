@@ -30,10 +30,10 @@ vim.keymap.set("n", "L", ":tabnext<CR>")
 vim.g.daniil_quickfix_opened = 0
 vim.keymap.set("n", "<C-q><C-q>", function()
   if vim.g.daniil_quickfix_opened == 1 then
-    vim.cmd(":cclose")
+    vim.cmd.cclose()
     vim.g.daniil_quickfix_opened = 0
   else
-    vim.cmd(":copen")
+    vim.cmd.copen()
     vim.g.daniil_quickfix_opened = 1
   end
 end)
