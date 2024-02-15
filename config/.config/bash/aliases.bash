@@ -9,13 +9,17 @@ mc() {
 
 newgo() {
 	dir="$1"
+	template="$2"
+	if [ -z "$template" ]; then
+		template="pkgm"
+	fi
 
 	mkdir -p $dir
 	cd $dir
 
 	go mod init $1
 
-	nap go/pkgm >main.go
+	nap go/$template >main.go
 }
 
 declare -A aliases=(
