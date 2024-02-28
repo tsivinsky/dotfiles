@@ -22,7 +22,7 @@ vim.keymap.set("n", "L", ":tabnext<CR>")
 
 -- quickfix
 vim.g.daniil_quickfix_opened = 0
-vim.keymap.set("n", "<C-q><C-q>", function()
+vim.keymap.set("n", "<leader>qq", function()
   if vim.g.daniil_quickfix_opened == 1 then
     vim.cmd.cclose()
     vim.g.daniil_quickfix_opened = 0
@@ -31,5 +31,5 @@ vim.keymap.set("n", "<C-q><C-q>", function()
     vim.g.daniil_quickfix_opened = 1
   end
 end)
-vim.keymap.set("n", "<C-q>n", vim.cmd.cnext)
-vim.keymap.set("n", "<C-q>N", vim.cmd.cprevious)
+vim.keymap.set("n", "<leader>qn", vim.cmd.cnext)
+vim.keymap.set("n", "<leader>qN", vim.cmd.cprevious)
