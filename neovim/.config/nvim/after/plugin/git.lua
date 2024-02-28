@@ -18,5 +18,3 @@ require("gitsigns").setup({
 })
 
 vim.keymap.set("n", "<leader>gg", ":Git<CR>")
-vim.keymap.set("n", "gh", ":diffget //2<CR>")
-vim.keymap.set("n", "gl", ":diffget //3<CR>")
