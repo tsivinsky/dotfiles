@@ -10,14 +10,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-  pattern = "*",
-  group = group,
-  callback = function()
-    vim.lsp.codelens.refresh()
-  end,
-})
-
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   group = group,
