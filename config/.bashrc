@@ -5,7 +5,6 @@ if [ -f /usr/share/git/git-prompt.sh ]; then
 	source /usr/share/git/git-prompt.sh
 fi
 
-# export TERM=kitty
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -17,9 +16,6 @@ export HISTSIZE=10000
 export GO111MODULE=auto
 export GOBIN="$HOME/go/bin"
 
-# Android stuff
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk
-
 MY_BIN="$DOTFILES/bin"
 RUST_BIN="$HOME/.cargo/bin"
 PYTHON_BIN="$HOME/.local/bin"
@@ -29,10 +25,7 @@ BUN_BIN="$BUN_INSTALL/bin"
 
 export PATH="$PATH:$MY_BIN:$PYTHON_BIN:$RUST_BIN:$GOBIN:$ANDROID_BIN:$BUN_BIN"
 
-# Source bash completions
 source $HOME/.config/bash-completions/*
-
-# Install aliases
 source $HOME/.config/bash/aliases.bash
 
 shopt -s autocd
@@ -52,16 +45,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-function ? {
-	cmd=$(history | tail -n 2 | head -n 1 | awk '{ printf $2 }')
-	echo "$cmd"
-
-	xdg-open "https://command-not-found.com/$cmd"
-}
-
 TZ=:/etc/localtime
 
 export FONTCONFIG_PATH=/etc/fonts
-
-# opam configuration
-test -r /home/daniil/.opam/opam-init/init.sh && . /home/daniil/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
