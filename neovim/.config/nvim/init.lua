@@ -15,8 +15,6 @@ require("packer").startup(function(use)
   use({ "wbthomason/packer.nvim" })
   use({ "nvim-lua/plenary.nvim" })
 
-  use({ "sainnhe/gruvbox-material" })
-
   use({ "nvim-treesitter/nvim-treesitter" })
   use({
     "JoosepAlviste/nvim-ts-context-commentstring",
