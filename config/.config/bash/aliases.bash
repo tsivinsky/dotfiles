@@ -45,6 +45,7 @@ declare -A aliases=(
 	["ga"]="git add"
 	["gc"]="git commit"
 	["gp"]="git push"
+	["gpn"]="git push --no-verify"
 	["gl"]="git log"
 	["gs"]="git status"
 	["gd"]="git diff"
