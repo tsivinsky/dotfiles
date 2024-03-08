@@ -13,7 +13,7 @@ local branch = {
 
 local diagnostics = {
   "diagnostics",
-  sections = { "error", "warn", "info", "hint" },
+  sections = { "error", "warn" },
   always_visible = true,
 }
 
@@ -92,14 +92,8 @@ local location = {
     local line = vim.fn.line(".")
     local total_lines = vim.api.nvim_buf_line_count(0)
 
-    local percent = math.floor(line / total_lines * 100)
-
-    return line .. "/" .. total_lines .. " (" .. percent .. "%%)"
+    return line .. "/" .. total_lines
   end,
-}
-
-local diff = {
-  "diff",
 }
 
 lualine.setup({
@@ -123,7 +117,7 @@ lualine.setup({
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics, relative_filename },
-    lualine_x = { searchcount, diff, location, tabstop, fileformat },
+    lualine_x = { searchcount, location, tabstop, fileformat },
     lualine_y = { filetype },
     lualine_z = {},
   },
