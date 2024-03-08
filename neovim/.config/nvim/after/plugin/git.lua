@@ -18,7 +18,7 @@ require("gitsigns").setup({
   end,
 })
 
-vim.keymap.set("n", "<leader>gg", ":Git<CR>")
+vim.keymap.set("n", "<leader>gg", vim.cmd.Git)
 vim.keymap.set("n", "<leader>gb", function()
   telescope_builtin.git_branches({
     show_remote_tracking_branches = false,
