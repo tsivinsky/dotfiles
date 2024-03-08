@@ -1,6 +1,3 @@
-local formatting = require("daniil.formatting")
-
-vim.keymap.set("n", "<leader><leader>", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<C-c>", vim.cmd.nohl)
 
 -- Move lines easily
