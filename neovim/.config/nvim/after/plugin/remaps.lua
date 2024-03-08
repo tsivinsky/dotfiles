@@ -21,14 +21,22 @@ vim.keymap.set("n", "H", ":tabprev<CR>")
 vim.keymap.set("n", "L", ":tabnext<CR>")
 
 -- quickfix
-vim.g.daniil_quickfix_opened = 0
+local function is_quickfix_opened()
+  local wins = vim.api.nvim_tabpage_list_wins(0)
+  for _, win in ipairs(wins) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    if vim.bo[buf].buftype == "quickfix" then
+      return true
+    end
+  end
+
+  return false
+end
 vim.keymap.set("n", "<leader>qq", function()
-  if vim.g.daniil_quickfix_opened == 1 then
+  if is_quickfix_opened() then
     vim.cmd.cclose()
-    vim.g.daniil_quickfix_opened = 0
   else
     vim.cmd.copen()
-    vim.g.daniil_quickfix_opened = 1
   end
 end)
 vim.keymap.set("n", "<leader>qn", vim.cmd.cnext)
