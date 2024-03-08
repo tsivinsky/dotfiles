@@ -21,3 +21,7 @@ end
 vim.keymap.set("n", "<leader>qq", toggle_quickfix)
 vim.keymap.set("n", "<leader>qn", vim.cmd.cnext)
 vim.keymap.set("n", "<leader>qN", vim.cmd.cprevious)
+
+vim.keymap.set("n", "<leader>qc", function()
+  vim.fn.setqflist({})
+end)
