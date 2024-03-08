@@ -12,7 +12,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term kitty
+set $term wezterm
 
 # Your preferred application launcher
 set $menu kickoff
