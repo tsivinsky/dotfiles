@@ -86,6 +86,16 @@ for _, server in ipairs(servers) do
     root_dir = util.root_pattern(".git"),
   }
 
+  if server == "lua_ls" then
+    opts.settings = {
+      Lua = {
+        diagnostics = {
+          globals = { "vim" },
+        },
+      },
+    }
+  end
+
   if server == "emmet_ls" then
     opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact", "astro" }
   end
