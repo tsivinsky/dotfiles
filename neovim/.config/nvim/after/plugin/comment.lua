@@ -1,12 +1,16 @@
+local U = require("Comment.utils")
+
+local ctype_to_commentstring = {
+  [U.ctype.linewise] = "__default",
+  [U.ctype.blockwise] = "__multiline",
+}
+
 require("Comment").setup({
   pre_hook = function(ctx)
     -- Only calculate commentstring for tsx filetypes
     if vim.bo.filetype == "typescriptreact" or vim.bo.filetype == "javascriptreact" then
-      local U = require("Comment.utils")
-
       -- Detemine whether to use linewise or blockwise commentstring
-      -- local type = ctx.ctype == U.ctype.line and "__default" or "__multiline"
-      local type = "__default"
+      local type = ctype_to_commentstring[ctx.ctype]
 
       -- Determine the location where to calculate commentstring from
       local location = nil
