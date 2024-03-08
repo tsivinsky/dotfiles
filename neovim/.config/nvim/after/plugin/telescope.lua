@@ -2,6 +2,10 @@ local telescope = require("telescope")
 local actions = require("telescope.actions")
 local layout_actions = require("telescope.actions.layout")
 local builtin = require("telescope.builtin")
+local conf = require("telescope.config").values
+local pickers = require("telescope.pickers")
+local finders = require("telescope.finders")
+local action_state = require("telescope.actions.state")
 
 telescope.setup({
   defaults = {
@@ -40,6 +44,52 @@ telescope.setup({
     },
   },
 })
+
+vim.ui.select = function(items, opts, on_choice)
+  opts = opts or {}
+  local prompt = opts.prompt or "Select:"
+  on_choice = on_choice or function(choice)
+    print(choice)
+  end
+
+  on_choice = vim.schedule_wrap(on_choice)
+
+  pickers
+      .new({
+        prompt_title = prompt,
+        finder = finders.new_table({
+          results = items,
+          entry_maker = function(entry)
+            return {
+              value = entry,
+              display = entry,
+              ordinal = entry,
+            }
+          end,
+        }),
+        attach_mappings = function(prompt_bufnr)
+          actions.select_default:replace(function()
+            local selection = action_state.get_selected_entry()
+            actions.close(prompt_bufnr)
+            if selection == nil then
+              on_choice(nil, nil)
+              return
+            end
+            on_choice(selection.value, selection.index)
+          end)
+
+          actions.close:enhance({
+            post = function()
+              on_choice(nil, nil)
+            end,
+          })
+
+          return true
+        end,
+        sorter = conf.generic_sorter(),
+      })
+      :find()
+end
 
 vim.keymap.set("n", "<leader>f", builtin.find_files)
 vim.keymap.set("n", "<leader>s", builtin.live_grep)
