@@ -95,6 +95,7 @@ for _, server in ipairs(servers) do
     opts.settings = {
       gopls = {
         linksInHover = true,
+        usePlaceholders = false, -- just to ensure it's off, incase in the future go team decides to toggle it on by default
       },
     }
   end
