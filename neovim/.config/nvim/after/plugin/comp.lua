@@ -39,17 +39,17 @@ cmp.setup({
   },
   mapping = {
     ["<C-j>"] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-      else
+      if ls.jumpable(1) then
         ls.jump(1)
+      else
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
       end
     end),
     ["<C-k>"] = cmp.mapping(function()
-      if cmp.visible() then
-        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-      else
+      if ls.jumpable(-1) then
         ls.jump(-1)
+      else
+        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
       end
     end),
     ["<C-space>"] = cmp.mapping(function()
