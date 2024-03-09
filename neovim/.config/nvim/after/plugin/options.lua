@@ -37,4 +37,6 @@ vim.opt.ignorecase = true
 vim.opt.list = true
 vim.opt.listchars = { multispace = "·", tab = ">~", leadmultispace = "┊ " }
 
+vim.opt.spelllang = "en_us,ru"
+
 vim.cmd.colorscheme("retrobox")
