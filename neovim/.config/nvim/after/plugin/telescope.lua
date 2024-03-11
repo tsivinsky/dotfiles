@@ -11,7 +11,7 @@ telescope.setup({
   defaults = {
     sorting_strategy = "ascending",
     file_ignore_patterns = { ".git/", "node_modules/" },
-    winblend = 15,
+    winblend = 0,
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_worse,
