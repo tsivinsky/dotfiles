@@ -100,6 +100,10 @@ for _, server in ipairs(servers) do
     opts.filetypes = { "html", "css", "scss", "javascripreact", "typescriptreact", "astro" }
   end
 
+  if server == "golangci_lint_ls" then
+    opts.root_dir = util.root_pattern("go.mod", ".git")
+  end
+
   if server == "gopls" then
     -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
     opts.settings = {
