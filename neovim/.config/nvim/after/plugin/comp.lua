@@ -93,10 +93,6 @@ cmp.setup({
       cmp.config.compare.kind,
     },
   },
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
   formatting = {
     format = function(entry, vim_item)
       vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
