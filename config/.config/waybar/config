@@ -2,7 +2,6 @@
   "position": "top",
   "modules-left": [
     "sway/workspaces",
-    "custom/player",
     "sway/mode"
   ],
   "modules-right": [
@@ -21,9 +20,6 @@
   "sway/mode": {
     "format": "--{}--",
     "tooltip": false
-  },
-  "custom/player": {
-    "exec": "playerctl metadata -f '{{title}} ― {{artist}}' -F"
   },
   "pulseaudio": {
     "tooltip": false,
