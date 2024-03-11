@@ -3,34 +3,6 @@ local ls = require("luasnip")
 
 require("cmp_git").setup()
 
-local kind_icons = {
-  Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "ﴯ",
-  Interface = "",
-  Module = "",
-  Property = "ﰠ",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
-}
-
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -89,20 +61,6 @@ cmp.setup({
       cmp.config.compare.sort_text,
       cmp.config.compare.kind,
     },
-  },
-  formatting = {
-    format = function(entry, vim_item)
-      vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-      vim_item.menu = ({
-        buffer = "[Buffer]",
-        luasnip = "[Snippet]",
-        nvim_lua = "[Lua]",
-        path = "[File]",
-        nvim_lsp = "[LSP]",
-      })[entry.source.name]
-
-      return vim_item
-    end,
   },
 })
 
