@@ -83,9 +83,6 @@ cmp.setup({
   completion = {
     completeopt = "menu,menuone,noselect,noinsert,preview",
   },
-  experimental = {
-    ghost_text = true,
-  },
   sorting = {
     comparators = {
       cmp.config.compare.score,
