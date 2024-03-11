@@ -60,10 +60,14 @@ vim.ui.select = function(items, opts, on_choice)
         finder = finders.new_table({
           results = items,
           entry_maker = function(entry)
+            local format_item = opts.format_item or function(item)
+              return item
+            end
+
             return {
               value = entry,
-              display = entry,
-              ordinal = entry,
+              display = format_item(entry),
+              ordinal = format_item(entry),
             }
           end,
         }),
