@@ -1,6 +1,10 @@
 #! /bin/bash
 
 name="$1"
+if [[ "$name" == "" ]]; then
+	echo "No name was provided"
+	exit 1
+fi
 
 model_line=$(upower -d | grep -n "$name" | cut -d ':' -f 1)
 if [[ "$model_line" == "" ]]; then
