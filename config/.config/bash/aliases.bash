@@ -22,6 +22,10 @@ newgo() {
 	nap go/$template >main.go
 }
 
+todo() {
+	$EDITOR ~/.local/todo.txt
+}
+
 declare -A aliases=(
 	["sudo"]="sudo "
 
