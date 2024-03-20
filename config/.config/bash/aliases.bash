@@ -23,7 +23,7 @@ newgo() {
 }
 
 todo() {
-	$EDITOR ~/.local/todo.txt
+	nvim ~/.local/todo.txt -c "norm G"
 }
 
 declare -A aliases=(
