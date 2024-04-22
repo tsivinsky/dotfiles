@@ -52,7 +52,6 @@ exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -c ~/.config/wo
 default_border pixel 2px
 smart_borders on
 focus_follows_mouse no
-gaps inner 10
 floating_modifier $mod normal
 font FiraCode 10
 xwayland enable
