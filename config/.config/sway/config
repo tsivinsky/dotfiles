@@ -40,7 +40,7 @@ set $laptopMonitor "eDP-1"
 set $wallpaperPathFile "~/.config/.wallpaper"
 
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
-exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -c ~/.config/wob.ini
+exec_always rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob -c ~/.config/wob.ini
 
 
 #   ____ _____ _   _ _____ ____      _    _     
