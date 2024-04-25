@@ -7,7 +7,8 @@
 window#waybar {
   background: @background;
   color: @foreground;
-  font-family: "Iosevka NF", "Fira Code Nerd Font";
+  font-family: "Iosevka NF", "Fira Code Nerd Font", "Font Awesome 6 Free",
+    "Font Awesome 6 Brands";
   font-size: 14px;
 }
 
@@ -34,19 +35,11 @@ window.eDP-1 * {
 }
 
 #tray,
-#custom-pacman-packages,
 #pulseaudio,
 #language,
 #network,
-#upower,
-#backlight,
 #clock {
   margin: 8px;
-  font-style: italic;
   padding: 0;
   color: @foreground;
-}
-
-#pulseaudio.muted {
-  color: @primary;
 }

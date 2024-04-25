@@ -9,8 +9,6 @@
     "pulseaudio",
     "sway/language",
     "network",
-    "backlight",
-    "upower",
     "clock"
   ],
   "sway/workspaces": {
@@ -22,37 +20,34 @@
     "tooltip": false
   },
   "pulseaudio": {
-    "tooltip": false,
-    "format": "{icon} {volume}",
-    "format-muted": "婢 {volume}",
+    "format": "{icon} {volume}%",
     "format-icons": [
-      "奄",
-      "奔",
-      "墳",
+      "",
+      "",
       ""
     ],
-    "on-click": "pavucontrol"
+    "format-muted": " 0%",
+    "tooltip": false
   },
   "sway/language": {
     "tooltip": false
   },
   "network": {
-    "format": "{icon}  {essid}",
-    "format-icons": "",
-    "format-disconnected": "睊",
-    "tooltip": false
-  },
-  "backlight": {
-    "format": "{icon}  {percent}%",
-    "format-icons": "",
-    "tooltip": false
-  },
-  "upower": {
+    "format": "{icon}",
+    "format-ethernet": "",
+    "format-wifi": "",
+    "format-disconnected": "No network",
     "tooltip": false
   },
   "clock": {
     "format": "{:%d %b %H:%M, %A}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "locale": "ru_RU.UTF-8",
+    "calendar": {
+      "format": {
+        "today": "<span color='#ffcc66'><b><u>{}</u></b></span>"
+      }
+    }
   },
   "tray": {
     "icon-size": 16,
