@@ -34,6 +34,13 @@ window.eDP-1 * {
   color: @primary;
 }
 
+#cpu,
+#custom-gpu-usage,
+#disk {
+  margin: 6px;
+  padding: 0;
+}
+
 #tray,
 #pulseaudio,
 #language,

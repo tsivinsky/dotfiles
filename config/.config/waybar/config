@@ -2,6 +2,9 @@
   "position": "top",
   "modules-left": [
     "sway/workspaces",
+    "cpu",
+    "custom/gpu-usage",
+    "disk",
     "sway/mode"
   ],
   "modules-right": [
@@ -18,6 +21,18 @@
   "sway/mode": {
     "format": "--{}--",
     "tooltip": false
+  },
+  "cpu": {
+    "format": "CPU: {usage}%",
+    "interval": 1
+  },
+  "custom/gpu-usage": {
+    "exec": "cat /sys/class/hwmon/hwmon2/device/gpu_busy_percent",
+    "format": "GPU: {}%",
+    "interval": 1
+  },
+  "disk": {
+    "format": "Disk: {used}/{total}"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
