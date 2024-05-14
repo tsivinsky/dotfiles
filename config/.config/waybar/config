@@ -7,12 +7,14 @@
     "disk",
     "sway/mode"
   ],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
     "tray",
     "pulseaudio",
     "sway/language",
-    "network",
-    "clock"
+    "network"
   ],
   "sway/workspaces": {
     "all-output": true,
@@ -59,7 +61,10 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "locale": "ru_RU.UTF-8",
     "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
       "format": {
+        "months": "<span color='#ddfc74'><b>{}</b></span>",
         "today": "<span color='#ffcc66'><b><u>{}</u></b></span>"
       }
     }
