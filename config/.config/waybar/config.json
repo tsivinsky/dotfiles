@@ -7,8 +7,7 @@
     "disk",
     "sway/mode"
   ],
-  "modules-center": ["clock"],
-  "modules-right": ["tray", "pulseaudio", "sway/language", "network"],
+  "modules-right": ["tray", "pulseaudio", "sway/language", "network", "clock"],
   "sway/workspaces": {
     "all-output": true,
     "format": "{index}"
