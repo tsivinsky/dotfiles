@@ -9,16 +9,13 @@ window#waybar {
   color: @foreground;
   font-family: "Iosevka NF", "Fira Code Nerd Font", "Font Awesome 6 Free",
     "Font Awesome 6 Brands";
-  font-size: 14px;
-}
-
-window.eDP-1 * {
-  font-size: 16px;
+  font-size: 22px;
 }
 
 #workspaces button {
   color: @foreground;
   border-radius: 0;
+  padding: 12px 28px;
 }
 
 #workspaces button.focused {
@@ -37,7 +34,7 @@ window.eDP-1 * {
 #cpu,
 #custom-gpu-usage,
 #disk {
-  margin: 6px;
+  margin: 8px;
   padding: 0;
 }
 

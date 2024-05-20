@@ -58,7 +58,7 @@
     }
   },
   "tray": {
-    "icon-size": 16,
+    "icon-size": 22,
     "spacing": 10
   }
 }
