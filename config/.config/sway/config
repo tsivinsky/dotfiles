@@ -85,7 +85,9 @@ output $laptopMonitor {
 }
 output $mainMonitor {
   pos 0 0
-  mode 1920x1080@144Hz
+  mode 3840x2160@144Hz
+  scale 1
+  adaptive_sync on
 }
 
 bindswitch --reload --locked lid:on exec "$HOME/dotfiles/bin/lock.sh"
