@@ -9,7 +9,7 @@ window#waybar {
   color: @foreground;
   font-family: "Iosevka NF", "Fira Code Nerd Font", "Font Awesome 6 Free",
     "Font Awesome 6 Brands";
-  font-size: 22px;
+  font-size: 20px;
 }
 
 #workspaces button {
