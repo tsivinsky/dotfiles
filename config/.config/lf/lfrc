@@ -17,8 +17,12 @@ cmd mkdir ${{
 }}
 
 cmd wallpaper ${{
-  p=$(pwd)
-  echo -n "$p/$1" > ~/.config/.wallpaper
+  if [[ "$1" == "" ]]; then
+    echo -n "$f" > ~/.config/.wallpaper
+  else
+    p=$(pwd)
+    echo -n "$p/$1" > ~/.config/.wallpaper
+  fi
 }}
 
 ### Mappings
@@ -32,7 +36,3 @@ map d delete
 map x cut
 
 map R reload
-
-map w ${{
-  echo -n "$f" > ~/.config/.wallpaper
-}}
