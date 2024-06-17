@@ -26,7 +26,7 @@
     "interval": 1
   },
   "disk": {
-    "format": "Disk: {used}/{total}"
+    "format": "Disk: {percentage_used}% [{used}/{total}]"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
