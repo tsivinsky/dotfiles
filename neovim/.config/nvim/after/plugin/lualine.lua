@@ -96,13 +96,6 @@ local location = {
   end,
 }
 
-local codeium = {
-  function()
-    local status = vim.api.nvim_call_function("codeium#GetStatusString", {})
-    return "Codeium: " .. status
-  end,
-}
-
 lualine.setup({
   options = {
     component_separators = "",
@@ -124,7 +117,7 @@ lualine.setup({
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics, relative_filename },
-    lualine_x = { codeium, searchcount, location, tabstop, fileformat },
+    lualine_x = { searchcount, location, tabstop, fileformat },
     lualine_y = { filetype },
     lualine_z = {},
   },
