@@ -8,9 +8,6 @@ require("gitsigns").setup({
   current_line_blame_opts = {
     delay = 1000,
   },
-  current_line_blame_formatter_opts = {
-    relative_time = true,
-  },
   on_attach = function(bufnr)
     vim.keymap.set("n", "gn", actions.next_hunk)
     vim.keymap.set("n", "gN", actions.prev_hunk)
