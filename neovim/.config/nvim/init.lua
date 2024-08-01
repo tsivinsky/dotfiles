@@ -61,8 +61,6 @@ require("packer").startup(function(use)
 
   use({ "b0o/SchemaStore.nvim" })
 
-  use({ "ThePrimeagen/harpoon", branch = "harpoon2" })
-
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
