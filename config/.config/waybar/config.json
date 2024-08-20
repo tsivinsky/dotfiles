@@ -46,7 +46,7 @@
   },
   "clock": {
     "format": "{:%d %b %H:%M, %A}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big><tt>{calendar}</tt></big>",
     "locale": "ru_RU.UTF-8",
     "calendar": {
       "mode": "year",
