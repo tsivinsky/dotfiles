@@ -5,10 +5,17 @@ local ctype_to_commentstring = {
   [U.ctype.blockwise] = "__multiline",
 }
 
+local jsx_filetypes = {
+  "javascript",
+  "javascriptreact",
+  "typescript",
+  "typescriptreact",
+}
+
 require("Comment").setup({
   pre_hook = function(ctx)
     -- Only calculate commentstring for tsx filetypes
-    if vim.bo.filetype == "typescriptreact" or vim.bo.filetype == "javascriptreact" then
+    if vim.list_contains(jsx_filetypes, vim.bo.filetype) then
       -- Detemine whether to use linewise or blockwise commentstring
       local type = ctype_to_commentstring[ctx.ctype]
 
