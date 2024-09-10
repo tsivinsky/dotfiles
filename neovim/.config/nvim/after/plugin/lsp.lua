@@ -37,7 +37,7 @@ null_ls.setup({
   end,
 })
 
-local lsp_server_without_formatting = { "tsserver", "html", "cssls", "eslint", "jsonls", "svelte" }
+local lsp_server_without_formatting = { "ts_ls", "html", "cssls", "eslint", "jsonls", "svelte" }
 
 local function on_attach(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
@@ -76,6 +76,10 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local servers = lsp_installer.get_installed_servers()
 for _, server in ipairs(servers) do
+  if server == "tsserver" then
+    server = "ts_ls" -- fixes tsserver deprecation message
+  end
+
   local opts = {
     capabilities = capabilities,
     on_attach = on_attach,
