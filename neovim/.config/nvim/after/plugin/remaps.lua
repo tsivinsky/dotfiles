@@ -16,8 +16,3 @@ vim.keymap.set("n", "tn", ":tabnew<CR>")
 vim.keymap.set("n", "tN", ":-tabnew<CR>")
 vim.keymap.set("n", "H", ":tabprev<CR>")
 vim.keymap.set("n", "L", ":tabnext<CR>")
-
-vim.keymap.set("n", "<C-->", ":vert :res -5<CR>")
-vim.keymap.set("n", "<C-=>", ":vert :res +5<CR>")
-vim.keymap.set("n", "<C-A-->", ":res -5<CR>")
-vim.keymap.set("n", "<C-A-=>", ":res +5<CR>")
