@@ -6,4 +6,4 @@ Name=OpenRGB
 StartupNotify=true
 Terminal=false
 Type=Application
-Exec=/usr/bin/openrgb --startminimized --profile "pinky-pink"
+Exec=/usr/bin/openrgb --startminimized --profile "red"
