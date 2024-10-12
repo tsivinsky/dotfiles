@@ -7,7 +7,7 @@
     "disk",
     "sway/mode"
   ],
-  "modules-right": ["tray", "pulseaudio", "sway/language", "network", "clock"],
+  "modules-right": ["tray", "wireplumber", "sway/language", "network", "clock"],
   "sway/workspaces": {
     "all-output": true,
     "format": "{index}"
@@ -28,7 +28,7 @@
   "disk": {
     "format": "Disk: {percentage_used}% [{used}/{total}]"
   },
-  "pulseaudio": {
+  "wireplumber": {
     "format": "{icon} {volume}%",
     "format-icons": ["", "", ""],
     "format-muted": " 0%",
