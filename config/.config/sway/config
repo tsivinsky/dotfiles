@@ -80,7 +80,8 @@ output $mainMonitor {
   pos 0 0
   mode 3840x2160@144Hz
   scale 1
-  adaptive_sync on
+  adaptive_sync off
+  render_bit_depth 10
 }
 
 bindswitch --reload --locked lid:on exec "$HOME/dotfiles/bin/lock.sh"
@@ -107,10 +108,7 @@ for_window [class="MuPDF"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 
-for_window [title="Picture-in-Picture"] {
-  sticky enable
-  move position 78ppt 65ppt
-}
+for_window [class="vesktop"] sticky enable
 
 for_window [class="feh"] {
   floating enable
