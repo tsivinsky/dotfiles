@@ -1,9 +1,0 @@
-[Desktop Entry]
-Categories=Utility;
-Comment=Logitech utility
-Name=Solaar
-Icon=solaar
-StartupNotify=true
-Terminal=false
-Type=Application
-Exec=/usr/bin/solaar -w hide
