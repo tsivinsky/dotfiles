@@ -1,0 +1,11 @@
+font-family = "IBM Plex Mono"
+font-feature = "-liga"
+font-feature = "-calt"
+font-feature = "-calt"
+font-feature = "-dlig"
+theme = "GruvboxDark"
+shell-integration-features = "no-cursor,no-title"
+cursor-style = "block"
+cursor-style-blink = false
+window-width = 130
+window-height = 40
