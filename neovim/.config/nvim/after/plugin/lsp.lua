@@ -76,10 +76,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local servers = lsp_installer.get_installed_servers()
 for _, server in ipairs(servers) do
-  if server == "tsserver" then
-    server = "ts_ls" -- fixes tsserver deprecation message
-  end
-
   local opts = {
     capabilities = capabilities,
     on_attach = on_attach,
