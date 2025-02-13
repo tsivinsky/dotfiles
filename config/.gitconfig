@@ -18,10 +18,10 @@
 [pull]
   rebase = false
 [alias]
-	today = log --author=daniil@tsivinsky.com --since=yesterday
+  today = log --author=daniil@tsivinsky.com --since=yesterday
   sync = remote update origin -p
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
