@@ -51,7 +51,12 @@ require("packer").startup(function(use)
   use({ "kyazdani42/nvim-tree.lua" })
   use({ "kyazdani42/nvim-web-devicons" })
 
-  use({ "windwp/nvim-autopairs" })
+  use({
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup({})
+    end,
+  })
   use({ "windwp/nvim-ts-autotag" })
 
   use({ "numToStr/Comment.nvim" })
