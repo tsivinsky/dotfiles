@@ -9,5 +9,5 @@ theme = "GruvboxDark"
 shell-integration-features = "no-cursor,no-title"
 cursor-style = "block"
 cursor-style-blink = false
-window-width = 95
-window-height = 25
+window-width = 120
+window-height = 30
