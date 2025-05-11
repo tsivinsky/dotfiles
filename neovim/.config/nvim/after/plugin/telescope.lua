@@ -55,44 +55,44 @@ vim.ui.select = function(items, opts, on_choice)
   on_choice = vim.schedule_wrap(on_choice)
 
   pickers
-      .new({
-        prompt_title = prompt,
-        finder = finders.new_table({
-          results = items,
-          entry_maker = function(entry)
-            local format_item = opts.format_item or function(item)
-              return item
-            end
+    .new({
+      prompt_title = prompt,
+      finder = finders.new_table({
+        results = items,
+        entry_maker = function(entry)
+          local format_item = opts.format_item or function(item)
+            return item
+          end
 
-            return {
-              value = entry,
-              display = format_item(entry),
-              ordinal = format_item(entry),
-            }
-          end,
-        }),
-        attach_mappings = function(prompt_bufnr)
-          actions.select_default:replace(function()
-            local selection = action_state.get_selected_entry()
-            actions.close(prompt_bufnr)
-            if selection == nil then
-              on_choice(nil, nil)
-              return
-            end
-            on_choice(selection.value, selection.index)
-          end)
-
-          actions.close:enhance({
-            post = function()
-              on_choice(nil, nil)
-            end,
-          })
-
-          return true
+          return {
+            value = entry,
+            display = format_item(entry),
+            ordinal = format_item(entry),
+          }
         end,
-        sorter = conf.generic_sorter(),
-      })
-      :find()
+      }),
+      attach_mappings = function(prompt_bufnr)
+        actions.select_default:replace(function()
+          local selection = action_state.get_selected_entry()
+          actions.close(prompt_bufnr)
+          if selection == nil then
+            on_choice(nil, nil)
+            return
+          end
+          on_choice(selection.value, selection.index)
+        end)
+
+        actions.close:enhance({
+          post = function()
+            on_choice(nil, nil)
+          end,
+        })
+
+        return true
+      end,
+      sorter = conf.generic_sorter(),
+    })
+    :find()
 end
 
 vim.keymap.set("n", "<leader>f", builtin.find_files)
