@@ -3,6 +3,7 @@ local telescope_builtin = require("telescope.builtin")
 
 require("gitsigns").setup({
   signcolumn = true,
+  sign_priority = 20,
   attach_to_untracked = false,
   current_line_blame = true,
   current_line_blame_opts = {
