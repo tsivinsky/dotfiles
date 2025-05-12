@@ -26,6 +26,17 @@ local searchcount = {
   "searchcount",
 }
 
+local macro_recording = {
+  function()
+    local symbol = vim.fn.reg_recording()
+    if symbol ~= "" then
+      return "@" .. symbol
+    else
+      return ""
+    end
+  end,
+}
+
 local filetype = {
   function()
     local filetype = vim.bo.filetype
@@ -117,7 +128,7 @@ lualine.setup({
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics, relative_filename },
-    lualine_x = { searchcount, location, tabstop, fileformat },
+    lualine_x = { macro_recording, searchcount, location, tabstop, fileformat },
     lualine_y = { filetype },
     lualine_z = {},
   },
