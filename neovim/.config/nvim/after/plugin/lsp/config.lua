@@ -9,6 +9,7 @@ vim.lsp.config("*", {
   capabilities = capabilities,
 })
 
+local servers_with_annoying_formatters = { "ts_ls" }
 local null_formatting = null_ls.builtins.formatting
 null_ls.setup({
   sources = {
@@ -30,7 +31,11 @@ null_ls.setup({
           return
         end
 
-        vim.lsp.buf.format()
+        vim.lsp.buf.format({
+          filter = function(client)
+            return not vim.tbl_contains(servers_with_annoying_formatters, client.name)
+          end,
+        })
       end,
     })
   end,
