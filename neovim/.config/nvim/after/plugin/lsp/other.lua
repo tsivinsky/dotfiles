@@ -11,6 +11,11 @@ vim.lsp.config.lua_ls = {
       diagnostics = {
         globals = { "vim" },
       },
+      workspace = {
+        library = {
+          vim.fn.expand("~/.local/share/nvim/site/pack/packer/start"),
+        },
+      },
     },
   },
 }
