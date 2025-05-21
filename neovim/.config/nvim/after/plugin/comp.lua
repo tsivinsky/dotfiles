@@ -122,7 +122,7 @@ ls.add_snippets("go", {
     fmt(
       [[
     if err != nil {
-      return <>
+      <>
     }
     ]],
       {
@@ -168,7 +168,12 @@ ls.add_snippets("go", {
           }
 
           local size = vim.tbl_count(params)
-          local x = {}
+
+          if size == 0 then
+            return sn(nil, { i(1) })
+          end
+
+          local x = { t("return ") }
           for index, param in ipairs(params) do
             local replace = rec[param]
             if replace ~= nil then
