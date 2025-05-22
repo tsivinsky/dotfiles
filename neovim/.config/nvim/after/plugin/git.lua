@@ -1,4 +1,4 @@
-local actions = require("gitsigns.actions")
+local gitsigns = require("gitsigns")
 local telescope_builtin = require("telescope.builtin")
 
 require("gitsigns").setup({
@@ -9,10 +9,16 @@ require("gitsigns").setup({
   current_line_blame_opts = {
     delay = 1000,
   },
-  on_attach = function(bufnr)
-    vim.keymap.set("n", "gn", actions.next_hunk)
-    vim.keymap.set("n", "gN", actions.prev_hunk)
-    vim.keymap.set({ "n", "v" }, "<leader>gr", actions.reset_hunk)
+  on_attach = function()
+    vim.keymap.set("n", "gn", function()
+      gitsigns.nav_hunk("next")
+    end)
+    vim.keymap.set("n", "gN", function()
+      gitsigns.nav_hunk("prev")
+    end)
+    vim.keymap.set({ "n", "v" }, "<leader>gr", function()
+      gitsigns.reset_hunk()
+    end)
   end,
 })
 
