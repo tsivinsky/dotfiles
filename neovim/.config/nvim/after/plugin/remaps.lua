@@ -16,3 +16,5 @@ vim.keymap.set("n", "tn", ":tabnew<CR>")
 vim.keymap.set("n", "tN", ":-tabnew<CR>")
 vim.keymap.set("n", "H", ":tabprev<CR>")
 vim.keymap.set("n", "L", ":tabnext<CR>")
+
+vim.keymap.set("n", "<leader>gl", require("daniil.gitblame").open_blame_window)
