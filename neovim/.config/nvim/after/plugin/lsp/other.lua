@@ -5,6 +5,9 @@ vim.lsp.config.lua_ls = {
   root_markers = { ".luarc.json", ".git", vim.uv.cwd() },
   settings = {
     Lua = {
+      format = {
+        enable = false,
+      },
       telemetry = {
         enable = false,
       },
