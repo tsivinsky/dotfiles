@@ -11,6 +11,8 @@ export DOTFILES="$HOME/dotfiles"
 
 export HISTSIZE=10000
 
+export MANPAGER="nvim +Man!"
+
 # Go ENVs
 export GO111MODULE=auto
 export GOBIN="$HOME/go/bin"
