@@ -37,6 +37,7 @@ function M.open_blame_window()
   u.set_buffer_text(bufnr, commit_info)
 
   vim.bo[bufnr].filetype = "gitcommit"
+  vim.wo[winnr].wrap = false
 
   vim.keymap.set("n", "<esc>", ":q<CR>", { buffer = bufnr })
   vim.keymap.set("n", "q", ":q<CR>", { buffer = bufnr })
