@@ -164,6 +164,7 @@ ls.add_snippets("go", {
             ["int"] = "0",
             ["uint"] = "0",
             ["error"] = "err",
+            ["bool"] = "false",
           }
 
           local size = vim.tbl_count(params)
