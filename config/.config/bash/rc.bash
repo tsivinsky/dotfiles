@@ -9,7 +9,7 @@ export VISUAL=nvim
 
 export DOTFILES="$HOME/dotfiles"
 
-export HISTSIZE=10000
+export HISTSIZE=50000
 
 export MANPAGER="nvim +Man!"
 
