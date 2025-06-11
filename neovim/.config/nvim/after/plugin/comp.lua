@@ -153,11 +153,9 @@ ls.add_snippets("go", {
           local params = {}
           for index = 0, return_type_node:child_count(), 1 do
             local param = return_type_node:child(index)
-            if param then
-              if param:type() == "parameter_declaration" then
-                local text = ts_utils.get_node_text(param)
-                table.insert(params, text[1])
-              end
+            if param and param:type() == "parameter_declaration" then
+              local text = ts_utils.get_node_text(param)
+              table.insert(params, text[1])
             end
           end
 
