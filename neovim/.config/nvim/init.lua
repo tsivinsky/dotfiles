@@ -57,7 +57,9 @@ require("lazy").setup({
       },
     },
 
-    { "nvimtools/none-ls.nvim" },
+    { "nvimtools/none-ls.nvim", dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    } },
 
     {
       "kyazdani42/nvim-tree.lua",
@@ -74,5 +76,13 @@ require("lazy").setup({
     { "nvim-lualine/lualine.nvim" },
 
     { "b0o/SchemaStore.nvim" },
+
+    { "nvzone/floaterm", dependencies = { "nvzone/volt" }, opts = {}, cmd = "FloatermToggle" },
+
+    { "SyedAsimShah1/quick-todo.nvim", opts = {
+      keys = {
+        open = "<leader>t",
+      },
+    } },
   },
 })

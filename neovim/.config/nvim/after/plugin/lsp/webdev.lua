@@ -119,26 +119,3 @@ vim.lsp.config.emmet_ls = {
   root_markers = { "package.json", ".git", vim.uv.cwd() },
 }
 vim.lsp.enable("emmet_ls")
-
--- eslint
-vim.lsp.config.eslint_ls = {
-  cmd = { "vscode-eslint-language-server", "--stdio" },
-  filetypes = {
-    "javascript",
-    "javascript.jsx",
-    "javascriptreact",
-    "typescript",
-    "typescript.tsx",
-    "typescriptreact",
-  },
-  root_markers = {
-    ".eslintrc.json",
-    "eslint.config.js",
-    "eslint.config.mjs",
-    "eslint.config.cjs",
-    "eslint.config.ts",
-    "eslint.config.mts",
-    "eslint.config.cts",
-  },
-}
--- vim.lsp.enable("eslint_ls")

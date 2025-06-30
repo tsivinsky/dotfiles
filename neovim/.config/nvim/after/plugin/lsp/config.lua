@@ -20,6 +20,7 @@ null_ls.setup({
     null_formatting.gofmt,
     null_formatting.goimports,
     null_formatting.shfmt,
+    require("none-ls.diagnostics.eslint"),
   },
   on_attach = function()
     local group = vim.api.nvim_create_augroup("NullLsLspFormatting", { clear = true })
