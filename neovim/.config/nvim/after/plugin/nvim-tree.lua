@@ -93,7 +93,7 @@ require("nvim-tree").setup({
     ignore = true,
   },
   diagnostics = {
-    enable = true,
+    enable = false,
     show_on_dirs = true,
     icons = { hint = "", info = "", warning = "", error = "" },
   },
