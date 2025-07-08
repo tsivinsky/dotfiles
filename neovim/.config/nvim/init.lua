@@ -77,8 +77,6 @@ require("lazy").setup({
 
     { "b0o/SchemaStore.nvim" },
 
-    { "nvzone/floaterm", dependencies = { "nvzone/volt" }, opts = {}, cmd = "FloatermToggle" },
-
     { "SyedAsimShah1/quick-todo.nvim", opts = {
       keys = {
         open = "<leader>t",
