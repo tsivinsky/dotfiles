@@ -27,6 +27,7 @@ vim.opt.scrolloff = 5
 vim.opt.redrawtime = 4000
 vim.opt.showmode = false
 vim.opt.hidden = true
+vim.opt.foldenable = false
 
 vim.opt.swapfile = false
 vim.opt.writebackup = false
