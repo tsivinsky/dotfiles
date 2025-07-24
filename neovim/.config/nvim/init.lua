@@ -76,11 +76,5 @@ require("lazy").setup({
     { "nvim-lualine/lualine.nvim" },
 
     { "b0o/SchemaStore.nvim" },
-
-    { "SyedAsimShah1/quick-todo.nvim", opts = {
-      keys = {
-        open = "<leader>t",
-      },
-    } },
   },
 })
