@@ -13,9 +13,7 @@ local servers_with_annoying_formatters = { "ts_ls" }
 local null_formatting = null_ls.builtins.formatting
 null_ls.setup({
   sources = {
-    null_formatting.prettierd.with({
-      extra_filetypes = { "svelte" },
-    }),
+    null_formatting.prettier,
     null_formatting.stylua,
     null_formatting.gofmt,
     null_formatting.goimports,
