@@ -10,18 +10,32 @@ cmp.setup({
     end,
   },
   mapping = {
-    ["<C-j>"] = cmp.mapping(function()
+    ["<C-u>"] = cmp.mapping(function(fallback)
+      if ls.jumpable(1) then
+        ls.jump(1)
+      else
+        fallback()
+      end
+    end),
+    ["<C-i>"] = cmp.mapping(function(fallback)
+      if ls.jumpable(-1) then
+        ls.jump(-1)
+      else
+        fallback()
+      end
+    end),
+    ["<C-j>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
       else
-        ls.jump(1)
+        fallback()
       end
     end),
-    ["<C-k>"] = cmp.mapping(function()
+    ["<C-k>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
       else
-        ls.jump(-1)
+        fallback()
       end
     end),
     ["<C-space>"] = cmp.mapping(function()
