@@ -68,3 +68,11 @@ vim.lsp.config.docker_ls = {
   root_markers = { "Dockerfile", ".git", vim.uv.cwd() },
 }
 vim.lsp.enable("docker_ls")
+
+-- c
+vim.lsp.config.clangd = {
+  cmd = { "clangd", "--clang-tidy" },
+  filetypes = { "c" },
+  root_markers = { "Makefile", "main.c" },
+}
+vim.lsp.enable("clangd")
