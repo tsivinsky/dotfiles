@@ -37,6 +37,7 @@ declare -A aliases=(
 	["pacman"]="pacman --color auto"
 	["yay"]="yay --color auto"
 	["tree"]="tree -C"
+	["y"]="yazi"
 
 	# Tmux
 	["t"]="tmux"
