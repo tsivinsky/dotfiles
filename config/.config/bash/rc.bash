@@ -17,7 +17,7 @@ export MANPAGER="nvim +Man!"
 export GO111MODULE=auto
 export GOBIN="$HOME/go/bin"
 
-MY_BIN="$DOTFILES/bin"
+MY_BIN="$HOME/bin"
 RUST_BIN="$HOME/.cargo/bin"
 PYTHON_BIN="$HOME/.local/bin"
 
