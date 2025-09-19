@@ -6,6 +6,9 @@ vim.lsp.config.ts_ls = {
 
   init_options = {
     hostInfo = "neovim",
+    preferences = {
+      importModuleSpecifierPreference = "non-relative",
+    },
   },
 }
 vim.lsp.enable("ts_ls")
