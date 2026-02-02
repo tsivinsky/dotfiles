@@ -68,6 +68,15 @@ require("lazy").setup({
       },
     },
 
+    {
+      "stevearc/oil.nvim",
+      config = function()
+        require("oil").setup({
+          default_file_explorer = false,
+        })
+      end,
+    },
+
     { "windwp/nvim-autopairs", opts = {} },
     { "windwp/nvim-ts-autotag" },
 
