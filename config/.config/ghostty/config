@@ -12,3 +12,4 @@ cursor-style-blink = false
 window-width = 120
 window-height = 30
 window-inherit-working-directory = false
+working-directory = inherit
