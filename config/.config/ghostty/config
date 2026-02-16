@@ -1,4 +1,5 @@
-font-family = "IBM Plex Mono"
+#font-family = "IBM Plex Mono"
+font-family = "Camingo Code"
 font-feature = "-liga"
 font-feature = "-calt"
 font-feature = "-calt"
