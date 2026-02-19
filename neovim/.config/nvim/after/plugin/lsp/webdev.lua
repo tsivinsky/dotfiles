@@ -118,6 +118,7 @@ vim.lsp.config.emmet_ls = {
     "typescript",
     "typescript.tsx",
     "typescriptreact",
+    "svelte"
   },
   root_markers = { "package.json", ".git", vim.uv.cwd() },
 }
