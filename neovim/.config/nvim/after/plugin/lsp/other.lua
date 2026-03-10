@@ -76,3 +76,10 @@ vim.lsp.config.clangd = {
   root_markers = { "Makefile", "main.c" },
 }
 vim.lsp.enable("clangd")
+
+-- yaml
+vim.lsp.config.yaml = {
+  cmd = { "yaml-language-server", "--stdio" },
+  filetypes = { "yaml" },
+}
+vim.lsp.enable("yaml")
