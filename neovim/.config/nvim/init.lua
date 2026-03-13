@@ -55,27 +55,4 @@ pack.add({
   },
 })
 
-vim.api.nvim_create_user_command("PackUpdate", function()
-  vim.pack.update()
-end, {})
-
-vim.api.nvim_create_user_command("PackClean", function()
-  local plugins = vim.pack.get()
-
-  local items = {}
-
-  for _, plug in ipairs(plugins) do
-    if not plug.active then
-      table.insert(items, plug.spec.name)
-    end
-  end
-
-  if #items == 0 then
-    return
-  end
-
-  vim.pack.del(items)
-
-  local msg = "Deleted " .. #items .. " plugins"
-  vim.notify(msg)
-end, {})
+pack.register_user_commands()
