@@ -28,3 +28,5 @@ vim.keymap.set("n", "<leader>gb", function()
     show_remote_tracking_branches = false,
   })
 end)
+
+vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = "#888888" })

@@ -1,3 +1,5 @@
+require("Comment").setup({})
+require("ts_context_commentstring").setup({})
 local U = require("Comment.utils")
 
 local ctype_to_commentstring = {

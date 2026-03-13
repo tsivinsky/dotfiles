@@ -1,6 +1,5 @@
 local ts = require("telescope.builtin")
 local null_ls = require("null-ls")
-local formatting = require("daniil.formatting")
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -25,10 +24,6 @@ null_ls.setup({
       pattern = "*",
       group = group,
       callback = function()
-        if not formatting.is_enabled() then
-          return
-        end
-
         vim.lsp.buf.format({
           filter = function(client)
             return not vim.tbl_contains(servers_with_annoying_formatters, client.name)

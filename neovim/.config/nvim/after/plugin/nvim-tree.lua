@@ -34,10 +34,11 @@ local function on_attach(bufnr)
 end
 
 require("nvim-tree").setup({
+  on_attach = on_attach,
   disable_netrw = true,
   hijack_netrw = true,
   hijack_cursor = true,
-  open_on_tab = false,
+  open_on_tab = true,
   update_cwd = true,
   auto_reload_on_write = true,
   reload_on_bufenter = true,
@@ -97,7 +98,6 @@ require("nvim-tree").setup({
     show_on_dirs = true,
     icons = { hint = "", info = "", warning = "", error = "" },
   },
-  on_attach = on_attach,
 })
 
 vim.keymap.set("n", "<leader><leader>", vim.cmd.NvimTreeToggle)

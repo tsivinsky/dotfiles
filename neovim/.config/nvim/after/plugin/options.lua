@@ -41,5 +41,3 @@ vim.opt.listchars = { multispace = "·", tab = ">~", leadmultispace = "┊ " }
 vim.opt.spelllang = "en_us,ru"
 
 vim.cmd.colorscheme("retrobox")
-
-vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = "#888888" })
