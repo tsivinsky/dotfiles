@@ -91,7 +91,7 @@ vim.ui.select = function(items, opts, on_choice)
         return true
       end,
       sorter = conf.generic_sorter(),
-    })
+    }, {})
     :find()
 end
 

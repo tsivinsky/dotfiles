@@ -1,7 +1,7 @@
 local cmp = require("cmp")
 local ls = require("luasnip")
 
-require("cmp_git").setup()
+require("cmp_git").setup({})
 
 cmp.setup({
   snippet = {
