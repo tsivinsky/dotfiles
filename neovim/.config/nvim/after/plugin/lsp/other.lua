@@ -11,13 +11,8 @@ vim.lsp.config.lua_ls = {
       telemetry = {
         enable = false,
       },
-      diagnostics = {
-        globals = { "vim" },
-      },
       workspace = {
-        library = {
-          vim.fn.expand("~/.local/share/nvim/site/pack/packer/start"),
-        },
+        library = vim.api.nvim_get_runtime_file("", true),
       },
     },
   },
