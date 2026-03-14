@@ -2,7 +2,7 @@
 
 return {
   s(
-    { trig = "iferr", snippetType = "autosnippet" },
+    { trig = "if err", snippetType = "autosnippet" },
     fmta(
       [[
     if err != nil {
