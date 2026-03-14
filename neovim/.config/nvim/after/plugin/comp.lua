@@ -13,20 +13,20 @@ cmp.setup({
     ["<CR>"] = cmp.mapping(function(fallback)
       fallback()
     end),
-    ["<C-u>"] = cmp.mapping(function(fallback)
+    ["<C-n>"] = cmp.mapping(function(fallback)
       if ls.jumpable(1) then
         ls.jump(1)
       else
         fallback()
       end
-    end),
-    ["<C-i>"] = cmp.mapping(function(fallback)
+    end, { "i", "s" }),
+    ["<C-p>"] = cmp.mapping(function(fallback)
       if ls.jumpable(-1) then
         ls.jump(-1)
       else
         fallback()
       end
-    end),
+    end, { "i", "s" }),
     ["<C-j>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
@@ -58,20 +58,20 @@ cmp.setup({
         fallback()
       end
     end),
-    ["<C-n>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.mapping.scroll_docs(4)
-      else
-        fallback()
-      end
-    end),
-    ["<C-m>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.mapping.scroll_docs(-4)
-      else
-        fallback()
-      end
-    end),
+    -- ["<C-n>"] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.mapping.scroll_docs(4)
+    --   else
+    --     fallback()
+    --   end
+    -- end),
+    -- ["<C-m>"] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.mapping.scroll_docs(-4)
+    --   else
+    --     fallback()
+    --   end
+    -- end),
     ["<C-f>"] = cmp.mapping(function(fallback)
       if ls.expand_or_jumpable() then
         ls.expand_or_jump()
@@ -123,4 +123,5 @@ cmp.setup.filetype("gitcommit", {
   }),
 })
 
-require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip").setup({ enable_autosnippets = true })
+require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/snippets" })
