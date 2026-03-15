@@ -12,6 +12,10 @@
       "rev": "27f7d753990c8d79bdefe75be0094e7e86eabf16",
       "src": "https://github.com/b0o/SchemaStore.nvim"
     },
+    "catppuccin": {
+      "rev": "384f304c8b04664c9e0091fbfb3923c5f97c1bcf",
+      "src": "https://github.com/catppuccin/nvim"
+    },
     "cmp-buffer": {
       "rev": "b74fab3656eea9de20a9b8116afa3cfc4ec09657",
       "src": "https://github.com/hrsh7th/cmp-buffer"

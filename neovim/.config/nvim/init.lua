@@ -54,4 +54,12 @@ pack.add({
   },
 })
 
+pack.add({
+  src = "catppuccin/nvim",
+  name = "catppuccin",
+})
+require("catppuccin").setup({})
+
+require("theme").setup()
+
 pack.register_user_commands()
