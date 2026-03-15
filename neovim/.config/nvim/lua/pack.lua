@@ -45,9 +45,34 @@ function M.add(opts)
 end
 
 function M.register_user_commands()
-  vim.api.nvim_create_user_command("PackUpdate", function()
-    vim.pack.update()
-  end, {})
+  vim.api.nvim_create_user_command("PackUpdate", function(args)
+    local plugins_to_update = {}
+
+    if args.args == "" then
+      local all_plugins = vim.pack.get()
+      for _, plugin in ipairs(all_plugins) do
+        table.insert(plugins_to_update, plugin.spec.name)
+      end
+    else
+      plugins_to_update = args.fargs
+    end
+
+    vim.pack.update(plugins_to_update)
+  end, {
+    nargs = "*",
+    complete = function(text)
+      local plugins = vim.pack.get()
+
+      local options = {}
+      for _, plugin in ipairs(plugins) do
+        if string.find(plugin.spec.name, "^" .. text .. "$") == nil then
+          table.insert(options, plugin.spec.name)
+        end
+      end
+
+      return options
+    end,
+  })
 
   vim.api.nvim_create_user_command("PackClean", function()
     local plugins = vim.pack.get()
