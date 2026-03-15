@@ -10,6 +10,11 @@ return {
     }
     ]],
       { i(0) }
-    )
+    ),
+    {
+      condition = function(line_to_cursor)
+        return #line_to_cursor == vim.api.nvim_get_current_line():len()
+      end,
+    }
   ),
 }
