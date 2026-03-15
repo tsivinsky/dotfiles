@@ -60,6 +60,4 @@ pack.add({
 })
 require("catppuccin").setup({})
 
-require("theme").setup()
-
 pack.register_user_commands()
