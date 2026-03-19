@@ -48,19 +48,14 @@ vim.lsp.config.bashls = {
 }
 vim.lsp.enable("bashls")
 
--- docker compose
-vim.lsp.config.compose_ls = {
-  cmd = { "docker-compose-langserver", "--stdio" },
-  filetypes = { "yaml" },
-  root_markers = { "docker-compose.yml", vim.uv.cwd() },
-}
-vim.lsp.enable("compose_ls")
-
 -- docker
 vim.lsp.config.docker_ls = {
-  cmd = { "docker-langserver", "--stdio" },
+  cmd = { "docker-language-server", "start", "--stdio" },
   filetypes = { "dockerfile" },
   root_markers = { "Dockerfile", ".git", vim.uv.cwd() },
+  init_options = {
+    telemetry = "off",
+  },
 }
 vim.lsp.enable("docker_ls")
 
