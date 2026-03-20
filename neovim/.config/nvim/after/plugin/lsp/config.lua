@@ -54,6 +54,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if not vim.lsp.buf.range_code_action == nil then
       vim.keymap.set("v", "<leader>.", vim.lsp.buf.range_code_action, opts)
     end
+
+    if client and client:supports_method("textDocument/codeLens") then
+      vim.lsp.codelens.enable(true, { bufnr = ev.buf })
+      vim.keymap.set("n", "<leader>c", vim.lsp.codelens.run, opts)
+    end
   end,
 })
 

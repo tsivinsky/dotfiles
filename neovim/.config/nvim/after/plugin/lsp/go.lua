@@ -7,6 +7,9 @@ vim.lsp.config.gopls = {
   root_markers = root_markers,
   settings = {
     gopls = {
+      codelenses = {
+        test = true,
+      },
       linksInHover = true,
       usePlaceholders = false, -- just to ensure it's off, incase in the future go team decides to toggle it on by default
       completeUnimported = true,
