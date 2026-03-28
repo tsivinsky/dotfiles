@@ -1,34 +1,47 @@
-require("nvim-treesitter.configs").setup({
-  ensure_installed = {
-    "bash",
-    "c",
-    "cmake",
-    "comment",
-    "css",
-    "dockerfile",
-    "go",
-    "gomod",
-    "html",
-    "javascript",
-    "jsdoc",
-    "json",
-    "jsonc",
-    "lua",
-    "make",
-    "markdown",
-    "python",
-    "rust",
-    "scss",
-    "svelte",
-    "tsx",
-    "typescript",
-    "vim",
-    "yaml",
-  },
-  highlight = {
-    enable = true,
-  },
+local languages = {
+  "bash",
+  "c",
+  "cmake",
+  "comment",
+  "css",
+  "dockerfile",
+  "go",
+  "gomod",
+  "html",
+  "javascript",
+  "jsdoc",
+  "json",
+  "lua",
+  "make",
+  "markdown",
+  "python",
+  "rust",
+  "scss",
+  "svelte",
+  "tsx",
+  "typescript",
+  "vim",
+  "yaml",
+}
+
+require("nvim-treesitter").setup({
+  install_dir = vim.fn.stdpath("data") .. "/site",
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "*" },
+  callback = function()
+    pcall(vim.treesitter.start)
+  end,
+})
+
+vim.api.nvim_create_user_command("NvimTSInstall", function()
+  require("nvim-treesitter").install(languages)
+end, {})
+
+vim.api.nvim_create_user_command("NvimTSUpdate", function()
+  require("nvim-treesitter").update(languages)
+end, {})
 
 require("nvim-ts-autotag").setup({
   opts = {

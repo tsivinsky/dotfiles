@@ -16,7 +16,7 @@ pack.add("nvim-telescope/telescope.nvim")
 
 pack.add({
   src = "nvim-treesitter/nvim-treesitter",
-  version = "master",
+  version = "main",
 })
 pack.add("windwp/nvim-ts-autotag")
 pack.add("windwp/nvim-autopairs")
