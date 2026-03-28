@@ -40,5 +40,7 @@ vim.opt.listchars = { multispace = "·", tab = ">~", leadmultispace = "┊ " }
 
 vim.opt.spelllang = "en_us,ru"
 
+vim.opt.winborder = "single"
+
 vim.opt.background = "light"
 vim.cmd.colorscheme("catppuccin-latte")
