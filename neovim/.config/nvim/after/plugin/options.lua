@@ -44,3 +44,10 @@ vim.opt.winborder = "single"
 
 vim.opt.background = "light"
 vim.cmd.colorscheme("catppuccin-latte")
+vim.cmd([[
+hi Normal guibg=#ffffff
+hi NormalNC guibg=#ffffff
+hi NormalFloat guibg=#ffffff
+hi NvimTreeNormal guibg=#ffffff
+hi fugitiveHeader guibg=#ffffff
+]])
