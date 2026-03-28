@@ -84,11 +84,13 @@ local filename = {
       return filename
     end
 
+    local items = { icon, filename }
+
     if modified then
-      return icon .. " " .. filename .. " " .. "[+]"
+      table.insert(items, "[+]")
     end
 
-    return icon .. " " .. filename
+    return table.concat(items, " ")
   end,
 }
 
