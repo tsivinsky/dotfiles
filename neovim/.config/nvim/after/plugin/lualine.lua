@@ -1,5 +1,6 @@
 local lualine = require("lualine")
 local devicons = require("nvim-web-devicons")
+local formatting = require("formatting")
 
 local mode = {
   "mode",
@@ -20,6 +21,17 @@ local diagnostics = {
 local relative_filename = {
   "filename",
   path = 1,
+}
+
+local formatting_status = {
+  function()
+    local is_formatting_enabled = formatting.is_enabled(vim.api.nvim_get_current_buf())
+    if is_formatting_enabled then
+      return "[f+]"
+    else
+      return "[f-]"
+    end
+  end,
 }
 
 local searchcount = {
@@ -128,7 +140,7 @@ lualine.setup({
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics, relative_filename },
-    lualine_x = { macro_recording, searchcount, location, tabstop, fileformat },
+    lualine_x = { macro_recording, searchcount, formatting_status, location, tabstop, fileformat },
     lualine_y = { filetype },
     lualine_z = {},
   },

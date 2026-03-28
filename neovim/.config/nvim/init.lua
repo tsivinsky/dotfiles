@@ -62,3 +62,5 @@ pack.add({
 require("catppuccin").setup({})
 
 pack.register_user_commands()
+
+require("formatting").register_user_commands()

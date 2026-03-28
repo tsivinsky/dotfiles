@@ -24,6 +24,10 @@ null_ls.setup({
       pattern = "*",
       group = group,
       callback = function()
+        if not require("formatting").is_enabled(vim.api.nvim_get_current_buf()) then
+          return
+        end
+
         vim.lsp.buf.format({
           filter = function(client)
             return not vim.tbl_contains(servers_with_annoying_formatters, client.name)
