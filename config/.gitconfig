@@ -1,6 +1,7 @@
 [user]
   email = daniil@tsivinsky.com
   name = Daniil Tsivinsky
+	signingkey = 2257F54B99322715
 [core]
   editor = nvim
 [init]
@@ -25,3 +26,7 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
