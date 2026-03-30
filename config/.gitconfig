@@ -30,3 +30,6 @@
 	gpgsign = true
 [tag]
 	gpgSign = true
+[credential "https://git.tsivinsky.com"]
+	helper = 
+	helper = !tea login helper
