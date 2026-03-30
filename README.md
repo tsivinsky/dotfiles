@@ -1,5 +1,8 @@
 # .files
 
+> [!IMPORTANT]
+> im not gonna update this repo, because github. new repo is on [my gitea instance](https://git.tsivinsky.com/tsivinsky/dotfiles)
+
 ### How to install
 
 ```bash
